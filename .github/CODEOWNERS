@@ -1,0 +1,7 @@
+# .github/CODEOWNERS
+# Mandatory reviewers for specific paths
+
+*       @selvarajcs002-collab
+
+# Add other authorized reviewers here
+# /some/path/  @username

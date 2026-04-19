@@ -1,0 +1,43 @@
+# .NET Core & Visual Studio
+[Bb]in/
+[Oo]bj/
+*.swp
+*.lock
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build logs
+*.log
+build_errors.txt
+build_errors_2.txt
+build_errs.txt
+build_full.log
+build_output.txt
+full_build.log
+msbuild.log
+
+# Angular / Node
+node_modules/
+dist/
+.angular/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.parcel-cache
+.cache
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+appsettings.Local.json
+
+# OS files
+.DS_Store
+Thumbs.db

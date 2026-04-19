@@ -1,0 +1,6 @@
+@SSProjectSolution_HostAddress = http://localhost:5219
+
+GET {{SSProjectSolution_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
