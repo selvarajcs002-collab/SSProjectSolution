@@ -1,0 +1,24 @@
+version: '3.8'
+
+  api:
+    image: ssproject-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ssproject-api
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      # Note: Integrated Security=True does NOT work inside Docker.
+      # You MUST use a SQL Server User (like 'sa') to connect from Docker to the Host.
+      - ConnectionStrings__DefaultConnection=Server=host.docker.internal\\SQLEXPRESS;Database=SSManagement;User Id=sa;Password=YourPasswordHere;Encrypt=False;TrustServerCertificate=True;MultipleActiveResultSets=True;
+      - PdfSettings__SavePath=/app/outputs/dc
+    volumes:
+      - ./dc_outputs:/app/outputs/dc
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+
+
+

@@ -35,7 +35,28 @@ We follow a structured branching model to ensure stability and quality:
 - `refactor: ...` (Code changes that neither fix a bug nor add a feature)
 - `chore: ...` (Updates to build process, dependencies, etc.)
 
-## Setup & Running
+## Docker Setup
+
+The application is containerized using Docker and orchestrated with Docker Compose. This setup includes the .NET 8 Web API and a SQL Server 2022 instance.
+
+### Prerequisites
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
+
+### Running with Docker Compose
+1. Build and start the containers:
+   ```bash
+   docker-compose up --build -d
+   ```
+2. The API will be available at `http://localhost:8080/swagger/index.html`.
+3. PDF outputs will be saved to the `./dc_outputs` directory in the project root.
+
+### Database Initialization
+After the database container is running, you must execute the setup scripts against the container:
+- SQL Server Host: `localhost,1433`
+- Username: `sa`
+- Password: `YourSecurePassword123!` (as defined in `docker-compose.yml`)
+
+## Setup & Running (Local Development)
 1. Clone the repository:
    ```bash
    git clone https://github.com/selvarajcs002-collab/SSProjectSolution.git
