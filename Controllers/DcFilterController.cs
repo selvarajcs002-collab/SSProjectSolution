@@ -6,7 +6,7 @@ using SSProjectSolution.Services;
 namespace SSProjectSolution.Controllers
 {
     [ApiController]
-    [Route("api")]
+    [Route("api/[controller]")]
     public class DcFilterController : ControllerBase
     {
         private readonly IDcFilterService _service;
@@ -16,7 +16,7 @@ namespace SSProjectSolution.Controllers
             _service = service;
         }
 
-        [HttpPost("get-details")]
+        [HttpPost]
         public async Task<IActionResult> GetDetails([FromBody] InwardOutwardFilterRequest request)
         {
             var result = await _service.GetInwardOutwardDetailsAsync(request);

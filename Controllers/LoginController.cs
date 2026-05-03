@@ -66,7 +66,7 @@ namespace SSProjectSolution.Controllers
             }
         }
 
-        [HttpPost("login")]
+        [HttpPost]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             try
