@@ -6,7 +6,7 @@ using SSProjectSolution.Services;
 namespace SSProjectSolution.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api")]
     public class DcFilterController : ControllerBase
     {
         private readonly IDcFilterService _service;
