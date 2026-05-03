@@ -6,7 +6,7 @@ using SSProjectSolution.Response;
 namespace SSProjectSolution.Controllers
 {
     [ApiController]
-    [Route("api/login")]
+    [Route("api")]
     public class LoginController : ControllerBase
     {
         private readonly IUserBusiness _userBusiness;
@@ -16,7 +16,7 @@ namespace SSProjectSolution.Controllers
             _userBusiness = userBusiness;
         }
 
-        [HttpPost("save-user")]
+        [HttpPost("login/save-user")]
         public async Task<IActionResult> SaveUser([FromBody] UserSaveRequest saveRequest)
         {
             try
@@ -38,7 +38,7 @@ namespace SSProjectSolution.Controllers
             }
         }
 
-        [HttpPut("update-user")]
+        [HttpPut("login/update-user")]
         public async Task<IActionResult> UpdateUser([FromBody] UserUpdateRequest updateRequest)
         {
             try
@@ -66,7 +66,7 @@ namespace SSProjectSolution.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             try
