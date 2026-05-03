@@ -28,15 +28,15 @@ jobs:
           if [ "${{ github.ref_name }}" == "master" ]; then
             echo "tag=backend-prod" >> $GITHUB_OUTPUT
             echo "port=8080" >> $GITHUB_OUTPUT
-            echo "container=ssproject-api-prod" >> $GITHUB_OUTPUT
+            echo "container=api-prod" >> $GITHUB_OUTPUT
           elif [ "${{ github.ref_name }}" == "test" ]; then
             echo "tag=backend-test" >> $GITHUB_OUTPUT
             echo "port=8082" >> $GITHUB_OUTPUT
-            echo "container=ssproject-api-test" >> $GITHUB_OUTPUT
+            echo "container=api-test" >> $GITHUB_OUTPUT
           else
             echo "tag=backend-dev" >> $GITHUB_OUTPUT
             echo "port=8081" >> $GITHUB_OUTPUT
-            echo "container=ssproject-api-dev" >> $GITHUB_OUTPUT
+            echo "container=api-dev" >> $GITHUB_OUTPUT
           fi
 
       - name: Build, tag, and push image to Amazon ECR
