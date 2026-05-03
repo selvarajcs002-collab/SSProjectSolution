@@ -6,7 +6,7 @@
 -- Database:    SSManagement
 -- =============================================
 
-USE [SSManagement];
+
 GO
 
 -- 1. Create User Defined Table Type: SizeCountType

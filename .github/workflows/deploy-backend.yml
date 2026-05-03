@@ -1,0 +1,81 @@
+name: Deploy Backend to AWS EC2
+
+on:
+  push:
+    branches: [ master, dev, test ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Set Environment Name
+        id: env_name
+        run: |
+          if [ "${{ github.ref_name }}" == "master" ]; then
+            echo "tag=backend-prod" >> $GITHUB_OUTPUT
+            echo "port=8080" >> $GITHUB_OUTPUT
+            echo "container=ssproject-api-prod" >> $GITHUB_OUTPUT
+          elif [ "${{ github.ref_name }}" == "test" ]; then
+            echo "tag=backend-test" >> $GITHUB_OUTPUT
+            echo "port=8082" >> $GITHUB_OUTPUT
+            echo "container=ssproject-api-test" >> $GITHUB_OUTPUT
+          else
+            echo "tag=backend-dev" >> $GITHUB_OUTPUT
+            echo "port=8081" >> $GITHUB_OUTPUT
+            echo "container=ssproject-api-dev" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build, tag, and push image to Amazon ECR
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: ssproject-api
+          IMAGE_TAG: ${{ steps.env_name.outputs.tag }}
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+      - name: SSH and Redeploy on EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin ${{ steps.login-ecr.outputs.registry }}
+            # 1. Create network if not exists
+            sudo docker network create ssproject-net || true
+            
+            # 2. Ensure SQL Server is running (Start if stopped, do nothing if already running)
+            if [ ! "$(sudo docker ps -q -f name=sqlserver)" ]; then
+              if [ "$(sudo docker ps -aq -f status=exited -f name=sqlserver)" ]; then
+                sudo docker start sqlserver
+              else
+                sudo docker run -d --name sqlserver --network ssproject-net -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Selva@RaJ1234" -p 1433:1433 mcr.microsoft.com/mssql/server:2022-latest
+              fi
+            fi
+
+            # 3. Deploy the specific environment API
+            sudo docker stop ${{ steps.env_name.outputs.container }} || true
+            sudo docker rm ${{ steps.env_name.outputs.container }} || true
+            sudo docker pull ${{ steps.login-ecr.outputs.registry }}/ssproject-api:${{ steps.env_name.outputs.tag }}
+            sudo docker run -d \
+              --name ${{ steps.env_name.outputs.container }} \
+              --network ssproject-net \
+              -p ${{ steps.env_name.outputs.port }}:8080 \
+              -e "ConnectionStrings__DefaultConnection=Server=sqlserver;Database=SSManagement;User Id=sa;Password=Selva@RaJ1234;Encrypt=False;TrustServerCertificate=True;" \
+              -e "ASPNETCORE_ENVIRONMENT=Development" \
+              ${{ steps.login-ecr.outputs.registry }}/ssproject-api:${{ steps.env_name.outputs.tag }}
