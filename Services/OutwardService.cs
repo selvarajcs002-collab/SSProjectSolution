@@ -23,6 +23,8 @@ namespace SSProjectSolution.Services
             _outwardRepository = outwardRepository;
         }
 
+        // ── Size-Based (existing — untouched) ──────────────────────────────────
+
         public async Task<OutwardResponse> SaveOutwardAsync(OutwardRequest request)
         {
             try
@@ -185,6 +187,72 @@ namespace SSProjectSolution.Services
                 {
                     Success = false,
                     Message = "Error in UpdateOutwardAsync: " + ex.Message
+                };
+            }
+        }
+
+        // ── Meter-Based (new — isolated) ───────────────────────────────────────
+
+        public async Task<OutwardMeterResponse> SaveMeterOutwardAsync(OutwardMeterSaveRequest request)
+        {
+            try
+            {
+                // Validate mode
+                if (string.IsNullOrWhiteSpace(request.Mode) ||
+                    (request.Mode != "INSERT" && request.Mode != "UPDATE"))
+                {
+                    return new OutwardMeterResponse
+                    {
+                        Success = false,
+                        Message = "Mode must be INSERT or UPDATE"
+                    };
+                }
+
+                // Build UDTT DataTable — backend recalculates TotalMeter inside the SP
+                var dt = new DataTable();
+                dt.Columns.Add("MeterValue", typeof(decimal));
+                dt.Columns.Add("BitsCount", typeof(decimal));
+
+                foreach (var detail in request.MeterDetails)
+                {
+                    if (detail.MeterValue <= 0 || detail.BitsCount <= 0)
+                        continue; // SP also validates, but filter obvious bad rows
+                    dt.Rows.Add(detail.MeterValue, detail.BitsCount);
+                }
+
+                if (dt.Rows.Count == 0)
+                {
+                    return new OutwardMeterResponse
+                    {
+                        Success = false,
+                        Message = "No valid meter details provided. MeterValue and BitsCount must be greater than 0."
+                    };
+                }
+
+                var parameters = new DynamicParameters();
+                parameters.Add("@OutwardId",
+                    request.Mode == "INSERT" ? 0 : request.OutwardId,
+                    dbType: DbType.Int32);
+                parameters.Add("@CompanyId", request.CompanyId);
+                parameters.Add("@StyleId", request.StyleId);
+                parameters.Add("@DesignId", request.DesignId);
+                parameters.Add("@Colour", request.Colour.Trim());
+                parameters.Add("@DesignName", request.DesignName.Trim());
+                parameters.Add("@StyleNo", request.StyleNo.Trim());
+                parameters.Add("@EntryType", request.EntryType);
+                parameters.Add("@Mode", request.Mode);
+                parameters.Add("@CreatedBy", request.CreatedBy);
+                parameters.Add("@MeterDetails", dt.AsTableValuedParameter("OutwardMeterDetailType"));
+
+                var response = await _outwardRepository.SaveMeterOutwardAsync(parameters);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return new OutwardMeterResponse
+                {
+                    Success = false,
+                    Message = "Error in SaveMeterOutwardAsync: " + ex.Message
                 };
             }
         }

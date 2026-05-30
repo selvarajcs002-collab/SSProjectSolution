@@ -41,5 +41,43 @@ namespace SSProjectSolution.Business
 
             return new CommonResponse { Id = 0, Message = "Failed to save Inward", Status = false };
         }
+
+        public async Task<CommonResponse> SaveMeterInward(InwardMeterSaveRequest request)
+        {
+            foreach(var item in request.MeterDetails)
+            {
+                Console.WriteLine($"MeterValue : {item.MeterValue}");
+            }
+
+            // 1. Validate duplicates and empty rows
+            var validMeterDetails = request.MeterDetails
+                .Where(m => m.MeterValue > 0 && m.BitsCount > 0)
+                .GroupBy(m => m.MeterValue)
+                .Select(g => 
+                {
+                    var m = g.First();
+                    // Recalculate TotalMeter
+                    m.TotalMeter = m.MeterValue * m.BitsCount;
+                    return m;
+                })
+                .ToList();
+
+            if (!validMeterDetails.Any())
+            {
+                return new CommonResponse { Id = 0, Message = "No valid meter details provided. MeterValue and BitsCount must be greater than 0.", Status = false };
+            }
+
+            request.MeterDetails = validMeterDetails;
+
+            // 2. Delegate to Service (recalculation happens in SP, but we cleaned up list here)
+            var result = await _inwardService.SaveMeterInwardAsync(request);
+
+            if (result.InwardId > 0)
+            {
+                return new CommonResponse { Id = result.InwardId, Message = result.Message, Status = true };
+            }
+
+            return new CommonResponse { Id = 0, Message = result.Message, Status = false };
+        }
     }
 }

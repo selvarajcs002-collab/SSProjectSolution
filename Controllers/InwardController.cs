@@ -27,10 +27,57 @@ namespace SSProjectSolution.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    return BadRequest(ModelState);
+                    var errors = ModelState
+                        .Where(x => x.Value.Errors.Count > 0)
+                        .ToDictionary(
+                            kvp => kvp.Key,
+                            kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToArray()
+                        );
+                    return BadRequest(new
+                    {
+                        Success = false,
+                        Message = "Validation Failed",
+                        Errors = errors
+                    });
                 }
 
                 var result = await _inwardBusiness.SaveInward(request);
+                
+                if (result.Status)
+                {
+                    return Ok(result);
+                }
+                
+                return BadRequest(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new CommonResponse { Id = 0, Message = "Internal Server Error: " + ex.Message, Status = false });
+            }
+        }
+
+        [HttpPost("save-meter-inward")]
+        public async Task<IActionResult> SaveMeterInward([FromBody] InwardMeterSaveRequest request)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    var errors = ModelState
+                        .Where(x => x.Value.Errors.Count > 0)
+                        .ToDictionary(
+                            kvp => kvp.Key,
+                            kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToArray()
+                        );
+                    return BadRequest(new
+                    {
+                        Success = false,
+                        Message = "Validation Failed",
+                        Errors = errors
+                    });
+                }
+
+                var result = await _inwardBusiness.SaveMeterInward(request);
                 
                 if (result.Status)
                 {
@@ -57,6 +104,25 @@ namespace SSProjectSolution.Controllers
 
                 var sizes = await _inwardService.GetSizesByColourStyleAsync(companyId, colour, styleNo);
                 return Ok(sizes);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Internal Server Error: " + ex.Message });
+            }
+        }
+
+        [HttpGet("meters")]
+        public async Task<IActionResult> GetMetersByColourStyle([FromQuery] int companyId, [FromQuery] string colour, [FromQuery] string styleNo)
+        {
+            try
+            {
+                if (companyId <= 0 || string.IsNullOrEmpty(colour) || string.IsNullOrEmpty(styleNo))
+                {
+                    return BadRequest(new { message = "Invalid input parameters" });
+                }
+
+                var meters = await _inwardService.GetMetersByColourStyleAsync(companyId, colour, styleNo);
+                return Ok(meters);
             }
             catch (Exception ex)
             {
@@ -95,7 +161,18 @@ namespace SSProjectSolution.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    return BadRequest(ModelState);
+                    var errors = ModelState
+                        .Where(x => x.Value.Errors.Count > 0)
+                        .ToDictionary(
+                            kvp => kvp.Key,
+                            kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToArray()
+                        );
+                    return BadRequest(new
+                    {
+                        Success = false,
+                        Message = "Validation Failed",
+                        Errors = errors
+                    });
                 }
 
                 var message = await _inwardService.UpdateInwardAsync(request);

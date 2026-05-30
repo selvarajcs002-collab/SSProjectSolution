@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using SSProjectSolution.Request;
+using SSProjectSolution.Response;
 using SSProjectSolution.Services;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SSProjectSolution.Controllers
@@ -16,6 +18,8 @@ namespace SSProjectSolution.Controllers
         {
             _outwardService = outwardService;
         }
+
+        // ── Size-Based (existing — untouched) ──────────────────────────────────
 
         [HttpPost("save-outward")]
         public async Task<IActionResult> SaveOutward([FromBody] OutwardRequest request)
@@ -112,6 +116,57 @@ namespace SSProjectSolution.Controllers
                 }
 
                 return BadRequest(response); // Use 400 for business logic failure
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
+            }
+        }
+
+        // ── Meter-Based (new — isolated) ───────────────────────────────────────
+
+        [HttpPost("save-meter-outward")]
+        public async Task<IActionResult> SaveMeterOutward([FromBody] OutwardMeterSaveRequest request)
+        {
+            try
+            {
+                if (request == null)
+                    return BadRequest(new { success = false, message = "Invalid request payload" });
+
+                if (request.MeterDetails == null || !request.MeterDetails.Any())
+                    return BadRequest(new { success = false, message = "MeterDetails cannot be empty" });
+
+                if (request.CompanyId <= 0)
+                    return BadRequest(new { success = false, message = "CompanyId must be valid" });
+
+                // Detect duplicate meter values in request
+                var duplicates = request.MeterDetails
+                    .GroupBy(m => m.MeterValue)
+                    .Where(g => g.Count() > 1)
+                    .Select(g => g.Key)
+                    .ToList();
+
+                if (duplicates.Any())
+                    return BadRequest(new
+                    {
+                        success = false,
+                        message = $"Duplicate MeterValue entries detected: {string.Join(", ", duplicates)}. Each meter value must be unique per outward."
+                    });
+
+                if (!ModelState.IsValid)
+                {
+                    var errors = ModelState
+                        .Where(x => x.Value.Errors.Count > 0)
+                        .ToDictionary(
+                            kvp => kvp.Key,
+                            kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToArray()
+                        );
+                    return BadRequest(new { success = false, message = "Validation Failed", errors });
+                }
+
+                var response = await _outwardService.SaveMeterOutwardAsync(request);
+
+                return response.Success ? Ok(response) : BadRequest(response);
             }
             catch (Exception ex)
             {

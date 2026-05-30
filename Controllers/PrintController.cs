@@ -38,5 +38,21 @@ namespace SSProjectSolution.Controllers
                 return StatusCode(500, new { success = false, message = ex.Message });
             }
         }
+
+        [HttpPost("generate-dc")]
+        public async Task<IActionResult> GenerateDeliveryChallan(
+            [FromServices] IPrintWorkflowService workflowService, 
+            [FromBody] GenerateDcRequest request)
+        {
+            try
+            {
+                var message = await workflowService.GenerateAndPrintDcAsync(request);
+                return Ok(new { success = true, message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { success = false, message = ex.Message });
+            }
+        }
     }
 }

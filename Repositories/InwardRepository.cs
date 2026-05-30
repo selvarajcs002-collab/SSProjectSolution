@@ -28,6 +28,20 @@ namespace SSProjectSolution.Repositories
                 commandType: CommandType.StoredProcedure);
         }
 
+        public async Task<IEnumerable<MeterResponseDto>> GetMetersByColourStyleAsync(int companyId, string colour, string styleNo)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var parameters = new DynamicParameters();
+            parameters.Add("@CompanyId", companyId);
+            parameters.Add("@Colour", colour);
+            parameters.Add("@StyleNo", styleNo);
+
+            return await connection.QueryAsync<MeterResponseDto>(
+                SPConstants.GetMetersByColourStyle,
+                parameters,
+                commandType: CommandType.StoredProcedure);
+        }
+
         public async Task<InwardByDcResponseDto> GetInwardByCompanyAndDcAsync(int companyId, string inwardDcNo)
         {
             using var connection = _dbConnection.CreateConnection();

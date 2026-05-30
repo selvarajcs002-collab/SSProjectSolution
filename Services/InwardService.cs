@@ -63,9 +63,47 @@ namespace SSProjectSolution.Services
                 commandType: CommandType.StoredProcedure);
         }
 
+        public async Task<(int InwardId, string Message)> SaveMeterInwardAsync(InwardMeterSaveRequest request)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            
+            // Create DataTable for UDTT
+            var dt = new DataTable();
+            dt.Columns.Add("MeterValue", typeof(decimal));
+            dt.Columns.Add("BitsCount", typeof(decimal));
+
+            foreach (var detail in request.MeterDetails)
+            {
+                dt.Rows.Add(detail.MeterValue, detail.BitsCount);
+            }
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@InwardId", request.InwardId);
+            parameters.Add("@CompanyId", request.CompanyId);
+            parameters.Add("@Colour", request.Colour);
+            parameters.Add("@DesignName", request.DesignName);
+            parameters.Add("@StyleNo", request.StyleNo);
+            parameters.Add("@InwardDcNo", request.InwardDcNo);
+            parameters.Add("@EntryType", request.EntryType);
+            parameters.Add("@CreatedBy", request.CreatedBy);
+            parameters.Add("@MeterDetails", dt.AsTableValuedParameter("MeterDetailType"));
+
+            var result = await connection.QueryFirstOrDefaultAsync<dynamic>(
+                SPConstants.SaveInwardMeter,
+                parameters,
+                commandType: CommandType.StoredProcedure);
+
+            return (result?.InwardId ?? 0, result?.Message ?? "Failed to save Meter Inward");
+        }
+
         public async Task<IEnumerable<SizeResponseDto>> GetSizesByColourStyleAsync(int companyId, string colour, string styleNo)
         {
             return await _inwardRepository.GetSizesByColourStyleAsync(companyId, colour, styleNo);
+        }
+
+        public async Task<IEnumerable<MeterResponseDto>> GetMetersByColourStyleAsync(int companyId, string colour, string styleNo)
+        {
+            return await _inwardRepository.GetMetersByColourStyleAsync(companyId, colour, styleNo);
         }
 
         public async Task<InwardByDcResponseDto> GetInwardByCompanyAndDcAsync(int companyId, string inwardDcNo)
