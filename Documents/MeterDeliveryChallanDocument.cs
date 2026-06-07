@@ -45,7 +45,16 @@ namespace SSProjectSolution.Documents
                     // Left Logo/Company details
                     row.RelativeItem().Row(innerRow =>
                     {
-                        innerRow.ConstantItem(40).Height(40).Placeholder(); // Placeholder for Logo
+                        var logoPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Assets", "logo.jpeg");
+                        if (System.IO.File.Exists(logoPath))
+                        {
+                            innerRow.AutoItem().Height(40).Image(logoPath);
+                        }
+                        else
+                        {
+                            innerRow.ConstantItem(40).Height(40).Placeholder(); // Placeholder for Logo
+                        }
+                        
                         innerRow.RelativeItem().PaddingLeft(8).Column(c =>
                         {
                             c.Item().Text("S.S.EMBROIDERY").FontSize(14).Bold().FontColor("#1e3a8a");
@@ -109,87 +118,49 @@ namespace SSProjectSolution.Documents
                     {
                         table.ColumnsDefinition(columns =>
                         {
-                            columns.ConstantColumn(50); // Style
-                            columns.ConstantColumn(55); // Design
+                            columns.ConstantColumn(60); // Style
+                            columns.ConstantColumn(60); // Design
                             columns.ConstantColumn(60); // Color
-                            columns.ConstantColumn(45); // Meter / Bit (equal width)
-                            columns.ConstantColumn(45); // Bits Count (equal width)
-                            columns.ConstantColumn(55); // Total Meter
+                            columns.ConstantColumn(70); // Meter/Bit
+                            columns.ConstantColumn(60); // Bits Count
+                            columns.ConstantColumn(60); // No Of Pieces
+                            columns.ConstantColumn(70); // Total Meter
                             columns.ConstantColumn(60); // Qty
                         });
 
                         // Header
+                        string[] headers =
+                                             {
+                                                "Style",
+                                                "Design",
+                                                "Color",
+                                                "Meter / Bit",
+                                                "Bits Count",
+                                                "No of Pieces",
+                                                "Total Meter",
+                                                "Qty"
+                                            };
+
                         table.Header(header =>
                         {
-                            header.Cell()
-                            .Border(0.5f)
-                            .Background("#e5e7eb")
-                            .Padding(4)
-                            .AlignCenter()
-                            .AlignMiddle()
-                            .Text("Style")
-                            .Bold()
-                            .FontSize(8);
-                        header.Cell()
-                            .Border(0.5f)
-                            .Background("#e5e7eb")
-                            .Padding(4)
-                            .AlignCenter()
-                            .AlignMiddle()
-                            .Text("Design")
-                            .Bold()
-                            .FontSize(8);
-                        header.Cell()
-                            .Border(0.5f)
-                            .Background("#e5e7eb")
-                            .Padding(4)
-                            .AlignCenter()
-                            .AlignMiddle()
-                            .Text("Color")
-                            .Bold()
-                            .FontSize(8);
-                        header.Cell()
-                            .Border(0.5f)
-                            .Background("#e5e7eb")
-                            .Padding(4)
-                            .AlignCenter()
-                            .AlignMiddle()
-                            .Text("Meter / Bit")
-                            .Bold()
-                            .FontSize(8);
-                        header.Cell()
-                            .Border(0.5f)
-                            .Background("#e5e7eb")
-                            .Padding(4)
-                            .AlignCenter()
-                            .AlignMiddle()
-                            .Text("Bits Count")
-                            .Bold()
-                            .FontSize(8);
-                        header.Cell()
-                            .Border(0.5f)
-                            .Background("#e5e7eb")
-                            .Padding(4)
-                            .AlignCenter()
-                            .AlignMiddle()
-                            .Text("Total Meter")
-                            .Bold()
-                            .FontSize(8);
-                        header.Cell()
-                            .Border(0.5f)
-                            .Background("#e5e7eb")
-                            .Padding(4)
-                            .AlignCenter()
-                            .AlignMiddle()
-                            .Text("Qty")
-                            .Bold()
-                            .FontSize(8);
+                            foreach (var h in headers)
+                            {
+                                header.Cell()
+                                    .Border(0.5f)
+                                    .Background("#e5e7eb")
+                                    .AlignCenter()
+                                    .AlignMiddle()
+                                    .Padding(4)
+                                    .Text(h)
+                                    .Bold()
+                                    .FontSize(8);
+                            }
                         });
 
                         var rowSpan = _model.Items.Count + 1;
 
                         // Left fixed columns
-                        table.Cell().RowSpan((uint)rowSpan)
+                        table.Cell().RowSpan((uint)rowSpan).Column(1)
                             .Border(0.5f)
                             .AlignCenter()
                             .AlignMiddle()
@@ -198,7 +169,7 @@ namespace SSProjectSolution.Documents
                             .Bold()
                             .FontSize(8);
 
-                        table.Cell().RowSpan((uint)rowSpan)
+                        table.Cell().RowSpan((uint)rowSpan).Column(2)
                             .Border(0.5f)
                             .AlignCenter()
                             .AlignMiddle()
@@ -206,7 +177,7 @@ namespace SSProjectSolution.Documents
                             .Text(_model.Design)
                             .FontSize(8);
 
-                        table.Cell().RowSpan((uint)rowSpan)
+                        table.Cell().RowSpan((uint)rowSpan).Column(3)
                             .Border(0.5f)
                             .AlignCenter()
                             .AlignMiddle()
@@ -215,7 +186,7 @@ namespace SSProjectSolution.Documents
                             .FontSize(8);
 
                         // Qty column (right side)
-                        table.Cell().RowSpan((uint)rowSpan)
+                        table.Cell().RowSpan((uint)rowSpan).Column(8)
                             .Border(0.5f)
                             .AlignCenter()
                             .AlignMiddle()
@@ -225,59 +196,69 @@ namespace SSProjectSolution.Documents
                             .FontSize(8);
 
                         // Detail rows
+                        uint currentRow = 1;
                         foreach (var item in _model.Items)
                         {
-                            table.Cell()
+                            table.Cell().Row(currentRow).Column(4)
                                 .Border(0.5f)
-                                .Padding(3)
                                 .AlignCenter()
-                                .Text($"{item.MeterPerBit:0.00} Mtr")
-                                .FontSize(8);
+                                .Text($"{item.MeterPerBit:0.00} Mtr");
 
-                            table.Cell()
+                            table.Cell().Row(currentRow).Column(5)
                                 .Border(0.5f)
-                                .Padding(3)
                                 .AlignCenter()
-                                .Text(item.BitsCount.ToString())
-                                .FontSize(8);
+                                .Text(item.BitsCount.ToString());
 
-                            table.Cell()
+                            table.Cell().Row(currentRow).Column(6)
                                 .Border(0.5f)
-                                .Padding(3)
                                 .AlignCenter()
-                                .Text(item.TotalMeter.ToString("0.00"))
-                                .FontSize(8);
+                                .Text(item.PiecesCount.ToString());
+
+                            table.Cell().Row(currentRow).Column(7)
+                                .Border(0.5f)
+                                .AlignCenter()
+                                .Text(item.TotalMeter.ToString("0.00"));
+                                
+                            currentRow++;
                         }
 
                         // Grand Total Row
-                        table.Cell()
-                            .ColumnSpan(2)
-                            .Border(0.5f)
-                            .Background("#f8fafc")
-                            .AlignCenter()
-                            .Padding(3)
-                            .Text("Grand Total ( Meter )")
-                            .Bold()
-                            .FontSize(8);
+                        table.Cell().Row(currentRow).Column(4).ColumnSpan(2)
+                          .Border(0.5f)
+                          .AlignCenter()
+                          .Text("Grand Total ( Meter )")
+                          .Bold();
 
-                        table.Cell()
+                        table.Cell().Row(currentRow).Column(6)
                             .Border(0.5f)
-                            .Background("#f8fafc")
                             .AlignCenter()
-                            .Padding(3)
+                            .Text(_model.Items.Sum(x => x.PiecesCount).ToString())
+                            .Bold();
+
+                        table.Cell().Row(currentRow).Column(7)
+                            .Border(0.5f)
+                            .AlignCenter()
                             .Text(_model.TotalMeterSum.ToString("0.00"))
-                            .Bold()
-                            .FontSize(8);
+                            .Bold();
                     });
 
-                if (!string.IsNullOrEmpty(_model.Remarks))
-                {
-                    column.Item().PaddingTop(5).Border(0.5f).BorderColor(Colors.Grey.Medium).Padding(4).Column(c =>
-                    {
-                        c.Item().Text("Remarks").FontSize(7).FontColor(Colors.Grey.Darken1);
-                        c.Item().Text(_model.Remarks).FontSize(8);
-                    });
-                }
+                column.Item().Height(40);
+                column.Item()
+                                .Border(0.5f)
+                                .Height(40)
+                                .Padding(4)
+                                .Column(c =>
+                                {
+                                    c.Item().Text("Remarks")
+                                        .FontSize(7)
+                                        .Bold();
+
+                                    c.Item().Text(
+                                        string.IsNullOrWhiteSpace(_model.Remarks)
+                                            ? "-"
+                                            : _model.Remarks)
+                                        .FontSize(8);
+                                });
             });
         }
 

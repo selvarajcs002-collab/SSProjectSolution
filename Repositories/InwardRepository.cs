@@ -58,21 +58,91 @@ namespace SSProjectSolution.Repositories
         public async Task<string> UpdateInwardAsync(InwardUpdateDto request)
         {
             using var connection = _dbConnection.CreateConnection();
-            var parameters = new DynamicParameters();
-            parameters.Add("@InwardId", request.InwardId);
-            parameters.Add("@CompanyId", request.CompanyId);
-            parameters.Add("@Colour", request.Colour);
-            parameters.Add("@DesignName", request.DesignName);
-            parameters.Add("@StyleNo", request.StyleNo);
-            parameters.Add("@InwardDcNo", request.InwardDcNo);
-            parameters.Add("@UpdatedBy", request.UpdatedBy);
+            connection.Open();
+            using var transaction = connection.BeginTransaction();
+            try
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@InwardId", request.InwardId);
+                parameters.Add("@CompanyId", request.CompanyId);
+                parameters.Add("@Colour", request.Colour);
+                parameters.Add("@DesignName", request.DesignName);
+                parameters.Add("@StyleNo", request.StyleNo);
+                parameters.Add("@InwardDcNo", request.InwardDcNo);
+                parameters.Add("@UpdatedBy", request.UpdatedBy);
 
-            var result = await connection.QueryFirstOrDefaultAsync<dynamic>(
-                SPConstants.UpdateInward,
-                parameters,
-                commandType: CommandType.StoredProcedure);
+                var result = await connection.QueryFirstOrDefaultAsync<dynamic>(
+                    SPConstants.UpdateInward,
+                    parameters,
+                    transaction: transaction,
+                    commandType: CommandType.StoredProcedure);
 
-            return result?.message ?? "Update failed";
+                if (request.EntryType == 'M')
+                {
+                    await connection.ExecuteAsync(
+                        "DELETE FROM INWARD_METER_DETAIL WHERE IMD_INWARD_ID = @InwardId",
+                        new { InwardId = request.InwardId },
+                        transaction);
+
+                    if (request.MeterDetails != null && request.MeterDetails.Any())
+                    {
+                        var validMeters = request.MeterDetails.Where(m => m.MeterValue > 0 && m.BitsCount > 0).ToList();
+                        if (validMeters.Any())
+                        {
+                            var meterSql = @"
+                                INSERT INTO INWARD_METER_DETAIL (IMD_INWARD_ID, IMD_COMPANY_ID, IMD_METER_VALUE, IMD_BITS_COUNT, IMD_TOTAL_METER, IMD_CREATED_BY, IMD_CREATED_DATE)
+                                VALUES (@InwardId, @CompanyId, @MeterValue, @BitsCount, (@MeterValue * @BitsCount), @UpdatedBy, GETDATE())";
+                            
+                            var meterParams = validMeters.Select(m => new {
+                                InwardId = request.InwardId,
+                                CompanyId = request.CompanyId,
+                                MeterValue = m.MeterValue,
+                                BitsCount = m.BitsCount,
+                                UpdatedBy = request.UpdatedBy
+                            }).ToList();
+
+                            await connection.ExecuteAsync(meterSql, meterParams, transaction);
+                        }
+                    }
+                }
+                else
+                {
+                    await connection.ExecuteAsync(
+                        "DELETE FROM InwardSizeCount WHERE InwardId = @InwardId",
+                        new { InwardId = request.InwardId },
+                        transaction);
+
+                    if (request.Sizes != null && request.Sizes.Any())
+                    {
+                        var validSizes = request.Sizes.Where(s => s.Count > 0 && !string.IsNullOrWhiteSpace(s.Size)).ToList();
+                        if (validSizes.Any())
+                        {
+                            var sizeSql = @"
+                                INSERT INTO InwardSizeCount (InwardId, StyleNo, DesignName, Colour, Size, Count)
+                                VALUES (@InwardId, @StyleNo, @DesignName, @Colour, LTRIM(RTRIM(@Size)), @Count)";
+
+                            var sizeParams = validSizes.Select(s => new {
+                                InwardId = request.InwardId,
+                                StyleNo = request.StyleNo,
+                                DesignName = request.DesignName,
+                                Colour = request.Colour,
+                                Size = s.Size,
+                                Count = s.Count
+                            }).ToList();
+
+                            await connection.ExecuteAsync(sizeSql, sizeParams, transaction);
+                        }
+                    }
+                }
+
+                transaction.Commit();
+                return result?.message ?? "Inward updated successfully";
+            }
+            catch
+            {
+                transaction.Rollback();
+                throw;
+            }
         }
 
         public async Task<IEnumerable<DesignStyleColourDto>> GetDesignStyleColourByCompanyAsync(int companyId)

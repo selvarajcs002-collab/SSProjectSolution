@@ -9,6 +9,7 @@ namespace SSProjectSolution.Repositories
         // ── Size-Based (existing — do NOT modify) ──────────────────────────────
         Task<IEnumerable<dynamic>> GetOutwardDetailsRawAsync(int id, string mode);
         Task<SSProjectSolution.Response.OutwardResponse> SaveOutwardAsync(Dapper.DynamicParameters parameters);
+        Task<IEnumerable<dynamic>> GetAvailableSizesAsync(int companyId, string styleNo, string designName, string colour);
 
         // ── Meter-Based (new — isolated) ───────────────────────────────────────
         Task<OutwardMeterResponse> SaveMeterOutwardAsync(Dapper.DynamicParameters parameters);

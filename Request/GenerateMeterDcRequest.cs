@@ -27,6 +27,7 @@ namespace SSProjectSolution.Request
     {
         public decimal MeterPerBit { get; set; }
         public decimal BitsCount { get; set; }
+        public decimal PiecesCount { get; set; }
         public decimal TotalMeter { get; set; }
     }
 }

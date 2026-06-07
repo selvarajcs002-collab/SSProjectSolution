@@ -1,28 +1,37 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace SSProjectSolution.Models.DTOs
 {
     public class InwardUpdateDto
     {
-        [JsonPropertyName("inward_id")]
+        [JsonProperty("inward_id")]
         public int InwardId { get; set; }
 
-        [JsonPropertyName("company_id")]
+        [JsonProperty("company_id")]
         public int CompanyId { get; set; }
 
-        [JsonPropertyName("colour")]
+        [JsonProperty("colour")]
         public string Colour { get; set; }
 
-        [JsonPropertyName("design_name")]
+        [JsonProperty("design_name")]
         public string DesignName { get; set; }
 
-        [JsonPropertyName("style_no")]
+        [JsonProperty("style_no")]
         public string StyleNo { get; set; }
 
-        [JsonPropertyName("inward_dc_no")]
+        [JsonProperty("inward_dc_no")]
         public string InwardDcNo { get; set; }
 
-        [JsonPropertyName("updated_by")]
+        [JsonProperty("updated_by")]
         public int UpdatedBy { get; set; }
+
+        [JsonProperty("entry_type")]
+        public char EntryType { get; set; } = 'S';
+
+        [JsonProperty("sizes")]
+        public List<SSProjectSolution.Request.SizeDto> Sizes { get; set; } = new List<SSProjectSolution.Request.SizeDto>();
+
+        [JsonProperty("meter_details")]
+        public List<SSProjectSolution.Request.MeterDetailDto> MeterDetails { get; set; } = new List<SSProjectSolution.Request.MeterDetailDto>();
     }
 }

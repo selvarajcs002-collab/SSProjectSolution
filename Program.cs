@@ -24,6 +24,8 @@ builder.Services.AddScoped<IDcFilterService, DcFilterService>();
 builder.Services.AddScoped<IPrintService, PrintService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IPrintWorkflowService, PrintWorkflowService>();
+builder.Services.AddScoped<IActivityLogService, ActivityLogService>();
+builder.Services.AddScoped<IStatusFilterService, StatusFilterService>();
 
 // Register Business Layer
 builder.Services.AddScoped<IUserBusiness, UserBusiness>();
@@ -48,11 +50,10 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 app.UseRouting();
 

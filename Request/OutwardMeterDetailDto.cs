@@ -25,5 +25,7 @@ namespace SSProjectSolution.Request
         /// Frontend-supplied hint. Backend ALWAYS recalculates (MeterValue × BitsCount).
         /// </summary>
         public decimal TotalMeter { get; set; }
+
+        public decimal PiecesCount { get; set; }
     }
 }

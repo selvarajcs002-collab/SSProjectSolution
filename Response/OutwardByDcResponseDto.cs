@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using SSProjectSolution.Request;
 
 namespace SSProjectSolution.Response
 {
@@ -42,8 +43,26 @@ namespace SSProjectSolution.Response
         [JsonPropertyName("status")]
         public string? Status { get; set; }
 
+        [JsonPropertyName("entryType")]
+        public string? EntryType { get; set; }
+
+        [JsonPropertyName("meterDetails")]
+        public List<MeterDetailDto> MeterDetails { get; set; } = new();
+
         [JsonPropertyName("sizeCounts")]
         public List<SizeCountDetailsDto> SizeCounts { get; set; } = new();
+
+        [JsonPropertyName("colourBreakdowns")]
+        public List<ColourBreakdownResponseDto> ColourBreakdowns { get; set; } = new();
+    }
+
+    public class ColourBreakdownResponseDto
+    {
+        [JsonPropertyName("colour")]
+        public string Colour { get; set; }
+
+        [JsonPropertyName("sizes")]
+        public List<SizeCountDetailsDto> Sizes { get; set; } = new();
     }
 
     public class SizeCountDetailsDto

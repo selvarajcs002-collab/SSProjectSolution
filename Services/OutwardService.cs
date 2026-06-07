@@ -30,14 +30,40 @@ namespace SSProjectSolution.Services
             try
             {
                 // ? MATCH SP EXPECTATION (IMPORTANT)
-                var sizeDataJson = JsonConvert.SerializeObject(new
+                string sizeDataJson;
+                if (request.ColourBreakdowns != null && request.ColourBreakdowns.Any())
                 {
-                    sizes = request.Sizes.Select(s => new
+                    sizeDataJson = JsonConvert.SerializeObject(new
                     {
-                        size = s.Size,
-                        count = s.Count
-                    })
-                });
+                        colourBreakdowns = request.ColourBreakdowns.Select(c => new
+                        {
+                            colour = !string.IsNullOrEmpty(c.ColourName) ? c.ColourName : c.Colour,
+                            sizes = (c.SizeBreakdowns != null && c.SizeBreakdowns.Any()) 
+                                ? c.SizeBreakdowns.Select(s => new
+                                {
+                                    size = s.SizeName,
+                                    count = s.Quantity
+                                }).ToList()
+                                : c.Sizes?.Select(s => new
+                                {
+                                    size = s.Size,
+                                    count = s.Count
+                                }).ToList()
+                        }).ToList()
+                    });
+                }
+                else
+                {
+                    // Fallback to legacy single-colour
+                    sizeDataJson = JsonConvert.SerializeObject(new
+                    {
+                        sizes = request.Sizes?.Select(s => new
+                        {
+                            size = s.Size,
+                            count = s.Count
+                        })
+                    });
+                }
 
                 var parameters = new DynamicParameters();
 
@@ -98,36 +124,72 @@ namespace SSProjectSolution.Services
         {
             try
             {
+                bool isInward = mode.ToUpper() == "INWARD";
+
+                // Fetch EntryType and MeterDetails
+                using var connection = _dbConnection.CreateConnection();
+                var entryType = isInward ? 
+                    await connection.QueryFirstOrDefaultAsync<string>("SELECT InwardEntryType FROM Inward WHERE InwardId = @id", new { id }) :
+                    await connection.QueryFirstOrDefaultAsync<string>("SELECT OutwardEntryType FROM Outward WHERE OutwardId = @id", new { id });
+
+                var meterDetails = new List<MeterDetailDto>();
+                if (entryType == "M") 
+                {
+                    if (isInward) {
+                        meterDetails = (await connection.QueryAsync<MeterDetailDto>(
+                            "SELECT IMD_METER_VALUE AS MeterValue, IMD_BITS_COUNT AS BitsCount, IMD_TOTAL_METER AS TotalMeter FROM INWARD_METER_DETAIL WHERE IMD_INWARD_ID = @id", new { id })).ToList();
+                    } else {
+                        meterDetails = (await connection.QueryAsync<MeterDetailDto>(
+                            "SELECT OMD_METER_VALUE AS MeterValue, OMD_BITS_COUNT AS BitsCount, OMD_TOTAL_METER AS TotalMeter FROM OUTWARD_METER_DETAIL WHERE OMD_OUTWARD_ID = @id", new { id })).ToList();
+                    }
+                }
+
                 var rawData = await _outwardRepository.GetOutwardDetailsRawAsync(id, mode);
                 
                 if (rawData == null || !rawData.Any()) return null;
 
                 // Mapping and grouping logic using mode-specific ID as the key
-                bool isInward = mode.ToUpper() == "INWARD";
-                
                 return rawData
                     .Where(x => (isInward ? x.InwardId : x.OutwardId) != null)
                     .GroupBy(x => (int)(isInward ? x.InwardId : x.OutwardId))
-                    .Select(g => new OutwardByDcResponseDto
+                    .Select(g => 
                     {
-                        Id = g.Key,
-                        CompanyName = g.First().CompanyName,
-                        CompanyId = g.First().CompanyId,
-                        Colour = g.First().Colour,
-                        DesignName = g.First().DesignName,
-                        StyleNo = g.First().StyleNo,
-                        UploadURL = g.First().UploadURL,
-                        CreatedBy = g.First().CreatedBy?.ToString(),
-                        CreatedDate = g.First().CreatedDate,
-                        UpdatedDate = g.First().UpdatedDate,
-                        DcNo = isInward ? g.First().InwardDcNo : g.First().OutwardDcNo,
-                        Status = g.First().Status,
-                        SizeCounts = g.Where(s => s.SizeCountId != null).Select(s => new SizeCountDetailsDto
+                        var allSizes = g.Where(s => s.SizeCountId != null).ToList();
+                        return new OutwardByDcResponseDto
                         {
-                            SizeCountId = s.SizeCountId,
-                            Size = s.Size,
-                            Count = s.Count
-                        }).ToList()
+                            Id = g.Key,
+                            CompanyName = g.First().CompanyName,
+                            CompanyId = g.First().CompanyId,
+                            Colour = g.First().Colour,
+                            DesignName = g.First().DesignName,
+                            StyleNo = g.First().StyleNo,
+                            UploadURL = g.First().UploadURL,
+                            CreatedBy = g.First().CreatedBy?.ToString(),
+                            CreatedDate = g.First().CreatedDate,
+                            UpdatedDate = g.First().UpdatedDate,
+                            DcNo = isInward ? g.First().InwardDcNo : g.First().OutwardDcNo,
+                            Status = g.First().Status,
+                            EntryType = entryType ?? "S",
+                            MeterDetails = meterDetails,
+                            SizeCounts = allSizes.Select(s => new SizeCountDetailsDto
+                            {
+                                SizeCountId = s.SizeCountId,
+                                Size = s.Size,
+                                Count = s.Count
+                            }).ToList(),
+                            ColourBreakdowns = allSizes
+                                .GroupBy(s => (string)s.SizeColour ?? (string)g.First().Colour)
+                                .Select(cg => new ColourBreakdownResponseDto
+                                {
+                                    Colour = cg.Key,
+                                    Sizes = cg.Select(s => new SizeCountDetailsDto
+                                    {
+                                        SizeCountId = s.SizeCountId,
+                                        Size = s.Size,
+                                        Count = s.Count
+                                    }).ToList()
+                                }).ToList()
+                        };
                     }).FirstOrDefault();
             }
             catch (Exception ex)
@@ -140,14 +202,40 @@ namespace SSProjectSolution.Services
         {
             try
             {
-                var sizeDataJson = JsonConvert.SerializeObject(new
+                // Use new request model fields directly since we are moving towards multi-colour
+                string sizeDataJson;
+                if (request.ColourBreakdowns != null && request.ColourBreakdowns.Any())
                 {
-                    sizes = request.SizeCounts.Select(s => new
+                    sizeDataJson = JsonConvert.SerializeObject(new
                     {
-                        size = s.Size,
-                        count = s.Count
-                    })
-                });
+                        colourBreakdowns = request.ColourBreakdowns.Select(c => new
+                        {
+                            colour = !string.IsNullOrEmpty(c.ColourName) ? c.ColourName : c.Colour,
+                            sizes = (c.SizeBreakdowns != null && c.SizeBreakdowns.Any()) 
+                                ? c.SizeBreakdowns.Select(s => new
+                                {
+                                    size = s.SizeName,
+                                    count = s.Quantity
+                                }).ToList()
+                                : c.Sizes?.Select(s => new
+                                {
+                                    size = s.Size,
+                                    count = s.Count
+                                }).ToList()
+                        }).ToList()
+                    });
+                }
+                else
+                {
+                    sizeDataJson = JsonConvert.SerializeObject(new
+                    {
+                        sizes = request.SizeCounts?.Select(s => new
+                        {
+                            size = s.Size,
+                            count = s.Count
+                        })
+                    });
+                }
 
                 var parameters = new DynamicParameters();
                 parameters.Add("@Mode", "UPDATE");
@@ -188,6 +276,18 @@ namespace SSProjectSolution.Services
                     Success = false,
                     Message = "Error in UpdateOutwardAsync: " + ex.Message
                 };
+            }
+        }
+
+        public async Task<System.Collections.Generic.IEnumerable<dynamic>> GetAvailableSizesAsync(int companyId, string styleNo, string designName, string colour)
+        {
+            try
+            {
+                return await _outwardRepository.GetAvailableSizesAsync(companyId, styleNo, designName, colour);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in GetAvailableSizesAsync: " + ex.Message);
             }
         }
 

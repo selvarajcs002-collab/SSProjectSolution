@@ -15,6 +15,14 @@ namespace SSProjectSolution.Request
         public string PrintedBy { get; set; } = string.Empty;
 
         public List<DcItem> Items { get; set; } = new List<DcItem>();
+        
+        // New fields for Size Based
+        public string Style { get; set; } = string.Empty;
+        public string DesignReference { get; set; } = string.Empty;
+        public string ItemType { get; set; } = "Size Based";
+        public bool LotCompleted { get; set; } = false;
+
+        public List<DcColourBreakdown> ColourBreakdowns { get; set; } = new List<DcColourBreakdown>();
     }
 
     public class DcItem
@@ -23,5 +31,20 @@ namespace SSProjectSolution.Request
         public string Description { get; set; } = string.Empty;
         public decimal Quantity { get; set; }
         public string Uom { get; set; } = string.Empty;
+    }
+
+    public class DcColourBreakdown
+    {
+        public string ColourName { get; set; }
+
+        public List<DcSizeBreakdown> Sizes { get; set; }
+            = new();
+    }
+
+    public class DcSizeBreakdown
+    {
+        public string SizeName { get; set; }
+
+        public int Quantity { get; set; }
     }
 }

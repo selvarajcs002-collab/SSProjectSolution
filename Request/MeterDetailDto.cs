@@ -23,5 +23,7 @@ namespace SSProjectSolution.Request
         
         // Frontend total meter is just for reference in the request, backend will recalculate it.
         public decimal? TotalMeter { get; set; }
+
+        public decimal PiecesCount { get; set; }
     }
 }

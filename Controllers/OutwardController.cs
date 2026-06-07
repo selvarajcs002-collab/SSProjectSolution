@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using SSProjectSolution.Request;
 using SSProjectSolution.Response;
 using SSProjectSolution.Services;
+using SSProjectSolution.Utilities;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -59,6 +60,7 @@ namespace SSProjectSolution.Controllers
             }
             catch (Exception ex)
             {
+                LoggerUtility.LogError(ex, "Error in SaveOutward");
                 return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
             }
         }
@@ -84,6 +86,7 @@ namespace SSProjectSolution.Controllers
             }
             catch (Exception ex)
             {
+                LoggerUtility.LogError(ex, "Error in GetOutwardByDcNo");
                 return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
             }
         }
@@ -119,6 +122,27 @@ namespace SSProjectSolution.Controllers
             }
             catch (Exception ex)
             {
+                LoggerUtility.LogError(ex, "Error in UpdateOutward");
+                return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
+            }
+        }
+
+        [HttpGet("available-sizes")]
+        public async Task<IActionResult> GetAvailableSizes([FromQuery] int companyId, [FromQuery] string styleNo, [FromQuery] string designName, [FromQuery] string colour)
+        {
+            try
+            {
+                if (companyId <= 0 || string.IsNullOrEmpty(styleNo) || string.IsNullOrEmpty(designName) || string.IsNullOrEmpty(colour))
+                {
+                    return BadRequest(new { success = false, message = "companyId, styleNo, designName, and colour are required" });
+                }
+
+                var sizes = await _outwardService.GetAvailableSizesAsync(companyId, styleNo, designName, colour);
+                return Ok(sizes);
+            }
+            catch (Exception ex)
+            {
+                LoggerUtility.LogError(ex, "Error in GetAvailableSizes");
                 return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
             }
         }
@@ -170,6 +194,7 @@ namespace SSProjectSolution.Controllers
             }
             catch (Exception ex)
             {
+                LoggerUtility.LogError(ex, "Error in SaveMeterOutward");
                 return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
             }
         }

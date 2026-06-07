@@ -164,13 +164,12 @@ BEGIN
         -- ── INSERT or UPDATE outward master ───────────────────────────────────
         IF @CurrentOutwardId = 0 OR @Mode = 'INSERT'
         BEGIN
-            -- Generate DC number: OM-YYYYMMDD-XXXXXXXX
-            DECLARE @DatePart   NVARCHAR(8)  = CONVERT(NVARCHAR(8), GETDATE(), 112);
+            -- Generate DC number: DC_MTER_latestdccount
             DECLARE @SeqNum     INT;
 
             SELECT @SeqNum = ISNULL(MAX(OutwardId), 0) + 1 FROM Outward;
 
-            SET @GeneratedDcNo = 'OM-' + @DatePart + '-' + RIGHT('00000000' + CAST(@SeqNum AS NVARCHAR(8)), 8);
+            SET @GeneratedDcNo = 'DC_MTER_' + CAST(@SeqNum AS NVARCHAR(10));
 
             INSERT INTO Outward (
                 CompanyId,

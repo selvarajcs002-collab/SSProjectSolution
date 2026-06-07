@@ -40,6 +40,35 @@ namespace SSProjectSolution.Repositories
                 commandType: CommandType.StoredProcedure);
         }
 
+        public async Task<IEnumerable<dynamic>> GetAvailableSizesAsync(int companyId, string styleNo, string designName, string colour)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var sql = @"
+                WITH InwardStock AS (
+                    SELECT Size, SUM([Count]) as TotalInward
+                    FROM InwardSizeCount
+                    WHERE StyleNo = @StyleNo AND DesignName = @DesignName AND Colour = @Colour
+                    GROUP BY Size
+                ),
+                OutwardUsed AS (
+                    SELECT Size, SUM([Count]) as TotalOutward
+                    FROM OutwardSizeCount
+                    WHERE StyleNo = @StyleNo AND DesignName = @DesignName AND Colour = @Colour
+                    GROUP BY Size
+                )
+                SELECT 
+                    0 as sizeId,
+                    i.Size as sizeName,
+                    (ISNULL(i.TotalInward, 0) - ISNULL(o.TotalOutward, 0)) as availableQty
+                FROM InwardStock i
+                LEFT JOIN OutwardUsed o ON i.Size = o.Size
+                WHERE (ISNULL(i.TotalInward, 0) - ISNULL(o.TotalOutward, 0)) > 0;
+            ";
+
+            var parameters = new { CompanyId = companyId, StyleNo = styleNo, DesignName = designName, Colour = colour };
+            return await connection.QueryAsync<dynamic>(sql, parameters);
+        }
+
         // ── Meter-Based (new — isolated) ───────────────────────────────────────
 
         public async Task<OutwardMeterResponse> SaveMeterOutwardAsync(DynamicParameters parameters)
