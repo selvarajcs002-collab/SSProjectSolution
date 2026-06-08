@@ -1,23 +1,33 @@
-name: SSProjectSolution CI
+name: Deploy API DEV
 
 on:
   push:
-    branches: [ master, test, dev ]
-  pull_request:
-    branches: [ master, test, dev ]
+    branches:
+      - dev
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: self-hosted
+
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build -c Release --no-restore
+
+      - name: Publish
+        run: dotnet publish -c Release -o publish
+
+      - name: Deploy to IIS
+        shell: powershell
+        run: |
+          powershell -ExecutionPolicy Bypass -File C:\Deploy\deploy-api-dev.ps1
