@@ -25,10 +25,10 @@ namespace SSProjectSolution.Documents
                 .Page(page =>
                 {
                     // A5 Landscape
-                    page.Size(210, 148, Unit.Millimetre);
-                    page.Margin(6, Unit.Millimetre);
+                    page.Size(200, 140, Unit.Millimetre);
+                    page.Margin(3, Unit.Millimetre);
                     page.PageColor(Colors.White);
-                    page.DefaultTextStyle(x => x.FontSize(9).FontFamily("Arial"));
+                    page.DefaultTextStyle(x => x.FontSize(7).FontFamily("Arial"));
 
                     page.Header().Element(ComposeHeader);
                     page.Content().Element(ComposeContent);
@@ -45,7 +45,7 @@ namespace SSProjectSolution.Documents
                     // Left Logo/Company details
                     row.RelativeItem().Row(innerRow =>
                     {
-                        var logoPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Assets", "logo.jpeg");
+                        var logoPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "logo.jpeg");
                         if (System.IO.File.Exists(logoPath))
                         {
                             innerRow.AutoItem().Height(40).Image(logoPath);
@@ -58,12 +58,12 @@ namespace SSProjectSolution.Documents
                         innerRow.RelativeItem().PaddingLeft(8).Column(c =>
                         {
                             c.Item().Text("S.S.EMBROIDERY").FontSize(14).Bold().FontColor("#1e3a8a");
-                            c.Item().Text("No:12, Discovery Nagar").FontSize(8);
-                            c.Item().Text("2nd Street, Kangarainagaram").FontSize(8);
-                            c.Item().Text("TIRUPUR - 641 666, Tamil Nadu India").FontSize(8);
+                            c.Item().Text("No:12, Discovery Nagar").FontSize(5);
+                            c.Item().Text("2nd Street, Kangarainagaram").FontSize(5);
+                            c.Item().Text("TIRUPUR - 641 666, Tamil Nadu India").FontSize(5);
                             c.Item().Text(t => {
-                                t.Span("GST: 33AEMFS9121J1ZF").Bold().FontSize(8);
-                                t.Span("  Phone: -").FontSize(8);
+                                t.Span("GST: 33AEMFS9121J1ZF").Bold().FontSize(3);
+                                t.Span("  Phone: -").FontSize(3);
                             });
                         });
                     });
@@ -74,7 +74,7 @@ namespace SSProjectSolution.Documents
                         c.Item().Text("DELIVERY CHALLAN").FontSize(12).Bold().FontColor("#111111");
                         c.Item().Text($"DC No: {_model.DcNo}").FontSize(9);
                         c.Item().Text($"Date: {_model.Date}").FontSize(9);
-                        c.Item().PaddingTop(2).Background("#bbf7d0").PaddingHorizontal(10).PaddingVertical(2).Text("ORIGINAL").FontSize(8).Bold().FontColor("#166534").AlignCenter();
+                        c.Item().PaddingTop(2).Background("#bbf7d0").PaddingHorizontal(10).PaddingVertical(2).Text("ORIGINAL").FontSize(6).Bold().FontColor("#166534").AlignCenter();
                     });
                 });
 
@@ -87,27 +87,46 @@ namespace SSProjectSolution.Documents
             container.PaddingVertical(2).Column(column =>
             {
                 // Party Details & Job details side-by-side
-                column.Item().PaddingBottom(6).Row(row =>
+                column.Item().PaddingBottom(4).Row(row =>
                 {
-                    // Party Details (Left)
-                    row.RelativeItem().Border(0.5f).BorderColor(Colors.Grey.Medium).Padding(4).Column(c =>
-                    {
-                        c.Item().Text("Party Name").FontSize(7).FontColor(Colors.Grey.Darken1);
-                        c.Item().Text(_model.CompanyName).FontSize(10).Bold();
-                        c.Item().Text(_model.Address).FontSize(8).LineHeight(1.2f);
-                    });
+                    row.RelativeItem()
+                        .Border(0.5f)
+                        .BorderColor(Colors.Grey.Medium)
+                        .Padding(1)
+                        .Column(c =>
+                        {
+                            c.Item().Text("Party Name").FontSize(7);
+                            c.Item().Text(_model.CompanyName).FontSize(7).Bold();
+                            c.Item().Text(_model.Address).FontSize(6);
+                        });
 
-                    row.ConstantItem(8); // spacing
+                    row.ConstantItem(5);
 
-                    // Job Details (Right)
-                    row.ConstantItem(180).Border(0.5f).BorderColor(Colors.Grey.Medium).Padding(4).Column(c =>
-                    {
-                        c.Item().Row(r => { r.ConstantItem(50).Text("Design").FontSize(8); r.RelativeItem().Text($": {_model.Design}").FontSize(8).Bold(); });
-                        c.Item().Row(r => { r.ConstantItem(50).Text("Style").FontSize(8); r.RelativeItem().Text($": {_model.Style}").FontSize(8).Bold(); });
-                        c.Item().Row(r => { r.ConstantItem(50).Text("Color").FontSize(8); r.RelativeItem().Text($": {_model.Color}").FontSize(8).Bold(); });
-                        c.Item().Row(r => { r.ConstantItem(50).Text("Machine").FontSize(8); r.RelativeItem().Text($": {_model.Machine}").FontSize(8); });
-                        c.Item().Row(r => { r.ConstantItem(50).Text("DC Type").FontSize(8); r.RelativeItem().Text($": {_model.DcType}").FontSize(8).Bold().FontColor("#2563eb"); });
-                    });
+                    row.RelativeItem()
+                        .Border(0.5f)
+                        .BorderColor(Colors.Grey.Medium)
+                        .Padding(1)
+                        .Column(c =>
+                        {
+                            c.Item().Row(r =>
+                            {
+                                r.ConstantItem(40).Text("Design").FontSize(7);
+                                r.RelativeItem().Text($": {_model.Design}").FontSize(7);
+                            });
+
+                            c.Item().Row(r =>
+                            {
+                                r.ConstantItem(40).Text("Style").FontSize(7);
+                                r.RelativeItem().Text($": {_model.Style}").FontSize(7);
+                            });
+
+                            c.Item().Row(r =>
+                            {
+                                r.ConstantItem(40).Text("Color").FontSize(7);
+                                r.RelativeItem().Text($": {_model.Color}").FontSize(7);
+                            });
+
+                        });
                 });
 
                 // Compute total bits sum for Qty column
@@ -118,14 +137,14 @@ namespace SSProjectSolution.Documents
                     {
                         table.ColumnsDefinition(columns =>
                         {
-                            columns.ConstantColumn(60); // Style
-                            columns.ConstantColumn(60); // Design
-                            columns.ConstantColumn(60); // Color
-                            columns.ConstantColumn(70); // Meter/Bit
-                            columns.ConstantColumn(60); // Bits Count
-                            columns.ConstantColumn(60); // No Of Pieces
-                            columns.ConstantColumn(70); // Total Meter
-                            columns.ConstantColumn(60); // Qty
+                            columns.RelativeColumn(2);     // Style
+                            columns.RelativeColumn(2);     // Design
+                            columns.RelativeColumn(2);     // Color
+                            columns.RelativeColumn(1.5f);  // Meter / Bit
+                            columns.RelativeColumn(1);     // Bits
+                            columns.RelativeColumn(1);     // Pieces
+                            columns.RelativeColumn(1.5f);  // Total Meter
+                            columns.RelativeColumn(1);     // Qty
                         });
 
                         // Header
@@ -146,14 +165,14 @@ namespace SSProjectSolution.Documents
                             foreach (var h in headers)
                             {
                                 header.Cell()
-                                    .Border(0.5f)
-                                    .Background("#e5e7eb")
-                                    .AlignCenter()
-                                    .AlignMiddle()
-                                    .Padding(4)
-                                    .Text(h)
-                                    .Bold()
-                                    .FontSize(8);
+    .Border(0.5f)
+    .Background("#e5e7eb")
+    .AlignCenter()
+    .AlignMiddle()
+    .Padding(2)
+    .Text(h)
+    .Bold()
+    .FontSize(6);
                             }
                         });
 
@@ -164,36 +183,36 @@ namespace SSProjectSolution.Documents
                             .Border(0.5f)
                             .AlignCenter()
                             .AlignMiddle()
-                            .Padding(3)
+                            .Padding(1)
                             .Text(_model.Style)
                             .Bold()
-                            .FontSize(8);
+                            .FontSize(6);
 
                         table.Cell().RowSpan((uint)rowSpan).Column(2)
                             .Border(0.5f)
                             .AlignCenter()
                             .AlignMiddle()
-                            .Padding(3)
+                            .Padding(1)
                             .Text(_model.Design)
-                            .FontSize(8);
+                            .FontSize(6);
 
                         table.Cell().RowSpan((uint)rowSpan).Column(3)
                             .Border(0.5f)
                             .AlignCenter()
                             .AlignMiddle()
-                            .Padding(3)
+                            .Padding(1)
                             .Text(_model.Color)
-                            .FontSize(8);
+                            .FontSize(6);
 
                         // Qty column (right side)
                         table.Cell().RowSpan((uint)rowSpan).Column(8)
                             .Border(0.5f)
                             .AlignCenter()
                             .AlignMiddle()
-                            .Padding(3)
+                            .Padding(1)
                             .Text(totalBitsSum.ToString())
                             .Bold()
-                            .FontSize(8);
+                            .FontSize(6);
 
                         // Detail rows
                         uint currentRow = 1;
@@ -242,23 +261,23 @@ namespace SSProjectSolution.Documents
                             .Bold();
                     });
 
-                column.Item().Height(40);
-                column.Item()
-                                .Border(0.5f)
-                                .Height(40)
-                                .Padding(4)
-                                .Column(c =>
-                                {
-                                    c.Item().Text("Remarks")
-                                        .FontSize(7)
-                                        .Bold();
 
-                                    c.Item().Text(
-                                        string.IsNullOrWhiteSpace(_model.Remarks)
-                                            ? "-"
-                                            : _model.Remarks)
-                                        .FontSize(8);
-                                });
+                column.Item()
+    .Border(0.5f)
+    .MinHeight(20)
+    .Padding(3)
+    .Column(c =>
+    {
+        c.Item().Text("Remarks")
+            .FontSize(6)
+            .Bold();
+
+        c.Item().Text(
+            string.IsNullOrWhiteSpace(_model.Remarks)
+                ? "-"
+                : _model.Remarks)
+            .FontSize(6);
+    });
             });
         }
 
@@ -266,25 +285,11 @@ namespace SSProjectSolution.Documents
 
         void ComposeFooter(IContainer container)
         {
-            container.AlignBottom().PaddingBottom(4).Row(row =>
+            container.PaddingTop(5).Row(row =>
             {
-                row.RelativeItem().Column(c =>
-                {
-                    c.Item().Height(0.8f).Background(Colors.Black);
-                    c.Item().PaddingTop(2).AlignCenter().Text("Receiver Signature").FontSize(8).SemiBold();
-                });
-                row.ConstantItem(25); // spacing
-                row.RelativeItem().Column(c =>
-                {
-                    c.Item().Height(0.8f).Background(Colors.Black);
-                    c.Item().PaddingTop(2).AlignCenter().Text("Prepared By").FontSize(8).SemiBold();
-                });
-                row.ConstantItem(25); // spacing
-                row.RelativeItem().Column(c =>
-                {
-                    c.Item().Height(0.8f).Background(Colors.Black);
-                    c.Item().PaddingTop(2).AlignCenter().Text("Authorised Signatory").FontSize(8).SemiBold();
-                });
+                row.RelativeItem().AlignCenter().Text("Receiver Signature").FontSize(6);
+                row.RelativeItem().AlignCenter().Text("Prepared By").FontSize(6);
+                row.RelativeItem().AlignCenter().Text("Authorised Signatory").FontSize(6);
             });
         }
 

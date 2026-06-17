@@ -1,15 +1,27 @@
 USE [SSManagement];
 GO
 
+-- ============================================================
+-- sp_GetSizes_ByColour_Style
+-- Returns per-size inward totals and available quantities for
+-- a given Company, Style No, and Colour.
+--
+-- Columns returned:
+--   Size         - the size label (S / M / L / XL …)
+--   Count        - total raw inward quantity (across all DCs)
+--   AvailableQty - Count minus total outward used, clamped to 0
+--                  (never negative). If no outward exists the
+--                  value equals Count.
+-- ============================================================
 CREATE OR ALTER PROCEDURE sp_GetSizes_ByColour_Style
-    @CompanyId INT,
-    @Colour NVARCHAR(100),
-    @StyleNo NVARCHAR(100)
+    @CompanyId  INT,
+    @Colour     NVARCHAR(100),
+    @StyleNo    NVARCHAR(100)
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    -- Inward Stock
+    -- ── Step 1: Total inward qty per Size ─────────────────────
     SELECT 
         isc.Size,
         SUM(isc.[Count]) AS TotalInward
@@ -17,11 +29,11 @@ BEGIN
     FROM InwardSizeCount isc
     INNER JOIN Inward i ON isc.InwardId = i.InwardId
     WHERE i.CompanyId = @CompanyId
-      AND i.Colour = @Colour
-      AND i.StyleNo = @StyleNo
+      AND isc.Colour    = @Colour
+      AND isc.StyleNo   = @StyleNo
     GROUP BY isc.Size;
 
-    -- Outward Used
+    -- ── Step 2: Total outward qty per Size ────────────────────
     SELECT 
         osc.Size,
         SUM(osc.[Count]) AS TotalOutward
@@ -29,17 +41,23 @@ BEGIN
     FROM OutwardSizeCount osc
     INNER JOIN Outward o ON osc.OutwardId = o.OutwardId
     WHERE o.CompanyId = @CompanyId
-      AND o.Colour = @Colour
-      AND o.StyleNo = @StyleNo
+      AND osc.Colour    = @Colour
+      AND osc.StyleNo   = @StyleNo
     GROUP BY osc.Size;
 
+    -- ── Step 3: Final result ──────────────────────────────────
+    --   Count        = raw total inward qty (unchanged)
+    --   AvailableQty = inward - outward, clamped to 0 (never negative)
     SELECT 
-        i.Size AS [size],
-        (ISNULL(i.TotalInward, 0) - ISNULL(o.TotalOutward, 0)) AS [count],
-        (ISNULL(i.TotalInward, 0) - ISNULL(o.TotalOutward, 0)) AS availableQty
+        i.Size                                                              AS [Size],
+        ISNULL(i.TotalInward, 0)                                            AS [Count],
+        CASE 
+            WHEN (ISNULL(i.TotalInward, 0) - ISNULL(o.TotalOutward, 0)) < 0
+            THEN 0
+            ELSE (ISNULL(i.TotalInward, 0) - ISNULL(o.TotalOutward, 0))
+        END                                                                 AS [AvailableQty]
     FROM #Inward i
-    LEFT JOIN #Outward o ON i.Size = o.Size
-    WHERE (ISNULL(i.TotalInward, 0) - ISNULL(o.TotalOutward, 0)) > 0;
+    LEFT JOIN #Outward o ON i.Size = o.Size;
 
     DROP TABLE #Inward;
     DROP TABLE #Outward;

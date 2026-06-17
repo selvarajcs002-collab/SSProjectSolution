@@ -1,16 +1,18 @@
-name: Deploy API DEV
+name: API Auto Deploy
 
 on:
   push:
     branches:
       - dev
+      - test
 
 jobs:
-  deploy:
+  deploy-dev:
+    if: github.ref == 'refs/heads/dev'
     runs-on: self-hosted
 
     steps:
-      - name: Checkout
+      - name: Checkout Source
         uses: actions/checkout@v4
 
       - name: Setup .NET
@@ -18,16 +20,41 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore
+      - name: Restore Packages
         run: dotnet restore
 
-      - name: Build
-        run: dotnet build -c Release --no-restore
+      - name: Build API
+        run: dotnet build --configuration Release --no-restore
 
-      - name: Publish
-        run: dotnet publish -c Release -o publish
+      - name: Publish API
+        run: dotnet publish --configuration Release --output publish
 
-      - name: Deploy to IIS
+      - name: Deploy DEV
         shell: powershell
-        run: |
-          powershell -ExecutionPolicy Bypass -File C:\Deploy\deploy-api-dev.ps1
+        run: C:\Deploy\deploy-api-dev.ps1
+
+  deploy-test:
+    if: github.ref == 'refs/heads/test'
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore Packages
+        run: dotnet restore
+
+      - name: Build API
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Publish API
+        run: dotnet publish --configuration Release --output publish
+
+      - name: Deploy TEST
+        shell: powershell
+        run: C:\Deploy\deploy-api-test.ps1

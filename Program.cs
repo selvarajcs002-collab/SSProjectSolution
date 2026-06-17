@@ -14,6 +14,7 @@ builder.Services.AddSingleton<DapperDBConnection>();
 builder.Services.AddScoped<SSProjectSolution.Repositories.IInwardRepository, SSProjectSolution.Repositories.InwardRepository>();
 builder.Services.AddScoped<SSProjectSolution.Repositories.IOutwardRepository, SSProjectSolution.Repositories.OutwardRepository>();
 builder.Services.AddScoped<SSProjectSolution.Repositories.IEmployeeRepository, SSProjectSolution.Repositories.EmployeeRepository>();
+builder.Services.AddScoped<SSProjectSolution.Repositories.IDcDetailRepository, SSProjectSolution.Repositories.DcDetailRepository>();
 
 // Register Service Layer
 builder.Services.AddScoped<IUserService, UserService>();
@@ -26,6 +27,7 @@ builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IPrintWorkflowService, PrintWorkflowService>();
 builder.Services.AddScoped<IActivityLogService, ActivityLogService>();
 builder.Services.AddScoped<IStatusFilterService, StatusFilterService>();
+builder.Services.AddScoped<IDcDetailService, DcDetailService>();
 
 // Register Business Layer
 builder.Services.AddScoped<IUserBusiness, UserBusiness>();
