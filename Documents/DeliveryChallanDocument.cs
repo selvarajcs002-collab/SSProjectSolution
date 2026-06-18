@@ -3,9 +3,7 @@ using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using SSProjectSolution.Request;
 using System.Linq;
-using System.IO;
-using System.Drawing;
-using System.Drawing.Imaging;
+using System.Collections.Generic;
 
 namespace SSProjectSolution.Documents
 {
@@ -26,284 +24,317 @@ namespace SSProjectSolution.Documents
             container
                 .Page(page =>
                 {
-                    // Custom Size 14x20 cm
-                    page.Size(14, 20, Unit.Centimetre);
-                    page.Margin(5, Unit.Millimetre);
+                    // A5 Landscape
+                    page.Size(211, 142, Unit.Millimetre);
+                    page.Margin(3, Unit.Millimetre);
                     page.PageColor(Colors.White);
-                    page.DefaultTextStyle(x => x.FontSize(7).FontFamily(Fonts.Arial));
+                    // Increased base font size from 7 to 9
+                    page.DefaultTextStyle(x => x.FontSize(9).FontFamily("Arial")); 
 
-                    var logoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "logo.jpeg");
-                    var transparentLogo = GetTransparentLogo(logoPath, 0.05f);
-                    if (transparentLogo != null && transparentLogo.Length > 0)
-                    {
-                        page.Background().AlignCenter().AlignMiddle().Width(10, Unit.Centimetre).Image(transparentLogo);
-                    }
+                    page.Header().AlignCenter().Text("DELIVERY CHALLAN (Not for Sale)").FontSize(10).Bold().FontColor("#111111");
 
-                    page.Content().Element(ComposeContent);
+                    page.Content().Element(ComposeMain);
                 });
+        }
+
+        void ComposeMain(IContainer container)
+        {
+            container.Border(1).Padding(2).Column(column =>
+            {
+                column.Item().Element(ComposeHeader);
+                column.Item().Element(ComposeContent);
+
+                column.Item()
+                      .ExtendVertical()
+                      .AlignBottom()
+                      .Element(ComposeFooter);
+            });
+        }
+
+        void ComposeHeader(IContainer container)
+        {
+            container.Column(column =>
+            {
+                column.Item().Row(row =>
+                {
+                    // Left Logo/Company details
+                    row.RelativeItem().Row(innerRow =>
+                    {
+                        var logoPath = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Assets", "logo.jpeg");
+                        if (System.IO.File.Exists(logoPath))
+                        {
+                            innerRow.AutoItem().Height(40).Image(logoPath);
+                        }
+                        else
+                        {
+                            innerRow.ConstantItem(40).Height(40).Placeholder(); // Placeholder for Logo
+                        }
+                        
+                        innerRow.RelativeItem().PaddingLeft(8).Column(c =>
+                        {
+                            c.Item().Text("S.S.EMBROIDERY").FontSize(15).Bold().FontColor("#1e3a8a"); 
+                            c.Item().Text("No:12, 2nd Street, Deeivega Nagar").FontSize(9).Medium(); 
+                            c.Item().Text("Ranganathapuram").FontSize(9).Medium(); 
+                            c.Item().Text("TIRUPUR - 641 603, Tamil Nadu India").FontSize(9).SemiBold(); 
+                            c.Item().PaddingTop(2).Text(t => {
+                                t.Span("GST: 33AEMFS9121J1ZF").Bold().FontSize(8); 
+                            });
+                        });
+                    });
+
+                    // Right Document Title
+                    row.ConstantItem(180).PaddingTop(10).Column(c =>
+                    {
+                        c.Item().Text($"DC No: {_model.DcNo}").FontSize(10); 
+                           c.Item().Height(5);
+                        c.Item().Text($"Date: {_model.Date}").FontSize(10); 
+                    });
+                });
+
+                column.Item().PaddingTop(4).Height(1.5f).Background("#1e3a8a");
+            });
         }
 
         void ComposeContent(IContainer container)
         {
-            container.Border(1).BorderColor(Colors.Black).Column(column =>
+            var colorsText = _model.ColourBreakdowns != null && _model.ColourBreakdowns.Any()
+                ? string.Join(", ", _model.ColourBreakdowns.Select(c => c.ColourName))
+                : string.Empty;
+
+            container.PaddingVertical(1).Column(column =>
             {
-                // 1. Header
-                column.Item().BorderBottom(1).BorderColor(Colors.Black).Row(row =>
+                // Party Details & Job details side-by-side
+                column.Item().PaddingBottom(2).Border(0.5f).BorderColor(Colors.Grey.Medium).Row(row =>
                 {
-                    // Left - Company
-                    row.RelativeItem().Padding(4).Row(companyRow =>
-                    {
-                        var logoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "logo.jpeg");
-                        companyRow.AutoItem().PaddingRight(4).Width(25).Image(logoPath);
-                        companyRow.RelativeItem().Column(c =>
+                    row.RelativeItem()
+                        .Padding(2)
+                        .Column(c =>
                         {
-                            c.Item().Text("S.S.EMBROIDERY").FontSize(8).Bold().FontColor(Colors.Blue.Darken2);
-                            c.Item().Text("No:12, Deeivega Nagar,").FontSize(5);
-                            c.Item().Text("2nd Street, Ranganathapuram").FontSize(5);
-                            c.Item().Text("Tiruppur-6416003, Tamilnadu, India").FontSize(5);
+                            c.Item().Text(_model.CompanyName).FontSize(10).Bold();
+                            c.Item().Text(_model.Address).FontSize(7);
                         });
-                    });
 
-                    // Middle - Title
-                    row.RelativeItem().Padding(2).AlignCenter().AlignMiddle().Column(c =>
-                    {
-                        c.Item().Text("DELIVERY CHALLAN (Not for sale)").FontSize(8).Bold().FontFamily(Fonts.TimesNewRoman);
-                        
-                        c.Item().PaddingTop(2).LineHorizontal(1).LineColor(Colors.Black);
-                    });
+                    row.AutoItem().LineVertical(0.5f).LineColor(Colors.Grey.Medium);
 
-                    // Right - Details
-                    row.ConstantItem(90).BorderLeft(1).BorderColor(Colors.Black).Column(c =>
-                    {
-                        c.Item().Padding(3).BorderBottom(1).BorderColor(Colors.Black).Row(r =>
+                    row.RelativeItem().PaddingTop(5)
+                        .Padding(2)
+                        .Column(c =>
                         {
-                            r.RelativeItem().Text("DC No.").FontSize(5);
-                            r.ConstantItem(10).Text(":");
-                            r.RelativeItem().Text(_model.DcNo).FontSize(5);
+                            c.Item().Row(r =>
+                            {
+                                r.ConstantItem(45).Text("Design").FontSize(9);
+                                r.RelativeItem().Text($": {_model.DesignReference}").FontSize(9);
+                            });
+
+                            c.Item().Row(r =>
+                            {
+                                r.ConstantItem(45).Text("Style").FontSize(9);
+                                r.RelativeItem().Text($": {_model.Style}").FontSize(9);
+                            });
+
+                            c.Item().Row(r =>
+                            {
+                                r.ConstantItem(45).Text("Color").FontSize(9);
+                                r.RelativeItem().Text($": {colorsText}").FontSize(9);
+                            });
                         });
-                        c.Item().Padding(3).BorderBottom(1).BorderColor(Colors.Black).Row(r =>
-                        {
-                            r.RelativeItem().Text("DC Date").FontSize(5);
-                            r.ConstantItem(10).Text(":");
-                            r.RelativeItem().Text(_model.Date).FontSize(5);
-                        });
-                    });
                 });
 
-                // 2. Info Panels
-                    column.Item().BorderBottom(1).BorderColor(Colors.Black).Row(row =>
+                // Get distinct sizes
+                var distinctSizes = new List<string>();
+                if (_model.ColourBreakdowns != null)
+                {
+                    // To keep them somewhat logically ordered if possible, but we'll preserve appearance order or natural sort
+                    distinctSizes = _model.ColourBreakdowns
+                        .SelectMany(c => c.Sizes)
+                        .Select(s => s.SizeName)
+                        .Distinct()
+                        .ToList();
+                }
+
+                // Table
+                column.Item().PaddingTop(10).Table(table =>
+                {
+                    table.ColumnsDefinition(columns =>
                     {
-                        // COMPANY DETAILS
-                        row.RelativeItem().BorderRight(1).BorderColor(Colors.Black).Padding(2).Column(c =>
+                        columns.RelativeColumn(2);     // Style
+                        columns.RelativeColumn(2);     // Color
+                        
+                        foreach (var size in distinctSizes)
                         {
-                            c.Item().AlignCenter().Text("COMPANY DETAILS").Bold().FontSize(5);
-                            c.Item().PaddingTop(5).PaddingBottom(5).LineHorizontal(0.5f).LineColor(Colors.Grey.Medium);
-
-                            c.Item().PaddingTop(2).Row(r => { r.ConstantItem(55).Text("Company Name").FontSize(5); r.ConstantItem(10).Text(":").FontSize(5); r.RelativeItem().Text(_model.CompanyName).FontSize(5); });
-                        });
-
-                        // ITEM DETAILS
-                        row.RelativeItem().BorderRight(1).BorderColor(Colors.Black).Padding(2).Column(c =>
-                        {
-                            c.Item().AlignCenter().Text("STYLE DETAILS").Bold().FontSize(5);
-                            c.Item().PaddingTop(5).PaddingBottom(5).LineHorizontal(0.5f).LineColor(Colors.Grey.Medium);
-
-                            c.Item().PaddingTop(2).Row(r => { r.ConstantItem(55).Text("Style Number").FontSize(5); r.ConstantItem(10).Text(":").FontSize(5); r.RelativeItem().Text(_model.Style).FontSize(5); });
-                           
-                        });
-
-                        // CHALLAN DETAILS
-                        row.RelativeItem().Padding(2).Column(c =>
-                        {
-                            c.Item().AlignCenter().Text("DESIGN DETAILS").Bold().FontSize(5);
-                            c.Item().PaddingTop(5).PaddingBottom(5).LineHorizontal(0.5f).LineColor(Colors.Grey.Medium);
-
-                             c.Item().PaddingTop(2).Row(r => { r.ConstantItem(55).Text("Design Reference").FontSize(5); r.ConstantItem(10).Text(":").FontSize(5); r.RelativeItem().Text(_model.DesignReference).FontSize(5); });
-
-                        });
+                            columns.RelativeColumn(1); // Dynamic Size
+                        }
+                        
+                        columns.RelativeColumn(1.5f);  // Total Qty
                     });
 
-                    // 3. Remarks
-                    column.Item().BorderBottom(1).BorderColor(Colors.Black).Padding(4).Row(row =>
+                    // Header
+                    table.Header(header =>
                     {
-                        row.ConstantItem(50).Text("Remarks").Bold();
-                        row.ConstantItem(10).Text(":");
-                        row.RelativeItem().Border(1).BorderColor(Colors.Grey.Medium).Padding(5).Text(_model.Remarks);
-                    });
-                    int sumTotal = 0;
-
-                    // 5. Size Breakdown Table
-                    column.Item().BorderBottom(1).BorderColor(Colors.Black).Table(table =>
-                    {
-                        var allSizes = _model.ColourBreakdowns
-                                                            .SelectMany(x => x.Sizes)
-                                                            .Select(x => x.SizeName)
-                                                            .Distinct()
-                                                            .Take(10)
-                                                            .ToList();
-
-                        table.ColumnsDefinition(columns =>
+                        void HeaderCell(string text)
                         {
-                            columns.ConstantColumn(20);
-                            columns.RelativeColumn();
-
-                            foreach (var size in allSizes)
-                                columns.ConstantColumn(20);
-
-                            columns.ConstantColumn(30);
-                        });
-
-                        table.Header(header =>
-                        {
-                            header.Cell().Border(1).PaddingVertical(3).PaddingHorizontal(2).AlignCenter().Text("S.No.").FontSize(5).Bold();
-                            header.Cell().Border(1).PaddingVertical(3).PaddingHorizontal(2).Text("Colour").FontSize(5).Bold();
-
-                            foreach (var size in allSizes)
-                            {
-                                header.Cell()
-                                    .Border(1)
-                                    .PaddingVertical(3).PaddingHorizontal(2)
-                                    .AlignCenter()
-                                    .Text(size)
-                                    .FontSize(5)
-                                    .Bold();
-                            }
-
                             header.Cell()
-                                .Border(1)
-                                .PaddingVertical(3).PaddingHorizontal(2)
+                                .Border(0.5f)
+                                .Background("#e5e7eb")
                                 .AlignCenter()
-                                .Text("TOTAL")
-                                .FontSize(5)
-                                .Bold();
-                        });
+                                .AlignMiddle()
+                                .Padding(2)
+                                .PaddingVertical(3)
+                                .Text(text)
+                                .Bold()
+                                .FontColor(Colors.Black)
+                                .FontSize(10);
+                        }
 
-                        int rowNo = 1;
-                        int grandTotal = 0;
+                        HeaderCell("Style");
+                        HeaderCell("Color");
 
-                        var sizeTotals = allSizes.ToDictionary(x => x, x => 0);
-
-                        foreach (var colour in _model.ColourBreakdowns)
+                        foreach (var size in distinctSizes)
                         {
-                            table.Cell().Border(1).PaddingVertical(4).PaddingHorizontal(3).AlignCenter().Text(rowNo.ToString()).FontSize(5);
+                            HeaderCell(size);
+                        }
 
-                            table.Cell().Border(1).PaddingVertical(4).PaddingHorizontal(3).Text(colour.ColourName).FontSize(5);
+                        HeaderCell("Total Qty");
+                    });
 
-                            int rowTotal = 0;
+                    var rowCount = _model.ColourBreakdowns?.Count ?? 0;
+                    var rowSpan = (uint)(rowCount > 0 ? rowCount : 1);
 
-                            foreach (var size in allSizes)
+                    if (rowCount == 0)
+                    {
+                         table.Cell().Border(0.5f).AlignCenter().AlignMiddle().Padding(2).PaddingVertical(3).Text(_model.Style).FontSize(9).Bold();
+                         table.Cell().Border(0.5f).AlignCenter().AlignMiddle().Padding(2).PaddingVertical(3).Text("").FontSize(9);
+                         foreach (var size in distinctSizes)
+                         {
+                             table.Cell().Border(0.5f).AlignCenter().AlignMiddle().PaddingVertical(3).Text("0").FontSize(9);
+                         }
+                         table.Cell().Border(0.5f).AlignCenter().AlignMiddle().Padding(2).PaddingVertical(3).Text("0").Bold().FontSize(9);
+                    }
+                    else
+                    {
+                        table.Cell().RowSpan(rowSpan).Column(1)
+                            .Border(0.5f)
+                            .AlignCenter()
+                            .AlignMiddle()
+                            .Padding(2)
+                            .PaddingVertical(3)
+                            .Text(_model.Style)
+                            .FontSize(9)
+                            .Bold();
+
+                        uint currentRow = 1;
+                        foreach (var breakdown in _model.ColourBreakdowns)
+                        {
+                            // Color
+                            table.Cell().Row(currentRow).Column(2)
+                                .Border(0.5f)
+                                .AlignCenter()
+                                .AlignMiddle()
+                                .Padding(2)
+                                .PaddingVertical(3)
+                                .Text(breakdown.ColourName)
+                                .FontSize(9);
+
+                            uint colIndex = 3;
+                            int totalQtyForRow = 0;
+
+                            foreach (var size in distinctSizes)
                             {
-                                var qty = colour.Sizes
-                                    .FirstOrDefault(x => x.SizeName == size)?.Quantity ?? 0;
+                                var sizeObj = breakdown.Sizes?.FirstOrDefault(s => s.SizeName == size);
+                                int qty = sizeObj?.Quantity ?? 0;
+                                totalQtyForRow += qty;
 
-                                table.Cell()
-                                    .Border(1)
-                                    .PaddingVertical(4).PaddingHorizontal(3)
+                                table.Cell().Row(currentRow).Column(colIndex)
+                                    .Border(0.5f)
                                     .AlignCenter()
-                                    .Text(qty > 0 ? qty.ToString() : "")
-                                    .FontSize(5);
-
-                                rowTotal += qty;
-                                sizeTotals[size] += qty;
+                                    .AlignMiddle()
+                                    .PaddingVertical(3)
+                                    .Text(qty > 0 ? qty.ToString() : "-")
+                                    .FontSize(9);
+                                
+                                colIndex++;
                             }
 
-                            table.Cell()
-                                .Border(1)
-                                .PaddingVertical(4).PaddingHorizontal(3)
+                            // Total Qty for the row
+                            table.Cell().Row(currentRow).Column(colIndex)
+                                .Border(0.5f)
                                 .AlignCenter()
-                                .Text(rowTotal.ToString())
-                                .FontSize(5)
-                                .Bold();
+                                .AlignMiddle()
+                                .Padding(2)
+                                .PaddingVertical(3)
+                                .Text(totalQtyForRow.ToString())
+                                .Bold()
+                                .FontSize(9);
 
-                            grandTotal += rowTotal;
-                            rowNo++;
+                            currentRow++;
                         }
+                    }
+                });
 
-                        table.Cell()
-                            .ColumnSpan(2)
-                            .Border(1)
-                            .PaddingVertical(4).PaddingHorizontal(3)
-                            .AlignRight()
-                            .Text("TOTAL (QTY)")
-                            .FontSize(5)
+                var grandTotalQty = _model.ColourBreakdowns?
+                    .SelectMany(c => c.Sizes)
+                    .Sum(s => s.Quantity) ?? 0;
+
+                // Grand Total Row
+                column.Item()
+                    .PaddingTop(10)
+                    .Border(0.5f)
+                    .AlignCenter()
+                    .AlignMiddle()
+                    .Padding(3)
+                    .Text($"GRAND TOTAL QUANTITY : {grandTotalQty} PCS")
+                    .FontSize(9)
+                    .Bold();
+
+                // Remarks
+                column.Item()
+                    .PaddingTop(10)
+                    .Border(0.5f)
+                    .MinHeight(20)
+                    .Padding(3)
+                    .Column(c =>
+                    {
+                        c.Item().Text("Remarks")
+                            .FontSize(9) 
                             .Bold();
 
-                        foreach (var size in allSizes)
-                        {
-                            table.Cell()
-                                .Border(1)
-                                .PaddingVertical(4).PaddingHorizontal(3)
-                                .AlignCenter()
-                                .Text(sizeTotals[size].ToString())
-                                .FontSize(5)
-                                .Bold();
-                        }
-
-                        table.Cell()
-                            .Border(1)
-                            .PaddingVertical(4).PaddingHorizontal(3)
-                            .AlignCenter()
-                            .Text(grandTotal.ToString())
-                            .FontSize(5)
-                            .Bold();
-
-                        sumTotal = grandTotal;
+                        c.Item().Text(
+                            string.IsNullOrWhiteSpace(_model.Remarks)
+                                ? "-"
+                                : _model.Remarks)
+                            .FontSize(9); 
                     });
-
-                    // 6. Grand Total Box
-                    column.Item().BorderBottom(1).BorderColor(Colors.Black).Padding(2).AlignCenter().Row(r =>
-                    {
-                        r.AutoItem().Border(1).BorderColor(Colors.Grey.Medium).Padding(2).Row(inner =>
-                        {
-                            inner.AutoItem().AlignMiddle().Text("GRAND TOTAL QUANTITY : ").Bold().FontSize(6);
-                            inner.AutoItem().AlignMiddle().Text(sumTotal.ToString()).FontColor(Colors.Green.Darken2).Bold().FontSize(6);
-                            inner.AutoItem().AlignMiddle().PaddingLeft(5).Text(" PCS").FontSize(6);
-                        });
-                    });
-
-                    // 7. Signatures
-                    column.Item().BorderBottom(1).BorderColor(Colors.Black).Row(row =>
-                    {
-                        void DrawSignBox(IContainer c, string title)
-                        {
-                            c.Padding(4).Column(col =>
-                            {
-                                col.Item().AlignCenter().Text(title).Bold();
-                                col.Item().PaddingTop(15).Text("Date: __________________").FontSize(5);
-                            });
-                        }
-
-                        row.RelativeItem().BorderRight(1).BorderColor(Colors.Black).Element(c => DrawSignBox(c, "Prepared By"));
-                        row.RelativeItem().BorderRight(1).BorderColor(Colors.Black).Element(c => DrawSignBox(c, "Checked By"));
-                        row.RelativeItem().BorderRight(1).BorderColor(Colors.Black).Element(c => DrawSignBox(c, "Received By"));
-                        row.RelativeItem().Element(c => DrawSignBox(c, "Authorized Sign"));
-                    });
-
-                    
             });
         }
 
-#pragma warning disable CA1416
-        private byte[] GetTransparentLogo(string path, float opacity)
+        private void ComposeFooter(IContainer container)
         {
-            if (!File.Exists(path)) return new byte[0];
-            using var original = new Bitmap(path);
-            using var transparent = new Bitmap(original.Width, original.Height);
-            using var graphics = Graphics.FromImage(transparent);
-            
-            var colorMatrix = new ColorMatrix();
-            colorMatrix.Matrix33 = opacity;
-            
-            var imageAttributes = new ImageAttributes();
-            imageAttributes.SetColorMatrix(colorMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
-            
-            graphics.DrawImage(original, new Rectangle(0, 0, transparent.Width, transparent.Height), 
-                               0, 0, original.Width, original.Height, GraphicsUnit.Pixel, imageAttributes);
-                               
-            using var ms = new MemoryStream();
-            transparent.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            return ms.ToArray();
+            container.PaddingTop(15).PaddingBottom(5).Row(row =>
+            {
+                row.RelativeItem().AlignCenter().Column(col =>
+                {
+                    col.Item().LineHorizontal(0.5f);
+                    col.Item().Text("Receiver Signature")
+                        .FontSize(8)
+                        .AlignCenter();
+                });
+
+                row.RelativeItem().AlignCenter().Column(col =>
+                {
+                    col.Item().LineHorizontal(0.5f);
+                    col.Item().Text("Prepared By")
+                        .FontSize(8)
+                        .AlignCenter();
+                });
+
+                row.RelativeItem().AlignCenter().Column(col =>
+                {
+                    col.Item().LineHorizontal(0.5f);
+                    col.Item().Text("Authorised Signatory")
+                        .FontSize(8)
+                        .AlignCenter();
+                });
+            });
         }
-#pragma warning restore CA1416
     }
 }
