@@ -30,6 +30,7 @@ namespace SSProjectSolution.Services
             parameters.Add("@landmark", request.Landmark);
             parameters.Add("@city", request.City);
             parameters.Add("@pincode", request.Pincode);
+            parameters.Add("@deliveryToLocations", request.DeliveryToLocations != null ? Newtonsoft.Json.JsonConvert.SerializeObject(request.DeliveryToLocations) : null);
 
             return await connection.QueryFirstOrDefaultAsync<CommonResponse>(
                 SPConstants.ManageCompany, 
@@ -54,13 +55,29 @@ namespace SSProjectSolution.Services
             var parameters = new DynamicParameters();
             parameters.Add("@companyId", companyId);
 
-            var result = await connection.QueryFirstOrDefaultAsync<CompanyModel>(
+            var result = await connection.QueryFirstOrDefaultAsync<dynamic>(
                 SPConstants.GetCompanyById,
                 parameters,
                 commandType: CommandType.StoredProcedure
             );
 
-            return result ?? new CompanyModel();
+            if (result == null) return new CompanyModel();
+
+            return new CompanyModel
+            {
+                CompanyId = result.companyId ?? 0,
+                CompanyName = result.companyName ?? string.Empty,
+                Gst_No = result.gst_no ?? string.Empty,
+                PhoneNumber = result.phoneNumber ?? string.Empty,
+                Door_No = result.door_no ?? string.Empty,
+                Street_Name = result.street_Name ?? string.Empty,
+                Landmark = result.landmark ?? string.Empty,
+                City = result.city ?? string.Empty,
+                Pincode = result.pincode ?? string.Empty,
+                DeliveryToLocations = string.IsNullOrEmpty((string)result.deliveryToLocations)
+                    ? new List<string>()
+                    : Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>((string)result.deliveryToLocations) ?? new List<string>()
+            };
         }
     }
 }

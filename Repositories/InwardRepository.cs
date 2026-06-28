@@ -69,6 +69,7 @@ namespace SSProjectSolution.Repositories
                 parameters.Add("@DesignName", request.DesignName);
                 parameters.Add("@StyleNo", request.StyleNo);
                 parameters.Add("@InwardDcNo", request.InwardDcNo);
+                parameters.Add("@PoNo", request.PoNo);
                 parameters.Add("@UpdatedBy", request.UpdatedBy);
 
                 var result = await connection.QueryFirstOrDefaultAsync<dynamic>(

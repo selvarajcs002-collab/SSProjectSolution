@@ -19,21 +19,26 @@ namespace SSProjectSolution.Request
         public int? DesignId { get; set; }
 
         [Required(ErrorMessage = "Colour is required")]
-        [StringLength(100)]
+        [StringLength(10000)]
         public string Colour { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "DesignName is required")]
-        [StringLength(150)]
+        [StringLength(10000)]
         public string DesignName { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "StyleNo is required")]
-        [StringLength(100)]
+        [StringLength(10000)]
         public string StyleNo { get; set; } = string.Empty;
 
-        [StringLength(100)]
+        [StringLength(10000)]
         public string OutwardDcNo { get; set; } = string.Empty;
 
         public char EntryType { get; set; } = 'M';
+
+        public string? DeliveryTo { get; set; }
+        public string? PoNo { get; set; }
+        public string? Weight { get; set; }
+        public string? NoOfBundles { get; set; }
 
         /// <summary>
         /// "INSERT" or "UPDATE"

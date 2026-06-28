@@ -5,7 +5,7 @@ namespace SSProjectSolution.Request
     public class SizeDto
     {
         [Required(ErrorMessage = "Size is required")]
-        [StringLength(10)]
+        [StringLength(10000)]
         public string Size { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Count is required")]

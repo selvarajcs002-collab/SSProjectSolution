@@ -147,6 +147,28 @@ namespace SSProjectSolution.Controllers
             }
         }
 
+        [HttpGet("colours-by-dcs")]
+        public async Task<IActionResult> GetColoursByDcs([FromQuery] int companyId, [FromQuery] string styleNo, [FromQuery] string designName, [FromQuery] string dcNos)
+        {
+            try
+            {
+                if (companyId <= 0 || string.IsNullOrEmpty(styleNo) || string.IsNullOrEmpty(designName) || string.IsNullOrEmpty(dcNos))
+                {
+                    return BadRequest(new { success = false, message = "companyId, styleNo, designName, and dcNos are required" });
+                }
+
+                var dcList = dcNos.Split(',').Select(d => d.Trim()).ToList();
+                var colours = await _outwardService.GetColoursByDcsAsync(companyId, styleNo, designName, dcList);
+                
+                return Ok(new { success = true, data = colours });
+            }
+            catch (Exception ex)
+            {
+                LoggerUtility.LogError(ex, "Error in GetColoursByDcs");
+                return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
+            }
+        }
+
         // ── Meter-Based (new — isolated) ───────────────────────────────────────
 
         [HttpPost("save-meter-outward")]
@@ -195,6 +217,28 @@ namespace SSProjectSolution.Controllers
             catch (Exception ex)
             {
                 LoggerUtility.LogError(ex, "Error in SaveMeterOutward");
+                return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
+            }
+        }
+
+        // ── Additional Details ─────────────────────────────────────────────────
+
+        [HttpGet("additional-details-options")]
+        public async Task<IActionResult> GetAdditionalDetailsOptions([FromQuery] int companyId)
+        {
+            try
+            {
+                if (companyId <= 0)
+                {
+                    return BadRequest(new { success = false, message = "companyId is required" });
+                }
+
+                var options = await _outwardService.GetAdditionalDetailsOptionsAsync(companyId);
+                return Ok(new { success = true, data = options });
+            }
+            catch (Exception ex)
+            {
+                LoggerUtility.LogError(ex, "Error in GetAdditionalDetailsOptions");
                 return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
             }
         }

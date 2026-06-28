@@ -83,6 +83,12 @@ namespace SSProjectSolution.Services
                 parameters.Add("@CreatedBy", request.Outward.CreatedBy);
                 parameters.Add("@Status", request.Outward.Status);
 
+                parameters.Add("@DeliveryTo", string.IsNullOrWhiteSpace(request.Outward.DeliveryTo) ? null : request.Outward.DeliveryTo);
+                parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.Outward.PoNo) ? null : request.Outward.PoNo);
+                parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Outward.Weight) ? null : request.Outward.Weight);
+                parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.Outward.NoOfBundles) ? null : request.Outward.NoOfBundles);
+                parameters.Add("@SelectedDcNos", request.Outward.SelectedDcNos != null && request.Outward.SelectedDcNos.Any() ? string.Join(",", request.Outward.SelectedDcNos) : null);
+
                 // ?? CRITICAL FIX
                 parameters.Add("@SizeData", sizeDataJson, DbType.String);
 
@@ -170,6 +176,13 @@ namespace SSProjectSolution.Services
                             DcNo = isInward ? g.First().InwardDcNo : g.First().OutwardDcNo,
                             Status = g.First().Status,
                             EntryType = entryType ?? "S",
+                            DeliveryTo = (string?)g.First().DeliveryTo,
+                            PoNo = (string?)g.First().PoNo,
+                            Weight = (string?)g.First().Weight,
+                            NoOfBundles = (string?)g.First().NoOfBundles,
+                            SelectedDcNos = !string.IsNullOrEmpty((string?)g.First().SelectedDcNos) 
+                                ? ((string)g.First().SelectedDcNos).Split(',', StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList() 
+                                : new List<string>(),
                             MeterDetails = meterDetails,
                             SizeCounts = allSizes.Select(s => new SizeCountDetailsDto
                             {
@@ -247,6 +260,11 @@ namespace SSProjectSolution.Services
                 parameters.Add("@UploadURL", request.UploadURL == "null" ? null : request.UploadURL);
                 parameters.Add("@CreatedBy", request.CreatedBy);
                 parameters.Add("@Status", request.Status);
+                parameters.Add("@DeliveryTo", string.IsNullOrWhiteSpace(request.DeliveryTo) ? null : request.DeliveryTo);
+                parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.PoNo) ? null : request.PoNo);
+                parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Weight) ? null : request.Weight);
+                parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.NoOfBundles) ? null : request.NoOfBundles);
+                parameters.Add("@SelectedDcNos", request.SelectedDcNos != null && request.SelectedDcNos.Any() ? string.Join(",", request.SelectedDcNos) : null);
                 parameters.Add("@SizeData", sizeDataJson, DbType.String);
 
                 parameters.Add("@OutwardDcNo", dbType: DbType.String, direction: ParameterDirection.Output, size: 50);
@@ -288,6 +306,37 @@ namespace SSProjectSolution.Services
             catch (Exception ex)
             {
                 throw new Exception("Error in GetAvailableSizesAsync: " + ex.Message);
+            }
+        }
+
+        public async Task<System.Collections.Generic.IEnumerable<dynamic>> GetColoursByDcsAsync(int companyId, string styleNo, string designName, System.Collections.Generic.List<string> dcNos)
+        {
+            try
+            {
+                using var connection = _dbConnection.CreateConnection();
+                var parameters = new DynamicParameters();
+                parameters.Add("@CompanyId", companyId);
+                parameters.Add("@StyleNo", styleNo);
+                parameters.Add("@DesignName", designName);
+                parameters.Add("@DcNos", string.Join(",", dcNos));
+
+                string sql = @"
+                    SELECT DISTINCT
+                        CASE WHEN i.Colour = 'MULTI' THEN isc.Colour ELSE i.Colour END AS colour
+                    FROM Inward i
+                    LEFT JOIN InwardSizeCount isc ON i.InwardId = isc.InwardId
+                    WHERE i.CompanyId = @CompanyId 
+                      AND i.StyleNo = @StyleNo 
+                      AND i.DesignName = @DesignName
+                      AND i.InwardDcNo IN (SELECT value FROM STRING_SPLIT(@DcNos, ','))
+                      AND (i.Colour != 'MULTI' OR isc.Colour IS NOT NULL)";
+
+                var result = await connection.QueryAsync<dynamic>(sql, parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in GetColoursByDcsAsync: " + ex.Message);
             }
         }
 
@@ -342,6 +391,10 @@ namespace SSProjectSolution.Services
                 parameters.Add("@EntryType", request.EntryType);
                 parameters.Add("@Mode", request.Mode);
                 parameters.Add("@CreatedBy", request.CreatedBy);
+                parameters.Add("@DeliveryTo", string.IsNullOrWhiteSpace(request.DeliveryTo) ? null : request.DeliveryTo);
+                parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.PoNo) ? null : request.PoNo);
+                parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Weight) ? null : request.Weight);
+                parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.NoOfBundles) ? null : request.NoOfBundles);
                 parameters.Add("@MeterDetails", dt.AsTableValuedParameter("OutwardMeterDetailType"));
 
                 var response = await _outwardRepository.SaveMeterOutwardAsync(parameters);
@@ -354,6 +407,20 @@ namespace SSProjectSolution.Services
                     Success = false,
                     Message = "Error in SaveMeterOutwardAsync: " + ex.Message
                 };
+            }
+        }
+
+        // ── Additional Details ─────────────────────────────────────────────────
+
+        public async Task<dynamic> GetAdditionalDetailsOptionsAsync(int companyId)
+        {
+            try
+            {
+                return await _outwardRepository.GetAdditionalDetailsOptionsAsync(companyId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in GetAdditionalDetailsOptionsAsync: " + ex.Message);
             }
         }
     }

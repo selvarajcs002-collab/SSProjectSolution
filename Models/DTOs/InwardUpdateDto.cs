@@ -22,6 +22,9 @@ namespace SSProjectSolution.Models.DTOs
         [JsonProperty("inward_dc_no")]
         public string InwardDcNo { get; set; }
 
+        [JsonProperty("po_no")]
+        public string? PoNo { get; set; }
+
         [JsonProperty("updated_by")]
         public int UpdatedBy { get; set; }
 

@@ -1,0 +1,33 @@
+﻿
+CREATE PROCEDURE [dbo].[sp_UpdateInward]
+    @InwardId INT,
+    @CompanyId INT,
+    @Colour NVARCHAR(100),
+    @DesignName NVARCHAR(150),
+    @StyleNo NVARCHAR(100),
+    @InwardDcNo NVARCHAR(100),
+    @PoNo NVARCHAR(100) = NULL,
+    @UpdatedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE Inward
+    SET Colour = @Colour,
+        DesignName = @DesignName,
+        StyleNo = @StyleNo,
+        InwardDcNo = @InwardDcNo,
+        PoNo = @PoNo,
+        UpdatedDate = GETDATE()
+    WHERE InwardId = @InwardId AND CompanyId = @CompanyId;
+
+    IF @@ROWCOUNT > 0
+    BEGIN
+        SELECT 'Inward updated successfully' AS [message];
+    END
+    ELSE
+    BEGIN
+        SELECT 'Inward update failed or no changes made' AS [message];
+    END
+END
+

@@ -22,6 +22,13 @@ namespace SSProjectSolution.Request
         public string ItemType { get; set; } = "Size Based";
         public bool LotCompleted { get; set; } = false;
 
+        // Additional Details
+        public string? DeliveryTo { get; set; }
+        public string? PoNo { get; set; }
+        public string? Weight { get; set; }
+        public string? NoOfBundles { get; set; }
+        public string? SupplierDcNo { get; set; }
+
         public List<DcColourBreakdown> ColourBreakdowns { get; set; } = new List<DcColourBreakdown>();
     }
 

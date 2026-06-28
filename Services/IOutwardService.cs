@@ -11,8 +11,12 @@ namespace SSProjectSolution.Services
         Task<OutwardByDcResponseDto?> GetOutwardByDcNoAsync(int id, string mode);
         Task<OutwardResponse> UpdateOutwardAsync(OutwardUpdateRequest request);
         Task<System.Collections.Generic.IEnumerable<dynamic>> GetAvailableSizesAsync(int companyId, string styleNo, string designName, string colour);
+        Task<System.Collections.Generic.IEnumerable<dynamic>> GetColoursByDcsAsync(int companyId, string styleNo, string designName, System.Collections.Generic.List<string> dcNos);
 
         // ── Meter-Based (new — isolated) ───────────────────────────────────────
         Task<OutwardMeterResponse> SaveMeterOutwardAsync(OutwardMeterSaveRequest request);
+        
+        // ── Additional Details ─────────────────────────────────────────────────
+        Task<dynamic> GetAdditionalDetailsOptionsAsync(int companyId);
     }
 }

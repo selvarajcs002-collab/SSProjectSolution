@@ -4,16 +4,19 @@ using QuestPDF.Infrastructure;
 using SSProjectSolution.Request;
 using System.Linq;
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 
 namespace SSProjectSolution.Documents
 {
     public class DeliveryChallanDocument : IDocument
     {
         private readonly GenerateDcRequest _model;
+        private readonly IConfiguration _configuration;
 
-        public DeliveryChallanDocument(GenerateDcRequest model)
+        public DeliveryChallanDocument(GenerateDcRequest model, IConfiguration configuration)
         {
             _model = model;
+            _configuration = configuration;
         }
 
         public DocumentMetadata GetMetadata() => DocumentMetadata.Default;
@@ -24,14 +27,16 @@ namespace SSProjectSolution.Documents
             container
                 .Page(page =>
                 {
-                    // A5 Landscape
-                    page.Size(211, 142, Unit.Millimetre);
+                    // Custom A5 Landscape dimensions per user request
+                    page.Size(215, 145, Unit.Millimetre);
+                    // Shift content to the right side by increasing left margin
                     page.Margin(3, Unit.Millimetre);
+                    page.MarginLeft(10, Unit.Millimetre);
                     page.PageColor(Colors.White);
-                    // Increased base font size from 7 to 9
-                    page.DefaultTextStyle(x => x.FontSize(9).FontFamily("Arial")); 
+                    // Increased base font size from 9 to 11
+                    page.DefaultTextStyle(x => x.FontSize(11).FontFamily("Arial")); 
 
-                    page.Header().AlignCenter().Text("DELIVERY CHALLAN (Not for Sale)").FontSize(10).Bold().FontColor("#111111");
+                    page.Header().AlignCenter().Text("DELIVERY CHALLAN (Not for Sale)").FontSize(13).Bold().FontColor("#111111");
 
                     page.Content().Element(ComposeMain);
                 });
@@ -72,23 +77,34 @@ namespace SSProjectSolution.Documents
                         
                         innerRow.RelativeItem().PaddingLeft(8).Column(c =>
                         {
-                            c.Item().Text("S.S.EMBROIDERY").FontSize(15).Bold().FontColor("#1e3a8a"); 
-                            c.Item().Text("No:12, 2nd Street, Deeivega Nagar").FontSize(9).Medium(); 
-                            c.Item().Text("Ranganathapuram").FontSize(9).Medium(); 
-                            c.Item().Text("TIRUPUR - 641 603, Tamil Nadu India").FontSize(9).SemiBold(); 
+                            c.Item().Text(_configuration?["CompanySettings:Name"] ?? "S.S.EMBROIDERY").FontSize(17).Bold().FontColor("#1e3a8a"); 
+                            c.Item().Text(_configuration?["CompanySettings:AddressLine1"] ?? "No:12, 2nd Street, Deeivega Nagar").FontSize(11).Medium(); 
+                            c.Item().Text(_configuration?["CompanySettings:AddressLine2"] ?? "Ranganathapuram").FontSize(11).Medium(); 
+                            c.Item().Text(_configuration?["CompanySettings:AddressLine3"] ?? "TIRUPUR - 641 603, Tamil Nadu India").FontSize(11).SemiBold(); 
                             c.Item().PaddingTop(2).Text(t => {
-                                t.Span("GST: 33AEMFS9121J1ZF").Bold().FontSize(8); 
+                                t.Span("GST: " + (_configuration?["CompanySettings:GstNo"] ?? "33AEMFS9121J1ZF")).Bold().FontSize(10); 
                             });
                         });
                     });
 
-                    // Right Document Title
-                    row.ConstantItem(180).PaddingTop(10).Column(c =>
-                    {
-                        c.Item().Text($"DC No: {_model.DcNo}").FontSize(10); 
-                           c.Item().Height(5);
-                        c.Item().Text($"Date: {_model.Date}").FontSize(10); 
-                    });
+                    row.AutoItem().LineVertical(0.5f).LineColor(Colors.Grey.Medium);
+
+                    row.RelativeItem()
+                        .PaddingLeft(8)
+                        .Padding(2)
+                        .Column(c =>
+                        {
+                            c.Item().Text("To M/S : ").FontSize(12).Bold().FontColor("#1e3a8a"); 
+                            c.Item().Text(_model.CompanyName).FontSize(12).Bold();
+                            c.Item().Text(_model.Address).FontSize(10);
+                            if (!string.IsNullOrWhiteSpace(_model.GstNo))
+                            {
+                                c.Item().PaddingTop(2).Text(t => {
+                                    t.Span("GST: ").Bold().FontSize(7); 
+                                    t.Span(_model.GstNo).FontSize(7); 
+                                });
+                            }
+                        });
                 });
 
                 column.Item().PaddingTop(4).Height(1.5f).Background("#1e3a8a");
@@ -104,40 +120,64 @@ namespace SSProjectSolution.Documents
             container.PaddingVertical(1).Column(column =>
             {
                 // Party Details & Job details side-by-side
-                column.Item().PaddingBottom(2).Border(0.5f).BorderColor(Colors.Grey.Medium).Row(row =>
+                column.Item().PaddingHorizontal(1).PaddingBottom(2).Table(table =>
                 {
-                    row.RelativeItem()
-                        .Padding(2)
-                        .Column(c =>
+                    table.ColumnsDefinition(columns =>
+                    {
+                        columns.ConstantColumn(55);
+                        columns.RelativeColumn(3);
+                        columns.ConstantColumn(65);
+                        columns.RelativeColumn(2);
+                    });
+
+                    // Fixed left side rows
+                    var leftRows = new List<(string Label, string Value)>
+                    {
+                        ("Delivery To", string.IsNullOrWhiteSpace(_model.DeliveryTo) ? "-" : _model.DeliveryTo),
+                        ("Design", string.IsNullOrWhiteSpace(_model.DesignReference) ? "-" : _model.DesignReference),
+                        ("Ref No", string.IsNullOrWhiteSpace(_model.PoNo) ? "-" : _model.PoNo),
+                        ("Supplier Dc No", string.IsNullOrWhiteSpace(_model.SupplierDcNo) ? "-" : _model.SupplierDcNo)
+                    };
+
+                    // Fixed right side rows
+                    var rightRows = new List<(string Label, string Value)>
+                    {
+                        ("DC No", string.IsNullOrWhiteSpace(_model.DcNo) ? "-" : _model.DcNo),
+                        ("Date", string.IsNullOrWhiteSpace(_model.Date) ? "-" : _model.Date),
+                        ("Weight", string.IsNullOrWhiteSpace(_model.Weight) ? "-" : _model.Weight + " kgs"),
+                        ("No.Of.Bund", string.IsNullOrWhiteSpace(_model.NoOfBundles) ? "-" : _model.NoOfBundles + " Nos")
+                        
+                    };
+
+
+                    int maxRows = Math.Max(leftRows.Count, rightRows.Count);
+
+                    for (int i = 0; i < maxRows; i++)
+                    {
+                        // Left side cells
+                        if (i < leftRows.Count)
                         {
-                            c.Item().Text(_model.CompanyName).FontSize(10).Bold();
-                            c.Item().Text(_model.Address).FontSize(7);
-                        });
-
-                    row.AutoItem().LineVertical(0.5f).LineColor(Colors.Grey.Medium);
-
-                    row.RelativeItem().PaddingTop(5)
-                        .Padding(2)
-                        .Column(c =>
+                            table.Cell().Border(0.5f).BorderColor(Colors.Grey.Medium).Padding(4).AlignMiddle().Text(leftRows[i].Label).Bold().FontSize(9);
+                            table.Cell().Border(0.5f).BorderColor(Colors.Grey.Medium).Padding(4).AlignMiddle().Text(leftRows[i].Value).FontSize(9);
+                        }
+                        else
                         {
-                            c.Item().Row(r =>
-                            {
-                                r.ConstantItem(45).Text("Design").FontSize(9);
-                                r.RelativeItem().Text($": {_model.DesignReference}").FontSize(9);
-                            });
+                            table.Cell().Border(0.5f).BorderColor(Colors.Grey.Medium).Padding(4).AlignMiddle();
+                            table.Cell().Border(0.5f).BorderColor(Colors.Grey.Medium).Padding(4).AlignMiddle();
+                        }
 
-                            c.Item().Row(r =>
-                            {
-                                r.ConstantItem(45).Text("Style").FontSize(9);
-                                r.RelativeItem().Text($": {_model.Style}").FontSize(9);
-                            });
-
-                            c.Item().Row(r =>
-                            {
-                                r.ConstantItem(45).Text("Color").FontSize(9);
-                                r.RelativeItem().Text($": {colorsText}").FontSize(9);
-                            });
-                        });
+                        // Right side cells
+                        if (i < rightRows.Count)
+                        {
+                            table.Cell().Border(0.5f).BorderColor(Colors.Grey.Medium).Padding(4).AlignMiddle().Text(rightRows[i].Label).Bold().FontSize(9);
+                            table.Cell().Border(0.5f).BorderColor(Colors.Grey.Medium).Padding(4).AlignMiddle().Text(rightRows[i].Value).FontSize(9);
+                        }
+                        else
+                        {
+                            table.Cell().Border(0.5f).BorderColor(Colors.Grey.Medium).Padding(4).AlignMiddle();
+                            table.Cell().Border(0.5f).BorderColor(Colors.Grey.Medium).Padding(4).AlignMiddle();
+                        }
+                    }
                 });
 
                 // Get distinct sizes
@@ -155,17 +195,16 @@ namespace SSProjectSolution.Documents
                 // Table
                 column.Item().PaddingTop(10).Table(table =>
                 {
+                    // Define columns: Style, Color, dynamic Size columns, Total Qty
                     table.ColumnsDefinition(columns =>
                     {
-                        columns.RelativeColumn(2);     // Style
-                        columns.RelativeColumn(2);     // Color
-                        
+                        columns.RelativeColumn(2); // Style
+                        columns.RelativeColumn(2); // Color
                         foreach (var size in distinctSizes)
                         {
-                            columns.RelativeColumn(1); // Dynamic Size
+                            columns.RelativeColumn(1); // each size column gets equal weight
                         }
-                        
-                        columns.RelativeColumn(1.5f);  // Total Qty
+                        columns.RelativeColumn(1.5f); // Total Qty
                     });
 
                     // Header

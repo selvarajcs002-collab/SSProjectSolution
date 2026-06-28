@@ -6,5 +6,6 @@ namespace SSProjectSolution.Models.DTOs
         public string DesignName { get; set; }
         public string StyleNo { get; set; }
         public string Colour { get; set; }
+        public string? PoNo { get; set; }
     }
 }

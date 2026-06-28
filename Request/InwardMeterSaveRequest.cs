@@ -12,19 +12,21 @@ namespace SSProjectSolution.Request
         public int CompanyId { get; set; }
 
         [Required(ErrorMessage = "Colour is required")]
-        [StringLength(100)]
+        [StringLength(10000)]
         public string Colour { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "DesignName is required")]
-        [StringLength(150)]
+        [StringLength(10000)]
         public string DesignName { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "StyleNo is required")]
-        [StringLength(100)]
+        [StringLength(10000)]
         public string StyleNo { get; set; } = string.Empty;
 
-        [StringLength(100)]
+        [Required]
         public string InwardDcNo { get; set; } = string.Empty;
+
+        public string? PoNo { get; set; }
 
         public char EntryType { get; set; } = 'M';
 

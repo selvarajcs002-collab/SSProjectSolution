@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Delivery Challan</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        /* Full Screen Loader */
+        .loader-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+        }
+
+        .spinner {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        /* Notifications */
+        .notification {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: left;
+            max-width: 400px;
+        }
+
+        .notification.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .notification.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Delivery Challan</h2>
+        <p>Click below to print the challan.</p>
+        <button id="btnPrint" onclick="printChallan()">Print Challan</button>
+        <div id="notificationArea" class="notification"></div>
+    </div>
+
+    <!-- Loader Overlay -->
+    <div id="loader" class="loader-overlay">
+        <div class="spinner"></div>
+        <div class="loader-text" id="loaderText">Preparing Delivery Challan...</div>
+    </div>
+
+    <script>
+        const sequence = [
+            "Preparing Delivery Challan...",
+            "Generating PDF...",
+            "Saving PDF...",
+            "Sending to Printer...",
+            "Please wait..."
+        ];
+
+        async function printChallan() {
+            const btn = document.getElementById("btnPrint");
+            const loader = document.getElementById("loader");
+            const loaderText = document.getElementById("loaderText");
+            const notification = document.getElementById("notificationArea");
+            
+            // Disable interaction
+            btn.disabled = true;
+            notification.style.display = "none";
+            loader.style.display = "flex";
+
+            // Simulate the loader sequence while the request is running
+            let sequenceIndex = 0;
+            const sequenceInterval = setInterval(() => {
+                sequenceIndex++;
+                if (sequenceIndex < sequence.length) {
+                    loaderText.innerText = sequence[sequenceIndex];
+                }
+            }, 2000); // Change text every 2 seconds for visual effect
+
+            try {
+                // Adjust port to match your local API (usually 5000 or 5001 or as defined in launchSettings.json)
+                const response = await fetch('http://localhost:5000/api/print/generate-dc', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        DcNo: 'DC1001',
+                        PrintedBy: 'Admin',
+                        PrinterName: '' // Will use default from appsettings
+                    })
+                });
+
+                clearInterval(sequenceInterval);
+                loader.style.display = "none";
+                btn.disabled = false;
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    if (result.printSuccess) {
+                        showNotification("success", result.message);
+                    } else {
+                        // Scenario 2 or other handled errors
+                        // Shows that it was saved but print failed
+                        showNotification("error", result.message);
+                    }
+                } else {
+                    showNotification("error", result.message || "An error occurred during printing.");
+                }
+            } catch (error) {
+                clearInterval(sequenceInterval);
+                loader.style.display = "none";
+                btn.disabled = false;
+                showNotification("error", "Network error or API is unreachable: " + error.message);
+            }
+        }
+
+        function showNotification(type, message) {
+            const notification = document.getElementById("notificationArea");
+            notification.className = `notification ${type}`;
+            notification.innerText = message;
+            notification.style.display = "block";
+        }
+    </script>
+</body>
+</html>

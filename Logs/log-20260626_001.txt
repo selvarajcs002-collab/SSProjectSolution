@@ -1,0 +1,108 @@
+2026-06-26 22:34:49.154 +05:30 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5219: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-06-26 23:07:21.799 +05:30 [INF] Now listening on: http://localhost:5219
+2026-06-26 23:07:22.019 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-26 23:07:22.021 +05:30 [INF] Hosting environment: Development
+2026-06-26 23:07:22.021 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-06-26 23:07:28.757 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-06-26 23:07:34.155 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:07:35.671 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 7066.0387ms
+2026-06-26 23:07:36.771 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-06-26 23:07:37.639 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:07:37.818 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-06-26 23:07:37.898 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-06-26 23:07:38.658 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-06-26 23:07:43.036 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-26 23:07:43.256 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 4505.9829ms
+2026-06-26 23:07:43.257 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-06-26 23:07:43.261 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 262 application/json; charset=utf-8 6492.9013ms
+2026-06-26 23:07:57.815 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/design-style-colour?companyId=6 - null null
+2026-06-26 23:07:57.818 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/6 - null null
+2026-06-26 23:07:57.823 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:07:57.823 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:07:57.823 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/design-style-colour?companyId=6 - 204 null null 8.531ms
+2026-06-26 23:07:57.826 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/6 - 204 null null 7.5179ms
+2026-06-26 23:07:57.827 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/design-style-colour?companyId=6 - null null
+2026-06-26 23:07:57.830 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/6 - null null
+2026-06-26 23:07:57.831 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:07:57.832 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:07:57.832 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetDesignStyleColour (SSProjectSolution)'
+2026-06-26 23:07:57.832 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-06-26 23:07:57.909 +05:30 [INF] Route matched with {action = "GetCompanyById", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyById(Int32) on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-06-26 23:07:57.924 +05:30 [INF] Route matched with {action = "GetDesignStyleColour", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDesignStyleColour(Int32) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-06-26 23:07:59.699 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.DesignStyleColourDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-26 23:07:59.722 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetDesignStyleColour (SSProjectSolution) in 1796.6167ms
+2026-06-26 23:07:59.723 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetDesignStyleColour (SSProjectSolution)'
+2026-06-26 23:07:59.728 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/design-style-colour?companyId=6 - 200 176 application/json; charset=utf-8 1900.3401ms
+2026-06-26 23:08:01.159 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Models.CompanyModel'.
+2026-06-26 23:08:01.187 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution) in 3262.3904ms
+2026-06-26 23:08:01.189 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-06-26 23:08:01.190 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/6 - 200 400 application/json; charset=utf-8 3359.6063ms
+2026-06-26 23:08:06.030 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=SN_101&designName=TIGER - null null
+2026-06-26 23:08:06.032 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:08:06.034 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=SN_101&designName=TIGER - 204 null null 3.0477ms
+2026-06-26 23:08:06.041 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=SN_101&designName=TIGER - null null
+2026-06-26 23:08:06.044 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:08:06.045 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution)'
+2026-06-26 23:08:06.059 +05:30 [INF] Route matched with {action = "GetDcNumbersByCompany", controller = "DcDetail"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDcNumbersByCompany(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.DcDetailController (SSProjectSolution).
+2026-06-26 23:08:06.694 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.DcNoResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-26 23:08:06.835 +05:30 [INF] Executed action SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution) in 775.5282ms
+2026-06-26 23:08:06.836 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution)'
+2026-06-26 23:08:06.837 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=SN_101&designName=TIGER - 200 153 application/json; charset=utf-8 796.1597ms
+2026-06-26 23:08:15.667 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/outward/colours-by-dcs?companyId=6&styleNo=SN_101&designName=TIGER&dcNos=DC_002 - null null
+2026-06-26 23:08:15.675 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:08:15.699 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/outward/colours-by-dcs?companyId=6&styleNo=SN_101&designName=TIGER&dcNos=DC_002 - 204 null null 31.1188ms
+2026-06-26 23:08:15.720 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/outward/colours-by-dcs?companyId=6&styleNo=SN_101&designName=TIGER&dcNos=DC_002 - null null
+2026-06-26 23:08:15.845 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:08:15.845 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.OutwardController.GetColoursByDcs (SSProjectSolution)'
+2026-06-26 23:08:15.984 +05:30 [INF] Route matched with {action = "GetColoursByDcs", controller = "Outward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetColoursByDcs(Int32, System.String, System.String, System.String) on controller SSProjectSolution.Controllers.OutwardController (SSProjectSolution).
+2026-06-26 23:08:16.289 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-26 23:08:16.693 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.GetColoursByDcs (SSProjectSolution) in 709.0223ms
+2026-06-26 23:08:16.694 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.GetColoursByDcs (SSProjectSolution)'
+2026-06-26 23:08:16.694 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/outward/colours-by-dcs?companyId=6&styleNo=SN_101&designName=TIGER&dcNos=DC_002 - 200 49 application/json; charset=utf-8 974.2096ms
+2026-06-26 23:08:25.267 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/outward/colours-by-dcs?companyId=6&styleNo=SN_101&designName=TIGER&dcNos=DC_002,DC_101 - null null
+2026-06-26 23:08:25.268 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:08:25.268 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/outward/colours-by-dcs?companyId=6&styleNo=SN_101&designName=TIGER&dcNos=DC_002,DC_101 - 204 null null 1.1558ms
+2026-06-26 23:08:25.272 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/outward/colours-by-dcs?companyId=6&styleNo=SN_101&designName=TIGER&dcNos=DC_002,DC_101 - null null
+2026-06-26 23:08:25.273 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:08:25.273 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.OutwardController.GetColoursByDcs (SSProjectSolution)'
+2026-06-26 23:08:25.274 +05:30 [INF] Route matched with {action = "GetColoursByDcs", controller = "Outward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetColoursByDcs(Int32, System.String, System.String, System.String) on controller SSProjectSolution.Controllers.OutwardController (SSProjectSolution).
+2026-06-26 23:08:25.354 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-26 23:08:25.356 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.GetColoursByDcs (SSProjectSolution) in 81.8273ms
+2026-06-26 23:08:25.356 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.GetColoursByDcs (SSProjectSolution)'
+2026-06-26 23:08:25.356 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/outward/colours-by-dcs?companyId=6&styleNo=SN_101&designName=TIGER&dcNos=DC_002,DC_101 - 200 66 application/json; charset=utf-8 83.8216ms
+2026-06-26 23:08:34.946 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/outward/colours-by-dcs?companyId=6&styleNo=SN_101&designName=TIGER&dcNos=DC_101 - null null
+2026-06-26 23:08:34.947 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:08:34.948 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/outward/colours-by-dcs?companyId=6&styleNo=SN_101&designName=TIGER&dcNos=DC_101 - 204 null null 1.9112ms
+2026-06-26 23:08:34.956 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/outward/colours-by-dcs?companyId=6&styleNo=SN_101&designName=TIGER&dcNos=DC_101 - null null
+2026-06-26 23:08:34.956 +05:30 [INF] CORS policy execution successful.
+2026-06-26 23:08:34.957 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.OutwardController.GetColoursByDcs (SSProjectSolution)'
+2026-06-26 23:08:34.958 +05:30 [INF] Route matched with {action = "GetColoursByDcs", controller = "Outward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetColoursByDcs(Int32, System.String, System.String, System.String) on controller SSProjectSolution.Controllers.OutwardController (SSProjectSolution).
+2026-06-26 23:08:35.041 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-26 23:08:35.042 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.GetColoursByDcs (SSProjectSolution) in 83.9749ms
+2026-06-26 23:08:35.042 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.GetColoursByDcs (SSProjectSolution)'
+2026-06-26 23:08:35.043 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/outward/colours-by-dcs?companyId=6&styleNo=SN_101&designName=TIGER&dcNos=DC_101 - 200 42 application/json; charset=utf-8 87.0107ms

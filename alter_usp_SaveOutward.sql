@@ -10,6 +10,10 @@ ALTER PROCEDURE [dbo].[usp_SaveOutward]
     @CreatedBy NVARCHAR(100),
     @OutwardDcNo NVARCHAR(50) = NULL OUTPUT,
     @Status NVARCHAR(50),
+    @DeliveryTo NVARCHAR(150) = NULL,
+    @PoNo NVARCHAR(100) = NULL,
+    @Weight NVARCHAR(100) = NULL,
+    @NoOfBundles NVARCHAR(100) = NULL,
     @SizeData NVARCHAR(MAX) -- JSON
 )
 AS
@@ -124,7 +128,7 @@ BEGIN
         SELECT 
             StyleNo, DesignName, Colour, Size,
             SUM([Count])
-        FROM SSManagement.dbo.InwardSizeCount
+        FROM dbo.InwardSizeCount
         WHERE StyleNo = @StyleNo AND DesignName = @DesignName
         GROUP BY StyleNo, DesignName, Colour, Size;
 
@@ -144,7 +148,7 @@ BEGIN
         SELECT 
             StyleNo, DesignName, Colour, Size,
             SUM([Count])
-        FROM SSManagement.dbo.OutwardSizeCount
+        FROM dbo.OutwardSizeCount
         WHERE (@Mode = 'INSERT' OR OutwardId <> @OutwardId)
           AND StyleNo = @StyleNo AND DesignName = @DesignName
         GROUP BY StyleNo, DesignName, Colour, Size;
@@ -209,29 +213,29 @@ BEGIN
             DECLARE @CompanyPrefix NVARCHAR(10), @MaxNo INT;
 
             SELECT @CompanyPrefix = UPPER(LEFT(CompanyName,3))
-            FROM SSManagement.dbo.CompanyDetails
+            FROM dbo.CompanyDetails
             WHERE CompanyId = @CompanyId;
 
             SELECT @MaxNo = ISNULL(MAX(CAST(SUBSTRING(OutwardDcNo, LEN(@CompanyPrefix) + 2, LEN(OutwardDcNo)) AS INT)), 0)
-            FROM SSManagement.dbo.Outward
+            FROM dbo.Outward
             WHERE OutwardDcNo LIKE @CompanyPrefix + '-%';
 
             SET @OutwardDcNo = @CompanyPrefix + '-' + CAST((@MaxNo + 1) AS NVARCHAR(50));
 
-            INSERT INTO SSManagement.dbo.Outward 
-                (CompanyId, Colour, DesignName, StyleNo, UploadURL, CreatedBy, OutwardDcNo, Status)
+            INSERT INTO dbo.Outward 
+                (CompanyId, Colour, DesignName, StyleNo, UploadURL, CreatedBy, OutwardDcNo, Status, DeliveryTo, PoNo, Weight, NoOfBundles)
             VALUES 
-                (@CompanyId, @Colour, @DesignName, @StyleNo, @UploadURL, @CreatedBy, @OutwardDcNo, @Status);
+                (@CompanyId, @Colour, @DesignName, @StyleNo, @UploadURL, @CreatedBy, @OutwardDcNo, @Status, @DeliveryTo, @PoNo, @Weight, @NoOfBundles);
 
             SET @OutwardId = SCOPE_IDENTITY();
 
             -- Create OutwardColour entries
-            INSERT INTO SSManagement.dbo.OutwardColour (OutwardId, Colour)
+            INSERT INTO dbo.OutwardColour (OutwardId, Colour)
             SELECT DISTINCT @OutwardId, Colour
             FROM @InputSizes;
 
             -- Create OutwardSizeCount entries linking to OutwardColour
-            INSERT INTO SSManagement.dbo.OutwardSizeCount (OutwardId, OutwardColourId, StyleNo, DesignName, Colour, Size, Count)
+            INSERT INTO dbo.OutwardSizeCount (OutwardId, OutwardColourId, StyleNo, DesignName, Colour, Size, Count)
             SELECT 
                 @OutwardId, 
                 oc.OutwardColourId,
@@ -241,7 +245,7 @@ BEGIN
                 i.Size, 
                 i.Count
             FROM @InputSizes i
-            JOIN SSManagement.dbo.OutwardColour oc ON oc.OutwardId = @OutwardId AND oc.Colour = i.Colour;
+            JOIN dbo.OutwardColour oc ON oc.OutwardId = @OutwardId AND oc.Colour = i.Colour;
 
             SELECT 1 AS Success, 'Outward saved successfully' AS Message, @OutwardId, @OutwardDcNo;
         END
@@ -258,10 +262,10 @@ BEGIN
             END
 
             SELECT @OutwardDcNo = OutwardDcNo
-            FROM SSManagement.dbo.Outward
+            FROM dbo.Outward
             WHERE OutwardId = @OutwardId;
 
-            UPDATE SSManagement.dbo.Outward
+            UPDATE dbo.Outward
             SET 
                 CompanyId   = @CompanyId,
                 Colour      = @Colour,
@@ -269,20 +273,24 @@ BEGIN
                 StyleNo     = @StyleNo,
                 UploadURL   = @UploadURL,
                 Status      = @Status,
+                DeliveryTo  = @DeliveryTo,
+                PoNo        = @PoNo,
+                Weight      = @Weight,
+                NoOfBundles = @NoOfBundles,
                 UpdatedDate = GETDATE()
             WHERE OutwardId = @OutwardId;
 
             -- Handle Colours
-            DELETE FROM SSManagement.dbo.OutwardSizeCount WHERE OutwardId = @OutwardId;
-            DELETE FROM SSManagement.dbo.OutwardColour WHERE OutwardId = @OutwardId;
+            DELETE FROM dbo.OutwardSizeCount WHERE OutwardId = @OutwardId;
+            DELETE FROM dbo.OutwardColour WHERE OutwardId = @OutwardId;
 
             -- Re-insert Colours
-            INSERT INTO SSManagement.dbo.OutwardColour (OutwardId, Colour)
+            INSERT INTO dbo.OutwardColour (OutwardId, Colour)
             SELECT DISTINCT @OutwardId, Colour
             FROM @InputSizes;
 
             -- Re-insert Sizes
-            INSERT INTO SSManagement.dbo.OutwardSizeCount (OutwardId, OutwardColourId, StyleNo, DesignName, Colour, Size, Count)
+            INSERT INTO dbo.OutwardSizeCount (OutwardId, OutwardColourId, StyleNo, DesignName, Colour, Size, Count)
             SELECT 
                 @OutwardId, 
                 oc.OutwardColourId,
@@ -292,7 +300,7 @@ BEGIN
                 i.Size, 
                 i.Count
             FROM @InputSizes i
-            JOIN SSManagement.dbo.OutwardColour oc ON oc.OutwardId = @OutwardId AND oc.Colour = i.Colour;
+            JOIN dbo.OutwardColour oc ON oc.OutwardId = @OutwardId AND oc.Colour = i.Colour;
 
             SELECT 1 AS Success, 'Outward updated successfully' AS Message, @OutwardId, @OutwardDcNo;
         END

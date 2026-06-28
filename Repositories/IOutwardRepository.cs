@@ -13,5 +13,8 @@ namespace SSProjectSolution.Repositories
 
         // ── Meter-Based (new — isolated) ───────────────────────────────────────
         Task<OutwardMeterResponse> SaveMeterOutwardAsync(Dapper.DynamicParameters parameters);
+        
+        // ── Additional Details ─────────────────────────────────────────────────
+        Task<dynamic> GetAdditionalDetailsOptionsAsync(int companyId);
     }
 }

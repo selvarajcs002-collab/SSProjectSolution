@@ -133,6 +133,10 @@ CREATE PROCEDURE SP_SAVE_OUTWARD_METER
     @EntryType    CHAR(1)          = 'M',
     @Mode         NVARCHAR(10)     = 'INSERT', -- 'INSERT' or 'UPDATE'
     @CreatedBy    NVARCHAR(100),
+    @DeliveryTo   NVARCHAR(150)    = NULL,
+    @PoNo         NVARCHAR(100)    = NULL,
+    @Weight       NVARCHAR(100)    = NULL,
+    @NoOfBundles  NVARCHAR(100)    = NULL,
     @MeterDetails OutwardMeterDetailType READONLY
 AS
 BEGIN
@@ -180,7 +184,11 @@ BEGIN
                 OutwardEntryType,
                 CreatedBy,
                 CreatedDate,
-                Status
+                Status,
+                DeliveryTo,
+                PoNo,
+                Weight,
+                NoOfBundles
             )
             VALUES (
                 @CompanyId,
@@ -191,7 +199,11 @@ BEGIN
                 'M',
                 @CreatedBy,
                 GETDATE(),
-                'ACTIVE'
+                'ACTIVE',
+                @DeliveryTo,
+                @PoNo,
+                @Weight,
+                @NoOfBundles
             );
 
             SET @CurrentOutwardId = SCOPE_IDENTITY();
@@ -208,6 +220,10 @@ BEGIN
                    DesignName      = @DesignName,
                    StyleNo         = @StyleNo,
                    OutwardEntryType = 'M',
+                   DeliveryTo      = @DeliveryTo,
+                   PoNo            = @PoNo,
+                   Weight          = @Weight,
+                   NoOfBundles     = @NoOfBundles,
                    UpdatedDate     = GETDATE()
             WHERE  OutwardId  = @CurrentOutwardId
               AND  CompanyId  = @CompanyId;

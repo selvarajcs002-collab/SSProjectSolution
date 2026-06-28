@@ -1,0 +1,107 @@
+.dashboard-container {
+  padding: 24px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  .create-btn {
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    text-transform: none;
+  }
+}
+
+.filter-card {
+  margin-bottom: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
+  .filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    align-items: center;
+
+    mat-form-field {
+      width: 100%;
+    }
+
+    .reset-btn {
+      height: 56px;
+      margin-bottom: 22px; /* aligns with form fields */
+    }
+  }
+}
+
+.table-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+
+  table {
+    width: 100%;
+
+    th.mat-header-cell {
+      background-color: #f1f5f9;
+      color: #475569;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 16px;
+    }
+
+    td.mat-cell {
+      padding: 16px;
+      color: #334155;
+      border-bottom: 1px solid #e2e8f0;
+    }
+  }
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+
+  &.approved {
+    background-color: #dcfce7;
+    color: #166534;
+  }
+
+  &.draft {
+    background-color: #f1f5f9;
+    color: #475569;
+  }
+
+  &.sent {
+    background-color: #dbeafe;
+    color: #1e40af;
+  }
+
+  &.rejected {
+    background-color: #ffedd5;
+    color: #c2410c;
+  }
+
+  &.expired {
+    background-color: #fee2e2;
+    color: #b91c1c;
+  }
+}

@@ -4,16 +4,19 @@ using QuestPDF.Infrastructure;
 using SSProjectSolution.Request;
 using System.Linq;
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 
 namespace SSProjectSolution.Documents
 {
     public class MeterDeliveryChallanDocument : IDocument
     {
         private readonly GenerateMeterDcRequest _model;
+        private readonly IConfiguration _configuration;
 
-        public MeterDeliveryChallanDocument(GenerateMeterDcRequest model)
+        public MeterDeliveryChallanDocument(GenerateMeterDcRequest model, IConfiguration configuration)
         {
             _model = model;
+            _configuration = configuration;
         }
 
         public DocumentMetadata GetMetadata() => DocumentMetadata.Default;
@@ -70,12 +73,12 @@ namespace SSProjectSolution.Documents
                         
                         innerRow.RelativeItem().PaddingLeft(8).Column(c =>
                         {
-                            c.Item().Text("S.S.EMBROIDERY").FontSize(22).Bold().FontColor("#1e3a8a"); 
-                            c.Item().Text("No:12, Discovery Nagar").FontSize(9).Medium(); 
-                            c.Item().Text("2nd Street, Kangarainagaram").FontSize(9).Medium(); 
-                            c.Item().Text("TIRUPUR - 641 666, Tamil Nadu India").FontSize(9).SemiBold(); 
+                            c.Item().Text(_configuration?["CompanySettings:Name"] ?? "S.S.EMBROIDERY").FontSize(22).Bold().FontColor("#1e3a8a"); 
+                            c.Item().Text(_configuration?["CompanySettings:AddressLine1"] ?? "No:12, Discovery Nagar").FontSize(9).Medium(); 
+                            c.Item().Text(_configuration?["CompanySettings:AddressLine2"] ?? "2nd Street, Kangarainagaram").FontSize(9).Medium(); 
+                            c.Item().Text(_configuration?["CompanySettings:AddressLine3"] ?? "TIRUPUR - 641 666, Tamil Nadu India").FontSize(9).SemiBold(); 
                             c.Item().PaddingTop(2).Text(t => {
-                                t.Span("GST: 33AEMFS9121J1ZF").Bold().FontSize(8); 
+                                t.Span("GST: " + (_configuration?["CompanySettings:GstNo"] ?? "33AEMFS9121J1ZF")).Bold().FontSize(8); 
                             });
                         });
                     });
@@ -108,6 +111,13 @@ namespace SSProjectSolution.Documents
                             c.Item().Text("Party Name").FontSize(9);
                             c.Item().Text(_model.CompanyName).FontSize(10).Bold();
                             c.Item().Text(_model.Address).FontSize(9);
+                            if (!string.IsNullOrWhiteSpace(_model.GstNo))
+                            {
+                                c.Item().PaddingTop(2).Text(t => {
+                                    t.Span("GST: ").Bold().FontSize(8); 
+                                    t.Span(_model.GstNo).FontSize(8); 
+                                });
+                            }
                         });
 
                     row.AutoItem().LineVertical(0.5f).LineColor(Colors.Grey.Medium);

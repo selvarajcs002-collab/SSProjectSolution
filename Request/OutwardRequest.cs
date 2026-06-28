@@ -40,6 +40,11 @@ namespace SSProjectSolution.Request
         public string? UploadURL { get; set; }
         public string? CreatedBy { get; set; }
         public string? Status { get; set; }
+        public string? DeliveryTo { get; set; }
+        public string? PoNo { get; set; }
+        public string? Weight { get; set; }
+        public string? NoOfBundles { get; set; }
+        public List<string>? SelectedDcNos { get; set; }
     }
 
     public class SizeData

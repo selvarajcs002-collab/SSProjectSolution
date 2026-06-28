@@ -79,5 +79,23 @@ namespace SSProjectSolution.Repositories
                 parameters,
                 commandType: CommandType.StoredProcedure);
         }
+
+        // ── Additional Details ─────────────────────────────────────────────────
+
+        public async Task<dynamic> GetAdditionalDetailsOptionsAsync(int companyId)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var sql = @"
+                SELECT DISTINCT DeliveryTo FROM Outward WHERE CompanyId = @CompanyId AND DeliveryTo IS NOT NULL AND DeliveryTo <> '';
+                SELECT DISTINCT PoNo FROM Outward WHERE CompanyId = @CompanyId AND PoNo IS NOT NULL AND PoNo <> '';
+            ";
+            
+            using var multi = await connection.QueryMultipleAsync(sql, new { CompanyId = companyId });
+            
+            var deliveryLocations = await multi.ReadAsync<string>();
+            var poNumbers = await multi.ReadAsync<string>();
+            
+            return new { DeliveryLocations = deliveryLocations, PoNumbers = poNumbers };
+        }
     }
 }

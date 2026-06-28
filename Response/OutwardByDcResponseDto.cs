@@ -46,6 +46,21 @@ namespace SSProjectSolution.Response
         [JsonPropertyName("entryType")]
         public string? EntryType { get; set; }
 
+        [JsonPropertyName("deliveryTo")]
+        public string? DeliveryTo { get; set; }
+
+        [JsonPropertyName("poNo")]
+        public string? PoNo { get; set; }
+
+        [JsonPropertyName("weight")]
+        public string? Weight { get; set; }
+
+        [JsonPropertyName("noOfBundles")]
+        public string? NoOfBundles { get; set; }
+
+        [JsonPropertyName("selectedDcNos")]
+        public List<string>? SelectedDcNos { get; set; }
+
         [JsonPropertyName("meterDetails")]
         public List<MeterDetailDto> MeterDetails { get; set; } = new();
 

@@ -11,6 +11,7 @@ namespace SSProjectSolution.Request
         public string Date { get; set; } = string.Empty;
         public string Remarks { get; set; } = string.Empty;
         public string PrintedBy { get; set; } = string.Empty;
+        public string? SupplierDcNo { get; set; }
 
         // Job details (from top right section)
         public string Design { get; set; } = string.Empty;

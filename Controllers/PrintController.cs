@@ -10,11 +10,11 @@ namespace SSProjectSolution.Controllers
     [Route("api/[controller]")]
     public class PrintController : ControllerBase
     {
-        private readonly IPrintService _printService;
+        private readonly IPdfSaveService _pdfSaveService;
 
-        public PrintController(IPrintService printService)
+        public PrintController(IPdfSaveService pdfSaveService)
         {
-            _printService = printService;
+            _pdfSaveService = pdfSaveService;
         }
 
         [HttpPost("save-pdf")]
@@ -22,7 +22,16 @@ namespace SSProjectSolution.Controllers
         {
             try
             {
-                string savedPath = await _printService.SavePdfAsync(request);
+                // Note: The previous IPrintService.SavePdfAsync was removed.
+                // Assuming PrintPdfRequest contains Base64Pdf and DcNo.
+                if (request == null || string.IsNullOrWhiteSpace(request.Base64Pdf) || string.IsNullOrWhiteSpace(request.DcNo))
+                {
+                    return BadRequest(new { success = false, message = "Invalid request" });
+                }
+
+                byte[] pdfBytes = Convert.FromBase64String(request.Base64Pdf);
+                string savedPath = await _pdfSaveService.SavePdfAsync(pdfBytes, request.DcNo);
+
                 return Ok(new { 
                     success = true, 
                     message = $"PDF saved successfully to {savedPath}", 
@@ -46,8 +55,8 @@ namespace SSProjectSolution.Controllers
         {
             try
             {
-                var message = await workflowService.GenerateAndPrintDcAsync(request);
-                return Ok(new { success = true, message });
+                var response = await workflowService.GenerateAndPrintDcAsync(request);
+                return Ok(response);
             }
             catch (Exception ex)
             {

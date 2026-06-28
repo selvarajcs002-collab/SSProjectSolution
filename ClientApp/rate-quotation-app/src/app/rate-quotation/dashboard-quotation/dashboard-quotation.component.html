@@ -1,0 +1,130 @@
+<div class="dashboard-container">
+  <div class="header-section">
+    <h1>Rate Quotation History</h1>
+    <button mat-flat-button color="primary" class="create-btn" (click)="navigateToCreate()">
+      + Create Rate Quotation
+    </button>
+  </div>
+
+  <mat-card class="filter-card">
+    <mat-card-content class="filter-grid">
+      <mat-form-field appearance="outline">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Search...">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Company</mat-label>
+        <mat-select>
+          <mat-option value="all">All</mat-option>
+          <mat-option value="acme">Acme Corp</mat-option>
+          <mat-option value="globex">Globex</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select>
+          <mat-option value="all">All</mat-option>
+          <mat-option value="approved">Approved</mat-option>
+          <mat-option value="draft">Draft</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>From Date</mat-label>
+        <input matInput [matDatepicker]="fromPicker">
+        <mat-datepicker-toggle matIconSuffix [for]="fromPicker"></mat-datepicker-toggle>
+        <mat-datepicker #fromPicker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>To Date</mat-label>
+        <input matInput [matDatepicker]="toPicker">
+        <mat-datepicker-toggle matIconSuffix [for]="toPicker"></mat-datepicker-toggle>
+        <mat-datepicker #toPicker></mat-datepicker>
+      </mat-form-field>
+
+      <button mat-stroked-button class="reset-btn">Reset</button>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="table-card">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+      
+      <!-- Quote No Column -->
+      <ng-container matColumnDef="quoteNo">
+        <th mat-header-cell *matHeaderCellDef> Quote No </th>
+        <td mat-cell *matCellDef="let element"> {{element.quoteNo}} </td>
+      </ng-container>
+
+      <!-- Company Name Column -->
+      <ng-container matColumnDef="companyName">
+        <th mat-header-cell *matHeaderCellDef> Company Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
+      </ng-container>
+
+      <!-- Style No Column -->
+      <ng-container matColumnDef="styleNo">
+        <th mat-header-cell *matHeaderCellDef> Style No </th>
+        <td mat-cell *matCellDef="let element"> {{element.styleNo}} </td>
+      </ng-container>
+
+      <!-- EMB Design Column -->
+      <ng-container matColumnDef="embDesign">
+        <th mat-header-cell *matHeaderCellDef> EMB Design </th>
+        <td mat-cell *matCellDef="let element"> {{element.embDesign}} </td>
+      </ng-container>
+
+      <!-- Stitches Column -->
+      <ng-container matColumnDef="stitches">
+        <th mat-header-cell *matHeaderCellDef> Stitches </th>
+        <td mat-cell *matCellDef="let element"> {{element.stitches}} </td>
+      </ng-container>
+
+      <!-- Cost Column -->
+      <ng-container matColumnDef="cost">
+        <th mat-header-cell *matHeaderCellDef> Cost / 1000 Sts </th>
+        <td mat-cell *matCellDef="let element"> {{element.cost | currency}} </td>
+      </ng-container>
+
+      <!-- Payment Terms Column -->
+      <ng-container matColumnDef="paymentTerms">
+        <th mat-header-cell *matHeaderCellDef> Payment Terms </th>
+        <td mat-cell *matCellDef="let element"> {{element.paymentTerms}} </td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element">
+          <span class="status-badge" [ngClass]="element.status.toLowerCase()">
+            {{element.status}}
+          </span>
+        </td>
+      </ng-container>
+
+      <!-- Date Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.date | date:'shortDate'}} </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="primary"><mat-icon>visibility</mat-icon></button>
+          <button mat-icon-button color="accent"><mat-icon>edit</mat-icon></button>
+          <button mat-icon-button><mat-icon>file_copy</mat-icon></button>
+          <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </mat-card>
+</div>

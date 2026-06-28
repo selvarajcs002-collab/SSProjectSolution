@@ -1,0 +1,107 @@
+<div class="create-container">
+  <div class="header-section">
+    <h1>Create Rate Quotation</h1>
+  </div>
+
+  <form [formGroup]="quotationForm" (ngSubmit)="submitQuotation()">
+    <div class="main-content-grid">
+      <!-- Left side: Form fields -->
+      <mat-card class="form-card">
+        <mat-card-content class="form-grid">
+          
+          <mat-form-field appearance="outline">
+            <mat-label>Company Name</mat-label>
+            <input matInput formControlName="companyName" placeholder="Enter company name">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Style No</mat-label>
+            <input matInput formControlName="styleNo" placeholder="Enter style no">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>EMB Design</mat-label>
+            <input matInput formControlName="embDesign" placeholder="Enter design name">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>No Of Stitches</mat-label>
+            <input matInput type="number" formControlName="noOfStitches" placeholder="0">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Chenille Colors</mat-label>
+            <input matInput formControlName="chenilleColors" placeholder="Enter colors">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Normal EMB Colors</mat-label>
+            <input matInput formControlName="normalEmbColors" placeholder="Enter colors">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Embroidery Cost / 1000 Sts</mat-label>
+            <input matInput type="number" formControlName="embCost" placeholder="0.00">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Payment Terms</mat-label>
+            <mat-select formControlName="paymentTerms">
+              <mat-option value="Net 15">Net 15</mat-option>
+              <mat-option value="Net 30">Net 30</mat-option>
+              <mat-option value="Net 60">Net 60</mat-option>
+              <mat-option value="Due on Receipt">Due on Receipt</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Right side: Image upload -->
+      <mat-card class="upload-card">
+        <mat-card-content>
+          <div class="upload-title">Design Preview</div>
+          <div class="upload-box-wrapper">
+            <input type="file" #fileInput hidden accept=".jpg,.jpeg,.png" (change)="onFileSelected($event)">
+            
+            <div class="upload-box" *ngIf="!imagePreview" (click)="fileInput.click()">
+              <mat-icon class="upload-icon">cloud_upload</mat-icon>
+              <span>Upload Image</span>
+              <span class="upload-hint">JPG, PNG (max 5MB)</span>
+            </div>
+
+            <div class="preview-box" *ngIf="imagePreview">
+              <img [src]="imagePreview" alt="Design Preview">
+              <div class="preview-overlay">
+                <button mat-icon-button type="button" (click)="fileInput.click()"><mat-icon>edit</mat-icon></button>
+                <button mat-icon-button type="button" color="warn" (click)="removeImage()"><mat-icon>delete</mat-icon></button>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!-- Terms and conditions -->
+    <mat-card class="terms-card">
+      <mat-card-header>
+        <mat-card-title>Terms & Conditions</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ul class="terms-list">
+          <li>Quotation is valid for 30 days from the date of issue.</li>
+          <li>Final stitch count and cost may vary slightly based on final digitized design.</li>
+          <li>Payment is due according to the specified payment terms.</li>
+          <li>Design approval is required before production begins.</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Footer actions -->
+    <div class="footer-actions">
+      <button mat-stroked-button type="button" (click)="saveDraft()">Save Draft</button>
+      <button mat-stroked-button type="button" color="primary" (click)="generatePdf()">Generate PDF</button>
+      <button mat-flat-button color="primary" type="submit">Submit Quotation</button>
+    </div>
+  </form>
+</div>

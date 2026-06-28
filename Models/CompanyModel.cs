@@ -11,5 +11,6 @@ namespace SSProjectSolution.Models
         public string Landmark { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
         public string Pincode { get; set; } = string.Empty;
+        public List<string> DeliveryToLocations { get; set; } = new List<string>();
     }
 }

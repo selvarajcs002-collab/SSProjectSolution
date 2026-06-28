@@ -27,6 +27,7 @@ namespace SSProjectSolution.Services
             parameters.Add("@DesignName", request.DesignName);
             parameters.Add("@StyleNo", request.StyleNo);
             parameters.Add("@InwardDcNo", request.InwardDcNo);
+            parameters.Add("@PoNo", request.PoNo);
             parameters.Add("@UploadURL", null);
             parameters.Add("@CreatedBy", request.CreatedBy);
 
@@ -84,6 +85,7 @@ namespace SSProjectSolution.Services
             parameters.Add("@DesignName", request.DesignName);
             parameters.Add("@StyleNo", request.StyleNo);
             parameters.Add("@InwardDcNo", request.InwardDcNo);
+            parameters.Add("@PoNo", request.PoNo);
             parameters.Add("@EntryType", request.EntryType);
             parameters.Add("@CreatedBy", request.CreatedBy);
             parameters.Add("@MeterDetails", dt.AsTableValuedParameter("MeterDetailType"));
