@@ -30,18 +30,23 @@ GO
 -- 2. CREATE User-Defined Table Type: OutwardMeterDetailType
 --    Used as UDTT parameter in SP_SAVE_OUTWARD_METER
 -- =============================================
-IF NOT EXISTS (SELECT * FROM sys.types WHERE name = 'OutwardMeterDetailType')
+-- NOTE: Must drop the stored procedure first because it depends on the UDTT
+IF OBJECT_ID('SP_SAVE_OUTWARD_METER', 'P') IS NOT NULL
+    DROP PROCEDURE SP_SAVE_OUTWARD_METER;
+GO
+
+IF EXISTS (SELECT * FROM sys.types WHERE name = 'OutwardMeterDetailType')
 BEGIN
-    CREATE TYPE OutwardMeterDetailType AS TABLE (
-        MeterValue DECIMAL(18,3) NOT NULL,
-        BitsCount  DECIMAL(18,3) NOT NULL
-    );
-    PRINT 'Type OutwardMeterDetailType created.';
+    DROP TYPE OutwardMeterDetailType;
+    PRINT 'Dropped existing OutwardMeterDetailType.';
 END
-ELSE
-BEGIN
-    PRINT 'Type OutwardMeterDetailType already exists.';
-END
+GO
+
+CREATE TYPE OutwardMeterDetailType AS TABLE (
+    MeterValue DECIMAL(18,3) NOT NULL,
+    BitsCount  DECIMAL(18,3) NOT NULL
+);
+PRINT 'Type OutwardMeterDetailType created.';
 GO
 
 -- =============================================
@@ -137,6 +142,10 @@ CREATE PROCEDURE SP_SAVE_OUTWARD_METER
     @PoNo         NVARCHAR(100)    = NULL,
     @Weight       NVARCHAR(100)    = NULL,
     @NoOfBundles  NVARCHAR(100)    = NULL,
+    @UploadURL    NVARCHAR(500)    = NULL,
+    @Status       NVARCHAR(50)     = NULL,
+    @Remarks      NVARCHAR(MAX)    = NULL,
+    @OutwardDate  DATETIME         = NULL,
     @MeterDetails OutwardMeterDetailType READONLY
 AS
 BEGIN
@@ -149,6 +158,10 @@ BEGIN
         SET @Colour     = LTRIM(RTRIM(ISNULL(@Colour, '')));
         SET @DesignName = LTRIM(RTRIM(ISNULL(@DesignName, '')));
         SET @StyleNo    = LTRIM(RTRIM(ISNULL(@StyleNo, '')));
+        SET @UploadURL  = LTRIM(RTRIM(ISNULL(@UploadURL, '')));
+        SET @Status     = ISNULL(@Status, 'ACTIVE');
+        SET @Remarks    = ISNULL(@Remarks, '');
+        IF @OutwardDate IS NULL SET @OutwardDate = GETDATE();
 
         -- ── Guard: reject empty meter details ────────────────────────────────
         IF NOT EXISTS (SELECT 1 FROM @MeterDetails WHERE MeterValue > 0 AND BitsCount > 0)
@@ -168,12 +181,34 @@ BEGIN
         -- ── INSERT or UPDATE outward master ───────────────────────────────────
         IF @CurrentOutwardId = 0 OR @Mode = 'INSERT'
         BEGIN
-            -- Generate DC number: DC_MTER_latestdccount
-            DECLARE @SeqNum     INT;
+            -- Generate DC number: SSE_0012/2026-2027
+            DECLARE @TotalCount INT;
+            DECLARE @CurrentDate DATETIME = GETDATE();
+            DECLARE @YearCurrent NVARCHAR(4);
+            DECLARE @YearNext NVARCHAR(4);
 
-            SELECT @SeqNum = ISNULL(MAX(OutwardId), 0) + 1 FROM Outward;
+            -- Financial year logic (April to March)
+            IF MONTH(@CurrentDate) >= 4
+            BEGIN
+                SET @YearCurrent = CAST(YEAR(@CurrentDate) AS NVARCHAR(4));
+                SET @YearNext = CAST(YEAR(@CurrentDate) + 1 AS NVARCHAR(4));
+            END
+            ELSE
+            BEGIN
+                SET @YearCurrent = CAST(YEAR(@CurrentDate) - 1 AS NVARCHAR(4));
+                SET @YearNext = CAST(YEAR(@CurrentDate) AS NVARCHAR(4));
+            END
 
-            SET @GeneratedDcNo = 'DC_MTER_' + CAST(@SeqNum AS NVARCHAR(10));
+            SELECT @TotalCount = ISNULL(COUNT(*), 0) + 1 FROM dbo.Outward;
+
+            SET @GeneratedDcNo = CONCAT(
+                'SSE_',
+                RIGHT('0000' + CAST(@TotalCount AS NVARCHAR(10)), 4),
+                '/',
+                @YearCurrent,
+                '-',
+                @YearNext
+            );
 
             INSERT INTO Outward (
                 CompanyId,
@@ -188,7 +223,10 @@ BEGIN
                 DeliveryTo,
                 PoNo,
                 Weight,
-                NoOfBundles
+                NoOfBundles,
+                UploadURL,
+                Remarks,
+                OutwardDate
             )
             VALUES (
                 @CompanyId,
@@ -199,11 +237,14 @@ BEGIN
                 'M',
                 @CreatedBy,
                 GETDATE(),
-                'ACTIVE',
+                @Status,
                 @DeliveryTo,
                 @PoNo,
                 @Weight,
-                @NoOfBundles
+                @NoOfBundles,
+                @UploadURL,
+                @Remarks,
+                @OutwardDate
             );
 
             SET @CurrentOutwardId = SCOPE_IDENTITY();
@@ -224,6 +265,10 @@ BEGIN
                    PoNo            = @PoNo,
                    Weight          = @Weight,
                    NoOfBundles     = @NoOfBundles,
+                   UploadURL       = @UploadURL,
+                   Status          = @Status,
+                   Remarks         = @Remarks,
+                   OutwardDate     = @OutwardDate,
                    UpdatedDate     = GETDATE()
             WHERE  OutwardId  = @CurrentOutwardId
               AND  CompanyId  = @CompanyId;

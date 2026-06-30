@@ -7,6 +7,11 @@ using SSProjectSolution.Validators;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using SSProjectSolution.Models;
+using SSProjectSolution.Repositories;
+using Microsoft.AspNetCore.SignalR;
+using SSProjectSolution.SignalR;
+using Microsoft.AspNetCore.Http;
 
 namespace SSProjectSolution.Services
 {
@@ -19,6 +24,9 @@ namespace SSProjectSolution.Services
         private readonly IPrinterValidator _printerValidator;
         private readonly PrintSettings _settings;
         private readonly ILogger<DeliveryChallanService> _logger;
+        private readonly IPrintJobRepository _printJobRepo;
+        private readonly IHubContext<PrintHub> _printHub;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public DeliveryChallanService(
             IPdfGenerator pdfGenerator,
@@ -27,7 +35,10 @@ namespace SSProjectSolution.Services
             IFileValidator fileValidator,
             IPrinterValidator printerValidator,
             IOptionsSnapshot<PrintSettings> options,
-            ILogger<DeliveryChallanService> logger)
+            ILogger<DeliveryChallanService> logger,
+            IPrintJobRepository printJobRepo,
+            IHubContext<PrintHub> printHub,
+            IHttpContextAccessor httpContextAccessor)
         {
             _pdfGenerator = pdfGenerator;
             _pdfSaveService = pdfSaveService;
@@ -36,6 +47,9 @@ namespace SSProjectSolution.Services
             _printerValidator = printerValidator;
             _settings = options.Value;
             _logger = logger;
+            _printJobRepo = printJobRepo;
+            _printHub = printHub;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<SaveAndPrintResponse> ProcessSaveAndPrintAsync(JObject payload)
@@ -134,15 +148,45 @@ namespace SSProjectSolution.Services
                     _logger.LogInformation("File Saved at {SavedPath} [CorrelationId: {CorrelationId}]", savedPath, correlationId);
                 }
 
-                // 4. Print PDF
+                // 4. Print PDF (Delegate to Print Agent)
                 if (_settings.EnablePrinting && !string.IsNullOrEmpty(savedPath))
                 {
-                    _logger.LogInformation("Print Validation and Submission Started [CorrelationId: {CorrelationId}]", correlationId);
+                    _logger.LogInformation("Creating PrintJob and notifying Print Agent [CorrelationId: {CorrelationId}]", correlationId);
                     
-                    bool printed = await ExecuteWithRetryAsync(() => _printService.PrintPdfAsync(savedPath, activePrinter), _settings.RetryCount, _settings.RetryDelay);
-                    response.Printed = printed;
+                    var userId = _httpContextAccessor.HttpContext?.User?.Identity?.Name ?? "system";
                     
-                    _logger.LogInformation("Print Submitted: {Printed} [CorrelationId: {CorrelationId}]", printed, correlationId);
+                    var job = new PrintJob
+                    {
+                        JobId = Guid.NewGuid().ToString("N"),
+                        DocumentType = "DeliveryChallan",
+                        DocumentNumber = dcNumber,
+                        PdfPath = savedPath,
+                        PrinterName = activePrinter,
+                        Copies = _settings.Copies,
+                        PaperSize = _settings.PaperSize,
+                        Orientation = _settings.PrintOrientation,
+                        Status = "Queued",
+                        UserId = userId,
+                        CompanyId = payload.Value<int?>("companyId") // Assuming payload has companyId
+                    };
+                    
+                    await _printJobRepo.CreateJobAsync(job);
+                    
+                    // Notify SignalR Client
+                    var connectionId = PrintHub.GetConnectionIdForUser(userId);
+                    if (!string.IsNullOrEmpty(connectionId))
+                    {
+                        await _printHub.Clients.Client(connectionId).SendAsync("ReceivePrintJob", job);
+                        job.Status = "Sent";
+                        await _printJobRepo.UpdateJobStatusAsync(job.JobId, "Sent");
+                        _logger.LogInformation("Print job sent to agent. JobId: {JobId}, ConnectionId: {ConnectionId}", job.JobId, connectionId);
+                    }
+                    else
+                    {
+                        _logger.LogWarning("No active Print Agent connected for UserId: {UserId}. Job queued.", userId);
+                    }
+                    
+                    response.Printed = true; // Set true here to indicate success queuing to the frontend
                 }
 
                 // Success completion

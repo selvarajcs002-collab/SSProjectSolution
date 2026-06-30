@@ -29,9 +29,9 @@ namespace SSProjectSolution.Documents
                 {
                     // Custom A5 Landscape dimensions per user request
                     page.Size(215, 145, Unit.Millimetre);
-                    // Shift content to the right side by increasing left margin
+                    // Standard margin to bring content to the left
                     page.Margin(3, Unit.Millimetre);
-                    page.MarginLeft(10, Unit.Millimetre);
+                    page.MarginLeft(5, Unit.Millimetre); // Reduced from 10 to 5 to move it slightly left
                     page.PageColor(Colors.White);
                     // Increased base font size from 9 to 11
                     page.DefaultTextStyle(x => x.FontSize(11).FontFamily("Arial")); 

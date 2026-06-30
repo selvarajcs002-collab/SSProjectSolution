@@ -20,6 +20,11 @@ namespace SSProjectSolution.Request
         public string Machine { get; set; } = "Embroidery Machine";
         public string DcType { get; set; } = "Meter Based";
 
+        public string? DeliveryTo { get; set; }
+        public string? PoNo { get; set; }
+        public string? Weight { get; set; }
+        public string? NoOfBundles { get; set; }
+
         public List<MeterDcItem> Items { get; set; } = new List<MeterDcItem>();
         public decimal TotalMeterSum { get; set; }
     }

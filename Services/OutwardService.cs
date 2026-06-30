@@ -395,6 +395,15 @@ namespace SSProjectSolution.Services
                 parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.PoNo) ? null : request.PoNo);
                 parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Weight) ? null : request.Weight);
                 parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.NoOfBundles) ? null : request.NoOfBundles);
+                parameters.Add("@UploadURL", request.UploadURL == "null" || string.IsNullOrWhiteSpace(request.UploadURL) ? null : request.UploadURL);
+                parameters.Add("@Status", string.IsNullOrWhiteSpace(request.Status) ? null : request.Status);
+                parameters.Add("@Remarks", string.IsNullOrWhiteSpace(request.Remarks) ? null : request.Remarks);
+                
+                DateTime? parsedOutwardDate = null;
+                if (!string.IsNullOrWhiteSpace(request.OutwardDate) && DateTime.TryParse(request.OutwardDate, out var date))
+                    parsedOutwardDate = date;
+                    
+                parameters.Add("@OutwardDate", parsedOutwardDate);
                 parameters.Add("@MeterDetails", dt.AsTableValuedParameter("OutwardMeterDetailType"));
 
                 var response = await _outwardRepository.SaveMeterOutwardAsync(parameters);

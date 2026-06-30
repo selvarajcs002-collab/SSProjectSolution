@@ -5,6 +5,10 @@ using Serilog;
 using FluentValidation.AspNetCore;
 using SSProjectSolution.Validators;
 using SSProjectSolution.Mappings;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using SSProjectSolution.SignalR;
+using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure Serilog
@@ -21,6 +25,44 @@ builder.Services.AddControllers()
     .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RateQuotationCreateDtoValidator>());
 
 builder.Services.AddAutoMapper(cfg => cfg.AddProfile<RateQuotationProfile>());
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddSignalR();
+
+// JWT Auth Setup
+var jwtKey = builder.Configuration["JwtSettings:SecretKey"];
+var jwtIssuer = builder.Configuration["JwtSettings:Issuer"];
+var jwtAudience = builder.Configuration["JwtSettings:Audience"];
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtIssuer,
+            ValidAudience = jwtAudience,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey!))
+        };
+
+        // SignalR requires token from query string
+        options.Events = new JwtBearerEvents
+        {
+            OnMessageReceived = context =>
+            {
+                var accessToken = context.Request.Query["access_token"];
+                var path = context.HttpContext.Request.Path;
+                if (!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/printhub"))
+                {
+                    context.Token = accessToken;
+                }
+                return Task.CompletedTask;
+            }
+        };
+    });
 
 // Register Data Connection
 builder.Services.AddSingleton<DapperDBConnection>();
@@ -31,6 +73,7 @@ builder.Services.AddScoped<SSProjectSolution.Repositories.IOutwardRepository, SS
 builder.Services.AddScoped<SSProjectSolution.Repositories.IEmployeeRepository, SSProjectSolution.Repositories.EmployeeRepository>();
 builder.Services.AddScoped<SSProjectSolution.Repositories.IDcDetailRepository, SSProjectSolution.Repositories.DcDetailRepository>();
 builder.Services.AddScoped<SSProjectSolution.Repositories.IRateQuotationRepository, SSProjectSolution.Repositories.RateQuotationRepository>();
+builder.Services.AddScoped<SSProjectSolution.Repositories.IPrintJobRepository, SSProjectSolution.Repositories.PrintJobRepository>();
 // Register Service Layer
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
@@ -100,8 +143,10 @@ app.UseCors("AllowAll");
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<PrintHub>("/printhub");
 
 app.Run();

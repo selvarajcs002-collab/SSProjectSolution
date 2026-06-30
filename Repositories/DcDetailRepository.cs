@@ -139,10 +139,22 @@ namespace SSProjectSolution.Repositories
                         WHERE osc.StyleNo    = @StyleNo
                           AND osc.DesignName = @DesignName
                           AND osc.Colour     = @Colour
+                          AND EXISTS (
+                              SELECT 1
+                              FROM Outward o
+                              INNER JOIN @DcList dl ON ',' + ISNULL(o.SelectedDcNos, '') + ',' LIKE '%,' + dl.DcNo + ',%'
+                              WHERE o.OutwardId = osc.OutwardId
+                          )
                         GROUP BY osc.Size";
 
+                    var outParams = new DynamicParameters();
+                    outParams.Add("StyleNo", ctx.StyleNo);
+                    outParams.Add("DesignName", ctx.DesignName);
+                    outParams.Add("Colour", ctx.Colour);
+                    outParams.Add("DcList", dcTable.AsTableValuedParameter("dbo.DcNumberList"));
+
                     var used = await connection.QueryAsync<(string Size, int UsedCount)>(
-                        outwardSql, new { ctx.StyleNo, ctx.DesignName, ctx.Colour });
+                        outwardSql, outParams);
 
                     foreach (var u in used)
                     {

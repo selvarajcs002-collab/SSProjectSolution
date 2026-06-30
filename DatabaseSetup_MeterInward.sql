@@ -54,6 +54,7 @@ CREATE PROCEDURE SP_SAVE_INWARD_METER
     @DesignName NVARCHAR(150),
     @StyleNo NVARCHAR(100),
     @InwardDcNo NVARCHAR(100),
+    @PoNo NVARCHAR(100) = NULL,
     @EntryType CHAR(1) = 'M',
     @CreatedBy INT,
     @MeterDetails MeterDetailType READONLY
@@ -69,6 +70,7 @@ BEGIN
         SET @DesignName = LTRIM(RTRIM(@DesignName));
         SET @StyleNo = LTRIM(RTRIM(@StyleNo));
         SET @InwardDcNo = ISNULL(LTRIM(RTRIM(@InwardDcNo)), '');
+        IF @PoNo IS NOT NULL SET @PoNo = LTRIM(RTRIM(@PoNo));
 
         DECLARE @CurrentInwardId INT = @InwardId;
 
@@ -81,6 +83,7 @@ BEGIN
                 DesignName, 
                 StyleNo, 
                 InwardDcNo,
+                PoNo,
                 InwardEntryType,
                 CreatedBy, 
                 CreatedDate
@@ -91,6 +94,7 @@ BEGIN
                 @DesignName, 
                 @StyleNo, 
                 @InwardDcNo,
+                @PoNo,
                 @EntryType,
                 @CreatedBy, 
                 GETDATE()
@@ -105,6 +109,7 @@ BEGIN
                 DesignName = @DesignName,
                 StyleNo = @StyleNo,
                 InwardDcNo = @InwardDcNo,
+                PoNo = @PoNo,
                 UpdatedDate = GETDATE()
             WHERE InwardId = @CurrentInwardId AND CompanyId = @CompanyId;
         END
