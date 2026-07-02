@@ -122,5 +122,32 @@ namespace SSProjectSolution.Services
         {
             return await _inwardRepository.GetDesignStyleColourByCompanyAsync(companyId);
         }
+
+        public async Task<SSProjectSolution.Response.CommonResponse> DeleteInwardAsync(int inwardId)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var parameters = new DynamicParameters();
+            parameters.Add("@InwardId", inwardId);
+
+            var result = await connection.QueryFirstOrDefaultAsync<dynamic>(
+                "sp_DeleteInwardWithValidation",
+                parameters,
+                commandType: CommandType.StoredProcedure);
+
+            if (result != null)
+            {
+                return new SSProjectSolution.Response.CommonResponse
+                {
+                    Status = (bool)result.Success,
+                    Message = (string)result.Message
+                };
+            }
+
+            return new SSProjectSolution.Response.CommonResponse
+            {
+                Status = false,
+                Message = "An error occurred while deleting the inward record."
+            };
+        }
     }
 }

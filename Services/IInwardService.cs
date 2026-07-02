@@ -13,5 +13,6 @@ namespace SSProjectSolution.Services
         Task<Models.DTOs.InwardByDcResponseDto> GetInwardByCompanyAndDcAsync(int companyId, string inwardDcNo);
         Task<string> UpdateInwardAsync(Models.DTOs.InwardUpdateDto inwardUpdate);
         Task<IEnumerable<Models.DTOs.DesignStyleColourDto>> GetDesignStyleColourByCompanyAsync(int companyId);
+        Task<CommonResponse> DeleteInwardAsync(int inwardId);
     }
 }

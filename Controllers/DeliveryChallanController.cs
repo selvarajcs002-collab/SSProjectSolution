@@ -12,14 +12,41 @@ namespace SSProjectSolution.Controllers
     {
         private readonly IPdfGenerator _pdfGenerator;
         private readonly IDeliveryChallanService _deliveryChallanService;
+        private readonly IInwardService _inwardService;
 
         public DeliveryChallanController(
             IPdfGenerator pdfGenerator,
-            IDeliveryChallanService deliveryChallanService)
+            IDeliveryChallanService deliveryChallanService,
+            IInwardService inwardService)
         {
             _pdfGenerator = pdfGenerator;
             _deliveryChallanService = deliveryChallanService;
+            _inwardService = inwardService;
             QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
+        }
+
+        [HttpDelete("delete-inward/{id}")]
+        public async Task<IActionResult> DeleteInward(int id)
+        {
+            try
+            {
+                var response = await _inwardService.DeleteInwardAsync(id);
+
+                if (response.Status)
+                {
+                    return Ok(response);
+                }
+                
+                return BadRequest(response);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new SSProjectSolution.Response.CommonResponse
+                {
+                    Status = false,
+                    Message = ex.Message
+                });
+            }
         }
 
         [HttpPost("GenerateAndDownloadDC")]
