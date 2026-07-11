@@ -2,15 +2,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SSProjectSolution.Request
 {
-    public class InwardCreateDto
+    public class InwardHeaderDto
     {
         [Required(ErrorMessage = "CompanyId is required")]
         [Range(1, int.MaxValue, ErrorMessage = "CompanyId must be greater than 0")]
         public int CompanyId { get; set; }
-
-        [Required(ErrorMessage = "Colour is required")]
-        [StringLength(10000)]
-        public string Colour { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "DesignName is required")]
         [StringLength(10000)]

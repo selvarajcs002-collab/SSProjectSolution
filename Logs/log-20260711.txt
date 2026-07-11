@@ -1,0 +1,5 @@
+2026-07-11 10:44:09.651 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-11 10:44:12.908 +05:30 [INF] Now listening on: http://localhost:5219
+2026-07-11 10:44:12.912 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-11 10:44:12.913 +05:30 [INF] Hosting environment: Development
+2026-07-11 10:44:12.915 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution

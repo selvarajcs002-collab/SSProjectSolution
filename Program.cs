@@ -74,11 +74,14 @@ builder.Services.AddScoped<SSProjectSolution.Repositories.IEmployeeRepository, S
 builder.Services.AddScoped<SSProjectSolution.Repositories.IDcDetailRepository, SSProjectSolution.Repositories.DcDetailRepository>();
 builder.Services.AddScoped<SSProjectSolution.Repositories.IRateQuotationRepository, SSProjectSolution.Repositories.RateQuotationRepository>();
 builder.Services.AddScoped<SSProjectSolution.Repositories.IPrintJobRepository, SSProjectSolution.Repositories.PrintJobRepository>();
+builder.Services.AddScoped<SSProjectSolution.Repositories.IStockRepository, SSProjectSolution.Repositories.StockRepository>();
+
 // Register Service Layer
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IInwardService, InwardService>();
 builder.Services.AddScoped<IOutwardService, OutwardService>();
+builder.Services.AddScoped<SSProjectSolution.Services.IStockService, SSProjectSolution.Services.StockService>();
 builder.Services.AddScoped<IDcFilterService, DcFilterService>();
 
 // Print Module Services
