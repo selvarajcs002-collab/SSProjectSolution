@@ -146,7 +146,7 @@ namespace SSProjectSolution.Services
                             "SELECT IMD_METER_VALUE AS MeterValue, IMD_BITS_COUNT AS BitsCount, IMD_TOTAL_METER AS TotalMeter FROM INWARD_METER_DETAIL WHERE IMD_INWARD_ID = @id", new { id })).ToList();
                     } else {
                         meterDetails = (await connection.QueryAsync<MeterDetailDto>(
-                            "SELECT OMD_METER_VALUE AS MeterValue, OMD_BITS_COUNT AS BitsCount, OMD_TOTAL_METER AS TotalMeter FROM OUTWARD_METER_DETAIL WHERE OMD_OUTWARD_ID = @id", new { id })).ToList();
+                            "SELECT OMD_METER_VALUE AS MeterValue, OMD_BITS_COUNT AS BitsCount, OMD_PIECES_COUNT AS PiecesCount, OMD_TOTAL_METER AS TotalMeter FROM OUTWARD_METER_DETAIL WHERE OMD_OUTWARD_ID = @id", new { id })).ToList();
                     }
                 }
 
@@ -176,12 +176,12 @@ namespace SSProjectSolution.Services
                             DcNo = isInward ? g.First().InwardDcNo : g.First().OutwardDcNo,
                             Status = g.First().Status,
                             EntryType = entryType ?? "S",
-                            DeliveryTo = (string?)g.First().DeliveryTo,
-                            PoNo = (string?)g.First().PoNo,
-                            Weight = (string?)g.First().Weight,
-                            NoOfBundles = (string?)g.First().NoOfBundles,
-                            SelectedDcNos = !string.IsNullOrEmpty((string?)g.First().SelectedDcNos) 
-                                ? ((string)g.First().SelectedDcNos).Split(',', StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList() 
+                            DeliveryTo = (g.First() as IDictionary<string, object>)?.ContainsKey("DeliveryTo") == true ? (string?)((IDictionary<string, object>)g.First())["DeliveryTo"] : null,
+                            PoNo = (g.First() as IDictionary<string, object>)?.ContainsKey("PoNo") == true ? (string?)((IDictionary<string, object>)g.First())["PoNo"] : null,
+                            Weight = (g.First() as IDictionary<string, object>)?.ContainsKey("Weight") == true ? (string?)((IDictionary<string, object>)g.First())["Weight"] : null,
+                            NoOfBundles = (g.First() as IDictionary<string, object>)?.ContainsKey("NoOfBundles") == true ? (string?)((IDictionary<string, object>)g.First())["NoOfBundles"] : null,
+                            SelectedDcNos = ((g.First() as IDictionary<string, object>)?.ContainsKey("SelectedDcNos") == true && !string.IsNullOrEmpty((string?)((IDictionary<string, object>)g.First())["SelectedDcNos"]))
+                                ? ((string)((IDictionary<string, object>)g.First())["SelectedDcNos"]).Split(',', StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList() 
                                 : new List<string>(),
                             MeterDetails = meterDetails,
                             SizeCounts = allSizes.Select(s => new SizeCountDetailsDto
@@ -361,12 +361,13 @@ namespace SSProjectSolution.Services
                 var dt = new DataTable();
                 dt.Columns.Add("MeterValue", typeof(decimal));
                 dt.Columns.Add("BitsCount", typeof(decimal));
+                dt.Columns.Add("PiecesCount", typeof(decimal));
 
                 foreach (var detail in request.MeterDetails)
                 {
                     if (detail.MeterValue <= 0 || detail.BitsCount <= 0)
                         continue; // SP also validates, but filter obvious bad rows
-                    dt.Rows.Add(detail.MeterValue, detail.BitsCount);
+                    dt.Rows.Add(detail.MeterValue, detail.BitsCount, (object)detail.PiecesCount ?? DBNull.Value);
                 }
 
                 if (dt.Rows.Count == 0)
@@ -395,9 +396,9 @@ namespace SSProjectSolution.Services
                 parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.PoNo) ? null : request.PoNo);
                 parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Weight) ? null : request.Weight);
                 parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.NoOfBundles) ? null : request.NoOfBundles);
+                parameters.Add("@SelectedDcNos", request.SelectedDcNos != null && request.SelectedDcNos.Any() ? string.Join(",", request.SelectedDcNos) : null);
                 parameters.Add("@UploadURL", request.UploadURL == "null" || string.IsNullOrWhiteSpace(request.UploadURL) ? null : request.UploadURL);
                 parameters.Add("@Status", string.IsNullOrWhiteSpace(request.Status) ? null : request.Status);
-                parameters.Add("@Remarks", string.IsNullOrWhiteSpace(request.Remarks) ? null : request.Remarks);
                 
                 DateTime? parsedOutwardDate = null;
                 if (!string.IsNullOrWhiteSpace(request.OutwardDate) && DateTime.TryParse(request.OutwardDate, out var date))

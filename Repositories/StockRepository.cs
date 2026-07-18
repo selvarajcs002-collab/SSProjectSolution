@@ -17,6 +17,23 @@ namespace SSProjectSolution.Repositories
             _dbConnection = dbConnection;
         }
 
+        private DataTable CreateDcNumberTable(IEnumerable<string>? dcNumbers)
+        {
+            var table = new DataTable();
+            table.Columns.Add("DcNo", typeof(string));
+            if (dcNumbers != null)
+            {
+                foreach (var dc in dcNumbers)
+                {
+                    if (!string.IsNullOrWhiteSpace(dc))
+                    {
+                        table.Rows.Add(dc.Trim());
+                    }
+                }
+            }
+            return table;
+        }
+
         public async Task<StockSummaryDto> GetStockSummaryAsync(StockFilterRequest filter)
         {
             using var connection = _dbConnection.CreateConnection();
@@ -28,8 +45,17 @@ namespace SSProjectSolution.Repositories
             parameters.Add("@DesignName", filter.DesignName);
             parameters.Add("@Colour", filter.Colour);
 
+            string spName = "usp_GetStockSummary";
+
+            if (filter.DeliveryChallanBased)
+            {
+                spName = "usp_GetStockSummary_DcBased";
+                var dcTable = CreateDcNumberTable(filter.DeliveryChallanNumbers);
+                parameters.Add("@DcList", dcTable.AsTableValuedParameter("dbo.DcNumberList"));
+            }
+
             return await connection.QueryFirstOrDefaultAsync<StockSummaryDto>(
-                "usp_GetStockSummary",
+                spName,
                 parameters,
                 commandType: CommandType.StoredProcedure);
         }
@@ -45,8 +71,17 @@ namespace SSProjectSolution.Repositories
             parameters.Add("@DesignName", filter.DesignName);
             parameters.Add("@Colour", filter.Colour);
 
+            string spName = "usp_GetStockBalance_SizeWise";
+
+            if (filter.DeliveryChallanBased)
+            {
+                spName = "usp_GetStockBalance_SizeWise_DcBased";
+                var dcTable = CreateDcNumberTable(filter.DeliveryChallanNumbers);
+                parameters.Add("@DcList", dcTable.AsTableValuedParameter("dbo.DcNumberList"));
+            }
+
             return await connection.QueryAsync<StockBalanceDto>(
-                "usp_GetStockBalance_SizeWise",
+                spName,
                 parameters,
                 commandType: CommandType.StoredProcedure);
         }
@@ -63,10 +98,81 @@ namespace SSProjectSolution.Repositories
             parameters.Add("@Colour", filter.Colour);
             parameters.Add("@TopCount", 50);
 
+            string spName = "usp_GetLastTransactions";
+
+            if (filter.DeliveryChallanBased)
+            {
+                spName = "usp_GetLastTransactions_DcBased";
+                var dcTable = CreateDcNumberTable(filter.DeliveryChallanNumbers);
+                parameters.Add("@DcList", dcTable.AsTableValuedParameter("dbo.DcNumberList"));
+            }
+
             return await connection.QueryAsync<StockTransactionDto>(
-                "usp_GetLastTransactions",
+                spName,
                 parameters,
                 commandType: CommandType.StoredProcedure);
+        }
+
+        public async Task<IEnumerable<DeliveryChallanDto>> GetDeliveryChallansAsync(int? companyId, string? styleNo, string? designName, string? colour, System.Threading.CancellationToken cancellationToken = default)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var parameters = new DynamicParameters();
+            parameters.Add("@CompanyId", companyId);
+            parameters.Add("@StyleNo", styleNo);
+            parameters.Add("@DesignName", designName);
+            parameters.Add("@Colour", colour);
+
+            return await connection.QueryAsync<DeliveryChallanDto>(
+                new CommandDefinition(
+                    "usp_GetDeliveryChallans_ForStock",
+                    parameters,
+                    commandType: CommandType.StoredProcedure,
+                    cancellationToken: cancellationToken));
+        }
+
+        public async Task<IEnumerable<FilterOptionDto>> GetStylesAsync(int companyId, System.Threading.CancellationToken cancellationToken = default)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var parameters = new DynamicParameters();
+            parameters.Add("@CompanyId", companyId);
+
+            return await connection.QueryAsync<FilterOptionDto>(
+                new CommandDefinition(
+                    "usp_GetStyles_ForStock",
+                    parameters,
+                    commandType: CommandType.StoredProcedure,
+                    cancellationToken: cancellationToken));
+        }
+
+        public async Task<IEnumerable<FilterOptionDto>> GetDesignsAsync(int companyId, string styleNo, System.Threading.CancellationToken cancellationToken = default)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var parameters = new DynamicParameters();
+            parameters.Add("@CompanyId", companyId);
+            parameters.Add("@StyleNo", styleNo);
+
+            return await connection.QueryAsync<FilterOptionDto>(
+                new CommandDefinition(
+                    "usp_GetDesigns_ForStock",
+                    parameters,
+                    commandType: CommandType.StoredProcedure,
+                    cancellationToken: cancellationToken));
+        }
+
+        public async Task<IEnumerable<FilterOptionDto>> GetColoursAsync(int companyId, string styleNo, string designName, System.Threading.CancellationToken cancellationToken = default)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var parameters = new DynamicParameters();
+            parameters.Add("@CompanyId", companyId);
+            parameters.Add("@StyleNo", styleNo);
+            parameters.Add("@DesignName", designName);
+
+            return await connection.QueryAsync<FilterOptionDto>(
+                new CommandDefinition(
+                    "usp_GetColours_ForStock",
+                    parameters,
+                    commandType: CommandType.StoredProcedure,
+                    cancellationToken: cancellationToken));
         }
     }
 }

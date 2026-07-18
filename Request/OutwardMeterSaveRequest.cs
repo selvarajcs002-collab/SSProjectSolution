@@ -44,6 +44,7 @@ namespace SSProjectSolution.Request
         public string? Status { get; set; }
         public string? Remarks { get; set; }
         public string? OutwardDate { get; set; }
+        public List<string>? SelectedDcNos { get; set; }
 
         /// <summary>
         /// "INSERT" or "UPDATE"
