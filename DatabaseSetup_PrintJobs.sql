@@ -1,4 +1,4 @@
-USE [SSManagementDEV] -- Update to your actual DB name if different
+USE [SSManagementTEST] -- Update to your actual DB name if different
 GO
 
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PrintJobs]') AND type in (N'U'))

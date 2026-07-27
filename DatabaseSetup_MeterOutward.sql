@@ -4,7 +4,7 @@
 -- Zero impact on existing Size-Based Outward tables or SPs.
 -- =============================================
 
-USE [SSManagement];
+USE [SSManagementDEV];
 GO
 
 -- =============================================
@@ -26,6 +26,20 @@ BEGIN
 END
 GO
 
+IF NOT EXISTS (
+    SELECT * FROM sys.columns
+    WHERE object_id = OBJECT_ID('Outward') AND name = 'SelectedDcNos'
+)
+BEGIN
+    ALTER TABLE Outward ADD SelectedDcNos NVARCHAR(MAX) NULL;
+    PRINT 'Column SelectedDcNos added to Outward table.';
+END
+ELSE
+BEGIN
+    PRINT 'Column SelectedDcNos already exists on Outward table.';
+END
+GO
+
 -- =============================================
 -- 2. CREATE User-Defined Table Type: OutwardMeterDetailType
 --    Used as UDTT parameter in SP_SAVE_OUTWARD_METER
@@ -44,7 +58,8 @@ GO
 
 CREATE TYPE OutwardMeterDetailType AS TABLE (
     MeterValue DECIMAL(18,3) NOT NULL,
-    BitsCount  DECIMAL(18,3) NOT NULL
+    BitsCount  DECIMAL(18,3) NOT NULL,
+    PiecesCount DECIMAL(18,3) NULL
 );
 PRINT 'Type OutwardMeterDetailType created.';
 GO
@@ -64,6 +79,7 @@ BEGIN
         OMD_DESIGN_ID    BIGINT       NULL,
         OMD_METER_VALUE  DECIMAL(18,3) NOT NULL,
         OMD_BITS_COUNT   DECIMAL(18,3) NOT NULL,
+        OMD_PIECES_COUNT DECIMAL(18,3) NULL,
         OMD_TOTAL_METER  DECIMAL(18,3) NOT NULL,   -- Always backend-calculated
         OMD_CREATED_BY   BIGINT       NULL,
         OMD_CREATED_DATE DATETIME     DEFAULT GETDATE()
@@ -73,6 +89,20 @@ END
 ELSE
 BEGIN
     PRINT 'Table OUTWARD_METER_DETAIL already exists.';
+END
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM sys.columns
+    WHERE object_id = OBJECT_ID('OUTWARD_METER_DETAIL') AND name = 'OMD_PIECES_COUNT'
+)
+BEGIN
+    ALTER TABLE OUTWARD_METER_DETAIL ADD OMD_PIECES_COUNT DECIMAL(18,3) NULL;
+    PRINT 'Column OMD_PIECES_COUNT added to OUTWARD_METER_DETAIL table.';
+END
+ELSE
+BEGIN
+    PRINT 'Column OMD_PIECES_COUNT already exists on OUTWARD_METER_DETAIL table.';
 END
 GO
 
@@ -142,6 +172,7 @@ CREATE PROCEDURE SP_SAVE_OUTWARD_METER
     @PoNo         NVARCHAR(100)    = NULL,
     @Weight       NVARCHAR(100)    = NULL,
     @NoOfBundles  NVARCHAR(100)    = NULL,
+    @SelectedDcNos NVARCHAR(MAX)   = NULL,
     @UploadURL    NVARCHAR(500)    = NULL,
     @Status       NVARCHAR(50)     = NULL,
     @Remarks      NVARCHAR(MAX)    = NULL,
@@ -224,9 +255,8 @@ BEGIN
                 PoNo,
                 Weight,
                 NoOfBundles,
-                UploadURL,
-                Remarks,
-                OutwardDate
+                SelectedDcNos,
+                UploadURL
             )
             VALUES (
                 @CompanyId,
@@ -242,9 +272,8 @@ BEGIN
                 @PoNo,
                 @Weight,
                 @NoOfBundles,
-                @UploadURL,
-                @Remarks,
-                @OutwardDate
+                @SelectedDcNos,
+                @UploadURL
             );
 
             SET @CurrentOutwardId = SCOPE_IDENTITY();
@@ -265,10 +294,9 @@ BEGIN
                    PoNo            = @PoNo,
                    Weight          = @Weight,
                    NoOfBundles     = @NoOfBundles,
+                   SelectedDcNos   = @SelectedDcNos,
                    UploadURL       = @UploadURL,
                    Status          = @Status,
-                   Remarks         = @Remarks,
-                   OutwardDate     = @OutwardDate,
                    UpdatedDate     = GETDATE()
             WHERE  OutwardId  = @CurrentOutwardId
               AND  CompanyId  = @CompanyId;
@@ -356,6 +384,7 @@ BEGIN
             OMD_DESIGN_ID,
             OMD_METER_VALUE,
             OMD_BITS_COUNT,
+            OMD_PIECES_COUNT,
             OMD_TOTAL_METER,    -- always backend-calculated
             OMD_CREATED_BY,
             OMD_CREATED_DATE
@@ -367,6 +396,7 @@ BEGIN
             @DesignId,
             md.MeterValue,
             md.BitsCount,
+            md.PiecesCount,
             (md.MeterValue * md.BitsCount),   -- recalculate here, not from frontend
             TRY_CAST(@CreatedBy AS BIGINT),   -- Use TRY_CAST here to safely handle string date or numeric userId
             GETDATE()

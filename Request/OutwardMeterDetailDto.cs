@@ -26,6 +26,6 @@ namespace SSProjectSolution.Request
         /// </summary>
         public decimal TotalMeter { get; set; }
 
-        public decimal PiecesCount { get; set; }
+        public decimal? PiecesCount { get; set; }
     }
 }

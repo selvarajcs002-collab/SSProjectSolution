@@ -35,7 +35,7 @@ namespace SSProjectSolution.Controllers
 
         public class AgentLoginRequest
         {
-            public string UserId { get; set; } = string.Empty;
+            public string AgentId { get; set; } = string.Empty;
             // Optionally, add a shared secret or password here for real security
             public string AgentSecret { get; set; } = string.Empty;
         }
@@ -43,11 +43,10 @@ namespace SSProjectSolution.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] AgentLoginRequest request)
         {
-            // In a real app, validate UserId and AgentSecret against a database here.
-            // For this implementation, we issue a token if UserId is provided.
-            if (string.IsNullOrWhiteSpace(request.UserId))
+            // In a real app, validate AgentId and AgentSecret against a database here.
+            if (string.IsNullOrWhiteSpace(request.AgentId))
             {
-                return BadRequest("UserId is required.");
+                return BadRequest("AgentId is required.");
             }
 
             var jwtKey = _configuration["JwtSettings:SecretKey"];
@@ -61,8 +60,8 @@ namespace SSProjectSolution.Controllers
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(ClaimTypes.Name, request.UserId),
-                    new Claim(JwtRegisteredClaimNames.Sub, request.UserId)
+                    new Claim(ClaimTypes.Name, request.AgentId),
+                    new Claim(JwtRegisteredClaimNames.Sub, request.AgentId)
                 }),
                 Expires = DateTime.UtcNow.AddDays(7), // Long-lived token for the agent, or implement refresh tokens
                 Issuer = jwtIssuer,
@@ -115,6 +114,16 @@ namespace SSProjectSolution.Controllers
                 await stream.CopyToAsync(memory);
             }
             memory.Position = 0;
+
+            // Delete the file from the server so it only remains on the client machine
+            try
+            {
+                System.IO.File.Delete(job.PdfPath);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Failed to delete temporary PDF file on server: {PdfPath}", job.PdfPath);
+            }
 
             return File(memory, "application/pdf", $"{job.DocumentNumber}.pdf");
         }

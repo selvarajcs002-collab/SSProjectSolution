@@ -92,39 +92,45 @@ namespace SSProjectSolution.Services
                 }
 
                 string activePrinter = _settings.PrinterName;
-                if (_settings.PrinterValidation && _settings.EnablePrinting)
+                bool shouldPrint = _settings.EnablePrinting;
+
+                if (_settings.PrinterValidation && shouldPrint)
                 {
                     if (string.IsNullOrWhiteSpace(_settings.PrinterName))
                     {
-                        throw new InvalidOperationException("Printer validation failed: Printer name is not configured.");
+                        _logger.LogWarning("Printer validation failed: Printer name is not configured. Proceeding to send job to client anyway. [CorrelationId: {CorrelationId}]", correlationId);
+                        // Do NOT set shouldPrint = false; we want the client to download the PDF!
                     }
-
-                    var printers = _settings.PrinterName.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                    bool anyValid = false;
-
-                    foreach (var p in printers)
+                    else
                     {
-                        var pName = p.Trim();
-                        var printerResult = _printerValidator.ValidatePrinter(pName);
-                        if (printerResult.IsValid)
-                        {
-                            activePrinter = pName;
-                            anyValid = true;
-                            _logger.LogInformation("Selected valid printer: {PrinterName} [CorrelationId: {CorrelationId}]", activePrinter, correlationId);
-                            break;
-                        }
-                        else
-                        {
-                            _logger.LogWarning("Printer fallback check: {PrinterName} is invalid ({ErrorMessage}) [CorrelationId: {CorrelationId}]", pName, printerResult.ErrorMessage, correlationId);
-                        }
-                    }
+                        var printers = _settings.PrinterName.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                        bool anyValid = false;
 
-                    if (!anyValid)
-                    {
-                        throw new InvalidOperationException($"Printer validation failed: None of the configured printers are available.");
+                        foreach (var p in printers)
+                        {
+                            var pName = p.Trim();
+                            var printerResult = _printerValidator.ValidatePrinter(pName);
+                            if (printerResult.IsValid)
+                            {
+                                activePrinter = pName;
+                                anyValid = true;
+                                _logger.LogInformation("Selected valid printer: {PrinterName} [CorrelationId: {CorrelationId}]", activePrinter, correlationId);
+                                break;
+                            }
+                            else
+                            {
+                                _logger.LogWarning("Printer fallback check: {PrinterName} is invalid ({ErrorMessage}) [CorrelationId: {CorrelationId}]", pName, printerResult.ErrorMessage, correlationId);
+                            }
+                        }
+
+                        if (!anyValid)
+                        {
+                            _logger.LogWarning("Printer validation failed: None of the configured printers are available. Proceeding to send job to client anyway. [CorrelationId: {CorrelationId}]", correlationId);
+                            // Do NOT set shouldPrint = false; we want the client to download the PDF!
+                        }
                     }
                 }
-                else if (_settings.EnablePrinting && !string.IsNullOrWhiteSpace(_settings.PrinterName))
+                else if (shouldPrint && !string.IsNullOrWhiteSpace(_settings.PrinterName))
                 {
                     // If no validation, just take the first one
                     activePrinter = _settings.PrinterName.Split(',')[0].Trim();
@@ -149,11 +155,11 @@ namespace SSProjectSolution.Services
                 }
 
                 // 4. Print PDF (Delegate to Print Agent)
-                if (_settings.EnablePrinting && !string.IsNullOrEmpty(savedPath))
+                if (shouldPrint && !string.IsNullOrEmpty(savedPath))
                 {
                     _logger.LogInformation("Creating PrintJob and notifying Print Agent [CorrelationId: {CorrelationId}]", correlationId);
                     
-                    var userId = _httpContextAccessor.HttpContext?.User?.Identity?.Name ?? "system";
+                    var userId = _httpContextAccessor.HttpContext?.User?.Identity?.Name ?? "Administrator";
                     
                     var job = new PrintJob
                     {

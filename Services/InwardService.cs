@@ -30,6 +30,7 @@ namespace SSProjectSolution.Services
             parameters.Add("@PoNo", request.PoNo);
             parameters.Add("@UploadURL", null);
             parameters.Add("@CreatedBy", request.CreatedBy);
+            parameters.Add("@InwardDate", request.InwardDate);
 
             return await connection.QueryFirstOrDefaultAsync<int>(
                 SPConstants.InsertInward,

@@ -7,5 +7,6 @@ namespace SSProjectSolution.Business
     {
         Task<CommonResponse> SaveInward(InwardSaveRequest request);
         Task<CommonResponse> SaveMeterInward(InwardMeterSaveRequest request);
+        Task<CommonResponse> SaveMultipleColourInward(InwardMultipleColourSaveRequest request);
     }
 }
