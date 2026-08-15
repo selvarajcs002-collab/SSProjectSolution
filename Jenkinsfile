@@ -1,7 +1,7 @@
 pipeline {
 
     agent any
-    
+
     triggers {
         githubPush()
     }
@@ -10,6 +10,7 @@ pipeline {
         timestamps()
         disableConcurrentBuilds()
         skipDefaultCheckout(true)
+
         timeout(time: 20, unit: 'MINUTES')
 
         buildDiscarder(
@@ -33,17 +34,21 @@ pipeline {
         DOTNET_ENVIRONMENT = "Development"
 
         API_PORT = "5000"
+
+        BACKUP_ROOT = "/var/www/SSManagement/DEV"
     }
 
     stages {
+
+        // ============================================================
+        // 1. PRE-CHECK
+        // ============================================================
 
         stage('Pre-Check') {
 
             steps {
 
-                sh '''
-                    /bin/bash <<'SCRIPT'
-                    set -Eeuo pipefail
+                sh '''#!/bin/bash
 
                     echo "=========================================="
                     echo " SSManagement API DEV Deployment"
@@ -53,7 +58,7 @@ pipeline {
                     echo "Checking .NET SDK..."
 
                     if ! command -v dotnet >/dev/null 2>&1; then
-                        echo "ERROR: dotnet command not found."
+                        echo "ERROR: dotnet is not installed."
                         exit 1
                     fi
 
@@ -63,58 +68,85 @@ pipeline {
 
                     case "$DOTNET_VERSION" in
                         8.*)
-                            echo ".NET 8 detected."
+                            echo ".NET 8 SDK detected."
                             ;;
                         *)
-                            echo "ERROR: .NET 8 SDK required."
+                            echo "ERROR: .NET 8 SDK is required."
                             exit 1
                             ;;
                     esac
+
 
                     echo ""
                     echo "Checking systemd service..."
 
                     if ! systemctl cat "${SERVICE_NAME}.service" >/dev/null 2>&1; then
 
-                        echo "ERROR: Service not found:"
+                        echo "ERROR: Service does not exist:"
                         echo "${SERVICE_NAME}.service"
-                    
+
                         echo ""
                         echo "Available SSManagement services:"
-                    
+
                         systemctl list-unit-files | grep -i ssmanagement || true
-                    
+
                         exit 1
                     fi
-                    
+
                     echo "Service found: ${SERVICE_NAME}.service"
-                    echo "Service found: $SERVICE_NAME"
+
 
                     echo ""
                     echo "Checking deployment directory..."
 
-                    mkdir -p "$DEPLOY_PATH"
+                    if ! mkdir -p "$DEPLOY_PATH"; then
+                        echo "ERROR: Cannot create/access deployment directory."
+                        exit 1
+                    fi
 
-                    ls -ld "$DEPLOY_PATH"
+                    if [ ! -w "$DEPLOY_PATH" ]; then
+                        echo "ERROR: Deployment directory is not writable:"
+                        echo "$DEPLOY_PATH"
+                        exit 1
+                    fi
+
+                    echo "Deployment directory is available."
+
 
                     echo ""
                     echo "Checking disk space..."
 
                     df -h "$DEPLOY_PATH"
 
+                    AVAILABLE_KB=$(df -Pk "$DEPLOY_PATH" | awk 'NR==2 {print $4}')
+
+                    if [ "$AVAILABLE_KB" -lt 1048576 ]; then
+                        echo "ERROR: Less than 1 GB disk space available."
+                        exit 1
+                    fi
+
+                    echo "Disk space is sufficient."
+
+
                     echo ""
-                    echo "Checking current API..."
+                    echo "Checking current service..."
 
                     if systemctl is-active --quiet "$SERVICE_NAME"; then
                         echo "Current API is running."
                     else
-                        echo "WARNING: Current API service is not running."
+                        echo "WARNING: Current API is not running."
                     fi
+
 
                     echo ""
                     echo "Checking port $API_PORT..."
 
-                    ss -lnt | grep ":${API_PORT}" || true
+                    if ss -lnt | grep -q ":${API_PORT} "; then
+                        echo "Port $API_PORT is currently in use."
+                    else
+                        echo "Port $API_PORT is currently free."
+                    fi
+
 
                     echo ""
                     echo "Pre-check completed successfully."
@@ -122,6 +154,10 @@ pipeline {
             }
         }
 
+
+        // ============================================================
+        // 2. CHECKOUT
+        // ============================================================
 
         stage('Checkout') {
 
@@ -134,25 +170,19 @@ pipeline {
         }
 
 
+        // ============================================================
+        // 3. VALIDATE SOURCE
+        // ============================================================
+
         stage('Validate Source') {
 
             steps {
 
-                sh '''
-                   
+                sh '''#!/bin/bash
+
                     echo "=========================================="
                     echo " Validating Source"
                     echo "=========================================="
-
-                    echo ""
-                    echo "Solution files:"
-
-                    find . -type f -name "*.sln" -print
-
-                    echo ""
-                    echo "Project files:"
-
-                    find . -type f -name "*.csproj" -print
 
                     PROJECT_COUNT=$(find . -type f -name "*.csproj" | wc -l)
 
@@ -161,20 +191,33 @@ pipeline {
                         exit 1
                     fi
 
-                    echo ""
                     echo "Found $PROJECT_COUNT project(s)."
+
+                    echo ""
+                    echo "Project files:"
+
+                    find . -type f -name "*.csproj" -print
+
+                    if [ ! -f "SSProjectSolution.csproj" ]; then
+                        echo "WARNING: SSProjectSolution.csproj not found at repository root."
+                        echo "Using discovered project files."
+                    fi
                 '''
             }
         }
 
 
+        // ============================================================
+        // 4. CLEAN
+        // ============================================================
+
         stage('Clean') {
 
             steps {
 
-                sh '''
-                   
-                    echo "Cleaning publish directory..."
+                sh '''#!/bin/bash
+
+                    echo "Cleaning previous publish output..."
 
                     rm -rf "$PUBLISH_PATH"
 
@@ -182,50 +225,67 @@ pipeline {
 
                     echo "Running dotnet clean..."
 
-                    dotnet clean -c Release
+                    dotnet clean -c Release --nologo
+
+                    echo "Clean completed."
                 '''
             }
         }
 
+
+        // ============================================================
+        // 5. RESTORE
+        // ============================================================
 
         stage('Restore') {
 
             steps {
 
-                sh '''
-                   
+                sh '''#!/bin/bash
 
-                    echo "Running dotnet restore..."
+                    echo "Restoring NuGet packages..."
 
                     dotnet restore
+
+                    echo "Restore completed."
                 '''
             }
         }
 
 
+        // ============================================================
+        // 6. BUILD
+        // ============================================================
+
         stage('Build') {
 
             steps {
 
-                sh '''
-                    
+                sh '''#!/bin/bash
+
                     echo "Building application..."
 
                     dotnet build \
                         -c Release \
                         --no-restore \
                         --nologo
+
+                    echo "Build completed successfully."
                 '''
             }
         }
 
 
+        // ============================================================
+        // 7. PUBLISH
+        // ============================================================
+
         stage('Publish') {
 
             steps {
 
-                sh '''
-                   
+                sh '''#!/bin/bash
+
                     echo "Publishing application..."
 
                     rm -rf "$PUBLISH_PATH"
@@ -240,19 +300,14 @@ pipeline {
                         --nologo
 
                     echo ""
-                    echo "Published files:"
-                    ls -lah "$PUBLISH_PATH"
-
-                    echo ""
-                    echo "Checking application DLL..."
+                    echo "Checking published application..."
 
                     if [ ! -f "$PUBLISH_PATH/SSProjectSolution.dll" ]; then
 
-                        echo "ERROR:"
-                        echo "SSProjectSolution.dll was not found."
+                        echo "ERROR: SSProjectSolution.dll was not generated."
 
                         echo ""
-                        echo "Available DLL files:"
+                        echo "Published DLL files:"
 
                         find "$PUBLISH_PATH" \
                             -maxdepth 1 \
@@ -263,53 +318,51 @@ pipeline {
                         exit 1
                     fi
 
-                    echo ""
-                    echo "SSProjectSolution.dll found."
 
-                    echo ""
-                    echo "Checking runtimeconfig..."
-
-                    RUNTIME_FILE=$(find "$PUBLISH_PATH" \
-                        -maxdepth 1 \
-                        -name "SSProjectSolution.runtimeconfig.json" \
-                        -print)
-
-                    if [ -z "$RUNTIME_FILE" ]; then
-                        echo "ERROR: runtimeconfig file not found."
+                    if [ ! -f "$PUBLISH_PATH/SSProjectSolution.runtimeconfig.json" ]; then
+                        echo "ERROR: runtimeconfig.json was not generated."
                         exit 1
                     fi
 
-                    echo "Runtime config found."
+
+                    echo "Published application is valid."
 
                     echo ""
-                    echo "Publish validation successful."
+                    echo "Publish size:"
+
+                    du -sh "$PUBLISH_PATH"
                 '''
             }
         }
 
 
+        // ============================================================
+        // 8. BACKUP
+        // ============================================================
+
         stage('Backup') {
 
             steps {
 
-                sh '''
-                   
-                    BACKUP_DIR="/var/www/SSManagement/DEV/API_Backup_$(date +%Y%m%d_%H%M%S)"
+                sh '''#!/bin/bash
+
+                    BACKUP_DIR="${BACKUP_ROOT}/API_Backup_$(date +%Y%m%d_%H%M%S)"
 
                     echo "Creating backup:"
                     echo "$BACKUP_DIR"
 
                     mkdir -p "$BACKUP_DIR"
 
-                    if [ -d "$DEPLOY_PATH" ]; then
+                    if [ -d "$DEPLOY_PATH" ] && [ "$(ls -A "$DEPLOY_PATH" 2>/dev/null)" ]; then
 
-                        cp -a "$DEPLOY_PATH"/. "$BACKUP_DIR"/ 2>/dev/null || true
+                        cp -a "$DEPLOY_PATH"/. "$BACKUP_DIR"/
 
                         echo "Backup completed."
 
                     else
 
-                        echo "No previous deployment found."
+                        echo "No existing deployment found."
+                        echo "Nothing to backup."
 
                     fi
                 '''
@@ -317,14 +370,17 @@ pipeline {
         }
 
 
+        // ============================================================
+        // 9. STOP API
+        // ============================================================
+
         stage('Stop API') {
 
             steps {
 
-                sh '''
-                   
-                    echo "Stopping service:"
-                    echo "$SERVICE_NAME"
+                sh '''#!/bin/bash
+
+                    echo "Stopping API service..."
 
                     sudo -n /usr/bin/systemctl stop "$SERVICE_NAME"
 
@@ -332,98 +388,104 @@ pipeline {
 
                     if systemctl is-active --quiet "$SERVICE_NAME"; then
 
-                        echo "ERROR: Service did not stop."
+                        echo "ERROR: API service did not stop."
+
+                        systemctl status "$SERVICE_NAME" --no-pager || true
 
                         exit 1
                     fi
 
-                    echo "Service stopped successfully."
+                    echo "API service stopped."
                 '''
             }
         }
 
+
+        // ============================================================
+        // 10. DEPLOY
+        // ============================================================
 
         stage('Deploy') {
 
             steps {
 
-                sh '''
+                sh '''#!/bin/bash
 
                     echo "Deploying application..."
 
-                    mkdir -p "$DEPLOY_PATH"
+                    if [ ! -f "$PUBLISH_PATH/SSProjectSolution.dll" ]; then
+                        echo "ERROR: Published DLL does not exist."
+                        exit 1
+                    fi
 
-                    echo "Removing old files..."
+
+                    echo "Removing old deployment..."
 
                     rm -rf "$DEPLOY_PATH"/*
 
-                    echo "Copying published files..."
+
+                    echo "Copying new files..."
 
                     cp -a "$PUBLISH_PATH"/. "$DEPLOY_PATH"/
+
 
                     echo "Setting ownership..."
 
                     chown -R root:root "$DEPLOY_PATH"
 
-                    echo ""
+
                     echo "Checking deployed DLL..."
 
                     if [ ! -f "$DEPLOY_PATH/SSProjectSolution.dll" ]; then
 
-                        echo "ERROR: SSProjectSolution.dll missing after deployment."
+                        echo "ERROR: Deployment failed."
+                        echo "SSProjectSolution.dll is missing."
 
                         exit 1
                     fi
 
-                    echo ""
-                    echo "Deployment contents:"
 
-                    ls -lah "$DEPLOY_PATH"
-
-                    echo ""
-                    echo "Deployment completed successfully."
+                    echo "Deployment completed."
                 '''
             }
         }
 
+
+        // ============================================================
+        // 11. START API
+        // ============================================================
 
         stage('Start API') {
 
             steps {
 
-                sh '''
-                   
+                sh '''#!/bin/bash
+
                     echo "Reloading systemd..."
 
                     sudo -n /usr/bin/systemctl daemon-reload
 
-                    echo "Starting service..."
+
+                    echo "Starting API service..."
 
                     sudo -n /usr/bin/systemctl start "$SERVICE_NAME"
 
-                    echo "Waiting for application..."
+
+                    echo "Waiting for API to start..."
 
                     sleep 5
 
-                    sudo -n /usr/bin/systemctl status \
-                        "$SERVICE_NAME" \
-                        --no-pager
-                '''
-            }
-        }
-
-
-        stage('Verify Service') {
-
-            steps {
-
-                sh '''
-                   
-                    echo "Checking service..."
 
                     if ! sudo -n /usr/bin/systemctl is-active --quiet "$SERVICE_NAME"; then
 
-                        echo "ERROR: API service is not running."
+                        echo "ERROR: API service failed to start."
+
+                        echo ""
+                        echo "===== SERVICE STATUS ====="
+
+                        sudo -n /usr/bin/systemctl status \
+                            "$SERVICE_NAME" \
+                            --no-pager || true
 
                         echo ""
                         echo "===== SERVICE LOGS ====="
@@ -431,7 +493,37 @@ pipeline {
                         sudo -n /usr/bin/journalctl \
                             -u "$SERVICE_NAME" \
                             --no-pager \
-                            -n 100
+                            -n 50 || true
+
+                        exit 1
+                    fi
+
+
+                    echo "API service started successfully."
+                '''
+            }
+        }
+
+
+        // ============================================================
+        // 12. VERIFY SERVICE
+        // ============================================================
+
+        stage('Verify Service') {
+
+            steps {
+
+                sh '''#!/bin/bash
+
+                    echo "Verifying service..."
+
+                    if ! sudo -n /usr/bin/systemctl is-active --quiet "$SERVICE_NAME"; then
+
+                        echo "ERROR: Service is not active."
+
+                        sudo -n /usr/bin/systemctl status \
+                            "$SERVICE_NAME" \
+                            --no-pager || true
 
                         exit 1
                     fi
@@ -442,15 +534,20 @@ pipeline {
         }
 
 
+        // ============================================================
+        // 13. VERIFY PORT
+        // ============================================================
+
         stage('Verify Port') {
 
             steps {
 
-                sh '''
-                   
+                sh '''#!/bin/bash
+
                     echo "Checking port $API_PORT..."
 
                     API_STARTED=false
+
 
                     for i in {1..15}; do
 
@@ -463,10 +560,12 @@ pipeline {
                             break
                         fi
 
-                        echo "Waiting for API..."
+                        echo "Waiting for API... attempt $i/15"
+
                         sleep 2
 
                     done
+
 
                     if [ "$API_STARTED" != "true" ]; then
 
@@ -485,7 +584,12 @@ pipeline {
                         sudo -n /usr/bin/journalctl \
                             -u "$SERVICE_NAME" \
                             --no-pager \
-                            -n 100 || true
+                            -n 50 || true
+
+                        echo ""
+                        echo "===== PORTS ====="
+
+                        ss -lnt || true
 
                         exit 1
                     fi
@@ -494,12 +598,16 @@ pipeline {
         }
 
 
+        // ============================================================
+        // 14. FINAL VALIDATION
+        // ============================================================
+
         stage('Final Validation') {
 
             steps {
 
-                sh '''
-                   
+                sh '''#!/bin/bash
+
                     echo ""
                     echo "=========================================="
                     echo " DEPLOYMENT SUCCESSFUL"
@@ -517,15 +625,18 @@ pipeline {
 
                     sudo -n /usr/bin/systemctl is-active "$SERVICE_NAME"
 
+
                     echo ""
                     echo "Port status:"
 
                     ss -lnt | grep ":${API_PORT} "
 
+
                     echo ""
                     echo "Application DLL:"
 
                     ls -lh "$DEPLOY_PATH/SSProjectSolution.dll"
+
 
                     echo ""
                     echo "Deployment completed successfully."
@@ -534,6 +645,10 @@ pipeline {
         }
     }
 
+
+    // ================================================================
+    // POST ACTIONS
+    // ================================================================
 
     post {
 
@@ -563,13 +678,15 @@ Deployment successful.
 SSManagement DEV API DEPLOYMENT FAILED
 ==========================================
 
-Build: ${BUILD_NUMBER}
+Application : ${APP_NAME}
+Service     : ${SERVICE_NAME}
+Build       : ${BUILD_NUMBER}
 
 Collecting diagnostics...
 """
 
-            sh '''
-                #!/bin/bash
+
+            sh '''#!/bin/bash
 
                 set +e
 
@@ -580,6 +697,7 @@ Collecting diagnostics...
                     "$SERVICE_NAME" \
                     --no-pager || true
 
+
                 echo ""
                 echo "===== SERVICE LOGS ====="
 
@@ -588,20 +706,30 @@ Collecting diagnostics...
                     --no-pager \
                     -n 100 || true
 
+
                 echo ""
                 echo "===== PORT ====="
 
                 ss -lnt | grep ":${API_PORT}" || true
 
+
                 echo ""
                 echo "===== DISK SPACE ====="
 
-                df -h
+                df -h || true
+
 
                 echo ""
                 echo "===== DEPLOYMENT DIRECTORY ====="
 
                 ls -lah "$DEPLOY_PATH" || true
+
+
+                echo ""
+                echo "===== PUBLISH DIRECTORY ====="
+
+                ls -lah "$PUBLISH_PATH" || true
+
             '''
         }
 
