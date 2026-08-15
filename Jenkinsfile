@@ -42,7 +42,7 @@ pipeline {
             steps {
 
                 sh '''
-                    #!/bin/bash
+                    /bin/bash <<'SCRIPT'
                     set -Eeuo pipefail
 
                     echo "=========================================="
