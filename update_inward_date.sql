@@ -66,3 +66,100 @@ BEGIN
     END
 END
 GO
+
+CREATE OR ALTER PROCEDURE [dbo].[sp_GetInward_ByCompany_And_DCNo]
+    @CompanyId INT,
+    @InwardDcNo NVARCHAR(100)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        InwardId AS inward_id,
+        CompanyId AS company_id,
+        Colour AS colour,
+        DesignName AS design_name,
+        StyleNo AS style_no,
+        InwardDcNo AS inward_dc_no,
+        COALESCE(InwardDate, CreatedDate) AS inward_date
+    FROM Inward
+    WHERE CompanyId = @CompanyId
+      AND InwardDcNo = @InwardDcNo;
+END
+GO
+
+CREATE OR ALTER PROCEDURE [dbo].[usp_GetDetails_ById_Mode]
+(
+    @Id INT,
+    @Mode NVARCHAR(10) -- 'INWARD' / 'OUTWARD'
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    IF (@Mode = 'INWARD')
+    BEGIN
+        SELECT 
+            I.InwardId,
+            UPPER(cmp.CompanyName) AS CompanyName,
+            I.CompanyId,
+            I.Colour,
+            I.DesignName,
+            I.StyleNo,
+            I.UploadURL,
+            I.CreatedBy,
+            I.CreatedDate,
+            COALESCE(I.InwardDate, I.CreatedDate) AS InwardDate,
+            I.UpdatedDate,
+            I.InwardDcNo,
+            I.PoNo,
+            NULL AS DeliveryTo,
+            NULL AS Weight,
+            NULL AS NoOfBundles,
+            I.Status,
+
+            ISC.Id AS SizeCountId,
+            ISC.Size,
+            ISC.Count,
+            ISC.Colour AS SizeColour
+        FROM dbo.Inward I
+        LEFT JOIN dbo.InwardSizeCount ISC
+            ON I.InwardId = ISC.InwardId
+        LEFT JOIN dbo.CompanyDetails cmp
+            ON I.CompanyId = cmp.CompanyId
+        WHERE I.InwardId = @Id
+    END
+    ELSE IF (@Mode = 'OUTWARD')
+    BEGIN
+        SELECT 
+            O.OutwardId,
+            UPPER(cmp.CompanyName) AS CompanyName,
+            O.CompanyId,
+            O.Colour,
+            O.DesignName,
+            O.StyleNo,
+            O.UploadURL,
+            O.CreatedBy,
+            O.CreatedDate,
+            O.UpdatedDate,
+            O.OutwardDcNo,
+            O.DeliveryTo,
+            O.PoNo,
+            O.Weight,
+            O.NoOfBundles,
+            O.Remarks,
+            O.Status,
+            O.SelectedDcNos,
+
+            OSC.Id AS SizeCountId,
+            OSC.Size,
+            OSC.Count,
+            OSC.Colour AS SizeColour
+        FROM dbo.Outward O
+        LEFT JOIN dbo.OutwardSizeCount OSC
+            ON O.OutwardId = OSC.OutwardId
+        LEFT JOIN dbo.CompanyDetails cmp
+            ON O.CompanyId = cmp.CompanyId
+        WHERE O.OutwardId = @Id
+    END
+END
+GO

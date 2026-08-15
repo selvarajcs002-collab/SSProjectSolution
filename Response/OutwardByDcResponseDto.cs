@@ -34,6 +34,9 @@ namespace SSProjectSolution.Response
         [JsonPropertyName("createdDate")]
         public DateTime? CreatedDate { get; set; }
 
+        [JsonPropertyName("inwardDate")]
+        public DateTime? InwardDate { get; set; }
+
         [JsonPropertyName("updatedDate")]
         public DateTime? UpdatedDate { get; set; }
 
@@ -57,6 +60,9 @@ namespace SSProjectSolution.Response
 
         [JsonPropertyName("noOfBundles")]
         public string? NoOfBundles { get; set; }
+
+        [JsonPropertyName("remarks")]
+        public string? Remarks { get; set; }
 
         [JsonPropertyName("selectedDcNos")]
         public List<string>? SelectedDcNos { get; set; }

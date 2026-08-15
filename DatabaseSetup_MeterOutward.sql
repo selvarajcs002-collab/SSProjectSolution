@@ -230,7 +230,8 @@ BEGIN
                 SET @YearNext = CAST(YEAR(@CurrentDate) AS NVARCHAR(4));
             END
 
-            SELECT @TotalCount = ISNULL(COUNT(*), 0) + 1 FROM dbo.Outward;
+            SELECT @TotalCount = ISNULL(COUNT(*), 0) + 604
+            FROM dbo.Outward;
 
             SET @GeneratedDcNo = CONCAT(
                 'SSE_',
@@ -255,6 +256,7 @@ BEGIN
                 PoNo,
                 Weight,
                 NoOfBundles,
+                Remarks,
                 SelectedDcNos,
                 UploadURL
             )
@@ -272,6 +274,7 @@ BEGIN
                 @PoNo,
                 @Weight,
                 @NoOfBundles,
+                @Remarks,
                 @SelectedDcNos,
                 @UploadURL
             );
@@ -294,6 +297,7 @@ BEGIN
                    PoNo            = @PoNo,
                    Weight          = @Weight,
                    NoOfBundles     = @NoOfBundles,
+                   Remarks         = @Remarks,
                    SelectedDcNos   = @SelectedDcNos,
                    UploadURL       = @UploadURL,
                    Status          = @Status,

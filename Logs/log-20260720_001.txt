@@ -1,0 +1,95 @@
+2026-07-20 18:19:03.061 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-20 18:19:03.824 +05:30 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5219: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-07-20 18:40:57.544 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-20 18:40:58.050 +05:30 [INF] Now listening on: http://localhost:5219
+2026-07-20 18:40:58.059 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-20 18:40:58.060 +05:30 [INF] Hosting environment: Development
+2026-07-20 18:40:58.061 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-07-20 18:41:02.858 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/printhub/negotiate?negotiateVersion=1 - null 0
+2026-07-20 18:41:03.025 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-20 18:41:03.894 +05:30 [INF] Executing endpoint '/printhub/negotiate'
+2026-07-20 18:41:03.935 +05:30 [INF] Executed endpoint '/printhub/negotiate'
+2026-07-20 18:41:04.042 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/printhub?id=cCfMvC1wbfF4XpU9v7Q68g - null null
+2026-07-20 18:41:04.039 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/printhub/negotiate?negotiateVersion=1 - 200 316 application/json 1090.7416ms
+2026-07-20 18:41:04.074 +05:30 [INF] Executing endpoint '/printhub'
+2026-07-20 18:41:04.239 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/PrintAgent/jobs/pending - null null
+2026-07-20 18:41:04.266 +05:30 [INF] Print Agent connected: UserId Administrator, ConnectionId fM9_qM_Oicn44xpNURtluQ
+2026-07-20 18:41:04.272 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.PrintAgentController.GetPendingJobs (SSProjectSolution)'
+2026-07-20 18:41:04.432 +05:30 [INF] Route matched with {action = "GetPendingJobs", controller = "PrintAgent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPendingJobs() on controller SSProjectSolution.Controllers.PrintAgentController (SSProjectSolution).
+2026-07-20 18:41:09.947 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/2 - null null
+2026-07-20 18:41:09.955 +05:30 [INF] CORS policy execution successful.
+2026-07-20 18:41:09.958 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/2 - 204 null null 11.2389ms
+2026-07-20 18:41:09.965 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/2 - null null
+2026-07-20 18:41:09.972 +05:30 [INF] CORS policy execution successful.
+2026-07-20 18:41:09.976 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-07-20 18:41:10.025 +05:30 [INF] Route matched with {action = "GetCompanyById", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyById(Int32) on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-07-20 18:41:15.193 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.PrintJob, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-20 18:41:16.991 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Models.CompanyModel'.
+2026-07-20 18:41:17.270 +05:30 [INF] Executed action SSProjectSolution.Controllers.PrintAgentController.GetPendingJobs (SSProjectSolution) in 12819.1152ms
+2026-07-20 18:41:17.273 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.PrintAgentController.GetPendingJobs (SSProjectSolution)'
+2026-07-20 18:41:17.286 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/PrintAgent/jobs/pending - 200 2 application/json; charset=utf-8 13047.5588ms
+2026-07-20 18:41:17.457 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution) in 7431.7997ms
+2026-07-20 18:41:17.460 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-07-20 18:41:17.468 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/2 - 200 269 application/json; charset=utf-8 7502.8543ms
+2026-07-20 18:41:17.510 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/DeliveryChallan/SaveAndPrintDC - null null
+2026-07-20 18:41:17.511 +05:30 [INF] CORS policy execution successful.
+2026-07-20 18:41:17.525 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/DeliveryChallan/SaveAndPrintDC - 204 null null 15.1568ms
+2026-07-20 18:41:17.531 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/DeliveryChallan/SaveAndPrintDC - application/json 822
+2026-07-20 18:41:17.536 +05:30 [INF] CORS policy execution successful.
+2026-07-20 18:41:17.539 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.DeliveryChallanController.SaveAndPrintDC (SSProjectSolution)'
+2026-07-20 18:41:17.565 +05:30 [INF] Route matched with {action = "SaveAndPrintDC", controller = "DeliveryChallan"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SaveAndPrintDC(Newtonsoft.Json.Linq.JObject) on controller SSProjectSolution.Controllers.DeliveryChallanController (SSProjectSolution).
+2026-07-20 18:41:18.109 +05:30 [INF] Request Started [CorrelationId: 8998963b2655445c8e29199a31bf1886]
+2026-07-20 18:41:19.032 +05:30 [INF] Selected valid printer: EPSONC47417 (L3250 Series) [CorrelationId: 8998963b2655445c8e29199a31bf1886]
+2026-07-20 18:41:19.033 +05:30 [INF] PDF Generation Started [CorrelationId: 8998963b2655445c8e29199a31bf1886]
+2026-07-20 18:41:23.308 +05:30 [INF] PDF Generated Successfully [CorrelationId: 8998963b2655445c8e29199a31bf1886]
+2026-07-20 18:41:23.309 +05:30 [INF] PDF Save Started [CorrelationId: 8998963b2655445c8e29199a31bf1886]
+2026-07-20 18:41:23.315 +05:30 [INF] Saving PDF to C:\SSManagement\DeliveryChallan\SSE-0589_2026-2027.pdf
+2026-07-20 18:41:23.318 +05:30 [INF] File saved successfully.
+2026-07-20 18:41:23.319 +05:30 [INF] File Saved at C:\SSManagement\DeliveryChallan\SSE-0589_2026-2027.pdf [CorrelationId: 8998963b2655445c8e29199a31bf1886]
+2026-07-20 18:41:23.319 +05:30 [INF] Creating PrintJob and notifying Print Agent [CorrelationId: 8998963b2655445c8e29199a31bf1886]
+2026-07-20 18:41:23.723 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/PrintAgent/download/b47cbddb2b6f4ac58fdbc57f8894a230 - null null
+2026-07-20 18:41:23.726 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.PrintAgentController.DownloadPdf (SSProjectSolution)'
+2026-07-20 18:41:23.736 +05:30 [INF] Route matched with {action = "DownloadPdf", controller = "PrintAgent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadPdf(System.String) on controller SSProjectSolution.Controllers.PrintAgentController (SSProjectSolution).
+2026-07-20 18:41:24.063 +05:30 [INF] Print job sent to agent. JobId: b47cbddb2b6f4ac58fdbc57f8894a230, ConnectionId: fM9_qM_Oicn44xpNURtluQ
+2026-07-20 18:41:24.064 +05:30 [INF] Request Completed Successfully [CorrelationId: 8998963b2655445c8e29199a31bf1886]
+2026-07-20 18:41:24.065 +05:30 [INF] Total Execution Time: 5956ms [CorrelationId: 8998963b2655445c8e29199a31bf1886]
+2026-07-20 18:41:24.065 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.SaveAndPrintResponse'.
+2026-07-20 18:41:24.077 +05:30 [INF] Executed action SSProjectSolution.Controllers.DeliveryChallanController.SaveAndPrintDC (SSProjectSolution) in 6511.6146ms
+2026-07-20 18:41:24.078 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.DeliveryChallanController.SaveAndPrintDC (SSProjectSolution)'
+2026-07-20 18:41:24.078 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/DeliveryChallan/SaveAndPrintDC - 200 317 application/json; charset=utf-8 6547.8858ms
+2026-07-20 18:41:25.105 +05:30 [INF] Executing FileStreamResult, sending file with download name 'SSE-0589/2026-2027.pdf' ...
+2026-07-20 18:41:25.138 +05:30 [INF] Executed action SSProjectSolution.Controllers.PrintAgentController.DownloadPdf (SSProjectSolution) in 1401.7016ms
+2026-07-20 18:41:25.138 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.PrintAgentController.DownloadPdf (SSProjectSolution)'
+2026-07-20 18:41:25.138 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/PrintAgent/download/b47cbddb2b6f4ac58fdbc57f8894a230 - 200 69749 application/pdf 1415.2386ms
+2026-07-20 18:41:35.306 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/PrintAgent/jobs/b47cbddb2b6f4ac58fdbc57f8894a230/status - application/json; charset=utf-8 null
+2026-07-20 18:41:35.308 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.PrintAgentController.UpdateJobStatus (SSProjectSolution)'
+2026-07-20 18:41:35.323 +05:30 [INF] Route matched with {action = "UpdateJobStatus", controller = "PrintAgent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateJobStatus(System.String, JobStatusRequest) on controller SSProjectSolution.Controllers.PrintAgentController (SSProjectSolution).
+2026-07-20 18:41:35.513 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2026-07-20 18:41:35.513 +05:30 [INF] Executed action SSProjectSolution.Controllers.PrintAgentController.UpdateJobStatus (SSProjectSolution) in 189.9727ms
+2026-07-20 18:41:35.513 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.PrintAgentController.UpdateJobStatus (SSProjectSolution)'
+2026-07-20 18:41:35.513 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/PrintAgent/jobs/b47cbddb2b6f4ac58fdbc57f8894a230/status - 200 0 null 207.627ms

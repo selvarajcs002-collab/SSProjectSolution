@@ -1,0 +1,13 @@
+{
+  "InstanceIds": ["i-018edd7911bc0f6a3"],
+  "DocumentName": "AWS-RunShellScript",
+  "Parameters": {
+    "commands": [
+      "sudo docker stop api-prod api-dev api-test || true",
+      "sudo docker rm api-prod api-dev api-test || true",
+      "sudo docker run -d --name api-prod --network ssproject-net -p 8080:8080 -e \"ConnectionStrings__DefaultConnection=Server=sqlserver;Database=SSManagement;User Id=sa;Password=Selva@RaJ1234;Encrypt=False;TrustServerCertificate=True;\" -e ASPNETCORE_ENVIRONMENT=Development selvaraj331/ssproject-api:latest",
+      "sudo docker run -d --name api-dev --network ssproject-net -p 8081:8080 -e \"ConnectionStrings__DefaultConnection=Server=sqlserver;Database=SSManagement;User Id=sa;Password=Selva@RaJ1234;Encrypt=False;TrustServerCertificate=True;\" -e ASPNETCORE_ENVIRONMENT=Development selvaraj331/ssproject-api:latest",
+      "sudo docker run -d --name api-test --network ssproject-net -p 8082:8080 -e \"ConnectionStrings__DefaultConnection=Server=sqlserver;Database=SSManagement;User Id=sa;Password=Selva@RaJ1234;Encrypt=False;TrustServerCertificate=True;\" -e ASPNETCORE_ENVIRONMENT=Development selvaraj331/ssproject-api:latest"
+    ]
+  }
+}

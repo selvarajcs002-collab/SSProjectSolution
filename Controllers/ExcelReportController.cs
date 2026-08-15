@@ -31,5 +31,18 @@ namespace SSProjectSolution.Controllers
                 return StatusCode(500, new { message = "An error occurred while generating the report", details = ex.Message });
             }
         }
+        [HttpPost("stock-management")]
+        public async Task<IActionResult> GetStockManagementReport([FromBody] SSProjectSolution.Request.StockFilterRequest request)
+        {
+            try
+            {
+                var response = await _excelReportService.GetStockManagementReportAsync(request);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An error occurred while generating the report", details = ex.Message });
+            }
+        }
     }
 }

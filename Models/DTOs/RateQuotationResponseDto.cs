@@ -28,5 +28,7 @@ namespace SSProjectSolution.Models.DTOs
         public DateTime CreatedDate { get; set; }
         public long? ModifiedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }
+        public string? ImageUrl { get; set; }
+        public bool HasImage { get; set; }
     }
 }

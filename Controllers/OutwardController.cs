@@ -242,5 +242,90 @@ namespace SSProjectSolution.Controllers
                 return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
             }
         }
+
+        // ── Lot Completion ─────────────────────────────────────────────────────
+
+        [HttpPost("mark-lot-completed")]
+        public async Task<IActionResult> MarkLotCompleted([FromBody] LotCompletedDto request)
+        {
+            try
+            {
+                if (request == null)
+                {
+                    return BadRequest(new { success = false, message = "Invalid request payload" });
+                }
+
+                if (request.CompanyId <= 0)
+                {
+                    return BadRequest(new { success = false, message = "CompanyId must be valid" });
+                }
+
+                var response = await _outwardService.MarkLotCompletedAsync(request);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                LoggerUtility.LogError(ex, "Error in MarkLotCompleted");
+                return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
+            }
+        }
+
+        [HttpPost("mark-inward-inactive")]
+        public async Task<IActionResult> MarkInwardInactive([FromBody] InwardStatusUpdateDto request)
+        {
+            try
+            {
+                if (request == null)
+                {
+                    return BadRequest(new { success = false, message = "Invalid request payload" });
+                }
+
+                if (request.CompanyId <= 0)
+                {
+                    return BadRequest(new { success = false, message = "CompanyId must be valid" });
+                }
+
+                var response = await _outwardService.MarkInwardInactiveAsync(request);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                LoggerUtility.LogError(ex, "Error in MarkInwardInactive");
+                return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
+            }
+        }
+
+        [HttpPost("mark-inward-inactive-by-dcno")]
+        public async Task<IActionResult> MarkInwardInactiveByDcNo([FromBody] InwardStatusUpdateByDcNoDto request)
+        {
+            try
+            {
+                if (request == null)
+                {
+                    return BadRequest(new { success = false, message = "Invalid request payload" });
+                }
+
+                if (request.CompanyId <= 0)
+                {
+                    return BadRequest(new { success = false, message = "CompanyId must be valid" });
+                }
+
+                if (string.IsNullOrWhiteSpace(request.InwardDcNo))
+                {
+                    return BadRequest(new { success = false, message = "InwardDcNo is required" });
+                }
+
+                var response = await _outwardService.MarkInwardInactiveByDcNoAsync(request);
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                LoggerUtility.LogError(ex, "Error in MarkInwardInactiveByDcNo");
+                return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
+            }
+        }
     }
 }

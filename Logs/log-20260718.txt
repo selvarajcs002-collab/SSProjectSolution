@@ -1623,3 +1623,4 @@
 2026-07-18 13:50:44.677 +05:30 [INF] Executed action SSProjectSolution.Controllers.DeliveryChallanController.SaveAndPrintDC (SSProjectSolution) in 541.6276ms
 2026-07-18 13:50:44.694 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.DeliveryChallanController.SaveAndPrintDC (SSProjectSolution)'
 2026-07-18 13:50:44.699 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/DeliveryChallan/SaveAndPrintDC - 200 331 application/json; charset=utf-8 603.7405ms
+2026-07-18 23:01:35.702 +05:30 [INF] Application is shutting down...

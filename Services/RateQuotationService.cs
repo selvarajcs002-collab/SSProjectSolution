@@ -86,6 +86,29 @@ namespace SSProjectSolution.Services
             }
         }
 
+        private readonly string ImageFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "RateQuotationImages");
+
+        private void AttachImageInfo(RateQuotationResponseDto dto)
+        {
+            if (dto == null) return;
+            try
+            {
+                if (Directory.Exists(ImageFolderPath))
+                {
+                    var files = Directory.GetFiles(ImageFolderPath, $"{dto.Id}.*");
+                    if (files.Length > 0)
+                    {
+                        dto.HasImage = true;
+                        dto.ImageUrl = $"/api/RateQuotation/image/{dto.Id}";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Error checking image existence for RateQuotation Id {Id}", dto.Id);
+            }
+        }
+
         public async Task<ApiResponse<RateQuotationResponseDto>> GetByIdAsync(long id)
         {
             try
@@ -95,6 +118,7 @@ namespace SSProjectSolution.Services
                 if (statusCode == 200 && entity != null)
                 {
                     var dto = _mapper.Map<RateQuotationResponseDto>(entity);
+                    AttachImageInfo(dto);
                     return ApiResponse<RateQuotationResponseDto>.SuccessResponse(dto, statusMessage);
                 }
 
@@ -117,6 +141,10 @@ namespace SSProjectSolution.Services
                 if (statusCode == 200)
                 {
                     var dtos = _mapper.Map<IEnumerable<RateQuotationResponseDto>>(entities);
+                    foreach (var dto in dtos)
+                    {
+                        AttachImageInfo(dto);
+                    }
                     return ApiResponse<IEnumerable<RateQuotationResponseDto>>.SuccessResponse(dtos, statusMessage);
                 }
 
@@ -138,6 +166,10 @@ namespace SSProjectSolution.Services
                 if (statusCode == 200)
                 {
                     var dtos = _mapper.Map<IEnumerable<RateQuotationResponseDto>>(entities);
+                    foreach (var dto in dtos)
+                    {
+                        AttachImageInfo(dto);
+                    }
                     return ApiResponse<IEnumerable<RateQuotationResponseDto>>.SuccessResponse(dtos, statusMessage);
                 }
 
@@ -159,6 +191,10 @@ namespace SSProjectSolution.Services
                 if (statusCode == 200)
                 {
                     var dtos = _mapper.Map<IEnumerable<RateQuotationResponseDto>>(entities);
+                    foreach (var dto in dtos)
+                    {
+                        AttachImageInfo(dto);
+                    }
                     var pagedResponse = new PagedResponse<IEnumerable<RateQuotationResponseDto>>(dtos, searchDto.PageNumber, searchDto.PageSize, totalRecords);
                     return ApiResponse<PagedResponse<IEnumerable<RateQuotationResponseDto>>>.SuccessResponse(pagedResponse, statusMessage);
                 }

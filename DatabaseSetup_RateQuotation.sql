@@ -3,6 +3,10 @@
 -- Contains Table and Stored Procedures
 -- ========================================================================================
 
+SET QUOTED_IDENTIFIER ON;
+SET ANSI_NULLS ON;
+GO
+
 IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RateQuotation]') AND type in (N'U'))
 BEGIN
     IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'[dbo].[RateQuotation]') AND name = 'NoOfStitches')

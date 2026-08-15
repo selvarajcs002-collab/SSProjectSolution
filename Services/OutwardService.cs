@@ -87,6 +87,7 @@ namespace SSProjectSolution.Services
                 parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.Outward.PoNo) ? null : request.Outward.PoNo);
                 parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Outward.Weight) ? null : request.Outward.Weight);
                 parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.Outward.NoOfBundles) ? null : request.Outward.NoOfBundles);
+                parameters.Add("@Remarks", string.IsNullOrWhiteSpace(request.Outward.Remarks) ? null : request.Outward.Remarks);
                 parameters.Add("@SelectedDcNos", request.Outward.SelectedDcNos != null && request.Outward.SelectedDcNos.Any() ? string.Join(",", request.Outward.SelectedDcNos) : null);
 
                 // ?? CRITICAL FIX
@@ -154,52 +155,95 @@ namespace SSProjectSolution.Services
                 
                 if (rawData == null || !rawData.Any()) return null;
 
-                // Mapping and grouping logic using mode-specific ID as the key
-                return rawData
-                    .Where(x => (isInward ? x.InwardId : x.OutwardId) != null)
-                    .GroupBy(x => (int)(isInward ? x.InwardId : x.OutwardId))
+                var idProp = isInward ? "InwardId" : "OutwardId";
+                var dcNoProp = isInward ? "InwardDcNo" : "OutwardDcNo";
+
+                var validRows = rawData
+                    .Select(x => x as IDictionary<string, object>)
+                    .Where(dict => dict != null && dict.ContainsKey(idProp) && dict[idProp] != null)
+                    .ToList();
+
+                if (!validRows.Any()) return null;
+
+                return validRows
+                    .GroupBy(dict => Convert.ToInt32(dict![idProp]))
                     .Select(g => 
                     {
-                        var allSizes = g.Where(s => s.SizeCountId != null).ToList();
+                        var firstRowDict = g.First();
+                        DateTime? inwardDateVal = null;
+                        if (firstRowDict != null)
+                        {
+                            foreach (var kvp in firstRowDict)
+                            {
+                                if (string.Equals(kvp.Key, "InwardDate", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    if (kvp.Value != null && DateTime.TryParse(kvp.Value.ToString(), out var parsedDate))
+                                    {
+                                        inwardDateVal = parsedDate;
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+
+                        var allSizes = g.Where(dict => 
+                            dict != null && 
+                            dict.ContainsKey("SizeCountId") && dict["SizeCountId"] != null && 
+                            dict.ContainsKey("Size") && dict["Size"] != null
+                        ).ToList();
+
+                        string mainColour = firstRowDict != null && firstRowDict.ContainsKey("Colour") && firstRowDict["Colour"] != null 
+                            ? firstRowDict["Colour"]?.ToString() ?? "" 
+                            : "";
+
                         return new OutwardByDcResponseDto
                         {
                             Id = g.Key,
-                            CompanyName = g.First().CompanyName,
-                            CompanyId = g.First().CompanyId,
-                            Colour = g.First().Colour,
-                            DesignName = g.First().DesignName,
-                            StyleNo = g.First().StyleNo,
-                            UploadURL = g.First().UploadURL,
-                            CreatedBy = g.First().CreatedBy?.ToString(),
-                            CreatedDate = g.First().CreatedDate,
-                            UpdatedDate = g.First().UpdatedDate,
-                            DcNo = isInward ? g.First().InwardDcNo : g.First().OutwardDcNo,
-                            Status = g.First().Status,
+                            CompanyName = firstRowDict != null && firstRowDict.ContainsKey("CompanyName") && firstRowDict["CompanyName"] != null ? firstRowDict["CompanyName"]?.ToString() : null,
+                            CompanyId = firstRowDict != null && firstRowDict.ContainsKey("CompanyId") && firstRowDict["CompanyId"] != null ? Convert.ToInt32(firstRowDict["CompanyId"]) : 0,
+                            Colour = mainColour,
+                            DesignName = firstRowDict != null && firstRowDict.ContainsKey("DesignName") && firstRowDict["DesignName"] != null ? firstRowDict["DesignName"]?.ToString() : null,
+                            StyleNo = firstRowDict != null && firstRowDict.ContainsKey("StyleNo") && firstRowDict["StyleNo"] != null ? firstRowDict["StyleNo"]?.ToString() : null,
+                            UploadURL = firstRowDict != null && firstRowDict.ContainsKey("UploadURL") && firstRowDict["UploadURL"] != null ? firstRowDict["UploadURL"]?.ToString() : null,
+                            CreatedBy = firstRowDict != null && firstRowDict.ContainsKey("CreatedBy") && firstRowDict["CreatedBy"] != null ? firstRowDict["CreatedBy"]?.ToString() : null,
+                            CreatedDate = firstRowDict != null && firstRowDict.ContainsKey("CreatedDate") && firstRowDict["CreatedDate"] != null && DateTime.TryParse(firstRowDict["CreatedDate"]?.ToString(), out var cd) ? cd : DateTime.MinValue,
+                            InwardDate = inwardDateVal ?? (firstRowDict != null && firstRowDict.ContainsKey("CreatedDate") && firstRowDict["CreatedDate"] != null && DateTime.TryParse(firstRowDict["CreatedDate"]?.ToString(), out var cd2) ? cd2 : DateTime.MinValue),
+                            UpdatedDate = firstRowDict != null && firstRowDict.ContainsKey("UpdatedDate") && firstRowDict["UpdatedDate"] != null && DateTime.TryParse(firstRowDict["UpdatedDate"]?.ToString(), out var ud) ? ud : null,
+                            DcNo = firstRowDict != null && firstRowDict.ContainsKey(dcNoProp) && firstRowDict[dcNoProp] != null ? firstRowDict[dcNoProp]?.ToString() : null,
+                            Status = firstRowDict != null && firstRowDict.ContainsKey("Status") && firstRowDict["Status"] != null ? firstRowDict["Status"]?.ToString() : null,
                             EntryType = entryType ?? "S",
-                            DeliveryTo = (g.First() as IDictionary<string, object>)?.ContainsKey("DeliveryTo") == true ? (string?)((IDictionary<string, object>)g.First())["DeliveryTo"] : null,
-                            PoNo = (g.First() as IDictionary<string, object>)?.ContainsKey("PoNo") == true ? (string?)((IDictionary<string, object>)g.First())["PoNo"] : null,
-                            Weight = (g.First() as IDictionary<string, object>)?.ContainsKey("Weight") == true ? (string?)((IDictionary<string, object>)g.First())["Weight"] : null,
-                            NoOfBundles = (g.First() as IDictionary<string, object>)?.ContainsKey("NoOfBundles") == true ? (string?)((IDictionary<string, object>)g.First())["NoOfBundles"] : null,
-                            SelectedDcNos = ((g.First() as IDictionary<string, object>)?.ContainsKey("SelectedDcNos") == true && !string.IsNullOrEmpty((string?)((IDictionary<string, object>)g.First())["SelectedDcNos"]))
-                                ? ((string)((IDictionary<string, object>)g.First())["SelectedDcNos"]).Split(',', StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList() 
+                            DeliveryTo = firstRowDict?.ContainsKey("DeliveryTo") == true ? firstRowDict["DeliveryTo"]?.ToString() : null,
+                            PoNo = firstRowDict?.ContainsKey("PoNo") == true ? firstRowDict["PoNo"]?.ToString() : null,
+                            Weight = firstRowDict?.ContainsKey("Weight") == true ? firstRowDict["Weight"]?.ToString() : null,
+                            NoOfBundles = firstRowDict?.ContainsKey("NoOfBundles") == true ? firstRowDict["NoOfBundles"]?.ToString() : null,
+                            Remarks = firstRowDict?.ContainsKey("Remarks") == true ? firstRowDict["Remarks"]?.ToString() : null,
+                            SelectedDcNos = (firstRowDict?.ContainsKey("SelectedDcNos") == true && !string.IsNullOrEmpty(firstRowDict["SelectedDcNos"]?.ToString()))
+                                ? firstRowDict["SelectedDcNos"]!.ToString()!.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).ToList() 
                                 : new List<string>(),
                             MeterDetails = meterDetails,
-                            SizeCounts = allSizes.Select(s => new SizeCountDetailsDto
+                            SizeCounts = allSizes.Select(dict => new SizeCountDetailsDto
                             {
-                                SizeCountId = s.SizeCountId,
-                                Size = s.Size,
-                                Count = s.Count
+                                SizeCountId = Convert.ToInt32(dict!["SizeCountId"]),
+                                Size = dict["Size"]?.ToString() ?? "",
+                                Count = dict.ContainsKey("Count") && dict["Count"] != null ? Convert.ToInt32(dict["Count"]) : 0
                             }).ToList(),
                             ColourBreakdowns = allSizes
-                                .GroupBy(s => (string)s.SizeColour ?? (string)g.First().Colour)
+                                .GroupBy(dict => 
+                                {
+                                    if (dict != null && dict.ContainsKey("SizeColour") && dict["SizeColour"] != null && !string.IsNullOrWhiteSpace(dict["SizeColour"]?.ToString()))
+                                    {
+                                        return dict["SizeColour"]!.ToString()!;
+                                    }
+                                    return mainColour;
+                                })
                                 .Select(cg => new ColourBreakdownResponseDto
                                 {
                                     Colour = cg.Key,
-                                    Sizes = cg.Select(s => new SizeCountDetailsDto
+                                    Sizes = cg.Select(dict => new SizeCountDetailsDto
                                     {
-                                        SizeCountId = s.SizeCountId,
-                                        Size = s.Size,
-                                        Count = s.Count
+                                        SizeCountId = Convert.ToInt32(dict!["SizeCountId"]),
+                                        Size = dict["Size"]?.ToString() ?? "",
+                                        Count = dict.ContainsKey("Count") && dict["Count"] != null ? Convert.ToInt32(dict["Count"]) : 0
                                     }).ToList()
                                 }).ToList()
                         };
@@ -264,6 +308,7 @@ namespace SSProjectSolution.Services
                 parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.PoNo) ? null : request.PoNo);
                 parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Weight) ? null : request.Weight);
                 parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.NoOfBundles) ? null : request.NoOfBundles);
+                parameters.Add("@Remarks", string.IsNullOrWhiteSpace(request.Remarks) ? null : request.Remarks);
                 parameters.Add("@SelectedDcNos", request.SelectedDcNos != null && request.SelectedDcNos.Any() ? string.Join(",", request.SelectedDcNos) : null);
                 parameters.Add("@SizeData", sizeDataJson, DbType.String);
 
@@ -396,6 +441,7 @@ namespace SSProjectSolution.Services
                 parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.PoNo) ? null : request.PoNo);
                 parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Weight) ? null : request.Weight);
                 parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.NoOfBundles) ? null : request.NoOfBundles);
+                parameters.Add("@Remarks", string.IsNullOrWhiteSpace(request.Remarks) ? null : request.Remarks);
                 parameters.Add("@SelectedDcNos", request.SelectedDcNos != null && request.SelectedDcNos.Any() ? string.Join(",", request.SelectedDcNos) : null);
                 parameters.Add("@UploadURL", request.UploadURL == "null" || string.IsNullOrWhiteSpace(request.UploadURL) ? null : request.UploadURL);
                 parameters.Add("@Status", string.IsNullOrWhiteSpace(request.Status) ? null : request.Status);
@@ -431,6 +477,77 @@ namespace SSProjectSolution.Services
             catch (Exception ex)
             {
                 throw new Exception("Error in GetAdditionalDetailsOptionsAsync: " + ex.Message);
+            }
+        }
+
+        // ── Lot Completion ─────────────────────────────────────────────────────
+
+        public async Task<dynamic> MarkLotCompletedAsync(LotCompletedDto payload)
+        {
+            try
+            {
+                var parameters = new Dapper.DynamicParameters();
+                parameters.Add("@CompanyId", payload.CompanyId);
+                parameters.Add("@StyleNo", payload.StyleNo);
+                parameters.Add("@DesignName", payload.DesignName);
+                parameters.Add("@Colour", payload.Colour);
+                parameters.Add("@PoNo", payload.PoNo);
+                parameters.Add("@IsDeliveryChallan", payload.IsDeliveryChallan ? 1 : 0);
+                parameters.Add("@SelectedDcNos", payload.SelectedDcNos != null && payload.SelectedDcNos.Any() ? string.Join(",", payload.SelectedDcNos) : null);
+                parameters.Add("@EntryType", payload.EntryType);
+                
+                string consumedSizesJson = payload.ConsumedSizes != null && payload.ConsumedSizes.Any()
+                    ? System.Text.Json.JsonSerializer.Serialize(payload.ConsumedSizes)
+                    : null;
+                parameters.Add("@ConsumedSizesJson", consumedSizesJson);
+
+                string consumedMetersJson = payload.ConsumedMeters != null && payload.ConsumedMeters.Any()
+                    ? System.Text.Json.JsonSerializer.Serialize(payload.ConsumedMeters)
+                    : null;
+                parameters.Add("@ConsumedMetersJson", consumedMetersJson);
+
+                return await _outwardRepository.MarkLotCompletedAsync(parameters);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in MarkLotCompletedAsync: " + ex.Message);
+            }
+        }
+
+        public async Task<dynamic> MarkInwardInactiveAsync(InwardStatusUpdateDto payload)
+        {
+            try
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@CompanyId", payload.CompanyId);
+                parameters.Add("@StyleNo", payload.StyleNo);
+                parameters.Add("@DesignName", payload.DesignName);
+                parameters.Add("@Colour", payload.Colour);
+
+                return await _outwardRepository.MarkInwardInactiveAsync(parameters);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in MarkInwardInactiveAsync: " + ex.Message);
+            }
+        }
+
+        public async Task<dynamic> MarkInwardInactiveByDcNoAsync(InwardStatusUpdateByDcNoDto payload)
+        {
+            try
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@CompanyId", payload.CompanyId);
+                parameters.Add("@StyleNo", payload.StyleNo);
+                parameters.Add("@DesignName", payload.DesignName);
+                parameters.Add("@Colour", payload.Colour);
+                parameters.Add("@InwardDcNo", payload.InwardDcNo);
+
+                return await _outwardRepository.MarkInwardInactiveByDcNoAsync(parameters);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in MarkInwardInactiveByDcNoAsync: " + ex.Message);
             }
         }
     }

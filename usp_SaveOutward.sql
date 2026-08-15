@@ -14,6 +14,7 @@ ALTER PROCEDURE [dbo].[usp_SaveOutward]
     @PoNo NVARCHAR(100) = NULL,
     @Weight NVARCHAR(100) = NULL,
     @NoOfBundles NVARCHAR(100) = NULL,
+    @Remarks NVARCHAR(MAX) = NULL,
     @SelectedDcNos NVARCHAR(MAX) = NULL,
     @SizeData NVARCHAR(MAX) -- JSON
 )
@@ -224,7 +225,7 @@ BEGIN
 DECLARE @YearCurrent NVARCHAR(4) = CAST(YEAR(GETDATE()) AS NVARCHAR(4));
 DECLARE @YearNext NVARCHAR(4) = CAST(YEAR(GETDATE()) + 1 AS NVARCHAR(4));
 
-SELECT @TotalCount = ISNULL(COUNT(*), 0) + 1
+SELECT @TotalCount = ISNULL(COUNT(*), 0) + 604
 FROM dbo.Outward;
 
 SET @OutwardDcNo = CONCAT(
@@ -237,9 +238,9 @@ SET @OutwardDcNo = CONCAT(
 );
 
             INSERT INTO dbo.Outward 
-                (CompanyId, Colour, DesignName, StyleNo, UploadURL, CreatedBy, OutwardDcNo, Status, DeliveryTo, PoNo, Weight, NoOfBundles, SelectedDcNos)
+                (CompanyId, Colour, DesignName, StyleNo, UploadURL, CreatedBy, OutwardDcNo, Status, DeliveryTo, PoNo, Weight, NoOfBundles, Remarks, SelectedDcNos)
             VALUES 
-                (@CompanyId, @Colour, @DesignName, @StyleNo, @UploadURL, @CreatedBy, @OutwardDcNo, @Status, @DeliveryTo, @PoNo, @Weight, @NoOfBundles, @SelectedDcNos);
+                (@CompanyId, @Colour, @DesignName, @StyleNo, @UploadURL, @CreatedBy, @OutwardDcNo, @Status, @DeliveryTo, @PoNo, @Weight, @NoOfBundles, @Remarks, @SelectedDcNos);
 
             SET @OutwardId = SCOPE_IDENTITY();
 
@@ -291,6 +292,7 @@ SET @OutwardDcNo = CONCAT(
                 PoNo        = @PoNo,
                 Weight      = @Weight,
                 NoOfBundles = @NoOfBundles,
+                Remarks     = @Remarks,
                 SelectedDcNos = @SelectedDcNos,
                 UpdatedDate = GETDATE()
             WHERE OutwardId = @OutwardId;

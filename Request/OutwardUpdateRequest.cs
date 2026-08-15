@@ -16,6 +16,7 @@ namespace SSProjectSolution.Request
         public string? PoNo { get; set; }
         public string? Weight { get; set; }
         public string? NoOfBundles { get; set; }
+        public string? Remarks { get; set; }
         public List<string>? SelectedDcNos { get; set; }
         public List<SizeCountUpdateDto>? SizeCounts { get; set; }
         public List<ColourBreakdown>? ColourBreakdowns { get; set; }

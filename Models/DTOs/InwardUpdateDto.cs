@@ -28,6 +28,9 @@ namespace SSProjectSolution.Models.DTOs
         [JsonProperty("updated_by")]
         public int UpdatedBy { get; set; }
 
+        [JsonProperty("inward_date")]
+        public DateTime? InwardDate { get; set; }
+
         [JsonProperty("entry_type")]
         public char EntryType { get; set; } = 'S';
 

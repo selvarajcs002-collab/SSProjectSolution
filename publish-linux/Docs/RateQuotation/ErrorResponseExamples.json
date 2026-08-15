@@ -1,0 +1,44 @@
+[
+  {
+    "scenario": "Validation Error (e.g. Missing CompanyName)",
+    "httpStatus": 400,
+    "response": {
+      "success": false,
+      "message": "Validation Failed",
+      "data": null,
+      "errors": [
+        "CompanyName is mandatory."
+      ]
+    }
+  },
+  {
+    "scenario": "Duplicate Quotation Number",
+    "httpStatus": 409,
+    "response": {
+      "success": false,
+      "message": "Quotation number already exists.",
+      "data": null,
+      "errors": null
+    }
+  },
+  {
+    "scenario": "Record Not Found (e.g. Update/Delete)",
+    "httpStatus": 404,
+    "response": {
+      "success": false,
+      "message": "Rate Quotation not found.",
+      "data": null,
+      "errors": null
+    }
+  },
+  {
+    "scenario": "Internal Server Error",
+    "httpStatus": 500,
+    "response": {
+      "success": false,
+      "message": "An internal error occurred. Please try again later.",
+      "data": null,
+      "errors": null
+    }
+  }
+]
