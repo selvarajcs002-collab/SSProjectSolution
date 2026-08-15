@@ -139,9 +139,7 @@ pipeline {
             steps {
 
                 sh '''
-                    #!/bin/bash
-                    set -Eeuo pipefail
-
+                   
                     echo "=========================================="
                     echo " Validating Source"
                     echo "=========================================="
@@ -175,9 +173,7 @@ pipeline {
             steps {
 
                 sh '''
-                    #!/bin/bash
-                    set -Eeuo pipefail
-
+                   
                     echo "Cleaning publish directory..."
 
                     rm -rf "$PUBLISH_PATH"
@@ -197,8 +193,7 @@ pipeline {
             steps {
 
                 sh '''
-                    #!/bin/bash
-                    set -Eeuo pipefail
+                   
 
                     echo "Running dotnet restore..."
 
@@ -213,9 +208,7 @@ pipeline {
             steps {
 
                 sh '''
-                    #!/bin/bash
-                    set -Eeuo pipefail
-
+                    
                     echo "Building application..."
 
                     dotnet build \
@@ -232,9 +225,7 @@ pipeline {
             steps {
 
                 sh '''
-                    #!/bin/bash
-                    set -Eeuo pipefail
-
+                   
                     echo "Publishing application..."
 
                     rm -rf "$PUBLISH_PATH"
@@ -302,9 +293,7 @@ pipeline {
             steps {
 
                 sh '''
-                    #!/bin/bash
-                    set -Eeuo pipefail
-
+                   
                     BACKUP_DIR="/var/www/SSManagement/DEV/API_Backup_$(date +%Y%m%d_%H%M%S)"
 
                     echo "Creating backup:"
@@ -333,9 +322,7 @@ pipeline {
             steps {
 
                 sh '''
-                    #!/bin/bash
-                    set -Eeuo pipefail
-
+                   
                     echo "Stopping service:"
                     echo "$SERVICE_NAME"
 
@@ -361,8 +348,6 @@ pipeline {
             steps {
 
                 sh '''
-                    #!/bin/bash
-                    set -Eeuo pipefail
 
                     echo "Deploying application..."
 
@@ -407,9 +392,7 @@ pipeline {
             steps {
 
                 sh '''
-                    #!/bin/bash
-                    set -Eeuo pipefail
-
+                   
                     echo "Reloading systemd..."
 
                     sudo -n /usr/bin/systemctl daemon-reload
@@ -435,9 +418,7 @@ pipeline {
             steps {
 
                 sh '''
-                    #!/bin/bash
-                    set -Eeuo pipefail
-
+                   
                     echo "Checking service..."
 
                     if ! sudo -n /usr/bin/systemctl is-active --quiet "$SERVICE_NAME"; then
@@ -466,9 +447,7 @@ pipeline {
             steps {
 
                 sh '''
-                    #!/bin/bash
-                    set -Eeuo pipefail
-
+                   
                     echo "Checking port $API_PORT..."
 
                     API_STARTED=false
@@ -520,9 +499,7 @@ pipeline {
             steps {
 
                 sh '''
-                    #!/bin/bash
-                    set -Eeuo pipefail
-
+                   
                     echo ""
                     echo "=========================================="
                     echo " DEPLOYMENT SUCCESSFUL"
