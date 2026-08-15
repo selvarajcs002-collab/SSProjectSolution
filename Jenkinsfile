@@ -74,19 +74,20 @@ pipeline {
                     echo ""
                     echo "Checking systemd service..."
 
-                    if ! systemctl list-unit-files | grep -q "^${SERVICE_NAME}.service"; then
+                    if ! systemctl cat "${SERVICE_NAME}.service" >/dev/null 2>&1; then
 
                         echo "ERROR: Service not found:"
-                        echo "$SERVICE_NAME"
-
+                        echo "${SERVICE_NAME}.service"
+                    
                         echo ""
                         echo "Available SSManagement services:"
-
+                    
                         systemctl list-unit-files | grep -i ssmanagement || true
-
+                    
                         exit 1
                     fi
-
+                    
+                    echo "Service found: ${SERVICE_NAME}.service"
                     echo "Service found: $SERVICE_NAME"
 
                     echo ""
