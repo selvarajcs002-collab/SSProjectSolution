@@ -21,7 +21,7 @@ pipeline {
 
         APP_NAME = "SSManagement-API-DEV"
 
-        DEPLOY_PATH = "/var/www/SSManagement/DEV/API"
+        DEPLOY_PATH = "/var/www/SSManagement/DEV/API "
 
         PUBLISH_PATH = "${WORKSPACE}/publish"
 
