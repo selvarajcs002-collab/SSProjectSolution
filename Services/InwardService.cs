@@ -89,6 +89,7 @@ namespace SSProjectSolution.Services
             parameters.Add("@PoNo", request.PoNo);
             parameters.Add("@EntryType", request.EntryType);
             parameters.Add("@CreatedBy", request.CreatedBy);
+            parameters.Add("@InwardDate", request.InwardDate);
             parameters.Add("@MeterDetails", dt.AsTableValuedParameter("MeterDetailType"));
 
             var result = await connection.QueryFirstOrDefaultAsync<dynamic>(

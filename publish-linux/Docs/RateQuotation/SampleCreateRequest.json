@@ -1,0 +1,19 @@
+{
+  "quotationDate": "2023-10-25T00:00:00Z",
+  "companyId": 123,
+  "companyName": "Acme Corp",
+  "contactPerson": "John Doe",
+  "mobileNo": "+1234567890",
+  "emailId": "john.doe@acmecorp.com",
+  "address": "123 Main St, Springfield",
+  "styleNo": "STYLE-101",
+  "designName": "Floral Pattern",
+  "productType": "Fabric",
+  "ratePerPiece": null,
+  "ratePerMeter": 15.50,
+  "quantity": 100,
+  "totalAmount": 1550.00,
+  "remarks": "Urgent delivery required",
+  "status": "Draft",
+  "createdBy": 1
+}

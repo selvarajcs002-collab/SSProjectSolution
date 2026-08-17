@@ -1,0 +1,13 @@
+{
+  "InstanceIds": ["i-018edd7911bc0f6a3"],
+  "DocumentName": "AWS-RunShellScript",
+  "Parameters": {
+    "commands": [
+      "aws ecr get-login-password --region ap-south-1 | sudo docker login --username AWS --password-stdin 637423522271.dkr.ecr.ap-south-1.amazonaws.com",
+      "sudo docker stop api-dev || true",
+      "sudo docker rm api-dev || true",
+      "sudo docker pull 637423522271.dkr.ecr.ap-south-1.amazonaws.com/ssproject-api:backend-dev",
+      "sudo docker run -d --name api-dev --network ssproject-net -p 8081:8080 --restart always -e \"ASPNETCORE_ENVIRONMENT=Development\" -e \"ConnectionStrings__DefaultConnection=Server=sqlserver;Database=SSManagement;User Id=sa;Password=Selva@RaJ1234;Encrypt=False;TrustServerCertificate=True;\" 637423522271.dkr.ecr.ap-south-1.amazonaws.com/ssproject-api:backend-dev"
+    ]
+  }
+}

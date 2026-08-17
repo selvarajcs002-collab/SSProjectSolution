@@ -1,31 +1,28 @@
-# Stage 1: Base runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+# Use the official .NET SDK image for building the app
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Copy the csproj and restore any dependencies (via NuGet)
+COPY ["SSProjectSolution.csproj", "./"]
+RUN dotnet restore "SSProjectSolution.csproj"
+
+# Copy the remaining files and build the app
+COPY . .
+WORKDIR "/src/."
+RUN dotnet build "SSProjectSolution.csproj" -c Release -o /app/build
+
+# Publish the app to a folder
+FROM build AS publish
+RUN dotnet publish "SSProjectSolution.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+# Use the ASP.NET runtime image for the final stage
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-# Stage 2: Build stage
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /src
-COPY ["SSProjectSolution.csproj", "./"]
-RUN dotnet restore "SSProjectSolution.csproj"
-COPY . .
-WORKDIR "/src"
-RUN dotnet build "SSProjectSolution.csproj" -c Release -o /app/build
-
-# Stage 3: Publish stage
-FROM build AS publish
-RUN dotnet publish "SSProjectSolution.csproj" -c Release -o /app/publish /p:UseAppHost=false
-
-# Stage 4: Final runtime image
-FROM base AS final
-WORKDIR /app
+# Copy the published output from the previous stage
 COPY --from=publish /app/publish .
 
-# Create the directory for PDF generation and set permissions
-RUN mkdir -p /app/outputs/dc && chmod 777 /app/outputs/dc
-
-# Cloud Run uses the PORT environment variable
-ENV ASPNETCORE_URLS=http://+:${PORT:-80}
-
+# Define the entry point for the container
 ENTRYPOINT ["dotnet", "SSProjectSolution.dll"]

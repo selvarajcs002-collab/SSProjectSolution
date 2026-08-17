@@ -97,5 +97,39 @@ namespace SSProjectSolution.Repositories
             
             return new { DeliveryLocations = deliveryLocations, PoNumbers = poNumbers };
         }
+
+        // ── Lot Completion ─────────────────────────────────────────────────────
+        public async Task<dynamic> MarkLotCompletedAsync(DynamicParameters parameters)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var result = await connection.QueryFirstOrDefaultAsync<dynamic>(
+                "sp_MarkLotCompleted",
+                parameters,
+                commandType: CommandType.StoredProcedure);
+                
+            return result ?? new { success = true, message = "Lot marked as completed successfully." };
+        }
+
+        public async Task<dynamic> MarkInwardInactiveAsync(DynamicParameters parameters)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var result = await connection.QueryFirstOrDefaultAsync<dynamic>(
+                "sp_MarkInwardInactive",
+                parameters,
+                commandType: CommandType.StoredProcedure);
+                
+            return result ?? new { success = true, message = "Inward rows marked as InActive successfully." };
+        }
+
+        public async Task<dynamic> MarkInwardInactiveByDcNoAsync(DynamicParameters parameters)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var result = await connection.QueryFirstOrDefaultAsync<dynamic>(
+                "sp_MarkInwardInactive_by_DCNO",
+                parameters,
+                commandType: CommandType.StoredProcedure);
+                
+            return result ?? new { success = true, message = "Inward record marked as InActive successfully." };
+        }
     }
 }

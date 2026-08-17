@@ -1,4 +1,3 @@
-
 CREATE OR ALTER PROCEDURE [dbo].[usp_GetDetails_ById_Mode]
     @Id INT,
     @Mode NVARCHAR(10) -- 'INWARD' or 'OUTWARD'
@@ -17,6 +16,7 @@ BEGIN
             I.UploadURL,
             I.CreatedBy,
             I.CreatedDate,
+            I.InwardDate,
             I.UpdatedDate,
             I.InwardDcNo,
             I.Status,
@@ -48,7 +48,11 @@ BEGIN
             O.UpdatedDate,
             O.OutwardDcNo,
             O.Status,
+            O.DeliveryTo,
             O.PoNo,
+            O.Weight,
+            O.NoOfBundles,
+            O.Remarks,
             O.SelectedDcNos,
             OSC.Id AS SizeCountId,
             OSC.Size,

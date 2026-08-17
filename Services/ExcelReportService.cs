@@ -11,10 +11,12 @@ namespace SSProjectSolution.Services
     public class ExcelReportService : IExcelReportService
     {
         private readonly DapperDBConnection _dbConnection;
+        private readonly IStockService _stockService;
 
-        public ExcelReportService(DapperDBConnection dbConnection)
+        public ExcelReportService(DapperDBConnection dbConnection, IStockService stockService)
         {
             _dbConnection = dbConnection;
+            _stockService = stockService;
         }
 
         public async Task<ReportResponseDto> GetDeliveryChallanReportAsync(ReportFilterRequestDto request)
@@ -104,6 +106,26 @@ namespace SSProjectSolution.Services
             }
 
             return response;
+        }
+        public async Task<SSProjectSolution.Response.StockManagementReportDto> GetStockManagementReportAsync(SSProjectSolution.Request.StockFilterRequest request)
+        {
+            var summary = await _stockService.GetStockSummaryAsync(request);
+            var balance = await _stockService.GetStockBalanceAsync(request);
+            var transactions = await _stockService.GetLastTransactionsAsync(request);
+            
+            // To get CompanyName we could query it or assume it's part of the UI.
+            // For now we'll just populate what we can from the request/DB.
+            
+            return new SSProjectSolution.Response.StockManagementReportDto
+            {
+                Summary = summary,
+                StockBalances = balance,
+                Transactions = transactions,
+                FromDate = request.FromDate?.ToString("yyyy-MM-dd"),
+                ToDate = request.ToDate?.ToString("yyyy-MM-dd"),
+                CompanyName = request.CompanyId != null ? request.CompanyId.ToString() : "All",
+                Branch = "Main Branch"
+            };
         }
     }
 }

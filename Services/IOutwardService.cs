@@ -18,5 +18,10 @@ namespace SSProjectSolution.Services
         
         // ── Additional Details ─────────────────────────────────────────────────
         Task<dynamic> GetAdditionalDetailsOptionsAsync(int companyId);
+
+        // ── Lot Completion ─────────────────────────────────────────────────────
+        Task<dynamic> MarkLotCompletedAsync(LotCompletedDto payload);
+        Task<dynamic> MarkInwardInactiveAsync(InwardStatusUpdateDto payload);
+        Task<dynamic> MarkInwardInactiveByDcNoAsync(InwardStatusUpdateByDcNoDto payload);
     }
 }

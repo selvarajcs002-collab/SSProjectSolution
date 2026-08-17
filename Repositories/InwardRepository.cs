@@ -71,6 +71,7 @@ namespace SSProjectSolution.Repositories
                 parameters.Add("@InwardDcNo", request.InwardDcNo);
                 parameters.Add("@PoNo", request.PoNo);
                 parameters.Add("@UpdatedBy", request.UpdatedBy);
+                parameters.Add("@InwardDate", request.InwardDate);
 
                 var result = await connection.QueryFirstOrDefaultAsync<dynamic>(
                     SPConstants.UpdateInward,

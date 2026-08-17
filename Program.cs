@@ -131,6 +131,7 @@ builder.Services.AddCors(options =>
     });
 });
 
+QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

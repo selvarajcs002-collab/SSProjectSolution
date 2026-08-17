@@ -1,0 +1,536 @@
+2026-07-19 13:52:06.242 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-19 13:52:06.943 +05:30 [INF] Now listening on: http://localhost:5219
+2026-07-19 13:52:06.947 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-19 13:52:06.949 +05:30 [INF] Hosting environment: Development
+2026-07-19 13:52:06.950 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-07-19 14:28:47.885 +05:30 [INF] Application is shutting down...
+2026-07-19 14:29:40.297 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-19 14:29:40.984 +05:30 [INF] Now listening on: http://localhost:5219
+2026-07-19 14:29:41.001 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-19 14:29:41.007 +05:30 [INF] Hosting environment: Development
+2026-07-19 14:29:41.010 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-07-19 14:37:49.311 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-19 14:37:50.219 +05:30 [INF] Now listening on: http://localhost:5219
+2026-07-19 14:37:50.225 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-19 14:37:50.227 +05:30 [INF] Hosting environment: Development
+2026-07-19 14:37:50.229 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-07-19 14:55:44.138 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-19 14:55:44.672 +05:30 [INF] Now listening on: http://localhost:5219
+2026-07-19 14:55:44.677 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-19 14:55:44.678 +05:30 [INF] Hosting environment: Development
+2026-07-19 14:55:44.680 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-07-19 14:57:44.755 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 14:57:44.755 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 14:57:45.125 +05:30 [INF] CORS policy execution successful.
+2026-07-19 14:57:45.125 +05:30 [INF] CORS policy execution successful.
+2026-07-19 14:57:45.187 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 435.9584ms
+2026-07-19 14:57:45.187 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 435.958ms
+2026-07-19 14:57:45.262 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 14:57:45.263 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 14:57:45.785 +05:30 [INF] CORS policy execution successful.
+2026-07-19 14:57:45.785 +05:30 [INF] CORS policy execution successful.
+2026-07-19 14:57:46.329 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-19 14:57:47.371 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 14:57:47.371 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 14:57:47.677 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 14:57:47.677 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 14:57:54.034 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 14:57:54.034 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 14:57:54.385 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 6673.7128ms
+2026-07-19 14:57:54.385 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 6664.295ms
+2026-07-19 14:57:54.397 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 14:57:54.406 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 14:57:54.437 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 9174.7349ms
+2026-07-19 14:57:54.446 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 9182.4631ms
+2026-07-19 14:57:59.081 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/delivery-challan - null null
+2026-07-19 14:57:59.099 +05:30 [INF] CORS policy execution successful.
+2026-07-19 14:57:59.105 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/delivery-challan - 204 null null 23.4119ms
+2026-07-19 14:57:59.113 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/ExcelReport/delivery-challan - application/json 138
+2026-07-19 14:57:59.132 +05:30 [INF] CORS policy execution successful.
+2026-07-19 14:57:59.141 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetDeliveryChallanReport (SSProjectSolution)'
+2026-07-19 14:57:59.280 +05:30 [INF] Route matched with {action = "GetDeliveryChallanReport", controller = "ExcelReport"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDeliveryChallanReport(SSProjectSolution.Models.DTOs.ReportFilterRequestDto) on controller SSProjectSolution.Controllers.ExcelReportController (SSProjectSolution).
+2026-07-19 14:58:00.327 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Models.DTOs.ReportResponseDto'.
+2026-07-19 14:58:00.345 +05:30 [INF] Executed action SSProjectSolution.Controllers.ExcelReportController.GetDeliveryChallanReport (SSProjectSolution) in 1020.1345ms
+2026-07-19 14:58:00.351 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetDeliveryChallanReport (SSProjectSolution)'
+2026-07-19 14:58:00.357 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/ExcelReport/delivery-challan - 200 97 application/json; charset=utf-8 1243.3525ms
+2026-07-19 15:04:17.859 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 15:04:17.861 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 15:04:17.878 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:04:17.897 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:04:17.902 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 42.4778ms
+2026-07-19 15:04:17.908 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 46.7429ms
+2026-07-19 15:04:17.938 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 15:04:17.952 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 15:04:17.960 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:04:17.969 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:04:17.972 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:04:17.974 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:04:17.976 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:04:17.979 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:04:18.640 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 15:04:18.815 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 830.1757ms
+2026-07-19 15:04:18.824 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:04:18.833 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 894.6636ms
+2026-07-19 15:04:18.941 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 15:04:18.950 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 959.7216ms
+2026-07-19 15:04:18.956 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:04:18.961 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 1008.8429ms
+2026-07-19 15:04:26.198 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/delivery-challan - null null
+2026-07-19 15:04:26.212 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:04:26.215 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/delivery-challan - 204 null null 16.4196ms
+2026-07-19 15:04:26.231 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/ExcelReport/delivery-challan - application/json 165
+2026-07-19 15:04:26.237 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:04:26.240 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetDeliveryChallanReport (SSProjectSolution)'
+2026-07-19 15:04:26.245 +05:30 [INF] Route matched with {action = "GetDeliveryChallanReport", controller = "ExcelReport"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDeliveryChallanReport(SSProjectSolution.Models.DTOs.ReportFilterRequestDto) on controller SSProjectSolution.Controllers.ExcelReportController (SSProjectSolution).
+2026-07-19 15:04:26.345 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Models.DTOs.ReportResponseDto'.
+2026-07-19 15:04:26.348 +05:30 [INF] Executed action SSProjectSolution.Controllers.ExcelReportController.GetDeliveryChallanReport (SSProjectSolution) in 97.3584ms
+2026-07-19 15:04:26.352 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetDeliveryChallanReport (SSProjectSolution)'
+2026-07-19 15:04:26.355 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/ExcelReport/delivery-challan - 200 97 application/json; charset=utf-8 124.5285ms
+2026-07-19 15:07:06.885 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 15:07:06.886 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 15:07:06.891 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:07:06.898 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:07:06.899 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 14.748ms
+2026-07-19 15:07:06.901 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 15.0031ms
+2026-07-19 15:07:06.909 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 15:07:06.917 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 15:07:06.921 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:07:06.929 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:07:06.932 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:07:06.936 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:07:06.938 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:07:06.940 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:07:07.054 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 15:07:07.063 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 119.2734ms
+2026-07-19 15:07:07.071 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:07:07.079 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 170.0093ms
+2026-07-19 15:07:07.110 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 15:07:07.126 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 177.7726ms
+2026-07-19 15:07:07.139 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:07:07.145 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 228.678ms
+2026-07-19 15:50:36.060 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 15:50:36.062 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 15:50:36.066 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:50:36.070 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:50:36.071 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 11.0383ms
+2026-07-19 15:50:36.073 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 11.0187ms
+2026-07-19 15:50:36.080 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 15:50:36.085 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 15:50:36.091 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:50:36.094 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:50:36.096 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:50:36.097 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:50:36.100 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:50:36.101 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:50:36.519 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 15:50:36.525 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 420.5796ms
+2026-07-19 15:50:36.532 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:50:36.536 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 456.3726ms
+2026-07-19 15:50:36.732 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 15:50:36.736 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 627.682ms
+2026-07-19 15:50:36.739 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:50:36.741 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 656.3333ms
+2026-07-19 15:50:57.558 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 15:50:57.558 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 15:50:57.562 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:50:57.565 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:50:57.567 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 9.0743ms
+2026-07-19 15:50:57.569 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 10.6865ms
+2026-07-19 15:50:57.574 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 15:50:57.580 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 15:50:57.584 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:50:57.588 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:50:57.590 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:50:57.592 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:50:57.593 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:50:57.595 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:50:57.663 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 15:50:57.666 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 67.5599ms
+2026-07-19 15:50:57.668 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:50:57.670 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 95.7773ms
+2026-07-19 15:50:57.674 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 15:50:57.681 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 79.3504ms
+2026-07-19 15:50:57.683 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:50:57.685 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 105.2722ms
+2026-07-19 15:51:53.315 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 15:51:53.316 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 15:51:53.319 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:51:53.323 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:51:53.324 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 9.0418ms
+2026-07-19 15:51:53.326 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 10.2313ms
+2026-07-19 15:51:53.331 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 15:51:53.336 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 15:51:53.341 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:51:53.346 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:51:53.347 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:51:53.349 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:51:53.351 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:51:53.353 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:51:53.540 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 15:51:53.540 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 15:51:53.547 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 188.7036ms
+2026-07-19 15:51:53.557 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 193.7004ms
+2026-07-19 15:51:53.563 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:51:53.568 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:51:53.573 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 241.6612ms
+2026-07-19 15:51:53.577 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 241.0587ms
+2026-07-19 15:51:59.809 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 15:51:59.810 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 15:51:59.813 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:51:59.818 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:51:59.820 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 11.3567ms
+2026-07-19 15:51:59.821 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 11.2085ms
+2026-07-19 15:51:59.827 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 15:51:59.832 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 15:51:59.839 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:51:59.849 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:51:59.853 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:51:59.854 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:51:59.855 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:51:59.857 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:51:59.923 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 15:51:59.927 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 66.9638ms
+2026-07-19 15:51:59.930 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:51:59.933 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 106.0434ms
+2026-07-19 15:51:59.938 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 15:51:59.942 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 78.3823ms
+2026-07-19 15:51:59.945 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:51:59.947 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 115.0558ms
+2026-07-19 15:52:09.558 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 15:52:09.559 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 15:52:09.562 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:52:09.568 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:52:09.570 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 12.5475ms
+2026-07-19 15:52:09.572 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 13.3772ms
+2026-07-19 15:52:09.580 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 15:52:09.585 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 15:52:09.589 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:52:09.594 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:52:09.595 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:52:09.597 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:52:09.599 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:52:09.601 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:52:09.726 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 15:52:09.735 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 130.631ms
+2026-07-19 15:52:09.744 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:52:09.750 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 169.5901ms
+2026-07-19 15:52:09.802 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 15:52:09.811 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 203.2042ms
+2026-07-19 15:52:09.818 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:52:09.823 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 238.1319ms
+2026-07-19 15:54:10.620 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 15:54:10.621 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 15:54:10.748 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:54:10.748 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:54:10.754 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 133.3672ms
+2026-07-19 15:54:10.759 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 137.2912ms
+2026-07-19 15:54:10.785 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 15:54:10.802 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 15:54:10.814 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:54:10.826 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:54:10.831 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:54:10.833 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:54:10.839 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:54:10.847 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:54:10.935 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 15:54:10.944 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 89.4286ms
+2026-07-19 15:54:10.947 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 15:54:10.953 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:54:10.964 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 103.8753ms
+2026-07-19 15:54:10.977 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:54:10.971 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 185.9736ms
+2026-07-19 15:54:10.982 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 179.9156ms
+2026-07-19 15:55:51.062 +05:30 [INF] Application is shutting down...
+2026-07-19 15:56:12.557 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-19 15:56:13.934 +05:30 [INF] Now listening on: http://localhost:5219
+2026-07-19 15:56:13.941 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-19 15:56:13.944 +05:30 [INF] Hosting environment: Development
+2026-07-19 15:56:13.946 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-07-19 15:56:34.872 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 15:56:34.872 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 15:56:35.423 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:56:35.546 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:56:35.565 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 697.7277ms
+2026-07-19 15:56:35.570 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 691.1816ms
+2026-07-19 15:56:35.629 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 15:56:35.629 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 15:56:35.660 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:56:35.660 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:56:35.666 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-07-19 15:56:36.316 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:56:36.316 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:56:37.073 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:56:37.073 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:56:41.873 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 15:56:42.084 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 15:56:42.117 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 4999.7322ms
+2026-07-19 15:56:42.134 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:56:42.149 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 5042.3847ms
+2026-07-19 15:56:42.163 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 6534.5021ms
+2026-07-19 15:56:42.166 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:56:42.203 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 6574.4782ms
+2026-07-19 15:59:29.996 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 15:59:29.997 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 15:59:30.007 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:59:30.015 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:59:30.019 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 22.4053ms
+2026-07-19 15:59:30.027 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 30.0274ms
+2026-07-19 15:59:30.038 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 15:59:30.047 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 15:59:30.056 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:59:30.062 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:59:30.069 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:59:30.069 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:59:30.072 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:59:30.073 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 15:59:30.162 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 15:59:30.166 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 85.9237ms
+2026-07-19 15:59:30.171 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 15:59:30.175 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 136.4704ms
+2026-07-19 15:59:30.203 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 15:59:30.210 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 133.616ms
+2026-07-19 15:59:30.215 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 15:59:30.225 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 177.7492ms
+2026-07-19 15:59:33.546 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - null null
+2026-07-19 15:59:33.559 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:59:33.569 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - 204 null null 23.1966ms
+2026-07-19 15:59:33.599 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - application/json 138
+2026-07-19 15:59:33.624 +05:30 [INF] CORS policy execution successful.
+2026-07-19 15:59:33.631 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-07-19 15:59:33.658 +05:30 [INF] Route matched with {action = "GetStockManagementReport", controller = "ExcelReport"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockManagementReport(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.ExcelReportController (SSProjectSolution).
+2026-07-19 15:59:33.989 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.StockManagementReportDto'.
+2026-07-19 15:59:34.022 +05:30 [INF] Executed action SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution) in 357.5639ms
+2026-07-19 15:59:34.029 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-07-19 15:59:34.034 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - 200 14510 application/json; charset=utf-8 435.6026ms
+2026-07-19 16:01:59.486 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 16:01:59.491 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 16:01:59.491 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:01:59.497 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:01:59.499 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 13.2892ms
+2026-07-19 16:01:59.501 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 9.6782ms
+2026-07-19 16:01:59.507 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 16:01:59.513 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 16:01:59.519 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:01:59.524 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:01:59.527 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:01:59.528 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:01:59.530 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:01:59.532 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:01:59.602 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 16:01:59.605 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 67.8879ms
+2026-07-19 16:01:59.608 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:01:59.611 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 104.0103ms
+2026-07-19 16:01:59.623 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 16:01:59.629 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 86.8699ms
+2026-07-19 16:01:59.632 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:01:59.636 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 123.2182ms
+2026-07-19 16:03:35.338 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - null null
+2026-07-19 16:03:35.359 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:03:35.363 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - 204 null null 24.669ms
+2026-07-19 16:03:35.374 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - application/json 138
+2026-07-19 16:03:35.380 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:03:35.383 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-07-19 16:03:35.393 +05:30 [INF] Route matched with {action = "GetStockManagementReport", controller = "ExcelReport"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockManagementReport(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.ExcelReportController (SSProjectSolution).
+2026-07-19 16:03:35.641 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.StockManagementReportDto'.
+2026-07-19 16:03:35.656 +05:30 [INF] Executed action SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution) in 257.7209ms
+2026-07-19 16:03:35.723 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-07-19 16:03:35.741 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - 200 14510 application/json; charset=utf-8 366.0726ms
+2026-07-19 16:06:57.622 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 16:06:57.622 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 16:06:57.626 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:06:57.631 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:06:57.632 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 10.6871ms
+2026-07-19 16:06:57.633 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 10.9624ms
+2026-07-19 16:06:57.638 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 16:06:57.644 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 16:06:57.649 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:06:57.653 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:06:57.655 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:06:57.656 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:06:57.659 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:06:57.662 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:06:57.748 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 16:06:57.751 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 82.8675ms
+2026-07-19 16:06:57.754 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:06:57.756 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 117.2689ms
+2026-07-19 16:06:58.024 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 16:06:58.027 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 355.7471ms
+2026-07-19 16:06:58.030 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:06:58.033 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 388.6804ms
+2026-07-19 16:07:08.634 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 16:07:08.636 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 16:07:08.641 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:07:08.648 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:07:08.651 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 17.5886ms
+2026-07-19 16:07:08.653 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 17.0529ms
+2026-07-19 16:07:08.658 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 16:07:08.666 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 16:07:08.671 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:07:08.676 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:07:08.677 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:07:08.679 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:07:08.682 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:07:08.685 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:07:08.763 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 16:07:08.765 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 76.7565ms
+2026-07-19 16:07:08.768 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:07:08.771 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 112.6476ms
+2026-07-19 16:07:08.771 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 16:07:08.779 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 86.5403ms
+2026-07-19 16:07:08.782 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:07:08.784 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 118.3145ms
+2026-07-19 16:07:21.366 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 16:07:21.366 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 16:07:21.371 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:07:21.376 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:07:21.379 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 12.7971ms
+2026-07-19 16:07:21.384 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 17.2214ms
+2026-07-19 16:07:21.390 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 16:07:21.397 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 16:07:21.401 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:07:21.406 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:07:21.409 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:07:21.410 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:07:21.413 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:07:21.415 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:07:21.480 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 16:07:21.483 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 63.2127ms
+2026-07-19 16:07:21.486 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:07:21.489 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 98.4603ms
+2026-07-19 16:07:21.493 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 16:07:21.498 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 74.4555ms
+2026-07-19 16:07:21.501 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:07:21.505 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 107.8852ms
+2026-07-19 16:09:34.234 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - null null
+2026-07-19 16:09:34.251 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:09:34.256 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - 204 null null 21.6173ms
+2026-07-19 16:09:34.269 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - application/json 138
+2026-07-19 16:09:34.276 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:09:34.281 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-07-19 16:09:34.285 +05:30 [INF] Route matched with {action = "GetStockManagementReport", controller = "ExcelReport"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockManagementReport(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.ExcelReportController (SSProjectSolution).
+2026-07-19 16:09:34.519 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.StockManagementReportDto'.
+2026-07-19 16:09:34.527 +05:30 [INF] Executed action SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution) in 236.6401ms
+2026-07-19 16:09:34.541 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-07-19 16:09:34.546 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - 200 14510 application/json; charset=utf-8 276.6ms
+2026-07-19 16:29:52.733 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 16:29:52.734 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 16:29:52.738 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:29:52.741 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:29:52.742 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 9.4033ms
+2026-07-19 16:29:52.744 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 10.3856ms
+2026-07-19 16:29:52.749 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 16:29:52.755 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 16:29:52.759 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:29:52.762 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:29:52.763 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:29:52.765 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:29:52.767 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:29:52.768 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:29:53.063 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 16:29:53.066 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 294.3434ms
+2026-07-19 16:29:53.068 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:29:53.071 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 321.4659ms
+2026-07-19 16:29:53.292 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 16:29:53.301 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 526.0307ms
+2026-07-19 16:29:53.310 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:29:53.316 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 561.6528ms
+2026-07-19 16:31:28.692 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 16:31:28.692 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 16:31:28.697 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:31:28.702 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:31:28.704 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 12.2881ms
+2026-07-19 16:31:28.706 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 14.1809ms
+2026-07-19 16:31:28.714 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 16:31:28.723 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 16:31:28.729 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:31:28.734 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:31:28.736 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:31:28.737 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:31:28.740 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:31:28.745 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:31:28.819 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 16:31:28.822 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 73.4944ms
+2026-07-19 16:31:28.826 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:31:28.829 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 114.6679ms
+2026-07-19 16:31:28.832 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 16:31:28.840 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 87.2575ms
+2026-07-19 16:31:28.844 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:31:28.847 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 124.5036ms
+2026-07-19 16:31:34.404 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - null null
+2026-07-19 16:31:34.419 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:31:34.422 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - 204 null null 17.7807ms
+2026-07-19 16:31:34.430 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - application/json 138
+2026-07-19 16:31:34.436 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:31:34.440 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-07-19 16:31:34.443 +05:30 [INF] Route matched with {action = "GetStockManagementReport", controller = "ExcelReport"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockManagementReport(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.ExcelReportController (SSProjectSolution).
+2026-07-19 16:31:34.701 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.StockManagementReportDto'.
+2026-07-19 16:31:34.711 +05:30 [INF] Executed action SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution) in 263.8654ms
+2026-07-19 16:31:34.721 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-07-19 16:31:34.727 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - 200 14510 application/json; charset=utf-8 297.1169ms
+2026-07-19 16:36:03.821 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 16:36:03.822 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 16:36:03.826 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:36:03.830 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:36:03.831 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 10.1245ms
+2026-07-19 16:36:03.833 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 10.6131ms
+2026-07-19 16:36:03.838 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 16:36:03.844 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 16:36:03.848 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:36:03.853 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:36:03.854 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:36:03.855 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:36:03.857 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:36:03.859 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:36:03.920 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 16:36:03.925 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 62.4878ms
+2026-07-19 16:36:03.929 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:36:03.932 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 93.0805ms
+2026-07-19 16:36:03.939 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 16:36:03.943 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 77.3358ms
+2026-07-19 16:36:03.947 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:36:03.949 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 104.7735ms
+2026-07-19 16:37:51.768 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - null null
+2026-07-19 16:37:51.783 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:37:51.786 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - 204 null null 18.0686ms
+2026-07-19 16:37:51.795 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - application/json 138
+2026-07-19 16:37:51.804 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:37:51.806 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-07-19 16:37:51.809 +05:30 [INF] Route matched with {action = "GetStockManagementReport", controller = "ExcelReport"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockManagementReport(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.ExcelReportController (SSProjectSolution).
+2026-07-19 16:37:52.063 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.StockManagementReportDto'.
+2026-07-19 16:37:52.067 +05:30 [INF] Executed action SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution) in 253.1595ms
+2026-07-19 16:37:52.072 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-07-19 16:37:52.077 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - 200 14510 application/json; charset=utf-8 281.6492ms
+2026-07-19 16:47:23.730 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-07-19 16:47:23.734 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-07-19 16:47:23.736 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:47:23.743 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 12.0232ms
+2026-07-19 16:47:23.741 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:47:23.749 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-07-19 16:47:23.750 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 15.8442ms
+2026-07-19 16:47:23.754 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:47:23.761 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-07-19 16:47:23.762 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:47:23.766 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:47:23.769 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:47:23.769 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:47:23.775 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-07-19 16:47:24.079 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-19 16:47:24.084 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 311.8256ms
+2026-07-19 16:47:24.090 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-07-19 16:47:24.096 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 322 application/json; charset=utf-8 346.9338ms
+2026-07-19 16:47:24.340 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-07-19 16:47:24.344 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 564.8939ms
+2026-07-19 16:47:24.348 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-07-19 16:47:24.350 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 11308 application/json; charset=utf-8 589.511ms
+2026-07-19 16:48:40.853 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - null null
+2026-07-19 16:48:40.877 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:48:40.885 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - 204 null null 31.9549ms
+2026-07-19 16:48:40.919 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - application/json 138
+2026-07-19 16:48:40.940 +05:30 [INF] CORS policy execution successful.
+2026-07-19 16:48:40.944 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-07-19 16:48:40.964 +05:30 [INF] Route matched with {action = "GetStockManagementReport", controller = "ExcelReport"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockManagementReport(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.ExcelReportController (SSProjectSolution).
+2026-07-19 16:48:41.228 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.StockManagementReportDto'.
+2026-07-19 16:48:41.254 +05:30 [INF] Executed action SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution) in 281.6096ms
+2026-07-19 16:48:41.265 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-07-19 16:48:41.274 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - 200 14510 application/json; charset=utf-8 354.7416ms
+2026-07-19 16:51:37.542 +05:30 [INF] Application is shutting down...

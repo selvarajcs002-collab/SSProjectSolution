@@ -16,5 +16,10 @@ namespace SSProjectSolution.Repositories
         
         // ── Additional Details ─────────────────────────────────────────────────
         Task<dynamic> GetAdditionalDetailsOptionsAsync(int companyId);
+
+        // ── Lot Completion ─────────────────────────────────────────────────────
+        Task<dynamic> MarkLotCompletedAsync(Dapper.DynamicParameters parameters);
+        Task<dynamic> MarkInwardInactiveAsync(Dapper.DynamicParameters parameters);
+        Task<dynamic> MarkInwardInactiveByDcNoAsync(Dapper.DynamicParameters parameters);
     }
 }

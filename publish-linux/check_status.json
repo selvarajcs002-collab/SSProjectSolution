@@ -1,0 +1,9 @@
+{
+  "InstanceIds": ["i-018edd7911bc0f6a3"],
+  "DocumentName": "AWS-RunShellScript",
+  "Parameters": {
+    "commands": [
+      "sudo docker ps --format \"table {{.Names}}\t{{.Status}}\t{{.Ports}}\""
+    ]
+  }
+}

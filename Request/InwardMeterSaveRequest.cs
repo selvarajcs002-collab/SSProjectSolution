@@ -34,6 +34,8 @@ namespace SSProjectSolution.Request
         [Range(1, int.MaxValue, ErrorMessage = "CreatedBy must be a valid user Id")]
         public int CreatedBy { get; set; }
 
+        public DateTime? InwardDate { get; set; }
+
         [Required(ErrorMessage = "MeterDetails list cannot be empty")]
         [MinLength(1, ErrorMessage = "At least one meter detail must be provided")]
         public List<MeterDetailDto> MeterDetails { get; set; } = new List<MeterDetailDto>();

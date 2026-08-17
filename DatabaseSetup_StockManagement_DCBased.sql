@@ -50,6 +50,7 @@ GO
 -- =============================================
 -- Author:		Antigravity
 -- Create date: 2026-07-11
+-- Modified date: 2026-07-20
 -- Description:	Get Stock Summary DC Based
 -- =============================================
 CREATE OR ALTER PROCEDURE [dbo].[usp_GetStockSummary_DcBased]
@@ -80,6 +81,8 @@ BEGIN
       AND (@StyleNo IS NULL OR I.StyleNo LIKE '%' + @StyleNo + '%')
       AND (@DesignName IS NULL OR I.DesignName LIKE '%' + @DesignName + '%')
       AND (@Colour IS NULL OR I.Colour LIKE '%' + @Colour + '%')
+      AND (@FromDate IS NULL OR CAST(COALESCE(I.InwardDate, I.CreatedDate) AS DATE) >= @FromDate)
+      AND (@ToDate IS NULL OR CAST(COALESCE(I.InwardDate, I.CreatedDate) AS DATE) <= @ToDate)
       AND I.Status <> 'Deleted';
 
     -- Calculate Total Outward based on DCs
@@ -91,6 +94,8 @@ BEGIN
       AND (@StyleNo IS NULL OR O.StyleNo LIKE '%' + @StyleNo + '%')
       AND (@DesignName IS NULL OR O.DesignName LIKE '%' + @DesignName + '%')
       AND (@Colour IS NULL OR OSC.Colour LIKE '%' + @Colour + '%')
+      AND (@FromDate IS NULL OR CAST(COALESCE(O.OutwardDate, O.CreatedDate) AS DATE) >= @FromDate)
+      AND (@ToDate IS NULL OR CAST(COALESCE(O.OutwardDate, O.CreatedDate) AS DATE) <= @ToDate)
       AND O.Status <> 'Deleted';
 
     -- Calculate Todays Inward (ignoring FromDate/ToDate filter)
@@ -102,7 +107,7 @@ BEGIN
       AND (@StyleNo IS NULL OR I.StyleNo LIKE '%' + @StyleNo + '%')
       AND (@DesignName IS NULL OR I.DesignName LIKE '%' + @DesignName + '%')
       AND (@Colour IS NULL OR I.Colour LIKE '%' + @Colour + '%')
-      AND CAST(I.CreatedDate AS DATE) = CAST(GETDATE() AS DATE)
+      AND CAST(COALESCE(I.InwardDate, I.CreatedDate) AS DATE) = CAST(GETDATE() AS DATE)
       AND I.Status <> 'Deleted';
 
     -- Calculate Todays Outward (ignoring FromDate/ToDate filter)
@@ -114,7 +119,7 @@ BEGIN
       AND (@StyleNo IS NULL OR O.StyleNo LIKE '%' + @StyleNo + '%')
       AND (@DesignName IS NULL OR O.DesignName LIKE '%' + @DesignName + '%')
       AND (@Colour IS NULL OR OSC.Colour LIKE '%' + @Colour + '%')
-      AND CAST(O.CreatedDate AS DATE) = CAST(GETDATE() AS DATE)
+      AND CAST(COALESCE(O.OutwardDate, O.CreatedDate) AS DATE) = CAST(GETDATE() AS DATE)
       AND O.Status <> 'Deleted';
 
     SELECT 
@@ -135,6 +140,7 @@ GO
 -- =============================================
 -- Author:		Antigravity
 -- Create date: 2026-07-11
+-- Modified date: 2026-07-20
 -- Description:	Get Stock Balance Size Wise DC Based
 -- =============================================
 CREATE OR ALTER PROCEDURE [dbo].[usp_GetStockBalance_SizeWise_DcBased]
@@ -160,8 +166,8 @@ BEGIN
           AND (@StyleNo IS NULL OR I.StyleNo LIKE '%' + @StyleNo + '%')
           AND (@DesignName IS NULL OR I.DesignName LIKE '%' + @DesignName + '%')
           AND (@Colour IS NULL OR I.Colour LIKE '%' + @Colour + '%')
-          AND (@FromDate IS NULL OR CAST(I.CreatedDate AS DATE) >= @FromDate)
-          AND (@ToDate IS NULL OR CAST(I.CreatedDate AS DATE) <= @ToDate)
+          AND (@FromDate IS NULL OR CAST(COALESCE(I.InwardDate, I.CreatedDate) AS DATE) >= @FromDate)
+          AND (@ToDate IS NULL OR CAST(COALESCE(I.InwardDate, I.CreatedDate) AS DATE) <= @ToDate)
           AND I.Status <> 'Deleted'
         GROUP BY ISC.Size
     ),
@@ -174,8 +180,8 @@ BEGIN
           AND (@StyleNo IS NULL OR O.StyleNo LIKE '%' + @StyleNo + '%')
           AND (@DesignName IS NULL OR O.DesignName LIKE '%' + @DesignName + '%')
           AND (@Colour IS NULL OR OSC.Colour LIKE '%' + @Colour + '%')
-          AND (@FromDate IS NULL OR CAST(O.CreatedDate AS DATE) >= @FromDate)
-          AND (@ToDate IS NULL OR CAST(O.CreatedDate AS DATE) <= @ToDate)
+          AND (@FromDate IS NULL OR CAST(COALESCE(O.OutwardDate, O.CreatedDate) AS DATE) >= @FromDate)
+          AND (@ToDate IS NULL OR CAST(COALESCE(O.OutwardDate, O.CreatedDate) AS DATE) <= @ToDate)
           AND O.Status <> 'Deleted'
         GROUP BY OSC.Size
     )
@@ -194,6 +200,7 @@ GO
 -- =============================================
 -- Author:		Antigravity
 -- Create date: 2026-07-11
+-- Modified date: 2026-07-20
 -- Description:	Get Last Transactions DC Based
 -- =============================================
 CREATE OR ALTER PROCEDURE [dbo].[usp_GetLastTransactions_DcBased]
@@ -215,7 +222,7 @@ BEGIN
         -- Inward
         SELECT 
             I.InwardId AS Id,
-            I.CreatedDate AS [Date],
+            COALESCE(I.InwardDate, I.CreatedDate) AS [Date],
             'INWARD' AS [Type],
             I.InwardDcNo AS DcNo,
             C.CompanyName,
@@ -231,8 +238,8 @@ BEGIN
           AND (@StyleNo IS NULL OR I.StyleNo LIKE '%' + @StyleNo + '%')
           AND (@DesignName IS NULL OR I.DesignName LIKE '%' + @DesignName + '%')
           AND (@Colour IS NULL OR I.Colour LIKE '%' + @Colour + '%')
-          AND (@FromDate IS NULL OR CAST(I.CreatedDate AS DATE) >= @FromDate)
-          AND (@ToDate IS NULL OR CAST(I.CreatedDate AS DATE) <= @ToDate)
+          AND (@FromDate IS NULL OR CAST(COALESCE(I.InwardDate, I.CreatedDate) AS DATE) >= @FromDate)
+          AND (@ToDate IS NULL OR CAST(COALESCE(I.InwardDate, I.CreatedDate) AS DATE) <= @ToDate)
           AND I.Status <> 'Deleted'
 
         UNION ALL
@@ -240,7 +247,7 @@ BEGIN
         -- Outward
         SELECT 
             O.OutwardId AS Id,
-            O.CreatedDate AS [Date],
+            COALESCE(O.OutwardDate, O.CreatedDate) AS [Date],
             'OUTWARD' AS [Type],
             O.OutwardDcNo AS DcNo,
             C.CompanyName,
@@ -260,11 +267,11 @@ BEGIN
           AND (@StyleNo IS NULL OR O.StyleNo LIKE '%' + @StyleNo + '%')
           AND (@DesignName IS NULL OR O.DesignName LIKE '%' + @DesignName + '%')
           AND (@Colour IS NULL OR O.Colour LIKE '%' + @Colour + '%' OR EXISTS (SELECT 1 FROM OutwardColour WHERE OutwardId = O.OutwardId AND Colour LIKE '%' + @Colour + '%'))
-          AND (@FromDate IS NULL OR CAST(O.CreatedDate AS DATE) >= @FromDate)
-          AND (@ToDate IS NULL OR CAST(O.CreatedDate AS DATE) <= @ToDate)
+          AND (@FromDate IS NULL OR CAST(COALESCE(O.OutwardDate, O.CreatedDate) AS DATE) >= @FromDate)
+          AND (@ToDate IS NULL OR CAST(COALESCE(O.OutwardDate, O.CreatedDate) AS DATE) <= @ToDate)
           AND O.Status <> 'Deleted'
     )
-    SELECT TOP (@TopCount) *
+    SELECT *
     FROM AllTransactions
     ORDER BY [Date] DESC;
 END

@@ -115,15 +115,7 @@ namespace SSProjectSolution.Controllers
             }
             memory.Position = 0;
 
-            // Delete the file from the server so it only remains on the client machine
-            try
-            {
-                System.IO.File.Delete(job.PdfPath);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogWarning(ex, "Failed to delete temporary PDF file on server: {PdfPath}", job.PdfPath);
-            }
+
 
             return File(memory, "application/pdf", $"{job.DocumentNumber}.pdf");
         }
@@ -151,6 +143,20 @@ namespace SSProjectSolution.Controllers
             if (request.Status == "Failed")
             {
                 await _printJobRepo.IncrementRetryCountAsync(jobId);
+            }
+            else if (request.Status == "Printed" || request.Status == "Completed")
+            {
+                try
+                {
+                    if (System.IO.File.Exists(job.PdfPath))
+                    {
+                        System.IO.File.Delete(job.PdfPath);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogWarning(ex, "Failed to delete temporary PDF file on server after print: {PdfPath}", job.PdfPath);
+                }
             }
 
             return updated ? Ok() : StatusCode(500, "Failed to update job status.");

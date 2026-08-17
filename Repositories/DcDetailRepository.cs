@@ -33,7 +33,8 @@ namespace SSProjectSolution.Repositories
                 FROM Inward 
                 WHERE CompanyId = @CompanyId 
                   AND InwardDcNo IS NOT NULL 
-                  AND LTRIM(RTRIM(InwardDcNo)) <> ''";
+                  AND LTRIM(RTRIM(InwardDcNo)) <> ''
+                  AND Status = 'Active'";
 
             if (!string.IsNullOrEmpty(styleNo))
                 sql += " AND StyleNo = @StyleNo";

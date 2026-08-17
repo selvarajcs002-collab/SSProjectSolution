@@ -1,0 +1,625 @@
+2026-08-04 09:33:07.389 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-04 09:33:07.997 +05:30 [INF] Now listening on: http://localhost:5219
+2026-08-04 09:33:08.006 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-04 09:33:08.010 +05:30 [INF] Hosting environment: Development
+2026-08-04 09:33:08.013 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-08-04 09:35:53.068 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 09:35:53.493 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:35:53.585 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 524.0402ms
+2026-08-04 09:35:53.675 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 09:35:53.816 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:35:53.833 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-08-04 09:35:54.297 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 09:35:55.974 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 09:36:05.365 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 09:36:07.048 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 9217.8872ms
+2026-08-04 09:36:07.197 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 09:36:07.259 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 13587.1487ms
+2026-08-04 09:42:21.045 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 09:42:21.052 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:42:21.054 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 8.8702ms
+2026-08-04 09:42:21.377 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 09:42:21.480 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:42:21.504 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 09:42:21.513 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 09:42:21.953 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 09:42:21.984 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 455.3031ms
+2026-08-04 09:42:22.021 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 09:42:22.078 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 700.676ms
+2026-08-04 09:44:57.762 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 09:44:57.767 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:44:57.769 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 6.7537ms
+2026-08-04 09:44:57.775 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 09:44:57.790 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:44:57.804 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 09:44:57.807 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 09:44:57.873 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 09:44:57.881 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 68.3236ms
+2026-08-04 09:44:57.885 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 09:44:57.888 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 112.688ms
+2026-08-04 09:52:36.238 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 09:52:36.240 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 09:52:36.241 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 09:52:36.244 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:52:36.248 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:52:36.251 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:52:36.252 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 14.0609ms
+2026-08-04 09:52:36.253 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 13.3764ms
+2026-08-04 09:52:36.255 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 13.6774ms
+2026-08-04 09:52:36.260 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 09:52:36.265 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 09:52:36.270 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 09:52:36.274 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:52:36.431 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:52:36.432 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 404 0 null 172.318ms
+2026-08-04 09:52:36.434 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 163.97ms
+2026-08-04 09:52:36.436 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:52:36.444 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/machines, Response status code: 404
+2026-08-04 09:52:36.446 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 09:52:36.448 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 09:52:36.455 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 09:52:37.214 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 09:52:37.216 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 757.7874ms
+2026-08-04 09:52:37.219 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 09:52:37.221 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 956.1476ms
+2026-08-04 09:54:40.148 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 09:54:40.151 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 09:54:40.154 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 09:54:40.158 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:54:40.177 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:54:40.184 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:54:40.267 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 34.9214ms
+2026-08-04 09:54:40.267 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 36.2692ms
+2026-08-04 09:54:40.267 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 37.802ms
+2026-08-04 09:54:40.277 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 09:54:40.299 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 09:54:40.308 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 09:54:40.313 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:54:40.319 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:54:40.323 +05:30 [INF] CORS policy execution successful.
+2026-08-04 09:54:40.325 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 09:54:40.328 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 404 0 null 28.7931ms
+2026-08-04 09:54:40.328 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 20.599ms
+2026-08-04 09:54:40.330 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 09:54:40.338 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/machines, Response status code: 404
+2026-08-04 09:54:40.344 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 09:54:40.417 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 09:54:40.422 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 72.7067ms
+2026-08-04 09:54:40.427 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 09:54:40.430 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 152.4294ms
+2026-08-04 10:04:41.528 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 10:04:41.528 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 10:04:41.528 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 10:04:41.538 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:04:41.541 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:04:41.548 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:04:41.551 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 22.6602ms
+2026-08-04 10:04:41.552 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 24.4543ms
+2026-08-04 10:04:41.555 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 27.1861ms
+2026-08-04 10:04:41.564 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 10:04:41.573 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 10:04:41.582 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 10:04:41.590 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:04:41.599 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:04:41.606 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:04:41.609 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 404 0 null 44.1522ms
+2026-08-04 10:04:41.611 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 10:04:41.613 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 31.413ms
+2026-08-04 10:04:41.625 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/machines, Response status code: 404
+2026-08-04 10:04:41.629 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 10:04:41.640 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 10:04:41.966 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 10:04:42.154 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 507.095ms
+2026-08-04 10:04:42.161 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 10:04:42.167 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 594.4496ms
+2026-08-04 10:08:27.348 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 10:08:27.353 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 10:08:27.353 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 10:08:27.358 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:08:27.363 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:08:27.368 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:08:27.370 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 22.6586ms
+2026-08-04 10:08:27.372 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 18.6471ms
+2026-08-04 10:08:27.373 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 20.2532ms
+2026-08-04 10:08:27.621 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 10:08:27.621 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 10:08:27.621 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 10:08:27.635 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:08:27.645 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:08:27.651 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:08:27.653 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 31.9082ms
+2026-08-04 10:08:27.655 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 404 0 null 33.4795ms
+2026-08-04 10:08:27.656 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 10:08:27.661 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 10:08:27.666 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/machines, Response status code: 404
+2026-08-04 10:08:27.668 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 10:08:27.900 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 10:08:27.911 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 232.9847ms
+2026-08-04 10:08:27.921 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 10:08:27.927 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 305.9484ms
+2026-08-04 10:09:57.268 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 10:09:57.280 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 10:09:57.282 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 10:09:57.335 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:09:57.384 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:09:57.436 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:09:57.445 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 176.377ms
+2026-08-04 10:09:57.453 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 172.55ms
+2026-08-04 10:09:57.483 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 200.892ms
+2026-08-04 10:09:57.508 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 10:09:57.531 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 10:09:57.570 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 10:09:57.652 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:09:57.690 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:09:57.717 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:09:57.892 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 404 0 null 384.8088ms
+2026-08-04 10:09:57.910 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 10:09:57.922 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 351.4654ms
+2026-08-04 10:09:58.007 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/machines, Response status code: 404
+2026-08-04 10:09:58.012 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 10:09:58.019 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 10:09:58.087 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 10:10:06.517 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 8487.9522ms
+2026-08-04 10:10:06.566 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 10:10:06.578 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 9046.8365ms
+2026-08-04 10:10:53.820 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 10:10:53.821 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 10:10:53.824 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 10:10:53.832 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:10:53.834 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:10:53.840 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:10:53.842 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 21.8849ms
+2026-08-04 10:10:53.846 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 24.594ms
+2026-08-04 10:10:53.849 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 25.0959ms
+2026-08-04 10:10:53.860 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 10:10:53.868 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 10:10:53.878 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 10:10:53.883 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:10:53.889 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:10:53.901 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:10:53.903 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 10:10:53.905 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 404 0 null 36.7863ms
+2026-08-04 10:10:53.915 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 37.0291ms
+2026-08-04 10:10:53.919 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 10:10:53.934 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/machines, Response status code: 404
+2026-08-04 10:10:53.949 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 10:10:54.113 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 10:10:54.146 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 192.6216ms
+2026-08-04 10:10:54.161 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 10:10:54.176 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 316.1828ms
+2026-08-04 10:59:57.015 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 10:59:57.020 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 10:59:57.067 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:59:57.067 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:59:57.068 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 10:59:57.075 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 65.748ms
+2026-08-04 10:59:57.075 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 55.3113ms
+2026-08-04 10:59:57.077 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:59:57.083 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 10:59:57.088 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 10:59:57.091 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 22.2715ms
+2026-08-04 10:59:57.109 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 10:59:57.127 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:59:57.143 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:59:57.143 +05:30 [INF] CORS policy execution successful.
+2026-08-04 10:59:57.225 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 116.3677ms
+2026-08-04 10:59:57.225 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 404 0 null 141.6336ms
+2026-08-04 10:59:57.230 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 10:59:57.287 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/machines, Response status code: 404
+2026-08-04 10:59:57.287 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 10:59:57.359 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 10:59:58.142 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 10:59:58.173 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 798.9276ms
+2026-08-04 10:59:58.176 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 10:59:58.178 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 1090.186ms
+2026-08-04 11:00:07.899 +05:30 [INF] Application is shutting down...
+2026-08-04 11:00:28.315 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-04 11:00:28.993 +05:30 [INF] Now listening on: http://localhost:5219
+2026-08-04 11:00:29.001 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-04 11:00:29.004 +05:30 [INF] Hosting environment: Development
+2026-08-04 11:00:29.006 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-08-04 11:03:13.461 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:03:13.462 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:03:13.462 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:03:14.009 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:03:14.009 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:03:14.009 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:03:14.049 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 592.2662ms
+2026-08-04 11:03:14.049 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 592.3022ms
+2026-08-04 11:03:14.049 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 592.2416ms
+2026-08-04 11:03:14.232 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:03:14.232 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:03:14.232 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:03:14.447 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:03:14.447 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:03:14.454 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:03:14.468 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-08-04 11:03:15.723 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 1491.1579ms
+2026-08-04 11:03:15.723 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 404 0 null 1492.1048ms
+2026-08-04 11:03:15.755 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:03:15.807 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 11:03:15.841 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/machines, Response status code: 404
+2026-08-04 11:03:16.784 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 11:03:23.928 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:03:25.487 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 8537.2651ms
+2026-08-04 11:03:25.496 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:03:25.513 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 11281.6136ms
+2026-08-04 11:03:52.610 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:03:52.610 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:03:52.612 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:03:52.618 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:03:52.622 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:03:52.627 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:03:52.629 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 19.0292ms
+2026-08-04 11:03:52.631 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 20.3751ms
+2026-08-04 11:03:52.632 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 20.2926ms
+2026-08-04 11:03:52.648 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:03:52.661 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:03:52.669 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:03:52.678 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:03:52.687 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:03:52.692 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:03:52.700 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:03:52.700 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 30.9797ms
+2026-08-04 11:03:52.700 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 404 0 null 51.733ms
+2026-08-04 11:03:52.704 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 11:03:52.712 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 11:03:52.719 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/machines, Response status code: 404
+2026-08-04 11:03:52.973 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:03:52.982 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 257.8979ms
+2026-08-04 11:03:52.993 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:03:52.998 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 336.2785ms
+2026-08-04 11:09:39.850 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:09:39.856 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:09:39.863 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:09:39.868 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:09:39.870 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:09:39.875 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 22.402ms
+2026-08-04 11:09:39.879 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 22.5593ms
+2026-08-04 11:09:39.885 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:09:39.895 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:09:39.902 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:09:39.904 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 33.15ms
+2026-08-04 11:09:39.910 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:09:39.917 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:09:39.929 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:09:39.931 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 404 0 null 36.4753ms
+2026-08-04 11:09:39.933 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:09:39.939 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:09:39.946 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/machines, Response status code: 404
+2026-08-04 11:09:39.950 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 11:09:39.952 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 23.2387ms
+2026-08-04 11:09:39.981 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 11:09:40.053 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:09:40.058 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 92.9118ms
+2026-08-04 11:09:40.062 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:09:40.065 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 163.3716ms
+2026-08-04 11:11:58.388 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:11:58.399 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:11:58.407 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:11:58.409 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:11:58.459 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:11:58.461 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 73.776ms
+2026-08-04 11:11:58.467 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:11:58.468 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 69.593ms
+2026-08-04 11:11:58.476 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:11:58.478 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 68.6227ms
+2026-08-04 11:11:58.489 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:11:58.495 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:11:58.503 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:11:58.515 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:11:58.517 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:11:58.577 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:11:58.582 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 404 0 null 92.5774ms
+2026-08-04 11:11:58.584 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 11:11:58.654 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 147.1447ms
+2026-08-04 11:11:58.869 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/machines, Response status code: 404
+2026-08-04 11:11:59.081 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:11:59.083 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 11:11:59.119 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 106.5376ms
+2026-08-04 11:11:59.134 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:11:59.145 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 668.6435ms
+2026-08-04 11:16:34.760 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-04 11:16:35.571 +05:30 [INF] Now listening on: http://localhost:5219
+2026-08-04 11:16:35.579 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-04 11:16:35.580 +05:30 [INF] Hosting environment: Development
+2026-08-04 11:16:35.580 +05:30 [INF] Content root path: c:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-08-04 11:16:48.772 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:16:48.951 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-08-04 11:16:49.075 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 11:16:49.152 +05:30 [INF] Route matched with {action = "GetMachines", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMachines() on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 11:16:50.710 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:16:51.031 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution) in 1866.2552ms
+2026-08-04 11:16:51.067 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 11:16:51.078 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 200 2 application/json; charset=utf-8 2311.8668ms
+2026-08-04 11:17:33.422 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:17:33.431 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 11:17:33.431 +05:30 [INF] Route matched with {action = "GetMachines", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMachines() on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 11:17:33.605 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:17:33.652 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution) in 220.0739ms
+2026-08-04 11:17:33.652 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 11:17:33.652 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 200 77 application/json; charset=utf-8 230.6298ms
+2026-08-04 11:20:34.927 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-04 11:20:35.220 +05:30 [INF] Now listening on: http://localhost:5219
+2026-08-04 11:20:35.226 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-04 11:20:35.228 +05:30 [INF] Hosting environment: Development
+2026-08-04 11:20:35.230 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-08-04 11:20:45.333 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:20:45.333 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:20:45.333 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:20:45.830 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:20:45.830 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:20:45.830 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:20:45.893 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 563.1513ms
+2026-08-04 11:20:45.893 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 563.1359ms
+2026-08-04 11:20:45.893 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 564.9833ms
+2026-08-04 11:20:45.982 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:20:45.993 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:20:46.017 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:20:46.055 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:20:46.056 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:20:46.061 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:20:47.423 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-08-04 11:20:49.179 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 3198.27ms
+2026-08-04 11:20:49.180 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 11:20:49.180 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:20:49.233 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 11:20:49.311 +05:30 [INF] Route matched with {action = "GetMachines", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMachines() on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 11:20:49.311 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 11:20:52.709 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:20:52.748 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:20:53.620 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution) in 4292.2714ms
+2026-08-04 11:20:53.627 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 11:20:53.634 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 200 77 application/json; charset=utf-8 7640.8053ms
+2026-08-04 11:20:53.826 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 4498.9691ms
+2026-08-04 11:20:53.841 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:20:53.846 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 7828.5219ms
+2026-08-04 11:50:06.395 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:50:06.449 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:50:06.470 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:50:06.933 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:50:07.136 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:50:07.145 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:50:07.155 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 685.1088ms
+2026-08-04 11:50:07.152 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 702.5012ms
+2026-08-04 11:50:07.148 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 753.6637ms
+2026-08-04 11:50:07.389 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:50:07.639 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:50:08.753 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:50:10.333 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:50:10.618 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:50:10.691 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 3301.8708ms
+2026-08-04 11:50:10.693 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 11:50:10.669 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:50:10.710 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 11:50:10.786 +05:30 [INF] Route matched with {action = "GetMachines", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMachines() on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 11:50:10.864 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:50:10.885 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 11:50:11.209 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:50:11.221 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution) in 342.237ms
+2026-08-04 11:50:11.236 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 11:50:11.269 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 200 77 application/json; charset=utf-8 3629.6014ms
+2026-08-04 11:50:11.460 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:50:11.525 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 587.8797ms
+2026-08-04 11:50:11.529 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:50:11.531 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 2778.569ms
+2026-08-04 11:51:28.095 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:51:28.095 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:51:28.095 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:51:28.102 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:51:28.116 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:51:28.119 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:51:28.124 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 27.1458ms
+2026-08-04 11:51:28.125 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 32.2957ms
+2026-08-04 11:51:28.127 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/list - 204 null null 33.4158ms
+2026-08-04 11:51:28.133 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:51:28.143 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/list - null null
+2026-08-04 11:51:28.153 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:51:28.163 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:51:28.168 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:51:28.176 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:51:28.267 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/list - 404 0 null 123.597ms
+2026-08-04 11:51:28.273 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:51:28.285 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 11:51:29.504 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/Shift/list, Response status code: 404
+2026-08-04 11:51:29.539 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 11:51:29.539 +05:30 [INF] Route matched with {action = "GetMachines", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMachines() on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 11:51:29.803 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:51:29.814 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution) in 265.3573ms
+2026-08-04 11:51:29.817 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:51:29.819 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 11:51:29.830 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 284.7257ms
+2026-08-04 11:51:29.853 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 200 77 application/json; charset=utf-8 1699.6752ms
+2026-08-04 11:51:29.868 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:51:29.922 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 1788.8603ms
+2026-08-04 11:53:42.467 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:53:42.467 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:53:42.479 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:53:42.474 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:53:42.483 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 16.9261ms
+2026-08-04 11:53:42.488 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 22.0227ms
+2026-08-04 11:53:42.502 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 11:53:42.508 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 11:53:42.523 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:53:42.513 +05:30 [INF] CORS policy execution successful.
+2026-08-04 11:53:42.528 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:53:42.525 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 11:53:42.532 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 11:53:42.534 +05:30 [INF] Route matched with {action = "GetMachines", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMachines() on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 11:53:42.600 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:53:42.605 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 67.0362ms
+2026-08-04 11:53:42.609 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 11:53:42.605 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 11:53:42.612 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 109.4283ms
+2026-08-04 11:53:42.619 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution) in 78.4879ms
+2026-08-04 11:53:42.633 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 11:53:42.635 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 200 77 application/json; charset=utf-8 127.697ms
+2026-08-04 12:02:55.263 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 12:02:55.265 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 12:02:55.270 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:02:55.272 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:02:55.274 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 8.7144ms
+2026-08-04 12:02:55.274 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 11.3121ms
+2026-08-04 12:02:55.277 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 12:02:55.280 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 12:02:55.283 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:02:55.286 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:02:55.286 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 12:02:55.289 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 12:02:55.296 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 12:02:55.297 +05:30 [INF] Route matched with {action = "GetMachines", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMachines() on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 12:02:56.160 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 12:02:56.163 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution) in 864.1579ms
+2026-08-04 12:02:56.180 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 12:02:56.183 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 200 77 application/json; charset=utf-8 902.6158ms
+2026-08-04 12:02:56.404 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 12:02:56.410 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 1119.0108ms
+2026-08-04 12:02:56.413 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 12:02:56.419 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 1141.9128ms
+2026-08-04 12:03:08.075 +05:30 [INF] Application is shutting down...
+2026-08-04 12:03:45.476 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-04 12:03:46.658 +05:30 [INF] Now listening on: http://localhost:5219
+2026-08-04 12:03:46.670 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-04 12:03:46.674 +05:30 [INF] Hosting environment: Development
+2026-08-04 12:03:46.677 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-08-04 12:07:07.669 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 12:07:07.669 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 12:07:07.967 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:07:07.967 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:07:08.027 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 364.2042ms
+2026-08-04 12:07:08.027 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 364.204ms
+2026-08-04 12:07:08.079 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 12:07:08.082 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 12:07:08.144 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:07:08.148 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:07:08.251 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-08-04 12:07:09.179 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 12:07:09.179 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 12:07:09.307 +05:30 [INF] Route matched with {action = "GetMachines", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMachines() on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 12:07:09.307 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 12:07:13.996 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 12:07:13.996 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 12:07:14.513 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution) in 5065.541ms
+2026-08-04 12:07:14.598 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 12:07:14.603 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 200 2 application/json; charset=utf-8 6524.5657ms
+2026-08-04 12:07:14.715 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 5276.3674ms
+2026-08-04 12:07:14.720 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 12:07:14.726 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 6643.819ms
+2026-08-04 12:17:14.482 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-04 12:17:15.499 +05:30 [INF] Now listening on: http://localhost:5219
+2026-08-04 12:17:15.502 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-04 12:17:15.503 +05:30 [INF] Hosting environment: Development
+2026-08-04 12:17:15.503 +05:30 [INF] Content root path: c:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-08-04 12:17:19.777 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 12:17:19.892 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-08-04 12:17:19.988 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 12:17:20.023 +05:30 [INF] Route matched with {action = "GetMachines", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMachines() on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 12:17:21.278 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 12:17:21.479 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution) in 1453.2825ms
+2026-08-04 12:17:21.491 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 12:17:21.503 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 200 2 application/json; charset=utf-8 1727.2892ms
+2026-08-04 12:17:22.132 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Production/log - null null
+2026-08-04 12:17:22.138 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ProductionController.GetProductionLog (SSProjectSolution)'
+2026-08-04 12:17:22.157 +05:30 [INF] Route matched with {action = "GetProductionLog", controller = "Production"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionLog(System.String, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32]) on controller SSProjectSolution.Controllers.ProductionController (SSProjectSolution).
+2026-08-04 12:17:24.369 +05:30 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2026-08-04 12:17:24.371 +05:30 [INF] Executed action SSProjectSolution.Controllers.ProductionController.GetProductionLog (SSProjectSolution) in 2213.7307ms
+2026-08-04 12:17:24.371 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ProductionController.GetProductionLog (SSProjectSolution)'
+2026-08-04 12:17:24.372 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Production/log - 200 166 application/json 2240.2678ms
+2026-08-04 12:19:54.909 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 12:19:54.909 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Production/log?page=1&pageSize=10 - null null
+2026-08-04 12:19:54.909 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 12:19:54.915 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:19:54.915 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:19:54.915 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:19:54.924 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 14.814ms
+2026-08-04 12:19:54.924 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Production/log?page=1&pageSize=10 - 204 null null 14.8164ms
+2026-08-04 12:19:54.925 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 16.6809ms
+2026-08-04 12:19:54.926 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Production/log?page=1&pageSize=10 - null null
+2026-08-04 12:19:54.926 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 12:19:54.927 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 12:19:54.930 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:19:54.930 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:19:54.930 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:19:54.935 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 12:19:54.935 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 12:19:54.935 +05:30 [INF] Route matched with {action = "GetMachines", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMachines() on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 12:19:54.939 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 12:19:54.940 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ProductionController.GetProductionLog (SSProjectSolution)'
+2026-08-04 12:19:54.940 +05:30 [INF] Route matched with {action = "GetProductionLog", controller = "Production"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionLog(System.String, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32]) on controller SSProjectSolution.Controllers.ProductionController (SSProjectSolution).
+2026-08-04 12:19:54.995 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 12:19:55.004 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution) in 68.6252ms
+2026-08-04 12:19:55.004 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 12:19:55.004 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 200 2 application/json; charset=utf-8 77.9829ms
+2026-08-04 12:19:55.143 +05:30 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2026-08-04 12:19:55.143 +05:30 [INF] Executed action SSProjectSolution.Controllers.ProductionController.GetProductionLog (SSProjectSolution) in 203.4115ms
+2026-08-04 12:19:55.144 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ProductionController.GetProductionLog (SSProjectSolution)'
+2026-08-04 12:19:55.144 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Production/log?page=1&pageSize=10 - 200 166 application/json 217.4695ms
+2026-08-04 12:19:55.329 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 12:19:55.457 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 517.7689ms
+2026-08-04 12:19:55.457 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 12:19:55.458 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 530.1701ms
+2026-08-04 12:20:31.654 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 12:20:31.655 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:20:31.655 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 1.1858ms
+2026-08-04 12:20:31.662 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/Shift/machines - application/json 55
+2026-08-04 12:20:31.662 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:20:31.662 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.CreateMachine (SSProjectSolution)'
+2026-08-04 12:20:31.669 +05:30 [INF] Route matched with {action = "CreateMachine", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateMachine(System.Object) on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 12:20:34.336 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2026-08-04 12:20:34.338 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.CreateMachine (SSProjectSolution) in 2668.4255ms
+2026-08-04 12:20:34.340 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.CreateMachine (SSProjectSolution)'
+2026-08-04 12:20:34.344 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/Shift/machines - 400 0 text/plain; charset=utf-8 2681.6185ms
+2026-08-04 12:22:12.791 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - null null
+2026-08-04 12:22:12.792 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:22:12.793 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Employee/all - 204 null null 1.6073ms
+2026-08-04 12:22:12.802 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - null null
+2026-08-04 12:22:12.803 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:22:12.803 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Shift/machines - 204 null null 0.5742ms
+2026-08-04 12:22:12.803 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Employee/all - null null
+2026-08-04 12:22:12.803 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:22:12.804 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 12:22:12.804 +05:30 [INF] Route matched with {action = "GetAllEmployees", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployees() on controller SSProjectSolution.Controllers.EmployeeController (SSProjectSolution).
+2026-08-04 12:22:12.811 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Shift/machines - null null
+2026-08-04 12:22:12.811 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:22:12.811 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 12:22:12.812 +05:30 [INF] Route matched with {action = "GetMachines", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetMachines() on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 12:22:12.814 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/Production/log?page=1&pageSize=10 - null null
+2026-08-04 12:22:12.815 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:22:12.815 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/Production/log?page=1&pageSize=10 - 204 null null 0.9304ms
+2026-08-04 12:22:12.819 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/Production/log?page=1&pageSize=10 - null null
+2026-08-04 12:22:12.820 +05:30 [INF] CORS policy execution successful.
+2026-08-04 12:22:12.820 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ProductionController.GetProductionLog (SSProjectSolution)'
+2026-08-04 12:22:12.821 +05:30 [INF] Route matched with {action = "GetProductionLog", controller = "Production"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionLog(System.String, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32]) on controller SSProjectSolution.Controllers.ProductionController (SSProjectSolution).
+2026-08-04 12:22:12.869 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 12:22:12.870 +05:30 [INF] Executed action SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution) in 65.306ms
+2026-08-04 12:22:12.870 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.EmployeeController.GetAllEmployees (SSProjectSolution)'
+2026-08-04 12:22:12.870 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Employee/all - 500 67 application/json; charset=utf-8 66.9455ms
+2026-08-04 12:22:12.901 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-04 12:22:12.901 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution) in 89.4048ms
+2026-08-04 12:22:12.901 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.GetMachines (SSProjectSolution)'
+2026-08-04 12:22:12.901 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Shift/machines - 200 2 application/json; charset=utf-8 90.6756ms
+2026-08-04 12:22:12.924 +05:30 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2026-08-04 12:22:12.925 +05:30 [INF] Executed action SSProjectSolution.Controllers.ProductionController.GetProductionLog (SSProjectSolution) in 103.8504ms
+2026-08-04 12:22:12.925 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ProductionController.GetProductionLog (SSProjectSolution)'
+2026-08-04 12:22:12.925 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/Production/log?page=1&pageSize=10 - 200 166 application/json 105.5996ms
+2026-08-04 12:24:05.916 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/Shift/machines - application/json 79
+2026-08-04 12:24:05.917 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.CreateMachine (SSProjectSolution)'
+2026-08-04 12:24:05.917 +05:30 [INF] Route matched with {action = "CreateMachine", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateMachine(System.Object) on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 12:24:06.006 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2026-08-04 12:24:06.006 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.CreateMachine (SSProjectSolution) in 89.1725ms
+2026-08-04 12:24:06.006 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.CreateMachine (SSProjectSolution)'
+2026-08-04 12:24:06.007 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/Shift/machines - 400 0 text/plain; charset=utf-8 91.0618ms
+2026-08-04 12:24:44.116 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/Shift/machines - application/json 79
+2026-08-04 12:24:44.116 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.CreateMachine (SSProjectSolution)'
+2026-08-04 12:24:44.117 +05:30 [INF] Route matched with {action = "CreateMachine", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateMachine(System.Object) on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 12:24:44.123 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2026-08-04 12:24:44.123 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.CreateMachine (SSProjectSolution) in 6.241ms
+2026-08-04 12:24:44.123 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.CreateMachine (SSProjectSolution)'
+2026-08-04 12:24:44.123 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/Shift/machines - 400 0 text/plain; charset=utf-8 7.021ms
+2026-08-04 12:25:09.941 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/Shift/machines - application/json 79
+2026-08-04 12:25:09.941 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ShiftController.CreateMachine (SSProjectSolution)'
+2026-08-04 12:25:09.943 +05:30 [INF] Route matched with {action = "CreateMachine", controller = "Shift"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateMachine(System.Object) on controller SSProjectSolution.Controllers.ShiftController (SSProjectSolution).
+2026-08-04 12:25:09.953 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2026-08-04 12:25:09.953 +05:30 [INF] Executed action SSProjectSolution.Controllers.ShiftController.CreateMachine (SSProjectSolution) in 10.6715ms
+2026-08-04 12:25:09.953 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ShiftController.CreateMachine (SSProjectSolution)'
+2026-08-04 12:25:09.953 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/Shift/machines - 400 0 text/plain; charset=utf-8 12.4323ms
