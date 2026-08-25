@@ -5,7 +5,9 @@ using SSProjectSolution.Response;
 using SSProjectSolution.Services;
 using SSProjectSolution.Documents;
 using System.IO;
+using System.IO;
 using QuestPDF.Fluent;
+using Microsoft.Extensions.Configuration;
 
 namespace SSProjectSolution.Controllers
 {
@@ -15,10 +17,12 @@ namespace SSProjectSolution.Controllers
     public class RateQuotationController : ControllerBase
     {
         private readonly IRateQuotationService _service;
+        private readonly string ImageFolderPath;
 
-        public RateQuotationController(IRateQuotationService service)
+        public RateQuotationController(IRateQuotationService service, IConfiguration configuration)
         {
             _service = service;
+            ImageFolderPath = configuration["RateQuotationSettings:ImageFolderPath"] ?? Path.Combine(Directory.GetCurrentDirectory(), "RateQuotationImages");
         }
 
         [HttpPost("create")]
@@ -145,7 +149,7 @@ namespace SSProjectSolution.Controllers
             return BadRequest(response);
         }
 
-        private readonly string ImageFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "RateQuotationImages");
+
 
         [HttpPost("upload-image/{id}")]
         public async Task<ActionResult<ApiResponse<string>>> UploadImageAsync(long id, IFormFile file)

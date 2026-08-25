@@ -4,6 +4,7 @@ using SSProjectSolution.Models;
 using SSProjectSolution.Models.DTOs;
 using SSProjectSolution.Repositories;
 using SSProjectSolution.Response;
+using Microsoft.Extensions.Configuration;
 
 namespace SSProjectSolution.Services
 {
@@ -12,12 +13,14 @@ namespace SSProjectSolution.Services
         private readonly IRateQuotationRepository _repository;
         private readonly IMapper _mapper;
         private readonly ILogger<RateQuotationService> _logger;
+        private readonly string ImageFolderPath;
 
-        public RateQuotationService(IRateQuotationRepository repository, IMapper mapper, ILogger<RateQuotationService> logger)
+        public RateQuotationService(IRateQuotationRepository repository, IMapper mapper, ILogger<RateQuotationService> logger, IConfiguration configuration)
         {
             _repository = repository;
             _mapper = mapper;
             _logger = logger;
+            ImageFolderPath = configuration["RateQuotationSettings:ImageFolderPath"] ?? Path.Combine(Directory.GetCurrentDirectory(), "RateQuotationImages");
         }
 
         public async Task<ApiResponse<long>> CreateAsync(RateQuotationCreateDto createDto)
@@ -86,7 +89,7 @@ namespace SSProjectSolution.Services
             }
         }
 
-        private readonly string ImageFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "RateQuotationImages");
+
 
         private void AttachImageInfo(RateQuotationResponseDto dto)
         {
