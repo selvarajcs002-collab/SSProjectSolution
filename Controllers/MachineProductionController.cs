@@ -83,5 +83,45 @@ namespace SSProjectSolution.Controllers
                 return StatusCode(500, new { success = false, message = ex.Message });
             }
         }
+
+        [HttpGet("paginated-list")]
+        public async Task<IActionResult> GetPaginatedProductionList([FromQuery] int page = 1, [FromQuery] int pageSize = 10, [FromQuery] string? shift = null)
+        {
+            try
+            {
+                using var connection = _dbConnection.CreateConnection();
+                var parameters = new DynamicParameters();
+                parameters.Add("@Shift", shift);
+
+                // Assuming sp_EMP_GetAllDailyProductions is created to fetch all records
+                var records = await connection.QueryAsync<MachineProductionDto>(
+                    "sp_EMP_GetAllDailyProductions",
+                    parameters,
+                    commandType: CommandType.StoredProcedure
+                );
+
+                // Order by latest entry first (using Id descending) and paginate
+                var paginatedRecords = records
+                    .OrderByDescending(x => x.Id)
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToList();
+
+                var totalRecords = records.Count();
+
+                return Ok(new
+                {
+                    TotalRecords = totalRecords,
+                    TotalPages = (int)Math.Ceiling((double)totalRecords / pageSize),
+                    CurrentPage = page,
+                    PageSize = pageSize,
+                    Data = paginatedRecords
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { success = false, message = ex.Message });
+            }
+        }
     }
 }

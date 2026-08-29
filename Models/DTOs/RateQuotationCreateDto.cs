@@ -14,7 +14,7 @@ namespace SSProjectSolution.Models.DTOs
         public string? ProductType { get; set; }
         public decimal? RatePerPiece { get; set; }
         public decimal? RatePerMeter { get; set; }
-        public int? NoOfStitches { get; set; }
+        public string? NoOfStitches { get; set; }
         public int? ChenilleColors { get; set; }
         public int? NormalEmbColors { get; set; }
         public int Quantity { get; set; }

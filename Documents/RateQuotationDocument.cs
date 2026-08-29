@@ -351,9 +351,7 @@ namespace SSProjectSolution.Documents
 
                                     AddRow(
                                         "No Of Stitches",
-                                        _model.NoOfStitches?
-                                            .ToString("N0")
-                                            ?? "-");
+                                        _model.NoOfStitches?.ToString() ?? "-");
 
                                     AddRow(
                                         "Embroidery Cost / 1000 Sts",
@@ -473,7 +471,7 @@ namespace SSProjectSolution.Documents
                                 "Quotation is valid for 30 days from the date of issue.");
 
                             AddBullet(
-                                "Sample approval is required before bulk production.");
+                                "5% - 10% Rejection must be allowed.");
 
                             AddBullet(
                                 "Payment terms as mentioned above must be followed.");

@@ -12,7 +12,7 @@ BEGIN
     IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'[dbo].[RateQuotation]') AND name = 'NoOfStitches')
     BEGIN
         ALTER TABLE [dbo].[RateQuotation] ADD 
-            [NoOfStitches] INT NULL,
+            [NoOfStitches] NVARCHAR(100) NULL,
             [ChenilleColors] INT NULL,
             [NormalEmbColors] INT NULL;
     END
@@ -37,7 +37,7 @@ BEGIN
         [ProductType] NVARCHAR(100) NULL,
         [RatePerPiece] DECIMAL(18,2) NULL,
         [RatePerMeter] DECIMAL(18,2) NULL,
-        [NoOfStitches] INT NULL,
+        [NoOfStitches] NVARCHAR(100) NULL,
         [ChenilleColors] INT NULL,
         [NormalEmbColors] INT NULL,
         [Quantity] INT NOT NULL,
@@ -83,7 +83,7 @@ CREATE PROCEDURE [dbo].[USP_RateQuotation_Insert]
     @ProductType NVARCHAR(100) = NULL,
     @RatePerPiece DECIMAL(18,2) = NULL,
     @RatePerMeter DECIMAL(18,2) = NULL,
-    @NoOfStitches INT = NULL,
+    @NoOfStitches NVARCHAR(100) = NULL,
     @ChenilleColors INT = NULL,
     @NormalEmbColors INT = NULL,
     @Quantity INT,
@@ -109,17 +109,19 @@ BEGIN
 
         BEGIN TRANSACTION;
 
-        -- Generate QuotationNo: SSE_YYYY_000X
+        -- Generate QuotationNo: SSE_{000number}-{current year}-{previous year}
         DECLARE @Year NVARCHAR(4) = CAST(YEAR(GETDATE()) AS NVARCHAR(4));
-        DECLARE @Prefix NVARCHAR(10) = 'SSE_' + @Year + '_';
+        DECLARE @PrevYear NVARCHAR(4) = CAST(YEAR(GETDATE()) - 1 AS NVARCHAR(4));
+        DECLARE @Prefix NVARCHAR(10) = 'SSE_';
+        DECLARE @Suffix NVARCHAR(20) = '-' + @Year + '-' + @PrevYear;
         DECLARE @NextNumber INT;
         DECLARE @QuotationNo NVARCHAR(50);
 
-        SELECT @NextNumber = ISNULL(MAX(CAST(RIGHT([QuotationNo], 4) AS INT)), 0) + 1
+        SELECT @NextNumber = ISNULL(MAX(CAST(SUBSTRING([QuotationNo], 5, 4) AS INT)), 0) + 1
         FROM [dbo].[RateQuotation] WITH (UPDLOCK, HOLDLOCK)
-        WHERE [QuotationNo] LIKE @Prefix + '%';
+        WHERE [QuotationNo] LIKE 'SSE_%' + @Suffix;
 
-        SET @QuotationNo = @Prefix + RIGHT('0000' + CAST(@NextNumber AS NVARCHAR(4)), 4);
+        SET @QuotationNo = @Prefix + RIGHT('0000' + CAST(@NextNumber AS NVARCHAR(4)), 4) + @Suffix;
 
         INSERT INTO [dbo].[RateQuotation] (
             [QuotationNo], [QuotationDate], [CompanyId], [CompanyName], [ContactPerson],
@@ -169,7 +171,7 @@ CREATE PROCEDURE [dbo].[USP_RateQuotation_Update]
     @ProductType NVARCHAR(100) = NULL,
     @RatePerPiece DECIMAL(18,2) = NULL,
     @RatePerMeter DECIMAL(18,2) = NULL,
-    @NoOfStitches INT = NULL,
+    @NoOfStitches NVARCHAR(100) = NULL,
     @ChenilleColors INT = NULL,
     @NormalEmbColors INT = NULL,
     @Quantity INT,
