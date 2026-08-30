@@ -459,9 +459,6 @@ namespace SSProjectSolution.Documents
 
                             // Terms
                             AddBullet(
-                                "Rate is based on the design and details provided by the customer.");
-
-                            AddBullet(
                                 "Any change in stitch count, colors or size may affect the quoted rate.");
 
                             AddBullet(
@@ -471,11 +468,15 @@ namespace SSProjectSolution.Documents
                                 "Quotation is valid for 30 days from the date of issue.");
 
                             AddBullet(
-                                "5% - 10% Rejection must be allowed.");
+                                "2% for Normal Embroidery, 5% for Special Embroidery, 10% for 3D Embroidery Rejection must be allowed.");
+                            
+                            AddBullet(
+                                "Quotation is valid for 30 days from the date of issue.");
 
                             AddBullet(
                                 "Payment terms as mentioned above must be followed.");
                         });
+                        
 
                     // =====================================================
                     // SIGNATURE
