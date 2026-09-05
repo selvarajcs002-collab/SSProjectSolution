@@ -20,12 +20,10 @@ namespace SSProjectSolution.Validators
                 .GreaterThan(0).WithMessage("Quantity must be greater than 0.");
 
             RuleFor(x => x.RatePerPiece)
-                .GreaterThanOrEqualTo(0).When(x => x.RatePerPiece.HasValue)
-                .WithMessage("RatePerPiece cannot be negative.");
+                .MaximumLength(200).WithMessage("RatePerPiece cannot exceed 200 characters.");
 
             RuleFor(x => x.RatePerMeter)
-                .GreaterThanOrEqualTo(0).When(x => x.RatePerMeter.HasValue)
-                .WithMessage("RatePerMeter cannot be negative.");
+                .MaximumLength(200).WithMessage("RatePerMeter cannot exceed 200 characters.");
 
             RuleFor(x => x.MobileNo)
                 .Matches(@"^\+?[1-9]\d{1,14}$").When(x => !string.IsNullOrEmpty(x.MobileNo))
@@ -57,12 +55,10 @@ namespace SSProjectSolution.Validators
                 .GreaterThan(0).WithMessage("Quantity must be greater than 0.");
 
             RuleFor(x => x.RatePerPiece)
-                .GreaterThanOrEqualTo(0).When(x => x.RatePerPiece.HasValue)
-                .WithMessage("RatePerPiece cannot be negative.");
+                .MaximumLength(200).WithMessage("RatePerPiece cannot exceed 200 characters.");
 
             RuleFor(x => x.RatePerMeter)
-                .GreaterThanOrEqualTo(0).When(x => x.RatePerMeter.HasValue)
-                .WithMessage("RatePerMeter cannot be negative.");
+                .MaximumLength(200).WithMessage("RatePerMeter cannot exceed 200 characters.");
 
             RuleFor(x => x.MobileNo)
                 .Matches(@"^\+?[1-9]\d{1,14}$").When(x => !string.IsNullOrEmpty(x.MobileNo))

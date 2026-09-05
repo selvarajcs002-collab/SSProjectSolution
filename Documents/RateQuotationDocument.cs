@@ -354,10 +354,16 @@ namespace SSProjectSolution.Documents
                                         _model.NoOfStitches?.ToString() ?? "-");
 
                                     AddRow(
-                                        "Embroidery Cost / 1000 Sts",
-                                        _model.RatePerMeter.HasValue
-                                            ? $"Rs. {_model.RatePerMeter.Value:F2}"
+                                        "Rate Per Piece",
+                                        _model.RatePerPiece != null
+                                            ? _model.RatePerPiece.ToString()
                                             : "-");
+
+                                    AddRow(
+                                        "Embroidery Cost / 1000 Sts",
+                                        string.IsNullOrWhiteSpace(_model.RatePerMeter)
+                                            ? "-"
+                                            : _model.RatePerMeter);
 
                                     AddRow(
                                         "Payment Terms",
