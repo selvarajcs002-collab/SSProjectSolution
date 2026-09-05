@@ -23,19 +23,19 @@ pipeline {
 
     environment {
 
-        APP_NAME = "SSManagement-API-DEV"
+        APP_NAME = "SSManagement-API-TEST"
 
-        DEPLOY_PATH = "/var/www/SSManagement/DEV/API"
+        DEPLOY_PATH = "/var/www/SSManagement/TEST/API"
 
         PUBLISH_PATH = "${WORKSPACE}/publish"
 
-        SERVICE_NAME = "ssmanagement-dev-api"
+        SERVICE_NAME = "ssmanagement-test-api"
 
-        DOTNET_ENVIRONMENT = "Development"
+        DOTNET_ENVIRONMENT = "TEST"
 
-        API_PORT = "5000"
+        API_PORT = "5001"
 
-        BACKUP_ROOT = "/var/www/SSManagement/DEV"
+        BACKUP_ROOT = "/var/www/SSManagement/TEST"
     }
 
     stages {
