@@ -29,33 +29,92 @@ namespace SSProjectSolution.Services
         {
             try
             {
-                // ? MATCH SP EXPECTATION (IMPORTANT)
-                string sizeDataJson;
+                var finalResponse = new OutwardResponse();
+                bool isFirst = true;
+
                 if (request.ColourBreakdowns != null && request.ColourBreakdowns.Any())
                 {
-                    sizeDataJson = JsonConvert.SerializeObject(new
+                    using (var scope = new System.Transactions.TransactionScope(System.Transactions.TransactionScopeAsyncFlowOption.Enabled))
                     {
-                        colourBreakdowns = request.ColourBreakdowns.Select(c => new
+                        foreach (var colourBreakdown in request.ColourBreakdowns)
                         {
-                            colour = !string.IsNullOrEmpty(c.ColourName) ? c.ColourName : c.Colour,
-                            sizes = (c.SizeBreakdowns != null && c.SizeBreakdowns.Any()) 
-                                ? c.SizeBreakdowns.Select(s => new
+                            var actualColour = !string.IsNullOrWhiteSpace(colourBreakdown.ColourName) 
+                                ? colourBreakdown.ColourName 
+                                : (!string.IsNullOrWhiteSpace(colourBreakdown.ColourId) ? colourBreakdown.ColourId : colourBreakdown.Colour);
+
+                            var sizeDataJson = JsonConvert.SerializeObject(new
+                            {
+                                colourBreakdowns = new[] { new
                                 {
-                                    size = s.SizeName,
-                                    count = s.Quantity
-                                }).ToList()
-                                : c.Sizes?.Select(s => new
+                                    colour = actualColour,
+                                    sizes = (colourBreakdown.SizeBreakdowns != null && colourBreakdown.SizeBreakdowns.Any()) 
+                                        ? colourBreakdown.SizeBreakdowns.Select(s => new
+                                        {
+                                            size = s.SizeName,
+                                            count = s.Quantity
+                                        }).ToList()
+                                        : colourBreakdown.Sizes?.Select(s => new
+                                        {
+                                            size = s.Size,
+                                            count = s.Count
+                                        }).ToList()
+                                }}
+                            });
+
+                            var parameters = new DynamicParameters();
+                            parameters.Add("@Mode", request.Outward.Mode);
+                            parameters.Add("@OutwardId",
+                                request.Outward.Mode == "INSERT" ? null : request.Outward.OutwardId,
+                                dbType: DbType.Int32,
+                                direction: ParameterDirection.InputOutput);
+
+                            parameters.Add("@CompanyId", request.Outward.CompanyId);
+                            
+                            // CRITICAL FIX: Ensure actual colour is persisted in Outward.Colour
+                            parameters.Add("@Colour", actualColour);
+                            
+                            parameters.Add("@DesignName", request.Outward.DesignName);
+                            parameters.Add("@StyleNo", request.Outward.StyleNo);
+                            parameters.Add("@UploadURL", request.Outward.UploadURL == "null" ? null : request.Outward.UploadURL);
+                            parameters.Add("@CreatedBy", request.Outward.CreatedBy);
+                            parameters.Add("@Status", request.Outward.Status);
+                            parameters.Add("@DeliveryTo", string.IsNullOrWhiteSpace(request.Outward.DeliveryTo) ? null : request.Outward.DeliveryTo);
+                            parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.Outward.PoNo) ? null : request.Outward.PoNo);
+                            parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Outward.Weight) ? null : request.Outward.Weight);
+                            parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.Outward.NoOfBundles) ? null : request.Outward.NoOfBundles);
+                            parameters.Add("@Remarks", string.IsNullOrWhiteSpace(request.Outward.Remarks) ? null : request.Outward.Remarks);
+                            parameters.Add("@SelectedDcNos", request.Outward.SelectedDcNos != null && request.Outward.SelectedDcNos.Any() ? string.Join(",", request.Outward.SelectedDcNos) : null);
+                            
+                            parameters.Add("@SizeData", sizeDataJson, DbType.String);
+
+                            parameters.Add("@OutwardDcNo", dbType: DbType.String, direction: ParameterDirection.Output, size: 50);
+
+                            var response = await _outwardRepository.SaveOutwardAsync(parameters);
+
+                            if (isFirst && response != null)
+                            {
+                                finalResponse = response;
+                                if (finalResponse.OutwardId == 0)
                                 {
-                                    size = s.Size,
-                                    count = s.Count
-                                }).ToList()
-                        }).ToList()
-                    });
+                                    var outId = parameters.Get<int?>("@OutwardId");
+                                    if (outId.HasValue) finalResponse.OutwardId = outId.Value;
+                                }
+                                if (string.IsNullOrEmpty(finalResponse.OutwardDcNo))
+                                {
+                                    var outDc = parameters.Get<string>("@OutwardDcNo");
+                                    if (!string.IsNullOrEmpty(outDc)) finalResponse.OutwardDcNo = outDc;
+                                }
+                                isFirst = false;
+                            }
+                        }
+
+                        scope.Complete();
+                    }
                 }
                 else
                 {
                     // Fallback to legacy single-colour
-                    sizeDataJson = JsonConvert.SerializeObject(new
+                    var sizeDataJson = JsonConvert.SerializeObject(new
                     {
                         sizes = request.Sizes?.Select(s => new
                         {
@@ -63,59 +122,53 @@ namespace SSProjectSolution.Services
                             count = s.Count
                         })
                     });
-                }
 
-                var parameters = new DynamicParameters();
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@Mode", request.Outward.Mode);
+                    parameters.Add("@OutwardId",
+                        request.Outward.Mode == "INSERT" ? null : request.Outward.OutwardId,
+                        dbType: DbType.Int32,
+                        direction: ParameterDirection.InputOutput);
+                    parameters.Add("@CompanyId", request.Outward.CompanyId);
+                    
+                    // Fallback uses the main request Colour
+                    parameters.Add("@Colour", request.Outward.Colour);
+                    
+                    parameters.Add("@DesignName", request.Outward.DesignName);
+                    parameters.Add("@StyleNo", request.Outward.StyleNo);
+                    parameters.Add("@UploadURL", request.Outward.UploadURL == "null" ? null : request.Outward.UploadURL);
+                    parameters.Add("@CreatedBy", request.Outward.CreatedBy);
+                    parameters.Add("@Status", request.Outward.Status);
+                    parameters.Add("@DeliveryTo", string.IsNullOrWhiteSpace(request.Outward.DeliveryTo) ? null : request.Outward.DeliveryTo);
+                    parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.Outward.PoNo) ? null : request.Outward.PoNo);
+                    parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Outward.Weight) ? null : request.Outward.Weight);
+                    parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.Outward.NoOfBundles) ? null : request.Outward.NoOfBundles);
+                    parameters.Add("@Remarks", string.IsNullOrWhiteSpace(request.Outward.Remarks) ? null : request.Outward.Remarks);
+                    parameters.Add("@SelectedDcNos", request.Outward.SelectedDcNos != null && request.Outward.SelectedDcNos.Any() ? string.Join(",", request.Outward.SelectedDcNos) : null);
+                    
+                    parameters.Add("@SizeData", sizeDataJson, DbType.String);
 
-                parameters.Add("@Mode", request.Outward.Mode);
+                    parameters.Add("@OutwardDcNo", dbType: DbType.String, direction: ParameterDirection.Output, size: 50);
 
-                parameters.Add("@OutwardId",
-                    request.Outward.Mode == "INSERT" ? null : request.Outward.OutwardId,
-                    dbType: DbType.Int32,
-                    direction: ParameterDirection.InputOutput);
+                    var response = await _outwardRepository.SaveOutwardAsync(parameters);
 
-                parameters.Add("@CompanyId", request.Outward.CompanyId);
-                parameters.Add("@Colour", request.Outward.Colour);
-                parameters.Add("@DesignName", request.Outward.DesignName);
-                parameters.Add("@StyleNo", request.Outward.StyleNo);
-                parameters.Add("@UploadURL",
-                    request.Outward.UploadURL == "null" ? null : request.Outward.UploadURL);
-                parameters.Add("@CreatedBy", request.Outward.CreatedBy);
-                parameters.Add("@Status", request.Outward.Status);
-
-                parameters.Add("@DeliveryTo", string.IsNullOrWhiteSpace(request.Outward.DeliveryTo) ? null : request.Outward.DeliveryTo);
-                parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.Outward.PoNo) ? null : request.Outward.PoNo);
-                parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Outward.Weight) ? null : request.Outward.Weight);
-                parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.Outward.NoOfBundles) ? null : request.Outward.NoOfBundles);
-                parameters.Add("@Remarks", string.IsNullOrWhiteSpace(request.Outward.Remarks) ? null : request.Outward.Remarks);
-                parameters.Add("@SelectedDcNos", request.Outward.SelectedDcNos != null && request.Outward.SelectedDcNos.Any() ? string.Join(",", request.Outward.SelectedDcNos) : null);
-
-                // ?? CRITICAL FIX
-                parameters.Add("@SizeData", sizeDataJson, DbType.String);
-
-                parameters.Add("@OutwardDcNo",
-                    dbType: DbType.String,
-                    direction: ParameterDirection.Output,
-                    size: 50);
-
-                // ? USE Repository method
-                var response = await _outwardRepository.SaveOutwardAsync(parameters);
-
-                if (response != null)
-                {
-                    if (response.OutwardId == 0)
+                    if (response != null)
                     {
-                        var outId = parameters.Get<int?>("@OutwardId");
-                        if (outId.HasValue) response.OutwardId = outId.Value;
-                    }
-                    if (string.IsNullOrEmpty(response.OutwardDcNo))
-                    {
-                        var outDc = parameters.Get<string>("@OutwardDcNo");
-                        if (!string.IsNullOrEmpty(outDc)) response.OutwardDcNo = outDc;
+                        finalResponse = response;
+                        if (finalResponse.OutwardId == 0)
+                        {
+                            var outId = parameters.Get<int?>("@OutwardId");
+                            if (outId.HasValue) finalResponse.OutwardId = outId.Value;
+                        }
+                        if (string.IsNullOrEmpty(finalResponse.OutwardDcNo))
+                        {
+                            var outDc = parameters.Get<string>("@OutwardDcNo");
+                            if (!string.IsNullOrEmpty(outDc)) finalResponse.OutwardDcNo = outDc;
+                        }
                     }
                 }
 
-                return response;
+                return finalResponse;
             }
             catch (Exception ex)
             {
@@ -259,32 +312,86 @@ namespace SSProjectSolution.Services
         {
             try
             {
-                // Use new request model fields directly since we are moving towards multi-colour
-                string sizeDataJson;
+                var finalResponse = new OutwardResponse();
+                bool isFirst = true;
+
                 if (request.ColourBreakdowns != null && request.ColourBreakdowns.Any())
                 {
-                    sizeDataJson = JsonConvert.SerializeObject(new
+                    using (var scope = new System.Transactions.TransactionScope(System.Transactions.TransactionScopeAsyncFlowOption.Enabled))
                     {
-                        colourBreakdowns = request.ColourBreakdowns.Select(c => new
+                        foreach (var colourBreakdown in request.ColourBreakdowns)
                         {
-                            colour = !string.IsNullOrEmpty(c.ColourName) ? c.ColourName : c.Colour,
-                            sizes = (c.SizeBreakdowns != null && c.SizeBreakdowns.Any()) 
-                                ? c.SizeBreakdowns.Select(s => new
+                            var actualColour = !string.IsNullOrWhiteSpace(colourBreakdown.ColourName) 
+                                ? colourBreakdown.ColourName 
+                                : (!string.IsNullOrWhiteSpace(colourBreakdown.ColourId) ? colourBreakdown.ColourId : colourBreakdown.Colour);
+
+                            var sizeDataJson = JsonConvert.SerializeObject(new
+                            {
+                                colourBreakdowns = new[] { new
                                 {
-                                    size = s.SizeName,
-                                    count = s.Quantity
-                                }).ToList()
-                                : c.Sizes?.Select(s => new
+                                    colour = actualColour,
+                                    sizes = (colourBreakdown.SizeBreakdowns != null && colourBreakdown.SizeBreakdowns.Any()) 
+                                        ? colourBreakdown.SizeBreakdowns.Select(s => new
+                                        {
+                                            size = s.SizeName,
+                                            count = s.Quantity
+                                        }).ToList()
+                                        : colourBreakdown.Sizes?.Select(s => new
+                                        {
+                                            size = s.Size,
+                                            count = s.Count
+                                        }).ToList()
+                                }}
+                            });
+
+                            var parameters = new DynamicParameters();
+                            parameters.Add("@Mode", "UPDATE");
+                            parameters.Add("@OutwardId", request.OutwardId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
+                            parameters.Add("@CompanyId", request.CompanyId);
+                            
+                            // CRITICAL FIX: Ensure actual colour is persisted
+                            parameters.Add("@Colour", actualColour); 
+                            
+                            parameters.Add("@DesignName", request.DesignName);
+                            parameters.Add("@StyleNo", request.StyleNo);
+                            parameters.Add("@UploadURL", request.UploadURL == "null" ? null : request.UploadURL);
+                            parameters.Add("@CreatedBy", request.CreatedBy);
+                            parameters.Add("@Status", request.Status);
+                            parameters.Add("@DeliveryTo", string.IsNullOrWhiteSpace(request.DeliveryTo) ? null : request.DeliveryTo);
+                            parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.PoNo) ? null : request.PoNo);
+                            parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Weight) ? null : request.Weight);
+                            parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.NoOfBundles) ? null : request.NoOfBundles);
+                            parameters.Add("@Remarks", string.IsNullOrWhiteSpace(request.Remarks) ? null : request.Remarks);
+                            parameters.Add("@SelectedDcNos", request.SelectedDcNos != null && request.SelectedDcNos.Any() ? string.Join(",", request.SelectedDcNos) : null);
+                            parameters.Add("@SizeData", sizeDataJson, DbType.String);
+
+                            parameters.Add("@OutwardDcNo", dbType: DbType.String, direction: ParameterDirection.Output, size: 50);
+
+                            var response = await _outwardRepository.SaveOutwardAsync(parameters);
+
+                            if (isFirst && response != null)
+                            {
+                                finalResponse = response;
+                                if (finalResponse.OutwardId == 0)
                                 {
-                                    size = s.Size,
-                                    count = s.Count
-                                }).ToList()
-                        }).ToList()
-                    });
+                                    var outId = parameters.Get<int?>("@OutwardId");
+                                    if (outId.HasValue) finalResponse.OutwardId = outId.Value;
+                                }
+                                if (string.IsNullOrEmpty(finalResponse.OutwardDcNo))
+                                {
+                                    var outDc = parameters.Get<string>("@OutwardDcNo");
+                                    if (!string.IsNullOrEmpty(outDc)) finalResponse.OutwardDcNo = outDc;
+                                }
+                                isFirst = false;
+                            }
+                        }
+
+                        scope.Complete();
+                    }
                 }
                 else
                 {
-                    sizeDataJson = JsonConvert.SerializeObject(new
+                    var sizeDataJson = JsonConvert.SerializeObject(new
                     {
                         sizes = request.SizeCounts?.Select(s => new
                         {
@@ -292,45 +399,46 @@ namespace SSProjectSolution.Services
                             count = s.Count
                         })
                     });
+
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@Mode", "UPDATE");
+                    parameters.Add("@OutwardId", request.OutwardId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
+                    parameters.Add("@CompanyId", request.CompanyId);
+                    parameters.Add("@Colour", request.Colour);
+                    parameters.Add("@DesignName", request.DesignName);
+                    parameters.Add("@StyleNo", request.StyleNo);
+                    parameters.Add("@UploadURL", request.UploadURL == "null" ? null : request.UploadURL);
+                    parameters.Add("@CreatedBy", request.CreatedBy);
+                    parameters.Add("@Status", request.Status);
+                    parameters.Add("@DeliveryTo", string.IsNullOrWhiteSpace(request.DeliveryTo) ? null : request.DeliveryTo);
+                    parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.PoNo) ? null : request.PoNo);
+                    parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Weight) ? null : request.Weight);
+                    parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.NoOfBundles) ? null : request.NoOfBundles);
+                    parameters.Add("@Remarks", string.IsNullOrWhiteSpace(request.Remarks) ? null : request.Remarks);
+                    parameters.Add("@SelectedDcNos", request.SelectedDcNos != null && request.SelectedDcNos.Any() ? string.Join(",", request.SelectedDcNos) : null);
+                    parameters.Add("@SizeData", sizeDataJson, DbType.String);
+
+                    parameters.Add("@OutwardDcNo", dbType: DbType.String, direction: ParameterDirection.Output, size: 50);
+
+                    var response = await _outwardRepository.SaveOutwardAsync(parameters);
+
+                    if (response != null)
+                    {
+                        finalResponse = response;
+                        if (finalResponse.OutwardId == 0)
+                        {
+                            var outId = parameters.Get<int?>("@OutwardId");
+                            if (outId.HasValue) finalResponse.OutwardId = outId.Value;
+                        }
+                        if (string.IsNullOrEmpty(finalResponse.OutwardDcNo))
+                        {
+                            var outDc = parameters.Get<string>("@OutwardDcNo");
+                            if (!string.IsNullOrEmpty(outDc)) finalResponse.OutwardDcNo = outDc;
+                        }
+                    }
                 }
 
-                var parameters = new DynamicParameters();
-                parameters.Add("@Mode", "UPDATE");
-                parameters.Add("@OutwardId", request.OutwardId, dbType: DbType.Int32, direction: ParameterDirection.InputOutput);
-                parameters.Add("@CompanyId", request.CompanyId);
-                parameters.Add("@Colour", request.Colour);
-                parameters.Add("@DesignName", request.DesignName);
-                parameters.Add("@StyleNo", request.StyleNo);
-                parameters.Add("@UploadURL", request.UploadURL == "null" ? null : request.UploadURL);
-                parameters.Add("@CreatedBy", request.CreatedBy);
-                parameters.Add("@Status", request.Status);
-                parameters.Add("@DeliveryTo", string.IsNullOrWhiteSpace(request.DeliveryTo) ? null : request.DeliveryTo);
-                parameters.Add("@PoNo", string.IsNullOrWhiteSpace(request.PoNo) ? null : request.PoNo);
-                parameters.Add("@Weight", string.IsNullOrWhiteSpace(request.Weight) ? null : request.Weight);
-                parameters.Add("@NoOfBundles", string.IsNullOrWhiteSpace(request.NoOfBundles) ? null : request.NoOfBundles);
-                parameters.Add("@Remarks", string.IsNullOrWhiteSpace(request.Remarks) ? null : request.Remarks);
-                parameters.Add("@SelectedDcNos", request.SelectedDcNos != null && request.SelectedDcNos.Any() ? string.Join(",", request.SelectedDcNos) : null);
-                parameters.Add("@SizeData", sizeDataJson, DbType.String);
-
-                parameters.Add("@OutwardDcNo", dbType: DbType.String, direction: ParameterDirection.Output, size: 50);
-
-                var response = await _outwardRepository.SaveOutwardAsync(parameters);
-                
-                if (response != null)
-                {
-                    if (response.OutwardId == 0)
-                    {
-                        var outId = parameters.Get<int?>("@OutwardId");
-                        if (outId.HasValue) response.OutwardId = outId.Value;
-                    }
-                    if (string.IsNullOrEmpty(response.OutwardDcNo))
-                    {
-                        var outDc = parameters.Get<string>("@OutwardDcNo");
-                        if (!string.IsNullOrEmpty(outDc)) response.OutwardDcNo = outDc;
-                    }
-                }
-
-                return response;
+                return finalResponse;
             }
             catch (Exception ex)
             {
