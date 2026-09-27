@@ -75,6 +75,7 @@ builder.Services.AddScoped<SSProjectSolution.Repositories.IDcDetailRepository, S
 builder.Services.AddScoped<SSProjectSolution.Repositories.IRateQuotationRepository, SSProjectSolution.Repositories.RateQuotationRepository>();
 builder.Services.AddScoped<SSProjectSolution.Repositories.IPrintJobRepository, SSProjectSolution.Repositories.PrintJobRepository>();
 builder.Services.AddScoped<SSProjectSolution.Repositories.IStockRepository, SSProjectSolution.Repositories.StockRepository>();
+builder.Services.AddScoped<SSProjectSolution.Repositories.IAdvanceAmountRepository, SSProjectSolution.Repositories.AdvanceAmountRepository>();
 
 // Register Service Layer
 builder.Services.AddScoped<IUserService, UserService>();
@@ -102,6 +103,7 @@ builder.Services.AddScoped<IStatusFilterService, StatusFilterService>();
 builder.Services.AddScoped<IDcDetailService, DcDetailService>();
 builder.Services.AddScoped<IExcelReportService, ExcelReportService>();
 builder.Services.AddScoped<IRateQuotationService, RateQuotationService>();
+builder.Services.AddScoped<IAdvanceAmountService, AdvanceAmountService>();
 
 // Register Business Layer
 builder.Services.AddScoped<IUserBusiness, UserBusiness>();
@@ -111,6 +113,10 @@ builder.Services.AddScoped<IInwardBusiness, InwardBusiness>();
 builder.Services.Configure<WhatsAppSettings>(
     builder.Configuration.GetSection(
         "WhatsAppSettings"));
+
+builder.Services.Configure<SSProjectSolution.Settings.ChallanSettings>(
+    builder.Configuration.GetSection("ChallanSettings"));
+builder.Services.AddScoped<IAdvanceChallanService, AdvanceChallanService>();
 
 builder.Services.AddHttpClient<
     IWhatsAppService,
@@ -127,7 +133,8 @@ builder.Services.AddCors(options =>
     {
         policy.AllowAnyOrigin()
               .AllowAnyMethod()
-              .AllowAnyHeader();
+              .AllowAnyHeader()
+              .WithExposedHeaders("Content-Disposition");
     });
 });
 

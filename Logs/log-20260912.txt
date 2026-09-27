@@ -1,0 +1,595 @@
+2026-09-12 00:31:13.252 +05:30 [INF] Application is shutting down...
+2026-09-12 00:31:49.546 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-12 00:31:49.834 +05:30 [INF] Now listening on: http://localhost:5219
+2026-09-12 00:31:49.838 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-12 00:31:49.839 +05:30 [INF] Hosting environment: Development
+2026-09-12 00:31:49.840 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-09-12 00:41:22.334 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - null null
+2026-09-12 00:41:22.436 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:41:22.452 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - 204 null null 121.6333ms
+2026-09-12 00:41:22.476 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 226
+2026-09-12 00:41:22.487 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:41:22.491 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-09-12 00:41:22.562 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:41:22.602 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 00:41:24.830 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:41:24.889 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 2275.7424ms
+2026-09-12 00:41:24.890 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:41:24.893 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 150 application/json; charset=utf-8 2417.5415ms
+2026-09-12 00:41:30.589 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - null null
+2026-09-12 00:41:30.649 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:41:30.654 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - 204 null null 65.5162ms
+2026-09-12 00:41:30.662 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 226
+2026-09-12 00:41:30.675 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:41:30.694 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:41:30.698 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 00:41:30.887 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:41:30.893 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 123.3094ms
+2026-09-12 00:41:30.896 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:41:30.905 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 150 application/json; charset=utf-8 242.9269ms
+2026-09-12 00:41:37.584 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - null null
+2026-09-12 00:41:37.591 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:41:37.594 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - 204 null null 10.0544ms
+2026-09-12 00:41:37.602 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 226
+2026-09-12 00:41:37.606 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:41:37.615 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:41:37.618 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 00:41:37.692 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:41:37.695 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 75.9467ms
+2026-09-12 00:41:37.698 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:41:37.700 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 150 application/json; charset=utf-8 98.1748ms
+2026-09-12 00:41:40.870 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 226
+2026-09-12 00:41:40.875 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:41:40.880 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:41:40.901 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 00:41:40.971 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:41:40.976 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 70.9272ms
+2026-09-12 00:41:40.988 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:41:40.993 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 150 application/json; charset=utf-8 122.3788ms
+2026-09-12 00:41:47.312 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - null null
+2026-09-12 00:41:47.318 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:41:47.320 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - 204 null null 7.6077ms
+2026-09-12 00:41:47.331 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 227
+2026-09-12 00:41:47.336 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:41:47.337 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:41:47.339 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 00:41:47.500 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:41:47.780 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 438.5888ms
+2026-09-12 00:41:47.784 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:41:47.786 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 2144 application/json; charset=utf-8 455.5144ms
+2026-09-12 00:42:52.287 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - null null
+2026-09-12 00:42:52.291 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:52.293 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - 204 null null 5.5452ms
+2026-09-12 00:42:52.305 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - null null
+2026-09-12 00:42:52.432 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:52.457 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution)'
+2026-09-12 00:42:52.487 +05:30 [INF] Route matched with {action = "GetOutwardByDcNo", controller = "Outward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOutwardByDcNo(Int32, System.String) on controller SSProjectSolution.Controllers.OutwardController (SSProjectSolution).
+2026-09-12 00:42:53.204 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.OutwardByDcResponseDto'.
+2026-09-12 00:42:53.540 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution) in 1046.436ms
+2026-09-12 00:42:53.712 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution)'
+2026-09-12 00:42:53.719 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - 200 927 application/json; charset=utf-8 1414.3099ms
+2026-09-12 00:42:53.827 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - null null
+2026-09-12 00:42:53.834 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:53.836 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - 204 null null 8.84ms
+2026-09-12 00:42:53.852 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 227
+2026-09-12 00:42:53.861 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:53.863 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:42:53.865 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 00:42:53.894 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/design-style-colour?companyId=6 - null null
+2026-09-12 00:42:53.908 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/6 - null null
+2026-09-12 00:42:53.911 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:53.912 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - null null
+2026-09-12 00:42:53.915 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:53.916 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/design-style-colour?companyId=6 - 204 null null 21.8747ms
+2026-09-12 00:42:53.920 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/6 - 204 null null 12.043ms
+2026-09-12 00:42:53.921 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:53.929 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - 204 null null 16.9955ms
+2026-09-12 00:42:53.996 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - null null
+2026-09-12 00:42:53.999 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/6 - null null
+2026-09-12 00:42:54.000 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/design-style-colour?companyId=6 - null null
+2026-09-12 00:42:54.015 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:42:54.017 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - null null
+2026-09-12 00:42:54.035 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - null null
+2026-09-12 00:42:54.042 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:54.052 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:54.055 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:54.063 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 193.8358ms
+2026-09-12 00:42:54.066 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:54.069 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:54.071 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:42:54.073 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-09-12 00:42:54.075 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetDesignStyleColour (SSProjectSolution)'
+2026-09-12 00:42:54.081 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:42:54.082 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - 204 null null 65.3107ms
+2026-09-12 00:42:54.083 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - 204 null null 48.5476ms
+2026-09-12 00:42:54.091 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 2144 application/json; charset=utf-8 238.8659ms
+2026-09-12 00:42:54.092 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 00:42:54.092 +05:30 [INF] Route matched with {action = "GetCompanyById", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyById(Int32) on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-09-12 00:42:54.099 +05:30 [INF] Route matched with {action = "GetDesignStyleColour", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDesignStyleColour(Int32) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 00:42:54.120 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - null null
+2026-09-12 00:42:54.142 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:54.146 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - 204 null null 26.3983ms
+2026-09-12 00:42:54.173 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - null null
+2026-09-12 00:42:54.175 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - null null
+2026-09-12 00:42:54.176 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - null null
+2026-09-12 00:42:54.198 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:54.202 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:54.206 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:54.208 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:42:54.209 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:42:54.211 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:42:54.213 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 00:42:54.215 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 00:42:54.216 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 00:42:54.343 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.DesignStyleColourDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:42:54.360 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetDesignStyleColour (SSProjectSolution) in 225.0909ms
+2026-09-12 00:42:54.365 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetDesignStyleColour (SSProjectSolution)'
+2026-09-12 00:42:54.369 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/design-style-colour?companyId=6 - 200 1823 application/json; charset=utf-8 369.2497ms
+2026-09-12 00:42:54.378 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-09-12 00:42:54.384 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:54.385 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 7.6752ms
+2026-09-12 00:42:54.502 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - null null
+2026-09-12 00:42:54.514 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:54.523 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - 204 null null 20.6452ms
+2026-09-12 00:42:54.549 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-09-12 00:42:54.561 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:54.563 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-12 00:42:54.572 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-09-12 00:42:54.640 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:42:54.674 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 94.9167ms
+2026-09-12 00:42:54.688 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-12 00:42:54.699 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 657 application/json; charset=utf-8 149.8342ms
+2026-09-12 00:42:54.710 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - null null
+2026-09-12 00:42:54.731 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:54.742 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution)'
+2026-09-12 00:42:54.767 +05:30 [INF] Route matched with {action = "GetDcNumbersByCompany", controller = "DcDetail"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDcNumbersByCompany(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.DcDetailController (SSProjectSolution).
+2026-09-12 00:42:54.823 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:42:54.840 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 716.369ms
+2026-09-12 00:42:54.852 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:42:54.858 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - 200 44 application/json; charset=utf-8 861.3611ms
+2026-09-12 00:42:54.941 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.DcNoResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:42:54.973 +05:30 [INF] Executed action SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution) in 200.3169ms
+2026-09-12 00:42:54.992 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution)'
+2026-09-12 00:42:55.009 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - 200 82 application/json; charset=utf-8 299.49ms
+2026-09-12 00:42:55.089 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:42:55.101 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:42:55.107 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 885.9828ms
+2026-09-12 00:42:55.118 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 894.3354ms
+2026-09-12 00:42:55.123 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:42:55.151 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:42:55.184 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - 200 44 application/json; charset=utf-8 1009.394ms
+2026-09-12 00:42:55.184 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - 200 44 application/json; charset=utf-8 1010.5098ms
+2026-09-12 00:42:55.241 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Models.CompanyModel'.
+2026-09-12 00:42:55.273 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution) in 1142.8664ms
+2026-09-12 00:42:55.280 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-09-12 00:42:55.290 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/6 - 200 250 application/json; charset=utf-8 1290.1826ms
+2026-09-12 00:42:55.550 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:42:55.555 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 1325.5529ms
+2026-09-12 00:42:55.557 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:42:55.563 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - 200 44 application/json; charset=utf-8 1386.7726ms
+2026-09-12 00:42:59.839 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward-update - null null
+2026-09-12 00:42:59.844 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:59.845 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward-update - 204 null null 6.0398ms
+2026-09-12 00:42:59.854 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/outward/outward-update - application/json 1002
+2026-09-12 00:42:59.859 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:42:59.866 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.OutwardController.UpdateOutward (SSProjectSolution)'
+2026-09-12 00:42:59.885 +05:30 [INF] Route matched with {action = "UpdateOutward", controller = "Outward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateOutward(SSProjectSolution.Request.OutwardUpdateRequest) on controller SSProjectSolution.Controllers.OutwardController (SSProjectSolution).
+2026-09-12 00:43:00.273 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.OutwardResponse'.
+2026-09-12 00:43:00.282 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.UpdateOutward (SSProjectSolution) in 387.8535ms
+2026-09-12 00:43:00.287 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.UpdateOutward (SSProjectSolution)'
+2026-09-12 00:43:00.290 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/outward/outward-update - 200 109 application/json; charset=utf-8 436.3645ms
+2026-09-12 00:50:14.174 +05:30 [INF] Application is shutting down...
+2026-09-12 00:50:42.635 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-12 00:50:42.873 +05:30 [INF] Now listening on: http://localhost:5219
+2026-09-12 00:50:42.880 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-12 00:50:42.883 +05:30 [INF] Hosting environment: Development
+2026-09-12 00:50:42.884 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-09-12 00:50:54.899 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - null null
+2026-09-12 00:50:55.110 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:50:55.204 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - 204 null null 308.5509ms
+2026-09-12 00:50:55.672 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 226
+2026-09-12 00:50:55.872 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:50:56.019 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-09-12 00:50:56.423 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:50:56.581 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 00:51:03.230 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:51:03.696 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 7071.2594ms
+2026-09-12 00:51:03.701 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:51:03.735 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 150 application/json; charset=utf-8 8065.4676ms
+2026-09-12 00:51:07.849 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - null null
+2026-09-12 00:51:07.880 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:07.887 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - 204 null null 37.7104ms
+2026-09-12 00:51:07.904 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 227
+2026-09-12 00:51:07.917 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:07.927 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:51:07.934 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 00:51:08.251 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:51:08.333 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 388.3207ms
+2026-09-12 00:51:08.347 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:51:08.353 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 2144 application/json; charset=utf-8 449.435ms
+2026-09-12 00:51:11.140 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - null null
+2026-09-12 00:51:11.147 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:11.149 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - 204 null null 9.509ms
+2026-09-12 00:51:11.158 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - null null
+2026-09-12 00:51:11.198 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:11.235 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution)'
+2026-09-12 00:51:11.263 +05:30 [INF] Route matched with {action = "GetOutwardByDcNo", controller = "Outward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOutwardByDcNo(Int32, System.String) on controller SSProjectSolution.Controllers.OutwardController (SSProjectSolution).
+2026-09-12 00:51:12.011 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.OutwardByDcResponseDto'.
+2026-09-12 00:51:12.136 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution) in 864.7204ms
+2026-09-12 00:51:12.150 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution)'
+2026-09-12 00:51:12.159 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - 200 944 application/json; charset=utf-8 1000.7844ms
+2026-09-12 00:51:12.196 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 227
+2026-09-12 00:51:12.242 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:12.252 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:51:12.265 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 00:51:12.318 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/6 - null null
+2026-09-12 00:51:12.344 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:12.351 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - null null
+2026-09-12 00:51:12.366 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - null null
+2026-09-12 00:51:12.378 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/6 - 204 null null 50.0287ms
+2026-09-12 00:51:12.383 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - null null
+2026-09-12 00:51:12.409 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:51:12.462 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-09-12 00:51:12.516 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:12.543 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:12.551 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - null null
+2026-09-12 00:51:12.565 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:12.588 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 309.5459ms
+2026-09-12 00:51:12.657 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:12.660 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - 204 null null 308.4202ms
+2026-09-12 00:51:12.670 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - 204 null null 303.2091ms
+2026-09-12 00:51:12.686 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:12.690 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - 204 null null 307.2988ms
+2026-09-12 00:51:12.713 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:51:12.734 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 263.3881ms
+2026-09-12 00:51:13.095 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - null null
+2026-09-12 00:51:13.139 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - null null
+2026-09-12 00:51:13.145 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - 204 null null 593.704ms
+2026-09-12 00:51:13.152 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - null null
+2026-09-12 00:51:13.188 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 2144 application/json; charset=utf-8 989.1229ms
+2026-09-12 00:51:13.278 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - null null
+2026-09-12 00:51:13.286 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:13.328 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:13.363 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-09-12 00:51:13.432 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:13.469 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/6 - null null
+2026-09-12 00:51:13.502 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:13.526 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:51:13.543 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:51:13.551 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:13.564 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:51:13.574 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:13.577 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - 204 null null 299.9193ms
+2026-09-12 00:51:13.632 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-12 00:51:13.632 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 00:51:13.641 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 00:51:13.650 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-09-12 00:51:13.663 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 00:51:13.714 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - null null
+2026-09-12 00:51:13.801 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-09-12 00:51:13.880 +05:30 [INF] Route matched with {action = "GetCompanyById", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyById(Int32) on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-09-12 00:51:14.166 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:14.239 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:51:14.368 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:51:14.468 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:51:14.646 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 868.6277ms
+2026-09-12 00:51:14.714 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:51:15.057 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Models.CompanyModel'.
+2026-09-12 00:51:15.135 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 00:51:15.235 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 1020.174ms
+2026-09-12 00:51:15.273 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:51:15.301 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:51:15.316 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 1482.8259ms
+2026-09-12 00:51:15.366 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution) in 1005.3133ms
+2026-09-12 00:51:15.462 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-12 00:51:15.486 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 1675.7933ms
+2026-09-12 00:51:15.500 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - 200 44 application/json; charset=utf-8 2404.6762ms
+2026-09-12 00:51:15.512 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:51:15.518 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:51:15.523 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-09-12 00:51:15.527 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 657 application/json; charset=utf-8 2163.2951ms
+2026-09-12 00:51:15.531 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:51:15.543 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - null null
+2026-09-12 00:51:15.546 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 169.9065ms
+2026-09-12 00:51:15.555 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - 200 44 application/json; charset=utf-8 2418.5994ms
+2026-09-12 00:51:15.557 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/6 - 200 250 application/json; charset=utf-8 2088.5872ms
+2026-09-12 00:51:15.572 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - 200 44 application/json; charset=utf-8 2419.8488ms
+2026-09-12 00:51:15.585 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:15.586 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:51:15.709 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - 200 44 application/json; charset=utf-8 1994.78ms
+2026-09-12 00:51:15.709 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution)'
+2026-09-12 00:51:16.313 +05:30 [INF] Route matched with {action = "GetDcNumbersByCompany", controller = "DcDetail"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDcNumbersByCompany(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.DcDetailController (SSProjectSolution).
+2026-09-12 00:51:16.518 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.DcNoResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:51:16.567 +05:30 [INF] Executed action SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution) in 197.2501ms
+2026-09-12 00:51:16.584 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution)'
+2026-09-12 00:51:16.601 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - 200 82 application/json; charset=utf-8 1057.8687ms
+2026-09-12 00:51:20.000 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward-update - null null
+2026-09-12 00:51:20.019 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:20.030 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward-update - 204 null null 29.2658ms
+2026-09-12 00:51:20.052 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/outward/outward-update - application/json 1002
+2026-09-12 00:51:20.070 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:51:20.076 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.OutwardController.UpdateOutward (SSProjectSolution)'
+2026-09-12 00:51:20.092 +05:30 [INF] Route matched with {action = "UpdateOutward", controller = "Outward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateOutward(SSProjectSolution.Request.OutwardUpdateRequest) on controller SSProjectSolution.Controllers.OutwardController (SSProjectSolution).
+2026-09-12 00:51:20.378 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'SSProjectSolution.Response.OutwardResponse'.
+2026-09-12 00:51:20.388 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.UpdateOutward (SSProjectSolution) in 287.3721ms
+2026-09-12 00:51:20.397 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.UpdateOutward (SSProjectSolution)'
+2026-09-12 00:51:20.418 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/outward/outward-update - 400 163 application/json; charset=utf-8 365.4581ms
+2026-09-12 00:56:55.029 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward-update - null null
+2026-09-12 00:56:55.038 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:56:55.041 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward-update - 204 null null 11.6106ms
+2026-09-12 00:56:55.051 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/outward/outward-update - application/json 1002
+2026-09-12 00:56:55.059 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:56:55.062 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.OutwardController.UpdateOutward (SSProjectSolution)'
+2026-09-12 00:56:55.066 +05:30 [INF] Route matched with {action = "UpdateOutward", controller = "Outward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateOutward(SSProjectSolution.Request.OutwardUpdateRequest) on controller SSProjectSolution.Controllers.OutwardController (SSProjectSolution).
+2026-09-12 00:56:55.298 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.OutwardResponse'.
+2026-09-12 00:56:55.307 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.UpdateOutward (SSProjectSolution) in 228.0609ms
+2026-09-12 00:56:55.332 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.UpdateOutward (SSProjectSolution)'
+2026-09-12 00:56:55.345 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/outward/outward-update - 200 109 application/json; charset=utf-8 293.3515ms
+2026-09-12 00:57:21.557 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - null null
+2026-09-12 00:57:21.565 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:57:21.568 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - 204 null null 10.4822ms
+2026-09-12 00:57:21.580 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 226
+2026-09-12 00:57:21.587 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:57:21.590 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:57:21.592 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 00:57:21.671 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:57:21.675 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 78.6166ms
+2026-09-12 00:57:21.690 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:57:21.704 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 150 application/json; charset=utf-8 123.6304ms
+2026-09-12 00:57:25.498 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 227
+2026-09-12 00:57:25.512 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:57:25.517 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:57:25.520 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 00:57:25.586 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:57:25.592 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 67.0294ms
+2026-09-12 00:57:25.601 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:57:25.604 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 2144 application/json; charset=utf-8 105.4519ms
+2026-09-12 00:57:59.726 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - null null
+2026-09-12 00:57:59.733 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:57:59.737 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - 204 null null 10.5715ms
+2026-09-12 00:57:59.752 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - null null
+2026-09-12 00:57:59.761 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:57:59.764 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution)'
+2026-09-12 00:57:59.767 +05:30 [INF] Route matched with {action = "GetOutwardByDcNo", controller = "Outward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOutwardByDcNo(Int32, System.String) on controller SSProjectSolution.Controllers.OutwardController (SSProjectSolution).
+2026-09-12 00:57:59.916 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.OutwardByDcResponseDto'.
+2026-09-12 00:57:59.920 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution) in 148.0813ms
+2026-09-12 00:57:59.924 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution)'
+2026-09-12 00:57:59.927 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - 200 971 application/json; charset=utf-8 174.8651ms
+2026-09-12 00:57:59.935 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - null null
+2026-09-12 00:57:59.943 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:57:59.946 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - 204 null null 10.8073ms
+2026-09-12 00:57:59.966 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 227
+2026-09-12 00:57:59.977 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/6 - null null
+2026-09-12 00:57:59.984 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.018 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - null null
+2026-09-12 00:58:00.021 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.032 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - null null
+2026-09-12 00:58:00.035 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - null null
+2026-09-12 00:58:00.050 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - null null
+2026-09-12 00:58:00.051 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:58:00.067 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.068 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/6 - 204 null null 91.5776ms
+2026-09-12 00:58:00.077 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.099 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.120 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.174 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - 204 null null 123.9869ms
+2026-09-12 00:58:00.132 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - 204 null null 114.0104ms
+2026-09-12 00:58:00.148 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-09-12 00:58:00.151 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - 204 null null 118.5027ms
+2026-09-12 00:58:00.165 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - 204 null null 130.779ms
+2026-09-12 00:58:00.130 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 00:58:00.229 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - null null
+2026-09-12 00:58:00.251 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/6 - null null
+2026-09-12 00:58:00.261 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.270 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - null null
+2026-09-12 00:58:00.279 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - null null
+2026-09-12 00:58:00.298 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.304 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.306 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 157.97ms
+2026-09-12 00:58:00.314 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.327 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.328 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:58:00.330 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-09-12 00:58:00.336 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - null null
+2026-09-12 00:58:00.353 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.340 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:58:00.343 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 00:58:00.346 +05:30 [INF] Route matched with {action = "GetCompanyById", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyById(Int32) on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-09-12 00:58:00.339 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:58:00.357 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:58:00.359 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 00:58:00.365 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:58:00.372 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 00:58:00.375 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 00:58:00.384 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 100.5482ms
+2026-09-12 00:58:00.398 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 00:58:00.400 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 2144 application/json; charset=utf-8 433.9655ms
+2026-09-12 00:58:00.409 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - null null
+2026-09-12 00:58:00.415 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.417 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - 204 null null 7.199ms
+2026-09-12 00:58:00.457 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-09-12 00:58:00.458 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:58:00.484 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:00.508 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 143.8467ms
+2026-09-12 00:58:00.640 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-12 00:58:00.896 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:58:00.917 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-09-12 00:58:00.935 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - 200 44 application/json; charset=utf-8 705.4298ms
+2026-09-12 00:58:00.949 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Models.CompanyModel'.
+2026-09-12 00:58:00.949 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:58:00.982 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - null null
+2026-09-12 00:58:00.985 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution) in 615.8005ms
+2026-09-12 00:58:00.994 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 614.1912ms
+2026-09-12 00:58:01.079 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:58:01.080 +05:30 [INF] CORS policy execution successful.
+2026-09-12 00:58:01.083 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-09-12 00:58:01.176 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/6 - 200 250 application/json; charset=utf-8 924.4662ms
+2026-09-12 00:58:01.131 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 161.2614ms
+2026-09-12 00:58:01.133 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution)'
+2026-09-12 00:58:01.121 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:58:01.244 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-12 00:58:01.280 +05:30 [INF] Route matched with {action = "GetDcNumbersByCompany", controller = "DcDetail"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDcNumbersByCompany(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.DcDetailController (SSProjectSolution).
+2026-09-12 00:58:01.284 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - 200 44 application/json; charset=utf-8 1004.2272ms
+2026-09-12 00:58:01.323 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 657 application/json; charset=utf-8 865.4337ms
+2026-09-12 00:58:01.458 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:58:01.465 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 00:58:01.485 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.DcNoResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 00:58:01.618 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 1228.1354ms
+2026-09-12 00:58:01.680 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 1285.487ms
+2026-09-12 00:58:01.761 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:58:01.748 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 00:58:01.716 +05:30 [INF] Executed action SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution) in 299.9051ms
+2026-09-12 00:58:01.766 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - 200 44 application/json; charset=utf-8 1429.3859ms
+2026-09-12 00:58:01.794 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - 200 44 application/json; charset=utf-8 1524.6878ms
+2026-09-12 00:58:01.801 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution)'
+2026-09-12 00:58:02.019 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - 200 82 application/json; charset=utf-8 1037.3299ms
+2026-09-12 01:09:26.876 +05:30 [INF] Application is shutting down...
+2026-09-12 01:09:41.135 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-12 01:09:41.403 +05:30 [INF] Now listening on: http://localhost:5219
+2026-09-12 01:09:41.410 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-12 01:09:41.413 +05:30 [INF] Hosting environment: Development
+2026-09-12 01:09:41.415 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-09-12 01:11:02.993 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - null null
+2026-09-12 01:11:02.995 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-09-12 01:11:03.158 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:03.158 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:03.184 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 194.9017ms
+2026-09-12 01:11:03.184 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - 204 null null 194.9024ms
+2026-09-12 01:11:03.213 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - null null
+2026-09-12 01:11:03.220 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-09-12 01:11:03.267 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:03.270 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:03.274 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-09-12 01:11:03.783 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution)'
+2026-09-12 01:11:03.783 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-12 01:11:03.863 +05:30 [INF] Route matched with {action = "GetOutwardByDcNo", controller = "Outward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOutwardByDcNo(Int32, System.String) on controller SSProjectSolution.Controllers.OutwardController (SSProjectSolution).
+2026-09-12 01:11:03.863 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-09-12 01:11:08.902 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 01:11:09.186 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.OutwardByDcResponseDto'.
+2026-09-12 01:11:09.385 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 5495.2837ms
+2026-09-12 01:11:09.390 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-12 01:11:09.390 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution) in 5516.9639ms
+2026-09-12 01:11:09.403 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 657 application/json; charset=utf-8 6182.547ms
+2026-09-12 01:11:09.410 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution)'
+2026-09-12 01:11:09.428 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/outward/outward_get_by_dcno?id=4336&mode=OUTWARD - 200 971 application/json; charset=utf-8 6214.65ms
+2026-09-12 01:11:09.436 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/6 - null null
+2026-09-12 01:11:09.448 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/design-style-colour?companyId=6 - null null
+2026-09-12 01:11:09.454 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.454 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - null null
+2026-09-12 01:11:09.464 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.467 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/6 - 204 null null 30.5354ms
+2026-09-12 01:11:09.465 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - null null
+2026-09-12 01:11:09.472 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - null null
+2026-09-12 01:11:09.479 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/design-style-colour?companyId=6 - 204 null null 31.6362ms
+2026-09-12 01:11:09.481 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.482 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/design-style-colour?companyId=6 - null null
+2026-09-12 01:11:09.485 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/6 - null null
+2026-09-12 01:11:09.489 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.501 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.510 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - null null
+2026-09-12 01:11:09.512 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - 204 null null 57.5194ms
+2026-09-12 01:11:09.519 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.527 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.532 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - 204 null null 67.5373ms
+2026-09-12 01:11:09.536 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - 204 null null 63.575ms
+2026-09-12 01:11:09.547 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.588 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - null null
+2026-09-12 01:11:09.615 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-09-12 01:11:09.615 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetDesignStyleColour (SSProjectSolution)'
+2026-09-12 01:11:09.622 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - null null
+2026-09-12 01:11:09.637 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - null null
+2026-09-12 01:11:09.640 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - 204 null null 129.4896ms
+2026-09-12 01:11:09.654 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.672 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.676 +05:30 [INF] Route matched with {action = "GetDesignStyleColour", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDesignStyleColour(Int32) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 01:11:09.677 +05:30 [INF] Route matched with {action = "GetCompanyById", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyById(Int32) on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-09-12 01:11:09.682 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.695 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 01:11:09.700 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 01:11:09.715 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 01:11:09.739 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - null null
+2026-09-12 01:11:09.739 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 01:11:09.745 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 01:11:09.753 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.754 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 01:11:09.773 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 01:11:09.788 +05:30 [INF] Route matched with {action = "GetSizesByColourStyle", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSizesByColourStyle(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-09-12 01:11:09.788 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.DesignStyleColourDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 01:11:09.815 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetDesignStyleColour (SSProjectSolution) in 110.1481ms
+2026-09-12 01:11:09.820 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetDesignStyleColour (SSProjectSolution)'
+2026-09-12 01:11:09.825 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/design-style-colour?companyId=6 - 200 1823 application/json; charset=utf-8 342.332ms
+2026-09-12 01:11:09.840 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - null null
+2026-09-12 01:11:09.851 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.854 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - 204 null null 14.1577ms
+2026-09-12 01:11:09.863 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 01:11:09.879 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - null null
+2026-09-12 01:11:09.888 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 90.1605ms
+2026-09-12 01:11:09.902 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:09.906 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 01:11:09.911 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution)'
+2026-09-12 01:11:09.915 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=RED&styleNo=321 - 200 44 application/json; charset=utf-8 176.2071ms
+2026-09-12 01:11:09.931 +05:30 [INF] Route matched with {action = "GetDcNumbersByCompany", controller = "DcDetail"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDcNumbersByCompany(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.DcDetailController (SSProjectSolution).
+2026-09-12 01:11:10.004 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.DcNoResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 01:11:10.096 +05:30 [INF] Executed action SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution) in 159.0672ms
+2026-09-12 01:11:10.186 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 01:11:10.194 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 01:11:10.206 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Models.CompanyModel'.
+2026-09-12 01:11:10.211 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.SizeResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 01:11:10.271 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution)'
+2026-09-12 01:11:10.281 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 510.7948ms
+2026-09-12 01:11:10.285 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 528.9643ms
+2026-09-12 01:11:10.302 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution) in 516.032ms
+2026-09-12 01:11:10.306 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-dcs/6?styleNo=321&designName=LAKH - 200 82 application/json; charset=utf-8 427.9692ms
+2026-09-12 01:11:10.315 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution) in 602.0335ms
+2026-09-12 01:11:10.317 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 01:11:10.322 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 01:11:10.331 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetSizesByColourStyle (SSProjectSolution)'
+2026-09-12 01:11:10.368 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-09-12 01:11:10.419 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BOTTLE%20GREEN&styleNo=321 - 200 44 application/json; charset=utf-8 797.4506ms
+2026-09-12 01:11:10.423 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=MAROON&styleNo=321 - 200 44 application/json; charset=utf-8 835.9164ms
+2026-09-12 01:11:10.450 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/sizes?companyId=6&colour=BLACK&styleNo=321 - 200 44 application/json; charset=utf-8 813.1002ms
+2026-09-12 01:11:10.453 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/6 - 200 250 application/json; charset=utf-8 968.3776ms
+2026-09-12 01:11:13.919 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward-update - null null
+2026-09-12 01:11:13.925 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:13.930 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward-update - 204 null null 11.1519ms
+2026-09-12 01:11:13.943 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/outward/outward-update - application/json 1029
+2026-09-12 01:11:13.956 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:11:13.961 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.OutwardController.UpdateOutward (SSProjectSolution)'
+2026-09-12 01:11:13.980 +05:30 [INF] Route matched with {action = "UpdateOutward", controller = "Outward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateOutward(SSProjectSolution.Request.OutwardUpdateRequest) on controller SSProjectSolution.Controllers.OutwardController (SSProjectSolution).
+2026-09-12 01:11:14.375 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.OutwardResponse'.
+2026-09-12 01:11:14.388 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.UpdateOutward (SSProjectSolution) in 401.3624ms
+2026-09-12 01:11:14.398 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.UpdateOutward (SSProjectSolution)'
+2026-09-12 01:11:14.404 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/outward/outward-update - 200 109 application/json; charset=utf-8 460.7626ms
+2026-09-12 01:12:42.414 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-09-12 01:12:42.421 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:12:42.428 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 14.116ms
+2026-09-12 01:12:42.441 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-09-12 01:12:42.447 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:12:42.449 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-12 01:12:42.453 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-09-12 01:12:42.531 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 01:12:42.535 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 77.3261ms
+2026-09-12 01:12:42.539 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-12 01:12:42.542 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 657 application/json; charset=utf-8 101.3174ms
+2026-09-12 01:12:55.694 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - null null
+2026-09-12 01:12:55.703 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:12:55.712 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - 204 null null 18.0755ms
+2026-09-12 01:12:55.739 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 226
+2026-09-12 01:12:55.747 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:12:55.754 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 01:12:55.776 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 01:12:56.105 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 01:12:56.344 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 560.5717ms
+2026-09-12 01:12:56.348 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 01:12:56.351 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 150 application/json; charset=utf-8 611.7314ms
+2026-09-12 01:13:02.702 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - null null
+2026-09-12 01:13:02.715 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:13:02.722 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StatusFilter/search - 204 null null 19.964ms
+2026-09-12 01:13:02.733 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - application/json 227
+2026-09-12 01:13:02.739 +05:30 [INF] CORS policy execution successful.
+2026-09-12 01:13:02.742 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 01:13:02.745 +05:30 [INF] Route matched with {action = "Search", controller = "StatusFilter"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(SSProjectSolution.Request.StatusFilterRequest) on controller SSProjectSolution.Controllers.StatusFilterController (SSProjectSolution).
+2026-09-12 01:13:02.856 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType15`8[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 01:13:02.894 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 141.8586ms
+2026-09-12 01:13:02.904 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
+2026-09-12 01:13:02.907 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 2810 application/json; charset=utf-8 174.7929ms

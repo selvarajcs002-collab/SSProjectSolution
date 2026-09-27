@@ -213,34 +213,8 @@ BEGIN
         IF @CurrentOutwardId = 0 OR @Mode = 'INSERT'
         BEGIN
             -- Generate DC number: SSE_0012/2026-2027
-            DECLARE @TotalCount INT;
-            DECLARE @CurrentDate DATETIME = GETDATE();
-            DECLARE @YearCurrent NVARCHAR(4);
-            DECLARE @YearNext NVARCHAR(4);
-
-            -- Financial year logic (April to March)
-            IF MONTH(@CurrentDate) >= 4
-            BEGIN
-                SET @YearCurrent = CAST(YEAR(@CurrentDate) AS NVARCHAR(4));
-                SET @YearNext = CAST(YEAR(@CurrentDate) + 1 AS NVARCHAR(4));
-            END
-            ELSE
-            BEGIN
-                SET @YearCurrent = CAST(YEAR(@CurrentDate) - 1 AS NVARCHAR(4));
-                SET @YearNext = CAST(YEAR(@CurrentDate) AS NVARCHAR(4));
-            END
-
-            SELECT @TotalCount = ISNULL(COUNT(*), 0) + 604
-            FROM dbo.Outward;
-
-            SET @GeneratedDcNo = CONCAT(
-                'SSE_',
-                RIGHT('0000' + CAST(@TotalCount AS NVARCHAR(10)), 4),
-                '/',
-                @YearCurrent,
-                '-',
-                @YearNext
-            );
+            -- Generate DC number using the central SP
+            EXEC dbo.usp_GenerateOutwardDcNo @OutwardDcNo = @GeneratedDcNo OUTPUT;
 
             INSERT INTO Outward (
                 CompanyId,

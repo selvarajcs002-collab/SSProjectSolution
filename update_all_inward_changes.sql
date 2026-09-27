@@ -1,4 +1,4 @@
-﻿IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'[dbo].[Inward]') AND name = 'InwardDate')
+IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'[dbo].[Inward]') AND name = 'InwardDate')
 BEGIN
     ALTER TABLE [dbo].[Inward] ADD InwardDate DATETIME NULL;
 END

@@ -7,6 +7,7 @@ namespace SSProjectSolution.Services
     public interface IOutwardService
     {
         // ── Size-Based (existing — do NOT modify) ──────────────────────────────
+        Task<GenerateDcNoResponse> GenerateDcNoAsync(GenerateDcNoRequest request);
         Task<OutwardResponse> SaveOutwardAsync(OutwardRequest request);
         Task<OutwardByDcResponseDto?> GetOutwardByDcNoAsync(int id, string mode);
         Task<OutwardResponse> UpdateOutwardAsync(OutwardUpdateRequest request);

@@ -22,6 +22,32 @@ namespace SSProjectSolution.Controllers
 
         // ── Size-Based (existing — untouched) ──────────────────────────────────
 
+        [HttpPost("generate-dc-no")]
+        public async Task<IActionResult> GenerateDcNo([FromBody] GenerateDcNoRequest request)
+        {
+            try
+            {
+                if (request == null || request.CompanyId <= 0)
+                {
+                    return BadRequest(new { success = false, message = "Invalid request or CompanyId" });
+                }
+
+                var response = await _outwardService.GenerateDcNoAsync(request);
+
+                if (response.Success)
+                {
+                    return Ok(response);
+                }
+
+                return BadRequest(response);
+            }
+            catch (Exception ex)
+            {
+                LoggerUtility.LogError(ex, "Error generating DC No");
+                return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
+            }
+        }
+
         [HttpPost("save-outward")]
         public async Task<IActionResult> SaveOutward([FromBody] OutwardRequest request)
         {

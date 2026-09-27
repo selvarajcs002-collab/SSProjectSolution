@@ -34,6 +34,7 @@ namespace SSProjectSolution.Request
         public int OutwardId { get; set; }
         public string? Mode { get; set; }
         public int CompanyId { get; set; }
+        public string? DcNo { get; set; }
         public string? Colour { get; set; }
         public string? DesignName { get; set; }
         public string? StyleNo { get; set; }

@@ -69,6 +69,11 @@ BEGIN
             ) s
             WHERE s.[count] > 0;
             
+            -- Store comma-separated colours in main variable if it's MULTI
+            IF @Colour = 'MULTI' OR @Colour IS NULL OR @Colour = ''
+            BEGIN
+                SELECT @Colour = SUBSTRING(STUFF((SELECT ', ' + Colour FROM (SELECT DISTINCT Colour FROM @InputSizes) c FOR XML PATH('')), 1, 2, ''), 1, 50);
+            END
         END
         ELSE IF (ISJSON(@SizeData) = 1 AND JSON_QUERY(@SizeData, '$.sizes') IS NOT NULL)
         BEGIN
@@ -141,22 +146,14 @@ BEGIN
             TotalOutward INT
         );
 
-        -- If UPDATE, we want to exclude the ENTIRE DC since we are rewriting it, but wait!
-        -- If we exclude the entire DC, we should look up @OutwardDcNo first!
-        IF (@Mode = 'UPDATE')
-        BEGIN
-            SELECT @OutwardDcNo = OutwardDcNo FROM dbo.Outward WHERE OutwardId = @OutwardId;
-        END
-
         INSERT INTO @OutwardUsed
         SELECT 
-            o.StyleNo, o.DesignName, o.Colour, o.Size,
-            SUM(o.[Count])
-        FROM dbo.OutwardSizeCount o
-        JOIN dbo.Outward ow ON o.OutwardId = ow.OutwardId
-        WHERE (@Mode = 'INSERT' OR ow.OutwardDcNo <> @OutwardDcNo)
-          AND o.StyleNo = @StyleNo AND o.DesignName = @DesignName
-        GROUP BY o.StyleNo, o.DesignName, o.Colour, o.Size;
+            StyleNo, DesignName, Colour, Size,
+            SUM([Count])
+        FROM dbo.OutwardSizeCount
+        WHERE (@Mode = 'INSERT' OR OutwardId <> @OutwardId)
+          AND StyleNo = @StyleNo AND DesignName = @DesignName
+        GROUP BY StyleNo, DesignName, Colour, Size;
 
         -----------------------------------------
         -- AVAILABLE STOCK
@@ -210,17 +207,6 @@ BEGIN
             RETURN;
         END
 
-        -- Prepare list of distinct colours to loop over
-        DECLARE @DistinctColours TABLE (Id INT IDENTITY(1,1), Colour NVARCHAR(50));
-        INSERT INTO @DistinctColours (Colour)
-        SELECT DISTINCT Colour FROM @InputSizes;
-
-        DECLARE @TotalColours INT = (SELECT COUNT(*) FROM @DistinctColours);
-        DECLARE @Iterator INT = 1;
-        DECLARE @CurrentColour NVARCHAR(50);
-        DECLARE @CurrentOutwardId INT;
-        DECLARE @FirstOutwardId INT;
-
         -----------------------------------------
         -- INSERT MODE
         -----------------------------------------
@@ -235,59 +221,47 @@ BEGIN
             SELECT @MaxNo = ISNULL(MAX(CAST(SUBSTRING(OutwardDcNo, LEN(@CompanyPrefix) + 2, LEN(OutwardDcNo)) AS INT)), 0)
             FROM dbo.Outward
             WHERE OutwardDcNo LIKE @CompanyPrefix + '-%';
-			
-            DECLARE @TotalCount INT;
-            DECLARE @YearCurrent NVARCHAR(4) = CAST(YEAR(GETDATE()) AS NVARCHAR(4));
-            DECLARE @YearNext NVARCHAR(4) = CAST(YEAR(GETDATE()) + 1 AS NVARCHAR(4));
+			DECLARE @TotalCount INT;
+DECLARE @YearCurrent NVARCHAR(4) = CAST(YEAR(GETDATE()) AS NVARCHAR(4));
+DECLARE @YearNext NVARCHAR(4) = CAST(YEAR(GETDATE()) + 1 AS NVARCHAR(4));
 
-            SELECT @TotalCount = ISNULL(COUNT(*), 0) + 604
-            FROM dbo.Outward;
+SELECT @TotalCount = ISNULL(COUNT(*), 0) + 604
+FROM dbo.Outward;
 
-            SET @OutwardDcNo = CONCAT(
-                'SSE-',
-                RIGHT('0000' + CAST(@TotalCount AS VARCHAR(10)), 4),
-                '/',
-                @YearCurrent,
-                '-',
-                @YearNext
-            );
+SET @OutwardDcNo = CONCAT(
+    'SSE-',
+    RIGHT('0000' + CAST(@TotalCount AS VARCHAR(10)), 4),
+    '/',
+    @YearCurrent,
+    '-',
+    @YearNext
+);
 
-            WHILE (@Iterator <= @TotalColours)
-            BEGIN
-                SELECT @CurrentColour = Colour FROM @DistinctColours WHERE Id = @Iterator;
+            INSERT INTO dbo.Outward 
+                (CompanyId, Colour, DesignName, StyleNo, UploadURL, CreatedBy, OutwardDcNo, Status, DeliveryTo, PoNo, Weight, NoOfBundles, Remarks, SelectedDcNos)
+            VALUES 
+                (@CompanyId, @Colour, @DesignName, @StyleNo, @UploadURL, @CreatedBy, @OutwardDcNo, @Status, @DeliveryTo, @PoNo, @Weight, @NoOfBundles, @Remarks, @SelectedDcNos);
 
-                INSERT INTO dbo.Outward 
-                    (CompanyId, Colour, DesignName, StyleNo, UploadURL, CreatedBy, OutwardDcNo, Status, DeliveryTo, PoNo, Weight, NoOfBundles, Remarks, SelectedDcNos)
-                VALUES 
-                    (@CompanyId, @CurrentColour, @DesignName, @StyleNo, @UploadURL, @CreatedBy, @OutwardDcNo, @Status, @DeliveryTo, @PoNo, @Weight, @NoOfBundles, @Remarks, @SelectedDcNos);
+            SET @OutwardId = SCOPE_IDENTITY();
 
-                SET @CurrentOutwardId = SCOPE_IDENTITY();
-                
-                IF (@Iterator = 1) SET @FirstOutwardId = @CurrentOutwardId;
+            -- Create OutwardColour entries
+            INSERT INTO dbo.OutwardColour (OutwardId, Colour)
+            SELECT DISTINCT @OutwardId, Colour
+            FROM @InputSizes;
 
-                -- Create OutwardColour entries
-                INSERT INTO dbo.OutwardColour (OutwardId, Colour)
-                VALUES (@CurrentOutwardId, @CurrentColour);
-                
-                DECLARE @OutwardColourId INT = SCOPE_IDENTITY();
+            -- Create OutwardSizeCount entries linking to OutwardColour
+            INSERT INTO dbo.OutwardSizeCount (OutwardId, OutwardColourId, StyleNo, DesignName, Colour, Size, Count)
+            SELECT 
+                @OutwardId, 
+                oc.OutwardColourId,
+                i.StyleNo, 
+                i.DesignName, 
+                i.Colour, 
+                i.Size, 
+                i.Count
+            FROM @InputSizes i
+            JOIN dbo.OutwardColour oc ON oc.OutwardId = @OutwardId AND oc.Colour = i.Colour;
 
-                -- Create OutwardSizeCount entries linking to OutwardColour
-                INSERT INTO dbo.OutwardSizeCount (OutwardId, OutwardColourId, StyleNo, DesignName, Colour, Size, Count)
-                SELECT 
-                    @CurrentOutwardId, 
-                    @OutwardColourId,
-                    StyleNo, 
-                    DesignName, 
-                    Colour, 
-                    Size, 
-                    Count
-                FROM @InputSizes
-                WHERE Colour = @CurrentColour;
-
-                SET @Iterator = @Iterator + 1;
-            END
-
-            SET @OutwardId = @FirstOutwardId;
             SELECT 1 AS Success, 'Outward saved successfully' AS Message, @OutwardId, @OutwardDcNo;
         END
         -----------------------------------------
@@ -306,76 +280,44 @@ BEGIN
             FROM dbo.Outward
             WHERE OutwardId = @OutwardId;
 
-            -- We must reset the state for this entire DC.
-            -- First, get all OutwardIds associated with this DC
-            DECLARE @DcOutwardIds TABLE (Id INT);
-            INSERT INTO @DcOutwardIds (Id) SELECT OutwardId FROM dbo.Outward WHERE OutwardDcNo = @OutwardDcNo;
+            UPDATE dbo.Outward
+            SET 
+                CompanyId   = @CompanyId,
+                Colour      = @Colour,
+                DesignName  = @DesignName,
+                StyleNo     = @StyleNo,
+                UploadURL   = @UploadURL,
+                Status      = @Status,
+                DeliveryTo  = @DeliveryTo,
+                PoNo        = @PoNo,
+                Weight      = @Weight,
+                NoOfBundles = @NoOfBundles,
+                Remarks     = @Remarks,
+                SelectedDcNos = @SelectedDcNos,
+                UpdatedDate = GETDATE()
+            WHERE OutwardId = @OutwardId;
 
-            -- Delete all children
-            DELETE FROM dbo.OutwardSizeCount WHERE OutwardId IN (SELECT Id FROM @DcOutwardIds);
-            DELETE FROM dbo.OutwardColour WHERE OutwardId IN (SELECT Id FROM @DcOutwardIds);
+            -- Handle Colours
+            DELETE FROM dbo.OutwardSizeCount WHERE OutwardId = @OutwardId;
+            DELETE FROM dbo.OutwardColour WHERE OutwardId = @OutwardId;
 
-            -- Delete all siblings (other rows for the same DC)
-            DELETE FROM dbo.Outward WHERE OutwardDcNo = @OutwardDcNo AND OutwardId <> @OutwardId;
+            -- Re-insert Colours
+            INSERT INTO dbo.OutwardColour (OutwardId, Colour)
+            SELECT DISTINCT @OutwardId, Colour
+            FROM @InputSizes;
 
-            WHILE (@Iterator <= @TotalColours)
-            BEGIN
-                SELECT @CurrentColour = Colour FROM @DistinctColours WHERE Id = @Iterator;
-
-                IF (@Iterator = 1)
-                BEGIN
-                    -- Update the main/first row
-                    UPDATE dbo.Outward
-                    SET 
-                        CompanyId   = @CompanyId,
-                        Colour      = @CurrentColour,
-                        DesignName  = @DesignName,
-                        StyleNo     = @StyleNo,
-                        UploadURL   = @UploadURL,
-                        Status      = @Status,
-                        DeliveryTo  = @DeliveryTo,
-                        PoNo        = @PoNo,
-                        Weight      = @Weight,
-                        NoOfBundles = @NoOfBundles,
-                        Remarks     = @Remarks,
-                        SelectedDcNos = @SelectedDcNos,
-                        UpdatedDate = GETDATE()
-                    WHERE OutwardId = @OutwardId;
-                    
-                    SET @CurrentOutwardId = @OutwardId;
-                END
-                ELSE
-                BEGIN
-                    -- Insert new row for additional colours
-                    INSERT INTO dbo.Outward 
-                        (CompanyId, Colour, DesignName, StyleNo, UploadURL, CreatedBy, OutwardDcNo, Status, DeliveryTo, PoNo, Weight, NoOfBundles, Remarks, SelectedDcNos)
-                    VALUES 
-                        (@CompanyId, @CurrentColour, @DesignName, @StyleNo, @UploadURL, @CreatedBy, @OutwardDcNo, @Status, @DeliveryTo, @PoNo, @Weight, @NoOfBundles, @Remarks, @SelectedDcNos);
-
-                    SET @CurrentOutwardId = SCOPE_IDENTITY();
-                END
-
-                -- Create OutwardColour entries
-                INSERT INTO dbo.OutwardColour (OutwardId, Colour)
-                VALUES (@CurrentOutwardId, @CurrentColour);
-                
-                DECLARE @UpdOutwardColourId INT = SCOPE_IDENTITY();
-
-                -- Create OutwardSizeCount entries linking to OutwardColour
-                INSERT INTO dbo.OutwardSizeCount (OutwardId, OutwardColourId, StyleNo, DesignName, Colour, Size, Count)
-                SELECT 
-                    @CurrentOutwardId, 
-                    @UpdOutwardColourId,
-                    StyleNo, 
-                    DesignName, 
-                    Colour, 
-                    Size, 
-                    Count
-                FROM @InputSizes
-                WHERE Colour = @CurrentColour;
-
-                SET @Iterator = @Iterator + 1;
-            END
+            -- Re-insert Sizes
+            INSERT INTO dbo.OutwardSizeCount (OutwardId, OutwardColourId, StyleNo, DesignName, Colour, Size, Count)
+            SELECT 
+                @OutwardId, 
+                oc.OutwardColourId,
+                i.StyleNo, 
+                i.DesignName, 
+                i.Colour, 
+                i.Size, 
+                i.Count
+            FROM @InputSizes i
+            JOIN dbo.OutwardColour oc ON oc.OutwardId = @OutwardId AND oc.Colour = i.Colour;
 
             SELECT 1 AS Success, 'Outward updated successfully' AS Message, @OutwardId, @OutwardDcNo;
         END

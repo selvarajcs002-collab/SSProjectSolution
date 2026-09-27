@@ -40,6 +40,16 @@ namespace SSProjectSolution.Repositories
                 commandType: CommandType.StoredProcedure);
         }
 
+        public async Task<string> GenerateOutwardDcNoAsync()
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var parameters = new DynamicParameters();
+            parameters.Add("@OutwardDcNo", dbType: DbType.String, direction: ParameterDirection.Output, size: 50);
+
+            await connection.ExecuteAsync("usp_GenerateOutwardDcNo", parameters, commandType: CommandType.StoredProcedure);
+            return parameters.Get<string>("@OutwardDcNo");
+        }
+
         public async Task<IEnumerable<dynamic>> GetAvailableSizesAsync(int companyId, string styleNo, string designName, string colour)
         {
             using var connection = _dbConnection.CreateConnection();
