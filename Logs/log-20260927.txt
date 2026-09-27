@@ -100,3 +100,514 @@
 2026-09-27 11:59:23.972 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.AdvanceAmountController.GenerateChallan (SSProjectSolution)'
 2026-09-27 11:59:24.017 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/AdvanceAmount/GenerateChallan - 200 105151 application/pdf 18421.0439ms
 2026-09-27 12:55:13.141 +05:30 [INF] Application is shutting down...
+2026-09-27 13:47:37.136 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-27 13:47:37.586 +05:30 [INF] Now listening on: http://localhost:5219
+2026-09-27 13:47:37.595 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-27 13:47:37.600 +05:30 [INF] Hosting environment: Development
+2026-09-27 13:47:37.603 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SS_Project\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-09-27 14:55:10.346 +05:30 [INF] Application is shutting down...
+2026-09-27 14:55:59.840 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-27 14:56:00.872 +05:30 [INF] Now listening on: http://localhost:5219
+2026-09-27 14:56:00.882 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-27 14:56:00.886 +05:30 [INF] Hosting environment: Development
+2026-09-27 14:56:00.889 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SS_Project\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-09-27 18:34:12.645 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-27 18:34:13.140 +05:30 [INF] Now listening on: http://localhost:5219
+2026-09-27 18:34:13.148 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-27 18:34:13.151 +05:30 [INF] Hosting environment: Development
+2026-09-27 18:34:13.153 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SS_Project\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-09-27 18:34:36.264 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/swagger - null null
+2026-09-27 18:34:36.528 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/swagger - 301 0 null 290.6141ms
+2026-09-27 18:34:36.586 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/swagger/index.html - null null
+2026-09-27 18:34:36.948 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/swagger/index.html - 200 null text/html;charset=utf-8 362.6139ms
+2026-09-27 18:34:36.985 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/swagger/swagger-ui-bundle.js - null null
+2026-09-27 18:34:36.989 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/swagger/swagger-ui-standalone-preset.js - null null
+2026-09-27 18:34:36.991 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/swagger/swagger-ui.css - null null
+2026-09-27 18:34:37.196 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-09-27 18:34:37.196 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-09-27 18:34:37.207 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/swagger/swagger-ui.css - 200 152034 text/css 215.7847ms
+2026-09-27 18:34:37.207 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 218.7148ms
+2026-09-27 18:34:37.321 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-09-27 18:34:37.336 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 350.6887ms
+2026-09-27 18:34:38.354 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/swagger/v1/swagger.json - null null
+2026-09-27 18:34:38.491 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/swagger/favicon-32x32.png - null null
+2026-09-27 18:34:38.500 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-09-27 18:34:38.504 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/swagger/favicon-32x32.png - 200 628 image/png 12.8759ms
+2026-09-27 18:34:38.989 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 634.6628ms
+2026-09-27 18:46:04.847 +05:30 [WRN] As of ""2026-09-27T13:16:04.1538561+00:00"", the heartbeat has been running for ""00:00:01.4360293"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.
+2026-09-27 18:55:42.087 +05:30 [INF] Application is shutting down...
+2026-09-27 18:56:25.084 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-27 18:56:25.609 +05:30 [INF] Now listening on: http://localhost:5219
+2026-09-27 18:56:25.620 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-27 18:56:25.625 +05:30 [INF] Hosting environment: Development
+2026-09-27 18:56:25.628 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SS_Project\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-09-27 19:01:54.093 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:01:54.093 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-09-27 19:01:54.093 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:01:54.288 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:01:54.288 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:01:54.288 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:01:54.325 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 236.657ms
+2026-09-27 19:01:54.325 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 204 null null 236.6562ms
+2026-09-27 19:01:54.325 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 236.6577ms
+2026-09-27 19:01:54.348 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-09-27 19:01:54.350 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:01:54.357 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:01:54.406 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:01:54.406 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:01:54.406 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:01:54.411 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-09-27 19:01:54.656 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-27 19:01:54.656 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:01:54.657 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:01:54.781 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-09-27 19:01:54.781 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:01:54.781 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:01:59.458 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:01:59.815 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:01:59.821 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:02:00.380 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 5579.4777ms
+2026-09-27 19:02:00.380 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 5584.4591ms
+2026-09-27 19:02:00.381 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 5588.659ms
+2026-09-27 19:02:00.385 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:02:00.387 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:02:00.391 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-27 19:02:00.395 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 584 application/json; charset=utf-8 6045.7033ms
+2026-09-27 19:02:00.397 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 1902 application/json; charset=utf-8 6039.4013ms
+2026-09-27 19:02:00.400 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 657 application/json; charset=utf-8 6051.7491ms
+2026-09-27 19:13:09.586 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/7 - null null
+2026-09-27 19:13:09.610 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:13:09.620 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/7 - 204 null null 34.3389ms
+2026-09-27 19:13:09.717 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/7 - application/json 241
+2026-09-27 19:13:09.767 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:13:09.779 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:13:09.886 +05:30 [INF] Route matched with {action = "UpdateProduction", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduction(Int32, SSProjectSolution.Models.DTOs.MachineProductionDto) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:13:12.229 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:13:12.247 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution) in 2352.6129ms
+2026-09-27 19:13:12.264 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:13:12.295 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/7 - 500 93 application/json; charset=utf-8 2577.6969ms
+2026-09-27 19:14:56.212 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/7 - null null
+2026-09-27 19:14:56.238 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:14:56.246 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/7 - 204 null null 34.1185ms
+2026-09-27 19:14:56.275 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/7 - application/json 241
+2026-09-27 19:14:56.301 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:14:56.332 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:14:56.346 +05:30 [INF] Route matched with {action = "UpdateProduction", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduction(Int32, SSProjectSolution.Models.DTOs.MachineProductionDto) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:14:56.668 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:14:56.688 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution) in 321.3707ms
+2026-09-27 19:14:56.716 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:14:56.754 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/7 - 500 72 application/json; charset=utf-8 481.191ms
+2026-09-27 19:22:39.363 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/7 - null null
+2026-09-27 19:22:39.412 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:22:39.431 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/7 - 204 null null 68.0462ms
+2026-09-27 19:22:39.515 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/7 - application/json 241
+2026-09-27 19:22:39.530 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:22:39.543 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:22:39.555 +05:30 [INF] Route matched with {action = "UpdateProduction", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduction(Int32, SSProjectSolution.Models.DTOs.MachineProductionDto) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:22:42.008 +05:30 [INF] Executing NotFoundObjectResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:22:42.015 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution) in 2404.5847ms
+2026-09-27 19:22:42.092 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:22:42.115 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/7 - 404 57 application/json; charset=utf-8 2599.8864ms
+2026-09-27 19:37:44.020 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/7 - null null
+2026-09-27 19:37:44.046 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:37:44.086 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/7 - 204 null null 33.9876ms
+2026-09-27 19:37:44.146 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/7 - application/json 237
+2026-09-27 19:37:44.152 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:37:44.155 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:37:44.158 +05:30 [INF] Route matched with {action = "UpdateProduction", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduction(Int32, SSProjectSolution.Models.DTOs.MachineProductionDto) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:37:46.034 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType10`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:37:46.141 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution) in 1978.2028ms
+2026-09-27 19:37:46.165 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:37:46.172 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/7 - 200 73 application/json; charset=utf-8 2025.9418ms
+2026-09-27 19:37:46.313 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:37:46.336 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:37:46.341 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:37:46.372 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:37:46.377 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 204 null null 64.0142ms
+2026-09-27 19:37:46.386 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 49.6518ms
+2026-09-27 19:37:46.402 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:37:46.420 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:37:46.599 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:37:46.599 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:37:46.616 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:37:46.629 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:37:46.786 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:37:46.789 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:37:47.334 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:37:47.451 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 448.4564ms
+2026-09-27 19:37:47.501 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:37:47.547 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 584 application/json; charset=utf-8 1127.4265ms
+2026-09-27 19:37:48.903 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:37:48.920 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 1970.0441ms
+2026-09-27 19:37:48.953 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:37:48.969 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 1902 application/json; charset=utf-8 2566.7437ms
+2026-09-27 19:38:01.188 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/5 - null null
+2026-09-27 19:38:01.247 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:01.266 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/5 - 204 null null 77.6955ms
+2026-09-27 19:38:01.334 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/5 - application/json 237
+2026-09-27 19:38:01.349 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:01.354 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:38:01.359 +05:30 [INF] Route matched with {action = "UpdateProduction", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduction(Int32, SSProjectSolution.Models.DTOs.MachineProductionDto) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:38:01.673 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType10`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:38:01.679 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution) in 309.6069ms
+2026-09-27 19:38:01.685 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:38:01.695 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/5 - 200 73 application/json; charset=utf-8 360.7284ms
+2026-09-27 19:38:01.713 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:38:01.727 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:01.731 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 204 null null 17.8169ms
+2026-09-27 19:38:01.744 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:38:01.755 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:38:01.776 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:01.825 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 80.6598ms
+2026-09-27 19:38:01.816 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:01.883 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:38:01.892 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:38:01.911 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:01.917 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:38:01.924 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:38:02.012 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:38:02.176 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:38:02.186 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 242.4798ms
+2026-09-27 19:38:02.199 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:38:02.225 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 1902 application/json; charset=utf-8 469.7606ms
+2026-09-27 19:38:02.315 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:38:02.330 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 275.771ms
+2026-09-27 19:38:02.339 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:38:02.346 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 584 application/json; charset=utf-8 462.2445ms
+2026-09-27 19:38:12.908 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-09-27 19:38:12.917 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:38:12.918 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:12.922 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:38:12.925 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:12.929 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 20.939ms
+2026-09-27 19:38:12.960 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:12.962 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 204 null null 45.0094ms
+2026-09-27 19:38:12.986 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-09-27 19:38:12.989 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 66.7442ms
+2026-09-27 19:38:13.001 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:38:13.012 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:13.025 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:38:13.032 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:13.035 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-27 19:38:13.056 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:13.059 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:38:13.082 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:38:13.112 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-09-27 19:38:13.112 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:38:13.120 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:38:13.364 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:38:13.369 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 240.346ms
+2026-09-27 19:38:13.373 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:38:13.376 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 584 application/json; charset=utf-8 350.2553ms
+2026-09-27 19:38:13.383 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:38:13.396 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 284.4112ms
+2026-09-27 19:38:13.400 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:38:13.403 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 1902 application/json; charset=utf-8 402.6644ms
+2026-09-27 19:38:14.780 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:38:14.789 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 1671.7814ms
+2026-09-27 19:38:14.806 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-27 19:38:14.814 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 657 application/json; charset=utf-8 1827.7338ms
+2026-09-27 19:38:31.103 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/5 - null null
+2026-09-27 19:38:31.149 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:31.157 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/5 - 204 null null 53.6377ms
+2026-09-27 19:38:31.176 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/5 - application/json 240
+2026-09-27 19:38:31.195 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:31.200 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:38:31.205 +05:30 [INF] Route matched with {action = "UpdateProduction", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduction(Int32, SSProjectSolution.Models.DTOs.MachineProductionDto) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:38:31.493 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType10`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:38:31.512 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution) in 298.5326ms
+2026-09-27 19:38:31.577 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:38:32.440 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:38:32.740 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:32.740 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/5 - 200 73 application/json; charset=utf-8 1563.5611ms
+2026-09-27 19:38:32.756 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 1177.5492ms
+2026-09-27 19:38:32.783 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:38:32.801 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:38:32.816 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:32.835 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:32.839 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 204 null null 56.106ms
+2026-09-27 19:38:32.870 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:38:32.892 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:38:32.899 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:38:32.913 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:38:33.062 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:38:33.062 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:38:33.426 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:38:33.427 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:38:33.439 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 345.8473ms
+2026-09-27 19:38:33.444 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 366.0147ms
+2026-09-27 19:38:33.455 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:38:33.459 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:38:33.470 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 584 application/json; charset=utf-8 669.485ms
+2026-09-27 19:38:33.473 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 1902 application/json; charset=utf-8 603.0461ms
+2026-09-27 19:39:42.976 +05:30 [INF] Application is shutting down...
+2026-09-27 19:42:56.890 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-27 19:42:58.752 +05:30 [INF] Now listening on: http://localhost:5219
+2026-09-27 19:42:58.765 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-27 19:42:58.770 +05:30 [INF] Hosting environment: Development
+2026-09-27 19:42:58.773 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SS_Project\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-09-27 19:43:24.810 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/5 - null null
+2026-09-27 19:43:26.398 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:43:26.455 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/5 - 204 null null 1665.0763ms
+2026-09-27 19:43:26.753 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/5 - application/json 245
+2026-09-27 19:43:26.900 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:43:26.909 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-09-27 19:43:27.977 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:43:28.829 +05:30 [INF] Route matched with {action = "UpdateProduction", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduction(Int32, SSProjectSolution.Models.DTOs.MachineProductionDto) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:43:38.700 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType10`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:43:39.286 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution) in 10330.5228ms
+2026-09-27 19:43:39.298 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:43:39.312 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:43:39.318 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/5 - 200 73 application/json; charset=utf-8 12568.2222ms
+2026-09-27 19:43:39.335 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:43:39.344 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:43:39.347 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 35.0819ms
+2026-09-27 19:43:39.354 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:43:39.364 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:43:39.366 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 204 null null 21.4346ms
+2026-09-27 19:43:39.381 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:43:39.428 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:43:39.428 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:43:39.437 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:43:39.583 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:43:39.588 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:43:39.610 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:43:40.141 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:43:40.171 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 571.1341ms
+2026-09-27 19:43:40.175 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:43:40.179 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 584 application/json; charset=utf-8 815.0334ms
+2026-09-27 19:43:41.190 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:43:41.214 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 1594.5815ms
+2026-09-27 19:43:41.227 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:43:41.233 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 1902 application/json; charset=utf-8 1851.5278ms
+2026-09-27 19:54:34.150 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-09-27 19:54:34.155 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:54:34.161 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:54:34.165 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:54:34.177 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:54:34.227 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:54:34.229 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 78.856ms
+2026-09-27 19:54:34.253 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 204 null null 97.8351ms
+2026-09-27 19:54:34.257 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 96.3982ms
+2026-09-27 19:54:34.267 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-09-27 19:54:34.280 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:54:34.299 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:54:34.313 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:54:34.321 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:54:34.337 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:54:34.343 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-27 19:54:34.345 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:54:34.347 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:54:34.386 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:54:34.389 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-09-27 19:54:34.392 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:54:35.943 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:54:35.949 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 1550.611ms
+2026-09-27 19:54:35.960 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:54:35.969 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 1902 application/json; charset=utf-8 1688.5121ms
+2026-09-27 19:54:37.200 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:54:37.200 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:54:37.207 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 2788.0452ms
+2026-09-27 19:54:37.243 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:54:37.234 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 2826.627ms
+2026-09-27 19:54:37.279 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 584 application/json; charset=utf-8 2979.7166ms
+2026-09-27 19:54:37.285 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-27 19:54:37.326 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 657 application/json; charset=utf-8 3059.3818ms
+2026-09-27 19:54:39.659 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - null null
+2026-09-27 19:54:39.676 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:54:39.679 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - 204 null null 20.0429ms
+2026-09-27 19:54:39.690 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - null null
+2026-09-27 19:54:39.700 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:54:39.702 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:54:39.705 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:54:39.944 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:54:39.951 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 239.9455ms
+2026-09-27 19:54:39.972 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:54:39.975 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - 200 377 application/json; charset=utf-8 284.5273ms
+2026-09-27 19:54:43.238 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:54:43.246 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:54:43.249 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 204 null null 10.3575ms
+2026-09-27 19:54:43.258 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:54:43.267 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:54:43.269 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:54:43.273 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:54:43.526 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:54:43.532 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 251.921ms
+2026-09-27 19:54:43.546 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:54:43.551 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 1902 application/json; charset=utf-8 292.6814ms
+2026-09-27 19:55:01.152 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/5 - null null
+2026-09-27 19:55:01.170 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:55:01.184 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/update/5 - 204 null null 31.0398ms
+2026-09-27 19:55:01.247 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/5 - application/json 244
+2026-09-27 19:55:01.273 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:55:01.280 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:55:01.285 +05:30 [INF] Route matched with {action = "UpdateProduction", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateProduction(Int32, SSProjectSolution.Models.DTOs.MachineProductionDto) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:55:01.606 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType10`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:55:01.614 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution) in 324.9046ms
+2026-09-27 19:55:01.623 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.UpdateProduction (SSProjectSolution)'
+2026-09-27 19:55:01.642 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5219/api/MachineProduction/update/5 - 200 73 application/json; charset=utf-8 395.5799ms
+2026-09-27 19:55:01.646 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:55:01.676 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:55:01.694 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:55:01.712 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:55:01.716 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 70.2232ms
+2026-09-27 19:55:01.720 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 204 null null 43.6706ms
+2026-09-27 19:55:01.733 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:55:01.748 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:55:01.753 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:55:01.762 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:55:01.769 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:55:01.774 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:55:01.779 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:55:01.783 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:55:02.041 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:55:02.041 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:55:02.054 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 255.1554ms
+2026-09-27 19:55:02.067 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 276.8714ms
+2026-09-27 19:55:02.088 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:55:02.114 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:55:02.121 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 1909 application/json; charset=utf-8 373.5509ms
+2026-09-27 19:55:02.144 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 591 application/json; charset=utf-8 410.3568ms
+2026-09-27 19:55:06.456 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-09-27 19:55:06.463 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:55:06.471 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:55:06.478 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:55:06.485 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:55:06.512 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:55:06.514 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 57.5209ms
+2026-09-27 19:55:06.518 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:55:06.528 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:55:06.547 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-09-27 19:55:06.557 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:55:06.567 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:55:06.594 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:55:06.638 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-27 19:55:06.663 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-09-27 19:55:06.865 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:55:06.872 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:55:06.956 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 349.8385ms
+2026-09-27 19:55:07.304 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 669.1932ms
+2026-09-27 19:55:07.335 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:55:07.472 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:55:07.482 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 1909 application/json; charset=utf-8 1017.8121ms
+2026-09-27 19:55:07.488 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 591 application/json; charset=utf-8 1017.0719ms
+2026-09-27 19:55:08.251 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:55:08.257 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 1574.7432ms
+2026-09-27 19:55:08.264 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-09-27 19:55:08.267 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 657 application/json; charset=utf-8 1719.7426ms
+2026-09-27 19:56:43.099 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/delete/7 - null null
+2026-09-27 19:56:43.130 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:56:43.138 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/delete/7 - 204 null null 39.4217ms
+2026-09-27 19:56:43.154 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5219/api/MachineProduction/delete/7 - null null
+2026-09-27 19:56:43.180 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:56:43.185 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.DeleteProduction (SSProjectSolution)'
+2026-09-27 19:56:43.209 +05:30 [INF] Route matched with {action = "DeleteProduction", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteProduction(Int32) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:56:43.474 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType10`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:56:43.480 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.DeleteProduction (SSProjectSolution) in 259.0557ms
+2026-09-27 19:56:43.487 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.DeleteProduction (SSProjectSolution)'
+2026-09-27 19:56:43.497 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5219/api/MachineProduction/delete/7 - 200 73 application/json; charset=utf-8 342.8372ms
+2026-09-27 19:56:43.511 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:56:43.517 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:56:43.530 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:56:43.543 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:56:43.547 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 35.6537ms
+2026-09-27 19:56:43.550 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 204 null null 33.011ms
+2026-09-27 19:56:43.593 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:56:43.612 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:56:43.631 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:56:43.649 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:56:43.660 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:56:43.665 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:56:43.671 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:56:43.675 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:56:43.931 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:56:43.935 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:56:43.955 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 265.3048ms
+2026-09-27 19:56:43.941 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 242.5814ms
+2026-09-27 19:56:43.983 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:56:44.005 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:56:44.013 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 591 application/json; charset=utf-8 420.074ms
+2026-09-27 19:56:44.022 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 1603 application/json; charset=utf-8 409.3605ms
+2026-09-27 19:56:48.620 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/delete/5 - null null
+2026-09-27 19:56:48.635 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:56:48.641 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/delete/5 - 204 null null 20.281ms
+2026-09-27 19:56:48.662 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5219/api/MachineProduction/delete/5 - null null
+2026-09-27 19:56:48.677 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:56:48.682 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.DeleteProduction (SSProjectSolution)'
+2026-09-27 19:56:48.688 +05:30 [INF] Route matched with {action = "DeleteProduction", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteProduction(Int32) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:56:48.966 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType10`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:56:48.975 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.DeleteProduction (SSProjectSolution) in 277.8464ms
+2026-09-27 19:56:48.982 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.DeleteProduction (SSProjectSolution)'
+2026-09-27 19:56:48.988 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5219/api/MachineProduction/delete/5 - 200 73 application/json; charset=utf-8 326.0894ms
+2026-09-27 19:56:49.537 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:56:49.543 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:56:49.554 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:56:49.559 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:56:49.562 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 204 null null 24.8359ms
+2026-09-27 19:56:49.570 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 26.2825ms
+2026-09-27 19:56:49.583 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:56:49.596 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:56:49.603 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:56:49.613 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:56:49.618 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:56:49.622 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:56:49.624 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:56:49.628 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:56:49.875 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:56:49.879 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 235.3959ms
+2026-09-27 19:56:49.888 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:56:49.888 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:56:49.897 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 260.4014ms
+2026-09-27 19:56:49.902 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 293 application/json; charset=utf-8 305.7706ms
+2026-09-27 19:56:49.908 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:56:49.922 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 1305 application/json; charset=utf-8 339.5143ms
+2026-09-27 19:57:38.738 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/add - null null
+2026-09-27 19:57:38.744 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:57:38.746 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/add - 204 null null 8.3802ms
+2026-09-27 19:57:38.756 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/MachineProduction/add - application/json 232
+2026-09-27 19:57:38.770 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:57:38.780 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.AddProduction (SSProjectSolution)'
+2026-09-27 19:57:39.455 +05:30 [INF] Route matched with {action = "AddProduction", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddProduction(SSProjectSolution.Models.DTOs.MachineProductionDto) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:57:39.970 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType10`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:57:40.535 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.AddProduction (SSProjectSolution) in 895.6837ms
+2026-09-27 19:57:40.573 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:57:40.776 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.AddProduction (SSProjectSolution)'
+2026-09-27 19:57:40.827 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:57:40.831 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/MachineProduction/add - 200 71 application/json; charset=utf-8 2075.1617ms
+2026-09-27 19:57:40.834 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 260.8516ms
+2026-09-27 19:57:40.865 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:57:40.885 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-09-27 19:57:40.902 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:57:40.930 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:57:40.946 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 204 null null 80.9229ms
+2026-09-27 19:57:41.001 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:57:41.055 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-09-27 19:57:41.065 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:57:41.109 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:57:41.134 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:57:41.165 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:57:41.416 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:57:41.416 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-27 19:57:41.425 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 238.5407ms
+2026-09-27 19:57:41.429 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 298.4425ms
+2026-09-27 19:57:41.434 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:57:41.453 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-09-27 19:57:41.453 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 1305 application/json; charset=utf-8 398.0582ms
+2026-09-27 19:57:41.498 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 293 application/json; charset=utf-8 612.7972ms
+2026-09-27 19:58:00.298 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - null null
+2026-09-27 19:58:00.305 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:58:00.307 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - 204 null null 8.6487ms
+2026-09-27 19:58:00.404 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - null null
+2026-09-27 19:58:00.412 +05:30 [INF] CORS policy execution successful.
+2026-09-27 19:58:00.415 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:58:00.418 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-09-27 19:58:00.683 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-27 19:58:00.687 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 263.7657ms
+2026-09-27 19:58:00.692 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-09-27 19:58:00.695 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - 200 662 application/json; charset=utf-8 291.4785ms
+2026-09-27 20:00:08.331 +05:30 [INF] Application is shutting down...
+2026-09-27 20:03:43.842 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-27 20:03:44.612 +05:30 [INF] Now listening on: http://localhost:5219
+2026-09-27 20:03:44.619 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-27 20:03:44.624 +05:30 [INF] Hosting environment: Development
+2026-09-27 20:03:44.626 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SS_Project\SSProjectSolution\SSProjectSolution\SSProjectSolution

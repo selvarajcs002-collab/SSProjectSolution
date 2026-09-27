@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Dapper;
 using System.Data;
 using SSProjectSolution.Data;
@@ -57,6 +57,74 @@ namespace SSProjectSolution.Controllers
 
                 var newId = result.FirstOrDefault();
                 return Ok(new { success = true, id = newId, message = "Production entry saved successfully" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { success = false, message = ex.Message });
+            }
+        }
+
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> UpdateProduction(int id, [FromBody] MachineProductionDto model)
+        {
+            try
+            {
+                if (model == null)
+                    return BadRequest(new { success = false, message = "Invalid production data" });
+
+                using var connection = _dbConnection.CreateConnection();
+                var parameters = new DynamicParameters();
+                parameters.Add("@Id", id);
+                parameters.Add("@EmployeeName", model.EmployeeName);
+                parameters.Add("@MachineName", model.MachineName);
+                parameters.Add("@Shift", model.Shift);
+                parameters.Add("@StyleName", model.StyleName);
+                parameters.Add("@DesignName", model.DesignName);
+                parameters.Add("@TotalProduction", model.TotalProduction);
+                parameters.Add("@TargetProduction", model.TargetProduction);
+                parameters.Add("@CostPerPiece", model.CostPerPiece);
+                parameters.Add("@ProductionCost", model.ProductionCost);
+                parameters.Add("@Status", model.Status);
+                parameters.Add("@CompanyId", model.CompanyId);
+
+                var result = await connection.QueryAsync<int>(
+                    "sp_EMP_UpdateDailyProduction",
+                    parameters,
+                    commandType: CommandType.StoredProcedure
+                );
+
+                var updatedId = result.FirstOrDefault();
+                if (updatedId <= 0)
+                    return NotFound(new { success = false, message = "Production record not found" });
+
+                return Ok(new { success = true, id = updatedId, message = "Production entry updated successfully" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { success = false, message = ex.Message });
+            }
+        }
+
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> DeleteProduction(int id)
+        {
+            try
+            {
+                using var connection = _dbConnection.CreateConnection();
+                var parameters = new DynamicParameters();
+                parameters.Add("@Id", id);
+
+                var result = await connection.QueryAsync<int>(
+                    "sp_EMP_DeleteDailyProduction",
+                    parameters,
+                    commandType: CommandType.StoredProcedure
+                );
+
+                var deletedId = result.FirstOrDefault();
+                if (deletedId <= 0)
+                    return NotFound(new { success = false, message = "Production record not found" });
+
+                return Ok(new { success = true, id = deletedId, message = "Production entry deleted successfully" });
             }
             catch (Exception ex)
             {
