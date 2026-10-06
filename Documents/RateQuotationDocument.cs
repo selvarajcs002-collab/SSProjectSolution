@@ -11,13 +11,16 @@ namespace SSProjectSolution.Documents
     {
         private readonly RateQuotationResponseDto _model;
         private readonly string _imagePath;
+        private readonly string _companyGst;
 
         public RateQuotationDocument(
             RateQuotationResponseDto model,
-            string imagePath)
+            string imagePath,
+            string? companyGst = null)
         {
             _model = model;
             _imagePath = imagePath;
+            _companyGst = companyGst?.Trim() ?? string.Empty;
         }
 
         public DocumentMetadata GetMetadata()
@@ -149,11 +152,13 @@ namespace SSProjectSolution.Documents
                                             "Tirupur - 641 603, TamilNadu, India")
                                         .FontSize(8);
 
-                                    // GST
-                                    left.Item()
-                                        .PaddingTop(3)
-                                        .Text("GST: 33ABNJS9123JIZT")
-                                        .FontSize(8);
+                                    if (!string.IsNullOrWhiteSpace(_companyGst))
+                                    {
+                                        left.Item()
+                                            .PaddingTop(3)
+                                            .Text("GST: " + _companyGst)
+                                            .FontSize(8);
+                                    }
                                 });
 
                             // -------------------------------------------------

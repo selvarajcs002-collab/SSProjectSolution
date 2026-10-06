@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 using SSProjectSolution.Documents;
 using SSProjectSolution.Request;
@@ -14,16 +15,22 @@ namespace SSProjectSolution.Services
     public class PdfGenerator : IPdfGenerator
     {
         private readonly IConfiguration _configuration;
+        private readonly ICompanyService _companyService;
+        private readonly ILogger<PdfGenerator> _logger;
 
-        public PdfGenerator(IConfiguration configuration)
+        public PdfGenerator(IConfiguration configuration, ICompanyService companyService, ILogger<PdfGenerator> logger)
         {
             _configuration = configuration;
+            _companyService = companyService;
+            _logger = logger;
         }
 
         public async Task<byte[]> GeneratePdfAsync(JObject payload)
         {
             if (payload == null)
                 throw new ArgumentNullException(nameof(payload), "Invalid request payload");
+
+            await ApplyCompanyGstAsync(payload);
 
             string entryType = payload.Value<string>("entryType") ?? "S";
 
@@ -49,14 +56,7 @@ namespace SSProjectSolution.Services
             if (string.IsNullOrEmpty(meterRequest.Address))
                 meterRequest.Address = payload.Value<string>("receiverAddress") ?? string.Empty;
 
-            if (string.IsNullOrEmpty(meterRequest.GstNo))
-            {
-                var companyObj = payload.Value<JObject>("company");
-                if (companyObj != null)
-                {
-                    meterRequest.GstNo = companyObj.Value<string>("gst") ?? string.Empty;
-                }
-            }
+            meterRequest.GstNo = ReadPayloadGst(payload);
 
             if (string.IsNullOrEmpty(meterRequest.Date))
                 meterRequest.Date = payload.Value<string>("date") ?? string.Empty;
@@ -102,22 +102,7 @@ namespace SSProjectSolution.Services
             if (string.IsNullOrEmpty(sizeRequest.Address))
                 sizeRequest.Address = payload.Value<string>("receiverAddress") ?? string.Empty;
 
-            if (string.IsNullOrEmpty(sizeRequest.GstNo))
-            {
-                var directGst = payload.Value<string>("gstNo");
-                if (!string.IsNullOrWhiteSpace(directGst))
-                {
-                    sizeRequest.GstNo = directGst;
-                }
-                else
-                {
-                    var companyObj = payload.Value<JObject>("company");
-                    if (companyObj != null)
-                    {
-                        sizeRequest.GstNo = companyObj.Value<string>("gst") ?? string.Empty;
-                    }
-                }
-            }
+            sizeRequest.GstNo = ReadPayloadGst(payload);
 
             if (string.IsNullOrEmpty(sizeRequest.Date))
                 sizeRequest.Date = payload.Value<string>("date") ?? string.Empty;
@@ -169,6 +154,38 @@ namespace SSProjectSolution.Services
             using var stream = new MemoryStream();
             document.GeneratePdf(stream);
             return stream.ToArray();
+        }
+
+        private async Task ApplyCompanyGstAsync(JObject payload)
+        {
+            var companyId = payload.Value<int?>("companyId") ?? payload.Value<int?>("CompanyId") ?? 0;
+            var challanNo = payload.Value<string>("dcNo") ?? payload.Value<string>("DcNo") ?? string.Empty;
+
+            if (companyId <= 0)
+            {
+                payload["gstNo"] = string.Empty;
+                _logger.LogWarning(
+                    "Delivery challan PDF has no CompanyId. ChallanNo={ChallanNo}. GST was not taken from a default company.",
+                    challanNo);
+                return;
+            }
+
+            var company = await _companyService.GetCompanyByIdAsync(companyId);
+            var gst = CompanyGstResolver.Resolve(companyId, company.CompanyId, company.Gst_No);
+            payload["gstNo"] = gst;
+            payload["companyId"] = companyId;
+
+            _logger.LogInformation(
+                "Delivery challan PDF company resolved. ChallanNo={ChallanNo} CompanyId={CompanyId} CompanyName={CompanyName} Gst={MaskedGst}",
+                challanNo,
+                companyId,
+                company.CompanyName,
+                CompanyGstResolver.Mask(gst));
+        }
+
+        private static string ReadPayloadGst(JObject payload)
+        {
+            return (payload.Value<string>("gstNo") ?? payload.Value<string>("GstNo") ?? string.Empty).Trim();
         }
     }
 }

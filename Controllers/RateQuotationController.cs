@@ -17,11 +17,13 @@ namespace SSProjectSolution.Controllers
     public class RateQuotationController : ControllerBase
     {
         private readonly IRateQuotationService _service;
+        private readonly ICompanyService _companyService;
         private readonly string ImageFolderPath;
 
-        public RateQuotationController(IRateQuotationService service, IConfiguration configuration)
+        public RateQuotationController(IRateQuotationService service, ICompanyService companyService, IConfiguration configuration)
         {
             _service = service;
+            _companyService = companyService;
             ImageFolderPath = configuration["RateQuotationSettings:ImageFolderPath"] ?? Path.Combine(Directory.GetCurrentDirectory(), "RateQuotationImages");
         }
 
@@ -341,7 +343,7 @@ namespace SSProjectSolution.Controllers
                 }
             }
 
-            var document = new RateQuotationDocument(model, imagePath);
+            var document = new RateQuotationDocument(model, imagePath, await ResolveCompanyGstAsync(model.CompanyId));
             var pdfBytes = document.GeneratePdf();
 
             var fileName = $"RateQuotation_{model.QuotationNo}.pdf";
@@ -381,7 +383,7 @@ namespace SSProjectSolution.Controllers
                     }
                 }
 
-                var document = new RateQuotationDocument(model, imagePath);
+                var document = new RateQuotationDocument(model, imagePath, await ResolveCompanyGstAsync(model.CompanyId));
                 var pdfBytes = document.GeneratePdf();
 
                 var fileName = $"RateQuotation_{model.QuotationNo}.pdf";
@@ -392,6 +394,15 @@ namespace SSProjectSolution.Controllers
                 // Note: Consider logging the exception here using an injected ILogger
                 return StatusCode(500, "Error generating PDF: " + ex.Message);
             }
+        }
+
+        private async Task<string> ResolveCompanyGstAsync(long companyId)
+        {
+            if (companyId <= 0 || companyId > int.MaxValue)
+                return string.Empty;
+
+            var company = await _companyService.GetCompanyByIdAsync((int)companyId);
+            return CompanyGstResolver.Resolve((int)companyId, company.CompanyId, company.Gst_No);
         }
     }
 }

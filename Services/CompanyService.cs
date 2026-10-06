@@ -1,4 +1,5 @@
 using Dapper;
+using Microsoft.Extensions.Logging;
 using SSProjectSolution.Data;
 using SSProjectSolution.Models;
 using SSProjectSolution.Request;
@@ -10,10 +11,12 @@ namespace SSProjectSolution.Services
     public class CompanyService : ICompanyService
     {
         private readonly DapperDBConnection _dbConnection;
+        private readonly ILogger<CompanyService> _logger;
 
-        public CompanyService(DapperDBConnection dbConnection)
+        public CompanyService(DapperDBConnection dbConnection, ILogger<CompanyService> logger)
         {
             _dbConnection = dbConnection;
+            _logger = logger;
         }
 
         public async Task<CommonResponse> ManageCompanyAsync(CompanyRequest request)
@@ -31,6 +34,12 @@ namespace SSProjectSolution.Services
             parameters.Add("@city", request.City);
             parameters.Add("@pincode", request.Pincode);
             parameters.Add("@deliveryToLocations", request.DeliveryToLocations != null ? Newtonsoft.Json.JsonConvert.SerializeObject(request.DeliveryToLocations) : null);
+
+            _logger.LogInformation(
+                "Company {Mode}. CompanyId={CompanyId} Gst={MaskedGst}",
+                request.Mode,
+                request.CompanyId,
+                CompanyGstResolver.Mask(request.Gst_No));
 
             return await connection.QueryFirstOrDefaultAsync<CommonResponse>(
                 SPConstants.ManageCompany, 
@@ -55,29 +64,78 @@ namespace SSProjectSolution.Services
             var parameters = new DynamicParameters();
             parameters.Add("@companyId", companyId);
 
-            var result = await connection.QueryFirstOrDefaultAsync<dynamic>(
+            var result = await connection.QueryFirstOrDefaultAsync(
                 SPConstants.GetCompanyById,
                 parameters,
                 commandType: CommandType.StoredProcedure
             );
 
-            if (result == null) return new CompanyModel();
-
-            return new CompanyModel
+            if (result == null)
             {
-                CompanyId = result.companyId ?? 0,
-                CompanyName = result.companyName ?? string.Empty,
-                Gst_No = result.gst_no ?? string.Empty,
-                PhoneNumber = result.phoneNumber ?? string.Empty,
-                Door_No = result.door_no ?? string.Empty,
-                Street_Name = result.street_Name ?? string.Empty,
-                Landmark = result.landmark ?? string.Empty,
-                City = result.city ?? string.Empty,
-                Pincode = result.pincode ?? string.Empty,
-                DeliveryToLocations = string.IsNullOrEmpty((string)result.deliveryToLocations)
+                _logger.LogWarning("Company lookup returned no row. CompanyId={CompanyId}", companyId);
+                return new CompanyModel();
+            }
+
+            var row = (IDictionary<string, object>)result;
+            var loadedCompanyId = ReadInt(row, "companyId");
+            var loadedGst = ReadString(row, "gst_no");
+            var gst = CompanyGstResolver.Resolve(companyId, loadedCompanyId, loadedGst);
+
+            if (loadedCompanyId != companyId)
+            {
+                _logger.LogError(
+                    "Company lookup returned a different company. RequestedCompanyId={RequestedCompanyId} ReturnedCompanyId={ReturnedCompanyId}",
+                    companyId,
+                    loadedCompanyId);
+                return new CompanyModel();
+            }
+
+            var deliveryTo = ReadString(row, "deliveryToLocations");
+            var model = new CompanyModel
+            {
+                CompanyId = loadedCompanyId,
+                CompanyName = ReadString(row, "companyName"),
+                Gst_No = gst,
+                PhoneNumber = ReadString(row, "phoneNumber"),
+                Door_No = ReadString(row, "door_no"),
+                Street_Name = ReadString(row, "street_Name"),
+                Landmark = ReadString(row, "landmark"),
+                City = ReadString(row, "city"),
+                Pincode = ReadString(row, "pincode"),
+                DeliveryToLocations = string.IsNullOrWhiteSpace(deliveryTo)
                     ? new List<string>()
-                    : Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>((string)result.deliveryToLocations) ?? new List<string>()
+                    : Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(deliveryTo) ?? new List<string>()
             };
+
+            _logger.LogInformation(
+                "Company loaded. CompanyId={CompanyId} CompanyName={CompanyName} Gst={MaskedGst}",
+                model.CompanyId,
+                model.CompanyName,
+                CompanyGstResolver.Mask(model.Gst_No));
+
+            return model;
+        }
+
+        private static string ReadString(IDictionary<string, object> row, string name)
+        {
+            foreach (var entry in row)
+            {
+                if (!string.Equals(entry.Key, name, StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                if (entry.Value == null || entry.Value is DBNull)
+                    return string.Empty;
+
+                return Convert.ToString(entry.Value)?.Trim() ?? string.Empty;
+            }
+
+            return string.Empty;
+        }
+
+        private static int ReadInt(IDictionary<string, object> row, string name)
+        {
+            var value = ReadString(row, name);
+            return int.TryParse(value, out var parsed) ? parsed : 0;
         }
     }
 }

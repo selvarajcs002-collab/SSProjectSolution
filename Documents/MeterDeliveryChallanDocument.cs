@@ -57,6 +57,12 @@ namespace SSProjectSolution.Documents
             });
         }
 
+        private string IssuerGst()
+        {
+            var configured = _configuration?["CompanySettings:GstNo"];
+            return string.IsNullOrWhiteSpace(configured) ? "33ABNFS9123JIZT" : configured.Trim();
+        }
+
         void ComposeHeader(IContainer container)
         {
             container.Column(column =>
@@ -83,7 +89,7 @@ namespace SSProjectSolution.Documents
                             c.Item().Text(_configuration?["CompanySettings:AddressLine2"] ?? "Ranganathapuram").FontSize(11).Medium(); 
                             c.Item().Text(_configuration?["CompanySettings:AddressLine3"] ?? "TIRUPUR - 641 603, Tamil Nadu India").FontSize(11).SemiBold(); 
                             c.Item().PaddingTop(2).Text(t => {
-                                t.Span("GST: " + (_configuration?["CompanySettings:GstNo"] ?? "33AEMFS9121J1ZF")).Bold().FontSize(10); 
+                                t.Span("GST: " + IssuerGst()).Bold().FontSize(10);
                             });
                         });
                     });
@@ -101,8 +107,8 @@ namespace SSProjectSolution.Documents
                             if (!string.IsNullOrWhiteSpace(_model.GstNo))
                             {
                                 c.Item().PaddingTop(2).Text(t => {
-                                    t.Span("GST: ").Bold().FontSize(7); 
-                                    t.Span(_model.GstNo).FontSize(7); 
+                                    t.Span("GST: ").Bold().FontSize(10);
+                                    t.Span(_model.GstNo).FontSize(10);
                                 });
                             }
                         });
