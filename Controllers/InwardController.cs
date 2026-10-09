@@ -247,6 +247,25 @@ namespace SSProjectSolution.Controllers
             }
         }
 
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                if (id <= 0)
+                {
+                    return BadRequest(new CommonResponse { Id = 0, Message = "Invalid inward id", Status = false });
+                }
+
+                var response = await _inwardService.DeleteInwardAsync(id);
+                return response.Status ? Ok(response) : BadRequest(response);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new CommonResponse { Id = 0, Message = ex.Message, Status = false });
+            }
+        }
+
         [HttpGet("matrix")]
         public async Task<IActionResult> GetMatrixByStyleNo([FromQuery] int companyId, [FromQuery] string styleNo)
         {

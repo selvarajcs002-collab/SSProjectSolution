@@ -177,6 +177,7 @@ CREATE PROCEDURE SP_SAVE_OUTWARD_METER
     @Status       NVARCHAR(50)     = NULL,
     @Remarks      NVARCHAR(MAX)    = NULL,
     @OutwardDate  DATETIME         = NULL,
+    @OutwardDcNo  NVARCHAR(50)     = NULL, -- optional: supplied for authorized reuse
     @MeterDetails OutwardMeterDetailType READONLY
 AS
 BEGIN
@@ -207,14 +208,20 @@ BEGIN
         END
 
         DECLARE @CurrentOutwardId INT    = @OutwardId;
-        DECLARE @GeneratedDcNo    NVARCHAR(50) = '';
+        DECLARE @GeneratedDcNo    NVARCHAR(50) = ISNULL(NULLIF(LTRIM(RTRIM(@OutwardDcNo)), ''), '');
 
         -- ── INSERT or UPDATE outward master ───────────────────────────────────
         IF @CurrentOutwardId = 0 OR @Mode = 'INSERT'
         BEGIN
-            -- Generate DC number: SSE_0012/2026-2027
-            -- Generate DC number using the central SP
-            EXEC dbo.usp_GenerateOutwardDcNo @OutwardDcNo = @GeneratedDcNo OUTPUT;
+            -- New numbers come from the persistent sequence.
+            -- A reused deleted number is passed in @OutwardDcNo and must not generate again.
+            IF @GeneratedDcNo = ''
+            BEGIN
+                EXEC dbo.usp_GenerateOutwardDcNo
+                    @OutwardDcNo = @GeneratedDcNo OUTPUT,
+                    @CreatedBy = @CreatedBy,
+                    @CompanyId = @CompanyId;
+            END
 
             INSERT INTO Outward (
                 CompanyId,

@@ -22,6 +22,46 @@ namespace SSProjectSolution.Controllers
 
         // ── Size-Based (existing — untouched) ──────────────────────────────────
 
+        [HttpGet("reusable-dc-nos")]
+        public async Task<IActionResult> GetReusableDcNos([FromQuery] string? search, [FromQuery] int? companyId)
+        {
+            try
+            {
+                var data = await _outwardService.GetReusableDcNosAsync(search, companyId);
+                return Ok(new { success = true, data });
+            }
+            catch (Exception ex)
+            {
+                LoggerUtility.LogError(ex, "Error listing reusable DC numbers");
+                return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
+            }
+        }
+
+        [HttpPost("reuse-dc-no")]
+        public async Task<IActionResult> ReserveReusedDcNo([FromBody] ReuseDcNoRequest request)
+        {
+            try
+            {
+                if (request == null || request.CompanyId <= 0 || string.IsNullOrWhiteSpace(request.DcNo))
+                {
+                    return BadRequest(new { success = false, message = "CompanyId and DcNo are required" });
+                }
+
+                var response = await _outwardService.ReserveReusedDcNoAsync(request);
+                if (response.Success)
+                {
+                    return Ok(response);
+                }
+
+                return BadRequest(response);
+            }
+            catch (Exception ex)
+            {
+                LoggerUtility.LogError(ex, "Error reserving reused DC number");
+                return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
+            }
+        }
+
         [HttpPost("generate-dc-no")]
         public async Task<IActionResult> GenerateDcNo([FromBody] GenerateDcNoRequest request)
         {
@@ -294,6 +334,40 @@ namespace SSProjectSolution.Controllers
             {
                 LoggerUtility.LogError(ex, "Error in MarkLotCompleted");
                 return StatusCode(500, new { success = false, message = "Internal Server Error: " + ex.Message });
+            }
+        }
+
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> DeleteOutward(int id, [FromQuery] string? deletedBy = null, [FromQuery] string? deletionReason = null)
+        {
+            try
+            {
+                if (id <= 0)
+                {
+                    return BadRequest(new CommonResponse
+                    {
+                        Status = false,
+                        Message = "Valid OutwardId is required"
+                    });
+                }
+
+                var response = await _outwardService.DeleteOutwardAsync(id, deletedBy, deletionReason);
+
+                if (response.Status)
+                {
+                    return Ok(response);
+                }
+
+                return BadRequest(response);
+            }
+            catch (Exception ex)
+            {
+                LoggerUtility.LogError(ex, "Error in DeleteOutward");
+                return StatusCode(500, new CommonResponse
+                {
+                    Status = false,
+                    Message = ex.Message
+                });
             }
         }
 

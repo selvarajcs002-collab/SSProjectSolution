@@ -17,6 +17,20 @@ namespace SSProjectSolution.Controllers
             _companyBusiness = companyBusiness;
         }
 
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchCompanies([FromQuery] string? q, [FromQuery] int limit = 25)
+        {
+            try
+            {
+                var result = await _companyBusiness.SearchCompanies(q, limit);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new CommonResponse { Id = 0, Message = ex.Message, Status = false });
+            }
+        }
+
         [HttpGet("get-company-list")]
         public async Task<IActionResult> GetCompanyList()
         {

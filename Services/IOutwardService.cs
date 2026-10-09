@@ -8,6 +8,8 @@ namespace SSProjectSolution.Services
     {
         // ── Size-Based (existing — do NOT modify) ──────────────────────────────
         Task<GenerateDcNoResponse> GenerateDcNoAsync(GenerateDcNoRequest request);
+        Task<System.Collections.Generic.IEnumerable<ReusableDcNoDto>> GetReusableDcNosAsync(string? search, int? companyId);
+        Task<ReuseDcNoResponse> ReserveReusedDcNoAsync(ReuseDcNoRequest request);
         Task<OutwardResponse> SaveOutwardAsync(OutwardRequest request);
         Task<OutwardByDcResponseDto?> GetOutwardByDcNoAsync(int id, string mode);
         Task<OutwardResponse> UpdateOutwardAsync(OutwardUpdateRequest request);
@@ -24,5 +26,6 @@ namespace SSProjectSolution.Services
         Task<dynamic> MarkLotCompletedAsync(LotCompletedDto payload);
         Task<dynamic> MarkInwardInactiveAsync(InwardStatusUpdateDto payload);
         Task<dynamic> MarkInwardInactiveByDcNoAsync(InwardStatusUpdateByDcNoDto payload);
+        Task<CommonResponse> DeleteOutwardAsync(int outwardId, string? deletedBy = null, string? deletionReason = null);
     }
 }

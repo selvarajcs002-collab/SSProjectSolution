@@ -25,6 +25,11 @@ namespace SSProjectSolution.Business
             return await _companyService.GetCompanyListAsync();
         }
 
+        public async Task<IEnumerable<CompanySearchResult>> SearchCompanies(string? query, int limit = 25)
+        {
+            return await _companyService.SearchCompaniesAsync(query, limit);
+        }
+
         public async Task<CompanyModel> GetCompanyById(int companyId)
         {
             if (companyId <= 0)

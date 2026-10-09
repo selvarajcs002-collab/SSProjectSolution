@@ -9,6 +9,7 @@ using SSProjectSolution.Data;
 using SSProjectSolution.Repositories;
 using SSProjectSolution.Request;
 using SSProjectSolution.Response;
+using SSProjectSolution.Utilities;
 
 namespace SSProjectSolution.Services
 {
@@ -29,7 +30,7 @@ namespace SSProjectSolution.Services
         {
             try
             {
-                var dcNo = await _outwardRepository.GenerateOutwardDcNoAsync();
+                var dcNo = await _outwardRepository.GenerateOutwardDcNoAsync(request.CreatedBy, request.CompanyId);
 
                 if (!string.IsNullOrWhiteSpace(dcNo))
                 {
@@ -337,6 +338,15 @@ namespace SSProjectSolution.Services
                     !string.IsNullOrWhiteSpace(generatedDcNo))
                 {
                     response.OutwardDcNo = generatedDcNo;
+                }
+
+                if (response.Success && response.OutwardId > 0 && !string.IsNullOrWhiteSpace(response.OutwardDcNo))
+                {
+                    await _outwardRepository.ConfirmOutwardDcAllocationAsync(
+                        response.OutwardDcNo,
+                        response.OutwardId,
+                        request.Outward.CompanyId,
+                        request.Outward.CreatedBy);
                 }
 
                 return response;
@@ -724,7 +734,20 @@ namespace SSProjectSolution.Services
                 parameters.Add("@OutwardDate", parsedOutwardDate);
                 parameters.Add("@MeterDetails", dt.AsTableValuedParameter("OutwardMeterDetailType"));
 
+                if (!string.IsNullOrWhiteSpace(request.OutwardDcNo))
+                    parameters.Add("@OutwardDcNo", request.OutwardDcNo.Trim());
+
                 var response = await _outwardRepository.SaveMeterOutwardAsync(parameters);
+
+                if (response != null && response.Success && response.OutwardId > 0 && !string.IsNullOrWhiteSpace(response.OutwardDcNo))
+                {
+                    await _outwardRepository.ConfirmOutwardDcAllocationAsync(
+                        response.OutwardDcNo,
+                        response.OutwardId,
+                        request.CompanyId,
+                        request.CreatedBy);
+                }
+
                 return response;
             }
             catch (Exception ex)
@@ -801,6 +824,61 @@ namespace SSProjectSolution.Services
             {
                 throw new Exception("Error in MarkInwardInactiveAsync: " + ex.Message);
             }
+        }
+
+        public async Task<IEnumerable<ReusableDcNoDto>> GetReusableDcNosAsync(string? search, int? companyId)
+        {
+            return await _outwardRepository.GetReusableDcNosAsync(search, companyId);
+        }
+
+        public async Task<ReuseDcNoResponse> ReserveReusedDcNoAsync(ReuseDcNoRequest request)
+        {
+            if (request == null || string.IsNullOrWhiteSpace(request.DcNo))
+            {
+                return new ReuseDcNoResponse { Success = false, Message = "DC number is required." };
+            }
+
+            if (!OutwardDcNumber.IsReuseAuthorized(request.UserRole))
+            {
+                return new ReuseDcNoResponse { Success = false, Message = "You are not authorized to reuse a deleted DC number." };
+            }
+
+            if (string.IsNullOrWhiteSpace(request.ReuseReason) || request.ReuseReason.Trim().Length < 3)
+            {
+                return new ReuseDcNoResponse { Success = false, Message = "A reuse reason of at least 3 characters is required." };
+            }
+
+            return await _outwardRepository.ReserveReusedDcNoAsync(request);
+        }
+
+        public async Task<CommonResponse> DeleteOutwardAsync(int outwardId, string? deletedBy = null, string? deletionReason = null)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var parameters = new DynamicParameters();
+            parameters.Add("@OutwardId", outwardId);
+            parameters.Add("@DeletedBy", deletedBy);
+            parameters.Add("@DeletionReason", deletionReason);
+
+            var result = await connection.QueryFirstOrDefaultAsync<dynamic>(
+                "sp_DeleteOutward",
+                parameters,
+                commandType: CommandType.StoredProcedure);
+
+            if (result != null)
+            {
+                return new CommonResponse
+                {
+                    Status = (bool)result.Success,
+                    Message = (string)result.Message,
+                    Id = outwardId
+                };
+            }
+
+            return new CommonResponse
+            {
+                Status = false,
+                Message = "An error occurred while deleting the outward record."
+            };
         }
 
         public async Task<dynamic> MarkInwardInactiveByDcNoAsync(InwardStatusUpdateByDcNoDto payload)

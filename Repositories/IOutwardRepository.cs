@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using SSProjectSolution.Request;
 using SSProjectSolution.Response;
 
 namespace SSProjectSolution.Repositories
@@ -9,7 +10,10 @@ namespace SSProjectSolution.Repositories
         // ── Size-Based (existing — do NOT modify) ──────────────────────────────
         Task<IEnumerable<dynamic>> GetOutwardDetailsRawAsync(int id, string mode);
         Task<SSProjectSolution.Response.OutwardResponse> SaveOutwardAsync(Dapper.DynamicParameters parameters);
-        Task<string> GenerateOutwardDcNoAsync();
+        Task<string> GenerateOutwardDcNoAsync(string? createdBy = null, int? companyId = null);
+        Task<System.Collections.Generic.IEnumerable<ReusableDcNoDto>> GetReusableDcNosAsync(string? search, int? companyId);
+        Task<ReuseDcNoResponse> ReserveReusedDcNoAsync(ReuseDcNoRequest request);
+        Task ConfirmOutwardDcAllocationAsync(string dcNo, int outwardId, int? companyId, string? actor);
         Task<IEnumerable<dynamic>> GetAvailableSizesAsync(int companyId, string styleNo, string designName, string colour);
 
         // ── Meter-Based (new — isolated) ───────────────────────────────────────

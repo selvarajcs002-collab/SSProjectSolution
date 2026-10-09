@@ -57,6 +57,26 @@ namespace SSProjectSolution.Services
             );
         }
 
+        public async Task<IEnumerable<CompanySearchResult>> SearchCompaniesAsync(string? query, int limit = 25)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var term = (query ?? string.Empty).Trim();
+            if (limit <= 0 || limit > 100)
+                limit = 25;
+
+            const string sql = @"
+                SELECT TOP (@Limit)
+                    companyId AS CompanyId,
+                    companyName AS CompanyName,
+                    ISNULL(gst_no, '') AS GstNo,
+                    ISNULL(city, '') AS City
+                FROM dbo.CompanyDetails
+                WHERE (@Term = '' OR companyName LIKE '%' + @Term + '%' OR ISNULL(gst_no, '') LIKE '%' + @Term + '%' OR ISNULL(city, '') LIKE '%' + @Term + '%')
+                ORDER BY companyName;";
+
+            return await connection.QueryAsync<CompanySearchResult>(sql, new { Term = term, Limit = limit });
+        }
+
         public async Task<CompanyModel> GetCompanyByIdAsync(int companyId)
         {
             using var connection = _dbConnection.CreateConnection();

@@ -8,6 +8,7 @@ namespace SSProjectSolution.Services
     {
         Task<CommonResponse> ManageCompanyAsync(CompanyRequest request);
         Task<IEnumerable<KeyValueModel>> GetCompanyListAsync();
+        Task<IEnumerable<CompanySearchResult>> SearchCompaniesAsync(string? query, int limit = 25);
         Task<CompanyModel> GetCompanyByIdAsync(int companyId);
     }
 }

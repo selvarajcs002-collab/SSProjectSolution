@@ -8,6 +8,7 @@ namespace SSProjectSolution.Business
     {
         Task<CommonResponse> SaveCompany(CompanyRequest request);
         Task<IEnumerable<KeyValueModel>> GetCompanyList();
+        Task<IEnumerable<CompanySearchResult>> SearchCompanies(string? query, int limit = 25);
         Task<CompanyModel> GetCompanyById(int companyId);
     }
 }

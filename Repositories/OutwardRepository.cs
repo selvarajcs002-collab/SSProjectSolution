@@ -1,5 +1,6 @@
 using Dapper;
 using SSProjectSolution.Data;
+using SSProjectSolution.Request;
 using SSProjectSolution.Response;
 using System.Collections.Generic;
 using System.Data;
@@ -40,14 +41,64 @@ namespace SSProjectSolution.Repositories
                 commandType: CommandType.StoredProcedure);
         }
 
-        public async Task<string> GenerateOutwardDcNoAsync()
+        public async Task<string> GenerateOutwardDcNoAsync(string? createdBy = null, int? companyId = null)
         {
             using var connection = _dbConnection.CreateConnection();
             var parameters = new DynamicParameters();
             parameters.Add("@OutwardDcNo", dbType: DbType.String, direction: ParameterDirection.Output, size: 50);
+            parameters.Add("@CreatedBy", createdBy);
+            parameters.Add("@CompanyId", companyId);
+            parameters.Add("@AllocationId", dbType: DbType.Int64, direction: ParameterDirection.Output);
 
             await connection.ExecuteAsync("usp_GenerateOutwardDcNo", parameters, commandType: CommandType.StoredProcedure);
             return parameters.Get<string>("@OutwardDcNo");
+        }
+
+        public async Task<IEnumerable<ReusableDcNoDto>> GetReusableDcNosAsync(string? search, int? companyId)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var parameters = new DynamicParameters();
+            parameters.Add("@Search", search);
+            parameters.Add("@CompanyId", companyId);
+            return await connection.QueryAsync<ReusableDcNoDto>(
+                "usp_GetReusableOutwardDcNos",
+                parameters,
+                commandType: CommandType.StoredProcedure);
+        }
+
+        public async Task<ReuseDcNoResponse> ReserveReusedDcNoAsync(ReuseDcNoRequest request)
+        {
+            using var connection = _dbConnection.CreateConnection();
+            var parameters = new DynamicParameters();
+            parameters.Add("@DcNo", request.DcNo);
+            parameters.Add("@CompanyId", request.CompanyId);
+            parameters.Add("@ReusedBy", request.ReusedBy);
+            parameters.Add("@ReuseReason", request.ReuseReason);
+            parameters.Add("@UserRole", request.UserRole);
+
+            var result = await connection.QueryFirstOrDefaultAsync<ReuseDcNoResponse>(
+                "usp_ReserveReusedOutwardDcNo",
+                parameters,
+                commandType: CommandType.StoredProcedure);
+
+            return result ?? new ReuseDcNoResponse { Success = false, Message = "Failed to reserve the DC number." };
+        }
+
+        public async Task ConfirmOutwardDcAllocationAsync(string dcNo, int outwardId, int? companyId, string? actor)
+        {
+            if (string.IsNullOrWhiteSpace(dcNo) || outwardId <= 0)
+                return;
+
+            using var connection = _dbConnection.CreateConnection();
+            var parameters = new DynamicParameters();
+            parameters.Add("@OutwardDcNo", dcNo);
+            parameters.Add("@OutwardId", outwardId);
+            parameters.Add("@CompanyId", companyId);
+            parameters.Add("@Actor", actor);
+            await connection.ExecuteAsync(
+                "usp_ConfirmOutwardDcAllocation",
+                parameters,
+                commandType: CommandType.StoredProcedure);
         }
 
         public async Task<IEnumerable<dynamic>> GetAvailableSizesAsync(int companyId, string styleNo, string designName, string colour)
