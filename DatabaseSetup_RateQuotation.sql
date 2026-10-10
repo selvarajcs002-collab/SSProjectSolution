@@ -38,6 +38,8 @@ BEGIN
         [RatePerPiece] DECIMAL(18,2) NULL,
         [RatePerMeter] DECIMAL(18,2) NULL,
         [NoOfStitches] NVARCHAR(100) NULL,
+        [NumberOfTrimmings] NVARCHAR(200) NULL,
+        [CustomField] NVARCHAR(500) NULL,
         [ChenilleColors] INT NULL,
         [NormalEmbColors] INT NULL,
         [Quantity] INT NOT NULL,
@@ -64,6 +66,16 @@ BEGIN
 END
 GO
 
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RateQuotation]') AND type in (N'U'))
+BEGIN
+    IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'[dbo].[RateQuotation]') AND name = 'NumberOfTrimmings')
+        ALTER TABLE [dbo].[RateQuotation] ADD [NumberOfTrimmings] NVARCHAR(200) NULL;
+
+    IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID(N'[dbo].[RateQuotation]') AND name = 'CustomField')
+        ALTER TABLE [dbo].[RateQuotation] ADD [CustomField] NVARCHAR(500) NULL;
+END
+GO
+
 -- 2. Stored Procedures
 
 -- A. USP_RateQuotation_Insert
@@ -84,6 +96,8 @@ CREATE PROCEDURE [dbo].[USP_RateQuotation_Insert]
     @RatePerPiece DECIMAL(18,2) = NULL,
     @RatePerMeter DECIMAL(18,2) = NULL,
     @NoOfStitches NVARCHAR(100) = NULL,
+    @NumberOfTrimmings NVARCHAR(200) = NULL,
+    @CustomField NVARCHAR(500) = NULL,
     @ChenilleColors INT = NULL,
     @NormalEmbColors INT = NULL,
     @Quantity INT,
@@ -126,13 +140,13 @@ BEGIN
         INSERT INTO [dbo].[RateQuotation] (
             [QuotationNo], [QuotationDate], [CompanyId], [CompanyName], [ContactPerson],
             [MobileNo], [EmailId], [Address], [StyleNo], [DesignName], [ProductType],
-            [RatePerPiece], [RatePerMeter], [NoOfStitches], [ChenilleColors], [NormalEmbColors], [Quantity], [TotalAmount], [Remarks],
+            [RatePerPiece], [RatePerMeter], [NoOfStitches], [NumberOfTrimmings], [CustomField], [ChenilleColors], [NormalEmbColors], [Quantity], [TotalAmount], [Remarks],
             [Status], [IsActive], [CreatedBy], [CreatedDate]
         )
         VALUES (
             @QuotationNo, @QuotationDate, @CompanyId, @CompanyName, @ContactPerson,
             @MobileNo, @EmailId, @Address, @StyleNo, @DesignName, @ProductType,
-            @RatePerPiece, @RatePerMeter, @NoOfStitches, @ChenilleColors, @NormalEmbColors, @Quantity, @TotalAmount, @Remarks,
+            @RatePerPiece, @RatePerMeter, @NoOfStitches, @NumberOfTrimmings, @CustomField, @ChenilleColors, @NormalEmbColors, @Quantity, @TotalAmount, @Remarks,
             @Status, 1, @CreatedBy, GETDATE()
         );
 
@@ -172,6 +186,8 @@ CREATE PROCEDURE [dbo].[USP_RateQuotation_Update]
     @RatePerPiece DECIMAL(18,2) = NULL,
     @RatePerMeter DECIMAL(18,2) = NULL,
     @NoOfStitches NVARCHAR(100) = NULL,
+    @NumberOfTrimmings NVARCHAR(200) = NULL,
+    @CustomField NVARCHAR(500) = NULL,
     @ChenilleColors INT = NULL,
     @NormalEmbColors INT = NULL,
     @Quantity INT,
@@ -215,6 +231,8 @@ BEGIN
             [RatePerPiece] = @RatePerPiece,
             [RatePerMeter] = @RatePerMeter,
             [NoOfStitches] = @NoOfStitches,
+            [NumberOfTrimmings] = @NumberOfTrimmings,
+            [CustomField] = @CustomField,
             [ChenilleColors] = @ChenilleColors,
             [NormalEmbColors] = @NormalEmbColors,
             [Quantity] = @Quantity,

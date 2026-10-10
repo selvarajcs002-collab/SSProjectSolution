@@ -12,15 +12,20 @@ namespace SSProjectSolution.Documents
         private readonly RateQuotationResponseDto _model;
         private readonly string _imagePath;
         private readonly string _companyGst;
+        private readonly string _customFieldLabel;
 
         public RateQuotationDocument(
             RateQuotationResponseDto model,
             string imagePath,
-            string? companyGst = null)
+            string? companyGst = null,
+            string? customFieldLabel = null)
         {
             _model = model;
             _imagePath = imagePath;
             _companyGst = companyGst?.Trim() ?? string.Empty;
+            _customFieldLabel = string.IsNullOrWhiteSpace(customFieldLabel)
+                ? "Additional Detail"
+                : customFieldLabel.Trim();
         }
 
         public DocumentMetadata GetMetadata()
@@ -137,7 +142,7 @@ namespace SSProjectSolution.Documents
 
                                                     title.Item()
                                                         .PaddingTop(2)
-                                                        .Text("Quality Stitches, Timely Delivery")
+                                                        .Text("Quality in Every Stitch")
                                                         .FontSize(9)
                                                         .FontColor(greyColor);
                                                 });
@@ -149,7 +154,7 @@ namespace SSProjectSolution.Documents
                                         .Text(
                                             "584/1-A, 12. Deiveega Nagar, " +
                                             "Ranganathapuram, Velampalayam, " +
-                                            "Tirupur - 641 603, TamilNadu, India")
+                                            "Tirupur - 641 603, Tamil Nadu, India")
                                         .FontSize(8);
 
                                     if (!string.IsNullOrWhiteSpace(_companyGst))
@@ -355,8 +360,22 @@ namespace SSProjectSolution.Documents
                                             ?? "-");
 
                                     AddRow(
-                                        "No Of Stitches",
-                                        _model.NoOfStitches?.ToString() ?? "-");
+                                        "No. of Stitches",
+                                        string.IsNullOrWhiteSpace(_model.NoOfStitches)
+                                            ? "-"
+                                            : _model.NoOfStitches);
+
+                                    AddRow(
+                                        "Number of Trimmings",
+                                        string.IsNullOrWhiteSpace(_model.NumberOfTrimmings)
+                                            ? "-"
+                                            : _model.NumberOfTrimmings);
+
+                                    AddRow(
+                                        _customFieldLabel,
+                                        string.IsNullOrWhiteSpace(_model.CustomField)
+                                            ? "-"
+                                            : _model.CustomField);
 
                                     AddRow(
                                         "Rate Per Piece",
@@ -470,22 +489,19 @@ namespace SSProjectSolution.Documents
 
                             // Terms
                             AddBullet(
-                                "Any change in stitch count, colors or size may affect the quoted rate.");
+                                "Any change in stitch count, colors, or size may affect the quoted rate.");
 
                             AddBullet(
-                                "GST will be charged extra as applicable.");
+                                "GST will be charged extra, as applicable.");
 
                             AddBullet(
-                                "Quotation is valid for 30 days from the date of issue.");
+                                "This quotation is valid for 30 days from the date of issue.");
 
                             AddBullet(
-                                "2% for Normal Embroidery, 5% for Special Embroidery, 10% for 3D Embroidery Rejection must be allowed.");
-                            
-                            AddBullet(
-                                "Quotation is valid for 30 days from the date of issue.");
+                                "A rejection allowance of 2% for normal embroidery and 5% for special embroidery must be allowed.");
 
                             AddBullet(
-                                "Payment terms as mentioned above must be followed.");
+                                "Payment terms mentioned above must be followed.");
                         });
                         
 

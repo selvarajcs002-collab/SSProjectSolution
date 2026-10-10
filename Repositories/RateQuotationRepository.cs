@@ -32,6 +32,8 @@ namespace SSProjectSolution.Repositories
             parameters.Add("@RatePerPiece", entity.RatePerPiece);
             parameters.Add("@RatePerMeter", entity.RatePerMeter);
             parameters.Add("@NoOfStitches", entity.NoOfStitches);
+            parameters.Add("@NumberOfTrimmings", entity.NumberOfTrimmings);
+            parameters.Add("@CustomField", entity.CustomField);
             parameters.Add("@ChenilleColors", entity.ChenilleColors);
             parameters.Add("@NormalEmbColors", entity.NormalEmbColors);
             parameters.Add("@Quantity", entity.Quantity);
@@ -71,6 +73,8 @@ namespace SSProjectSolution.Repositories
             parameters.Add("@RatePerPiece", entity.RatePerPiece);
             parameters.Add("@RatePerMeter", entity.RatePerMeter);
             parameters.Add("@NoOfStitches", entity.NoOfStitches);
+            parameters.Add("@NumberOfTrimmings", entity.NumberOfTrimmings);
+            parameters.Add("@CustomField", entity.CustomField);
             parameters.Add("@ChenilleColors", entity.ChenilleColors);
             parameters.Add("@NormalEmbColors", entity.NormalEmbColors);
             parameters.Add("@Quantity", entity.Quantity);

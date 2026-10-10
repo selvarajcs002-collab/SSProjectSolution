@@ -19,12 +19,25 @@ namespace SSProjectSolution.Controllers
         private readonly IRateQuotationService _service;
         private readonly ICompanyService _companyService;
         private readonly string ImageFolderPath;
+        private readonly string CustomFieldLabel;
 
         public RateQuotationController(IRateQuotationService service, ICompanyService companyService, IConfiguration configuration)
         {
             _service = service;
             _companyService = companyService;
             ImageFolderPath = configuration["RateQuotationSettings:ImageFolderPath"] ?? Path.Combine(Directory.GetCurrentDirectory(), "RateQuotationImages");
+            var configuredLabel = configuration["RateQuotationSettings:CustomFieldLabel"];
+            CustomFieldLabel = string.IsNullOrWhiteSpace(configuredLabel) ? "Additional Detail" : configuredLabel.Trim();
+        }
+
+        [HttpGet("settings")]
+        public IActionResult GetSettings()
+        {
+            return Ok(new
+            {
+                success = true,
+                data = new { customFieldLabel = CustomFieldLabel }
+            });
         }
 
         [HttpPost("create")]
@@ -343,7 +356,7 @@ namespace SSProjectSolution.Controllers
                 }
             }
 
-            var document = new RateQuotationDocument(model, imagePath, await ResolveCompanyGstAsync(model.CompanyId));
+            var document = new RateQuotationDocument(model, imagePath, await ResolveCompanyGstAsync(model.CompanyId), CustomFieldLabel);
             var pdfBytes = document.GeneratePdf();
 
             var fileName = $"RateQuotation_{model.QuotationNo}.pdf";
@@ -383,7 +396,7 @@ namespace SSProjectSolution.Controllers
                     }
                 }
 
-                var document = new RateQuotationDocument(model, imagePath, await ResolveCompanyGstAsync(model.CompanyId));
+                var document = new RateQuotationDocument(model, imagePath, await ResolveCompanyGstAsync(model.CompanyId), CustomFieldLabel);
                 var pdfBytes = document.GeneratePdf();
 
                 var fileName = $"RateQuotation_{model.QuotationNo}.pdf";

@@ -247,3 +247,1104 @@
 2026-10-09 12:39:43.272 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.GetReusableDcNos (SSProjectSolution) in 107.4491ms
 2026-10-09 12:39:43.289 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.GetReusableDcNos (SSProjectSolution)'
 2026-10-09 12:39:43.297 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/outward/reusable-dc-nos?search=&companyId= - 200 348 application/json; charset=utf-8 167.4294ms
+2026-10-09 14:41:22.116 +05:30 [WRN] As of ""2026-10-09T09:11:19.9115675+00:00"", the heartbeat has been running for ""00:00:01.9747731"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.
+2026-10-09 22:52:45.039 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-09 22:52:45.750 +05:30 [INF] Now listening on: http://localhost:5219
+2026-10-09 22:52:45.760 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-09 22:52:45.763 +05:30 [INF] Hosting environment: Development
+2026-10-09 22:52:45.766 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SS_Project\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-10-09 22:57:39.491 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 22:57:39.491 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-10-09 22:57:39.490 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-10-09 22:57:39.955 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:57:39.956 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:57:39.956 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:57:40.130 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 637.2369ms
+2026-10-09 22:57:40.130 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 204 null null 637.2331ms
+2026-10-09 22:57:40.130 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 637.2364ms
+2026-10-09 22:57:40.173 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - null null
+2026-10-09 22:57:40.190 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-10-09 22:57:40.203 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 22:57:40.329 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:57:40.329 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:57:40.329 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:57:40.334 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-10-09 22:57:40.899 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-10-09 22:57:40.899 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 22:57:40.899 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:57:41.105 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:57:41.105 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:57:41.105 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 22:57:45.621 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:57:45.621 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:57:45.953 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:57:47.202 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Night - null null
+2026-10-09 22:57:47.205 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 6051.4665ms
+2026-10-09 22:57:47.228 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 6102.7476ms
+2026-10-09 22:57:47.230 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 6099.8109ms
+2026-10-09 22:57:47.230 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:57:47.255 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-10-09 22:57:47.266 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:57:47.286 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 22:57:47.298 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Night - 204 null null 94.3469ms
+2026-10-09 22:57:47.310 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 2 application/json; charset=utf-8 7119.3001ms
+2026-10-09 22:57:47.313 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Day - 200 73 application/json; charset=utf-8 7139.9481ms
+2026-10-09 22:57:47.323 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 7119.1776ms
+2026-10-09 22:57:47.349 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Night - null null
+2026-10-09 22:57:47.386 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Day - null null
+2026-10-09 22:57:47.454 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:57:47.473 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:57:47.516 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:57:47.519 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Day - 204 null null 132.9873ms
+2026-10-09 22:57:47.630 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:57:47.702 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Day - null null
+2026-10-09 22:57:47.754 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:57:47.765 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:57:47.788 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:57:47.868 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:57:47.949 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:57:47.953 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 222.5565ms
+2026-10-09 22:57:47.964 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 81.4599ms
+2026-10-09 22:57:47.972 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:57:47.981 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:57:47.987 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Night - 200 648 application/json; charset=utf-8 638.6738ms
+2026-10-09 22:57:47.997 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Day - 200 75 application/json; charset=utf-8 294.7218ms
+2026-10-09 22:57:54.622 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - null null
+2026-10-09 22:57:54.630 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:57:54.633 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - 204 null null 10.5197ms
+2026-10-09 22:57:54.642 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - null null
+2026-10-09 22:57:54.649 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:57:54.652 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:57:54.658 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:57:54.737 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:57:54.745 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 79.234ms
+2026-10-09 22:57:54.749 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:57:54.751 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - 200 646 application/json; charset=utf-8 109.5732ms
+2026-10-09 22:58:00.124 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/delete/11 - null null
+2026-10-09 22:58:00.134 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:00.140 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/delete/11 - 204 null null 16.3017ms
+2026-10-09 22:58:00.189 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5219/api/MachineProduction/delete/11 - null null
+2026-10-09 22:58:00.222 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:00.234 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.DeleteProduction (SSProjectSolution)'
+2026-10-09 22:58:00.323 +05:30 [INF] Route matched with {action = "DeleteProduction", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteProduction(Int32) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:58:00.482 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType10`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:58:00.507 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.DeleteProduction (SSProjectSolution) in 147.8527ms
+2026-10-09 22:58:00.527 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-10-09 22:58:00.582 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.DeleteProduction (SSProjectSolution)'
+2026-10-09 22:58:00.616 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:00.621 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5219/api/MachineProduction/delete/11 - 200 74 application/json; charset=utf-8 431.7715ms
+2026-10-09 22:58:00.633 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 105.3662ms
+2026-10-09 22:58:00.964 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - null null
+2026-10-09 22:58:01.068 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-10-09 22:58:01.564 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:02.815 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:02.828 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - 204 null null 1854.5202ms
+2026-10-09 22:58:03.131 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-10-09 22:58:03.155 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - null null
+2026-10-09 22:58:03.550 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:58:03.564 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:03.627 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:58:03.688 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:58:03.697 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:58:03.784 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 166.155ms
+2026-10-09 22:58:03.796 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-10-09 22:58:03.801 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Night - null null
+2026-10-09 22:58:03.827 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 2 application/json; charset=utf-8 2758.4613ms
+2026-10-09 22:58:03.843 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:03.848 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:58:03.994 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Day - null null
+2026-10-09 22:58:04.002 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Night - 204 null null 200.4015ms
+2026-10-09 22:58:04.025 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 245.5667ms
+2026-10-09 22:58:04.049 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:04.170 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Night - null null
+2026-10-09 22:58:04.183 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:58:04.197 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Day - 204 null null 202.202ms
+2026-10-09 22:58:04.249 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:04.278 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - 200 369 application/json; charset=utf-8 1122.5732ms
+2026-10-09 22:58:04.407 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Day - null null
+2026-10-09 22:58:04.419 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:58:04.697 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:04.701 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:58:04.714 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:58:04.880 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:58:04.979 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:58:04.982 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:58:04.999 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 119.0431ms
+2026-10-09 22:58:05.056 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 165.7089ms
+2026-10-09 22:58:05.083 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:58:05.095 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:58:05.107 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Night - 200 371 application/json; charset=utf-8 936.1366ms
+2026-10-09 22:58:05.114 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Day - 200 75 application/json; charset=utf-8 706.7711ms
+2026-10-09 22:58:09.256 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/delete/10 - null null
+2026-10-09 22:58:09.275 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:09.279 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/delete/10 - 204 null null 23.1054ms
+2026-10-09 22:58:09.317 +05:30 [INF] Request starting HTTP/1.1 DELETE http://localhost:5219/api/MachineProduction/delete/10 - null null
+2026-10-09 22:58:09.375 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:09.377 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.DeleteProduction (SSProjectSolution)'
+2026-10-09 22:58:09.379 +05:30 [INF] Route matched with {action = "DeleteProduction", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteProduction(Int32) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:58:09.477 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType10`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:58:09.487 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.DeleteProduction (SSProjectSolution) in 102.465ms
+2026-10-09 22:58:09.491 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.DeleteProduction (SSProjectSolution)'
+2026-10-09 22:58:09.493 +05:30 [INF] Request finished HTTP/1.1 DELETE http://localhost:5219/api/MachineProduction/delete/10 - 200 74 application/json; charset=utf-8 176.414ms
+2026-10-09 22:58:09.535 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - null null
+2026-10-09 22:58:09.537 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-10-09 22:58:09.553 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:09.613 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:09.615 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - 204 null null 80.0962ms
+2026-10-09 22:58:09.629 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/list/6 - 204 null null 91.618ms
+2026-10-09 22:58:09.664 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - null null
+2026-10-09 22:58:09.684 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - null null
+2026-10-09 22:58:09.708 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:09.716 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:09.726 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:58:09.730 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-10-09 22:58:09.735 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:58:09.745 +05:30 [INF] Route matched with {action = "GetProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProductionList(Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:58:09.824 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:58:09.827 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:58:09.831 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 79.3933ms
+2026-10-09 22:58:09.845 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution) in 83.2742ms
+2026-10-09 22:58:09.863 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:58:09.877 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetProductionList (SSProjectSolution)'
+2026-10-09 22:58:09.886 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=10&shift=Night - 200 73 application/json; charset=utf-8 221.5836ms
+2026-10-09 22:58:09.913 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/list/6 - 200 2 application/json; charset=utf-8 228.5341ms
+2026-10-09 22:58:09.933 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Night - null null
+2026-10-09 22:58:09.950 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Day - null null
+2026-10-09 22:58:09.973 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:09.981 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:09.983 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Night - 204 null null 50.0349ms
+2026-10-09 22:58:09.994 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Day - 204 null null 43.47ms
+2026-10-09 22:58:10.025 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Night - null null
+2026-10-09 22:58:10.040 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Day - null null
+2026-10-09 22:58:10.060 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:10.075 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:10.081 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:58:10.086 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:58:10.097 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:58:10.108 +05:30 [INF] Route matched with {action = "GetPaginatedProductionList", controller = "MachineProduction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginatedProductionList(Int32, Int32, System.String) on controller SSProjectSolution.Controllers.MachineProductionController (SSProjectSolution).
+2026-10-09 22:58:10.210 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:58:10.227 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType11`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.MachineProductionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:58:10.231 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 112.9255ms
+2026-10-09 22:58:10.279 +05:30 [INF] Executed action SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution) in 134.2332ms
+2026-10-09 22:58:10.311 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:58:10.318 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.MachineProductionController.GetPaginatedProductionList (SSProjectSolution)'
+2026-10-09 22:58:10.342 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Night - 200 75 application/json; charset=utf-8 317.3131ms
+2026-10-09 22:58:10.360 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/MachineProduction/paginated-list?page=1&pageSize=5000&shift=Day - 200 75 application/json; charset=utf-8 320.245ms
+2026-10-09 22:58:46.772 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 22:58:46.774 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-10-09 22:58:46.777 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-10-09 22:58:46.778 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - null null
+2026-10-09 22:58:46.780 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:46.785 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:46.796 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:46.800 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:46.801 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 29.076ms
+2026-10-09 22:58:46.803 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 28.9585ms
+2026-10-09 22:58:46.805 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 27.9729ms
+2026-10-09 22:58:46.807 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - 204 null null 28.8786ms
+2026-10-09 22:58:46.820 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 22:58:46.831 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-10-09 22:58:46.834 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-10-09 22:58:46.840 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - application/json 168
+2026-10-09 22:58:46.846 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:46.851 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:46.856 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:46.866 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:58:46.867 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 22:58:46.876 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 22:58:46.871 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 22:58:46.873 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 22:58:46.869 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 22:58:46.900 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:58:46.900 +05:30 [INF] Route matched with {action = "GetStockBalance", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockBalance(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:58:46.900 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:58:46.997 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:58:47.002 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 120.4672ms
+2026-10-09 22:58:47.017 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 22:58:47.020 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 200.3082ms
+2026-10-09 22:58:47.384 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockBalanceDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:58:47.430 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:58:47.456 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution) in 542.9558ms
+2026-10-09 22:58:47.472 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:58:47.541 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 22:58:47.580 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 659.6398ms
+2026-10-09 22:58:47.639 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - 200 2462 application/json; charset=utf-8 799.5897ms
+2026-10-09 22:58:47.777 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 22:58:47.806 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 901.7542ms
+2026-10-09 22:58:47.921 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 331 application/json; charset=utf-8 1089.7853ms
+2026-10-09 22:58:47.933 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 22:58:48.083 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 33600 application/json; charset=utf-8 1248.9287ms
+2026-10-09 22:59:30.680 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-10-09 22:59:30.681 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-10-09 22:59:30.684 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - null null
+2026-10-09 22:59:30.723 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:30.754 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:30.761 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:30.763 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 83.3589ms
+2026-10-09 22:59:30.766 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 84.6272ms
+2026-10-09 22:59:30.771 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - 204 null null 86.3435ms
+2026-10-09 22:59:30.778 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-10-09 22:59:30.788 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-10-09 22:59:30.796 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - application/json 168
+2026-10-09 22:59:30.808 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:30.823 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:30.829 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:30.833 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 22:59:30.836 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 22:59:30.838 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 22:59:30.842 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:59:30.843 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward_get_by_dcno?id=2596&mode=INWARD - null null
+2026-10-09 22:59:30.845 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:59:30.846 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 22:59:30.849 +05:30 [INF] Route matched with {action = "GetStockBalance", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockBalance(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:59:30.861 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:30.873 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:30.885 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 38.6387ms
+2026-10-09 22:59:30.878 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward_get_by_dcno?id=2596&mode=INWARD - 204 null null 35.1853ms
+2026-10-09 22:59:30.893 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 22:59:30.908 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/outward/outward_get_by_dcno?id=2596&mode=INWARD - null null
+2026-10-09 22:59:30.921 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:30.940 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 22:59:30.947 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:59:30.947 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 22:59:30.959 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:30.974 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 118.9224ms
+2026-10-09 22:59:30.978 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockBalanceDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:59:30.988 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution)'
+2026-10-09 22:59:30.992 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 22:59:30.998 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution) in 120.5547ms
+2026-10-09 22:59:31.007 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:59:31.023 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 331 application/json; charset=utf-8 245.0099ms
+2026-10-09 22:59:31.027 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 22:59:31.042 +05:30 [INF] Route matched with {action = "GetOutwardByDcNo", controller = "Outward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOutwardByDcNo(Int32, System.String) on controller SSProjectSolution.Controllers.OutwardController (SSProjectSolution).
+2026-10-09 22:59:31.052 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - 200 2462 application/json; charset=utf-8 255.6789ms
+2026-10-09 22:59:31.054 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:59:31.075 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 92.5957ms
+2026-10-09 22:59:31.078 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 22:59:31.080 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 212.4495ms
+2026-10-09 22:59:31.086 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 193.4467ms
+2026-10-09 22:59:31.090 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 22:59:31.103 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 33600 application/json; charset=utf-8 315.1664ms
+2026-10-09 22:59:32.694 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.OutwardByDcResponseDto'.
+2026-10-09 22:59:32.909 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution) in 1850.4867ms
+2026-10-09 22:59:32.932 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution)'
+2026-10-09 22:59:32.963 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/outward/outward_get_by_dcno?id=2596&mode=INWARD - 200 1070 application/json; charset=utf-8 2054.3502ms
+2026-10-09 22:59:37.086 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 22:59:37.088 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-10-09 22:59:37.092 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-10-09 22:59:37.096 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - null null
+2026-10-09 22:59:37.104 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:37.118 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:37.124 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:37.131 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:37.133 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 46.3331ms
+2026-10-09 22:59:37.135 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 47.2555ms
+2026-10-09 22:59:37.138 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 45.6547ms
+2026-10-09 22:59:37.140 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - 204 null null 43.7672ms
+2026-10-09 22:59:37.149 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 22:59:37.157 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-10-09 22:59:37.168 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-10-09 22:59:37.179 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - application/json 168
+2026-10-09 22:59:37.238 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:37.202 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:37.216 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:37.187 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:37.242 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 22:59:37.255 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 22:59:37.260 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 22:59:37.264 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 22:59:37.273 +05:30 [INF] Route matched with {action = "GetStockBalance", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockBalance(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:59:37.277 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:59:37.290 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:59:37.298 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 22:59:37.386 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockBalanceDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:59:37.426 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:59:37.457 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution) in 148.3109ms
+2026-10-09 22:59:37.476 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 143.4901ms
+2026-10-09 22:59:37.481 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 22:59:37.488 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 22:59:37.501 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - 200 2462 application/json; charset=utf-8 321.5988ms
+2026-10-09 22:59:37.521 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:59:37.632 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 331 application/json; charset=utf-8 474.8649ms
+2026-10-09 22:59:37.813 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 473.0803ms
+2026-10-09 22:59:37.835 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 22:59:37.837 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 33600 application/json; charset=utf-8 669.3682ms
+2026-10-09 22:59:38.068 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:59:38.072 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 725.9099ms
+2026-10-09 22:59:38.075 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 22:59:38.078 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 928.6472ms
+2026-10-09 22:59:43.211 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-10-09 22:59:43.213 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-10-09 22:59:43.215 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - null null
+2026-10-09 22:59:43.226 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.239 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.252 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.256 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 45.2866ms
+2026-10-09 22:59:43.259 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 46.3178ms
+2026-10-09 22:59:43.268 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - 204 null null 53.3705ms
+2026-10-09 22:59:43.286 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-10-09 22:59:43.301 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-10-09 22:59:43.315 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - application/json 168
+2026-10-09 22:59:43.337 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.329 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.324 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.339 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 22:59:43.341 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 22:59:43.343 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 22:59:43.345 +05:30 [INF] Route matched with {action = "GetStockBalance", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockBalance(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:59:43.348 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:59:43.351 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:59:43.422 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward_get_by_dcno?id=5810&mode=OUTWARD - null null
+2026-10-09 22:59:43.424 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 22:59:43.429 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.437 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.438 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/outward/outward_get_by_dcno?id=5810&mode=OUTWARD - 204 null null 16.6921ms
+2026-10-09 22:59:43.441 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 16.9755ms
+2026-10-09 22:59:43.457 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/outward/outward_get_by_dcno?id=5810&mode=OUTWARD - null null
+2026-10-09 22:59:43.453 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockBalanceDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:59:43.453 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:59:43.450 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 22:59:43.467 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.470 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution) in 115.4736ms
+2026-10-09 22:59:43.473 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 110.23ms
+2026-10-09 22:59:43.477 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.480 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution)'
+2026-10-09 22:59:43.482 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 22:59:43.485 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 22:59:43.487 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 22:59:43.489 +05:30 [INF] Route matched with {action = "GetOutwardByDcNo", controller = "Outward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOutwardByDcNo(Int32, System.String) on controller SSProjectSolution.Controllers.OutwardController (SSProjectSolution).
+2026-10-09 22:59:43.491 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - 200 2462 application/json; charset=utf-8 176.1808ms
+2026-10-09 22:59:43.494 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 331 application/json; charset=utf-8 208.424ms
+2026-10-09 22:59:43.497 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 22:59:43.524 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:59:43.581 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:59:43.585 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 66.4832ms
+2026-10-09 22:59:43.589 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 22:59:43.592 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 141.195ms
+2026-10-09 22:59:43.647 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.OutwardByDcResponseDto'.
+2026-10-09 22:59:43.652 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 293.3942ms
+2026-10-09 22:59:43.656 +05:30 [INF] Executed action SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution) in 154.9788ms
+2026-10-09 22:59:43.661 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 22:59:43.667 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/1 - null null
+2026-10-09 22:59:43.669 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.OutwardController.GetOutwardByDcNo (SSProjectSolution)'
+2026-10-09 22:59:43.672 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 33600 application/json; charset=utf-8 370.5834ms
+2026-10-09 22:59:43.681 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.684 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/outward/outward_get_by_dcno?id=5810&mode=OUTWARD - 200 710 application/json; charset=utf-8 226.7362ms
+2026-10-09 22:59:43.692 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-by-id/1 - 204 null null 25.1994ms
+2026-10-09 22:59:43.699 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/inward/design-style-colour?companyId=1 - null null
+2026-10-09 22:59:43.713 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.715 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/inward/design-style-colour?companyId=1 - 204 null null 15.7597ms
+2026-10-09 22:59:43.803 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-details?companyId=1&inwardDcNo=4901139439&colour=WHITE - null null
+2026-10-09 22:59:43.816 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/1 - null null
+2026-10-09 22:59:43.817 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/inward/design-style-colour?companyId=1 - null null
+2026-10-09 22:59:43.828 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.844 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.876 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-details?companyId=1&inwardDcNo=4901139439&colour=WHITE - 204 null null 73.3741ms
+2026-10-09 22:59:43.880 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:43.886 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-10-09 22:59:43.909 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.InwardController.GetDesignStyleColour (SSProjectSolution)'
+2026-10-09 22:59:43.925 +05:30 [INF] Route matched with {action = "GetCompanyById", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyById(Int32) on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 22:59:43.926 +05:30 [INF] Route matched with {action = "GetDesignStyleColour", controller = "Inward"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDesignStyleColour(Int32) on controller SSProjectSolution.Controllers.InwardController (SSProjectSolution).
+2026-10-09 22:59:44.007 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-details?companyId=1&inwardDcNo=4901139439&colour=WHITE - null null
+2026-10-09 22:59:44.018 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:44.020 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.DcDetailController.GetInwardDetailsByDc (SSProjectSolution)'
+2026-10-09 22:59:44.051 +05:30 [INF] Route matched with {action = "GetInwardDetailsByDc", controller = "DcDetail"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetInwardDetailsByDc(Int32, System.Collections.Generic.List`1[System.String], System.String) on controller SSProjectSolution.Controllers.DcDetailController (SSProjectSolution).
+2026-10-09 22:59:44.111 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-dcs/1?styleNo=FL-SAP-0731&designName=HOTEL%20PREMIER%20PEGASUS - null null
+2026-10-09 22:59:44.120 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:44.123 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/DcDetail/inward-dcs/1?styleNo=FL-SAP-0731&designName=HOTEL%20PREMIER%20PEGASUS - 204 null null 12.5836ms
+2026-10-09 22:59:44.131 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.DTOs.DesignStyleColourDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:59:44.141 +05:30 [INF] Executed action SSProjectSolution.Controllers.InwardController.GetDesignStyleColour (SSProjectSolution) in 202.5536ms
+2026-10-09 22:59:44.144 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.InwardController.GetDesignStyleColour (SSProjectSolution)'
+2026-10-09 22:59:44.147 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/inward/design-style-colour?companyId=1 - 200 1900 application/json; charset=utf-8 330.2096ms
+2026-10-09 22:59:44.248 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-dcs/1?styleNo=FL-SAP-0731&designName=HOTEL%20PREMIER%20PEGASUS - null null
+2026-10-09 22:59:44.275 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:44.290 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution)'
+2026-10-09 22:59:44.316 +05:30 [INF] Route matched with {action = "GetDcNumbersByCompany", controller = "DcDetail"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDcNumbersByCompany(Int32, System.String, System.String) on controller SSProjectSolution.Controllers.DcDetailController (SSProjectSolution).
+2026-10-09 22:59:44.480 +05:30 [INF] Company loaded. CompanyId=1 CompanyName=KKP FINE LINEN PVT LTD Gst=33***********Z1
+2026-10-09 22:59:44.481 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.DcNoResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:59:44.491 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Models.CompanyModel'.
+2026-10-09 22:59:44.517 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution) in 584.372ms
+2026-10-09 22:59:44.521 +05:30 [INF] Executed action SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution) in 180.6286ms
+2026-10-09 22:59:44.547 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyById (SSProjectSolution)'
+2026-10-09 22:59:44.551 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.DcDetailController.GetDcNumbersByCompany (SSProjectSolution)'
+2026-10-09 22:59:44.570 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-by-id/1 - 200 259 application/json; charset=utf-8 753.9989ms
+2026-10-09 22:59:44.573 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-dcs/1?styleNo=FL-SAP-0731&designName=HOTEL%20PREMIER%20PEGASUS - 200 26 application/json; charset=utf-8 324.6468ms
+2026-10-09 22:59:45.407 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[SSProjectSolution.Models.DTOs.InwardEntryDetailsDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:59:45.462 +05:30 [INF] Executed action SSProjectSolution.Controllers.DcDetailController.GetInwardDetailsByDc (SSProjectSolution) in 1403.3025ms
+2026-10-09 22:59:45.490 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.DcDetailController.GetInwardDetailsByDc (SSProjectSolution)'
+2026-10-09 22:59:45.506 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/DcDetail/inward-details?companyId=1&inwardDcNo=4901139439&colour=WHITE - 200 132 application/json; charset=utf-8 1498.2194ms
+2026-10-09 22:59:54.196 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 22:59:54.198 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-10-09 22:59:54.199 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-10-09 22:59:54.201 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - null null
+2026-10-09 22:59:54.212 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:54.226 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:54.244 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:54.262 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:54.266 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 70.0065ms
+2026-10-09 22:59:54.272 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 73.4156ms
+2026-10-09 22:59:54.281 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 81.526ms
+2026-10-09 22:59:54.284 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - 204 null null 82.6528ms
+2026-10-09 22:59:54.291 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 22:59:54.302 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-10-09 22:59:54.310 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-10-09 22:59:54.325 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - application/json 168
+2026-10-09 22:59:54.333 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:54.350 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:54.363 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:54.369 +05:30 [INF] CORS policy execution successful.
+2026-10-09 22:59:54.371 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 22:59:54.372 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 22:59:54.374 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 22:59:54.379 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 22:59:54.383 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 22:59:54.386 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:59:54.390 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:59:54.399 +05:30 [INF] Route matched with {action = "GetStockBalance", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockBalance(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 22:59:54.478 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:59:54.483 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 75.9216ms
+2026-10-09 22:59:54.486 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 22:59:54.489 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 198.7075ms
+2026-10-09 22:59:54.506 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 22:59:54.511 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 89.8252ms
+2026-10-09 22:59:54.515 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 22:59:54.519 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 331 application/json; charset=utf-8 216.8433ms
+2026-10-09 22:59:54.522 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockBalanceDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:59:54.535 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution) in 98.9229ms
+2026-10-09 22:59:54.541 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 22:59:54.545 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - 200 2462 application/json; charset=utf-8 219.2961ms
+2026-10-09 22:59:54.613 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 22:59:54.706 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 276.9526ms
+2026-10-09 22:59:54.715 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 22:59:54.722 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 33600 application/json; charset=utf-8 412.3874ms
+2026-10-09 23:02:02.975 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:02:02.986 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:02.990 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 15.2438ms
+2026-10-09 23:02:03.003 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:02:03.015 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:03.019 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:02:03.021 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 23:02:03.097 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:02:03.101 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 70.4455ms
+2026-10-09 23:02:03.105 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:02:03.108 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 104.2519ms
+2026-10-09 23:02:10.573 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/styles?companyId=2 - null null
+2026-10-09 23:02:10.588 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:10.594 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/styles?companyId=2 - 204 null null 20.7299ms
+2026-10-09 23:02:10.612 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/StockManagement/styles?companyId=2 - null null
+2026-10-09 23:02:10.625 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:10.629 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStyles (SSProjectSolution)'
+2026-10-09 23:02:10.686 +05:30 [INF] Route matched with {action = "GetStyles", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStyles(System.Nullable`1[System.Int32], System.Threading.CancellationToken) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:02:10.914 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.FilterOptionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:02:10.939 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStyles (SSProjectSolution) in 241.8977ms
+2026-10-09 23:02:10.945 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStyles (SSProjectSolution)'
+2026-10-09 23:02:10.951 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/StockManagement/styles?companyId=2 - 200 547 application/json; charset=utf-8 337.8205ms
+2026-10-09 23:02:17.829 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-10-09 23:02:17.837 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-10-09 23:02:17.840 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - null null
+2026-10-09 23:02:17.849 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:17.868 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:17.881 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:17.884 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 55.4748ms
+2026-10-09 23:02:17.890 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 52.7996ms
+2026-10-09 23:02:17.894 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - 204 null null 53.9517ms
+2026-10-09 23:02:17.907 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 165
+2026-10-09 23:02:17.919 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 165
+2026-10-09 23:02:17.932 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - application/json 165
+2026-10-09 23:02:17.943 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:17.954 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:17.965 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:17.968 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 23:02:17.970 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 23:02:17.971 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 23:02:17.975 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:02:17.978 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:02:17.980 +05:30 [INF] Route matched with {action = "GetStockBalance", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockBalance(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:02:18.081 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:02:18.084 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockBalanceDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:02:18.086 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 101.1602ms
+2026-10-09 23:02:18.097 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution) in 95.6371ms
+2026-10-09 23:02:18.107 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 23:02:18.111 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 23:02:18.115 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 325 application/json; charset=utf-8 208.6613ms
+2026-10-09 23:02:18.118 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - 200 3303 application/json; charset=utf-8 186.2349ms
+2026-10-09 23:02:18.169 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:02:18.178 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 181.0485ms
+2026-10-09 23:02:18.184 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 23:02:18.187 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 25738 application/json; charset=utf-8 267.6012ms
+2026-10-09 23:02:45.773 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/styles?companyId=2 - null null
+2026-10-09 23:02:45.776 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:02:45.787 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:45.799 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:45.802 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/styles?companyId=2 - 204 null null 29.3676ms
+2026-10-09 23:02:45.807 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 30.9311ms
+2026-10-09 23:02:45.829 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:02:45.874 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/StockManagement/styles?companyId=2 - null null
+2026-10-09 23:02:45.879 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:45.887 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:45.889 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:02:45.891 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStyles (SSProjectSolution)'
+2026-10-09 23:02:45.893 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 23:02:45.896 +05:30 [INF] Route matched with {action = "GetStyles", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStyles(System.Nullable`1[System.Int32], System.Threading.CancellationToken) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:02:45.958 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:02:45.962 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 59.581ms
+2026-10-09 23:02:45.972 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:02:45.977 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 147.936ms
+2026-10-09 23:02:45.986 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.FilterOptionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:02:46.010 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStyles (SSProjectSolution) in 102.5086ms
+2026-10-09 23:02:46.014 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStyles (SSProjectSolution)'
+2026-10-09 23:02:46.024 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/StockManagement/styles?companyId=2 - 200 547 application/json; charset=utf-8 149.3217ms
+2026-10-09 23:02:49.360 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-10-09 23:02:49.360 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-10-09 23:02:49.361 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - null null
+2026-10-09 23:02:49.378 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:49.396 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:49.413 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:49.424 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 64.7886ms
+2026-10-09 23:02:49.427 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 66.8099ms
+2026-10-09 23:02:49.436 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - 204 null null 74.9784ms
+2026-10-09 23:02:49.447 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 165
+2026-10-09 23:02:49.459 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 165
+2026-10-09 23:02:49.472 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - application/json 165
+2026-10-09 23:02:49.477 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:49.493 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:49.507 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:02:49.520 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 23:02:49.515 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 23:02:49.509 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 23:02:49.524 +05:30 [INF] Route matched with {action = "GetStockBalance", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockBalance(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:02:49.529 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:02:49.539 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:02:49.621 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockBalanceDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:02:49.626 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution) in 81.714ms
+2026-10-09 23:02:49.629 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 23:02:49.639 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - 200 3303 application/json; charset=utf-8 167.4067ms
+2026-10-09 23:02:49.660 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:02:49.664 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 101.262ms
+2026-10-09 23:02:49.680 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 23:02:49.684 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 325 application/json; charset=utf-8 237.6257ms
+2026-10-09 23:02:49.746 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:02:49.752 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 195.4424ms
+2026-10-09 23:02:49.759 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 23:02:49.761 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 25738 application/json; charset=utf-8 302.4937ms
+2026-10-09 23:03:58.997 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - null null
+2026-10-09 23:03:59.015 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:03:59.021 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - 204 null null 24.376ms
+2026-10-09 23:03:59.047 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - application/json 135
+2026-10-09 23:03:59.069 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:03:59.076 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-10-09 23:03:59.103 +05:30 [INF] Route matched with {action = "GetStockManagementReport", controller = "ExcelReport"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockManagementReport(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.ExcelReportController (SSProjectSolution).
+2026-10-09 23:03:59.682 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.StockManagementReportDto'.
+2026-10-09 23:03:59.719 +05:30 [INF] Executed action SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution) in 610.2078ms
+2026-10-09 23:03:59.739 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-10-09 23:03:59.756 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - 200 29324 application/json; charset=utf-8 708.979ms
+2026-10-09 23:09:31.681 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - null null
+2026-10-09 23:09:31.681 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-10-09 23:09:31.681 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:09:31.681 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-10-09 23:09:31.700 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:09:31.700 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:09:31.701 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:09:32.035 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:09:32.148 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 468.689ms
+2026-10-09 23:09:32.151 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 472.8028ms
+2026-10-09 23:09:32.173 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - 204 null null 494.3874ms
+2026-10-09 23:09:32.173 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 494.4638ms
+2026-10-09 23:09:32.357 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - application/json 168
+2026-10-09 23:09:32.357 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:09:32.357 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-10-09 23:09:32.366 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-10-09 23:09:32.374 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:09:32.374 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:09:32.380 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:09:32.455 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 23:09:32.455 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 23:09:32.455 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 23:09:32.459 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:09:32.466 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:09:32.484 +05:30 [INF] Route matched with {action = "GetStockBalance", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockBalance(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:09:32.484 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:09:32.484 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:09:32.484 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 23:09:33.632 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:09:33.638 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 1112.8207ms
+2026-10-09 23:09:33.643 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:09:33.646 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 1289.3359ms
+2026-10-09 23:09:34.259 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockBalanceDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:09:34.263 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution) in 1767.7133ms
+2026-10-09 23:09:34.266 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 23:09:34.269 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - 200 2462 application/json; charset=utf-8 1912.6769ms
+2026-10-09 23:09:34.362 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:09:34.366 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 1857.4314ms
+2026-10-09 23:09:34.369 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 23:09:34.372 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 331 application/json; charset=utf-8 2015.0437ms
+2026-10-09 23:09:34.971 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:09:35.314 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 2812.1115ms
+2026-10-09 23:09:35.330 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 23:09:35.349 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 33600 application/json; charset=utf-8 2980.8566ms
+2026-10-09 23:20:19.476 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:20:19.480 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-10-09 23:20:19.480 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-10-09 23:20:19.480 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - null null
+2026-10-09 23:20:19.487 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:20:19.492 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:20:19.502 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:20:19.520 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:20:19.524 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 47.4639ms
+2026-10-09 23:20:19.525 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 45.7674ms
+2026-10-09 23:20:19.528 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 48.1365ms
+2026-10-09 23:20:19.530 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - 204 null null 49.5438ms
+2026-10-09 23:20:19.537 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:20:19.543 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-10-09 23:20:19.550 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-10-09 23:20:19.555 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - application/json 168
+2026-10-09 23:20:19.570 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:20:19.573 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:20:19.578 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:20:19.583 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:20:19.586 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 23:20:19.587 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:20:19.589 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 23:20:19.594 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:20:19.596 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 23:20:19.598 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:20:19.679 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 23:20:19.682 +05:30 [INF] Route matched with {action = "GetStockBalance", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockBalance(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:20:20.247 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:20:20.277 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 669.3856ms
+2026-10-09 23:20:20.283 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:20:20.288 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 750.5757ms
+2026-10-09 23:20:20.754 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockBalanceDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:20:20.935 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution) in 1248.5452ms
+2026-10-09 23:20:20.936 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:20:20.939 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 23:20:20.945 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - 200 2462 application/json; charset=utf-8 1389.8725ms
+2026-10-09 23:20:21.345 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:20:21.349 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 1745.6531ms
+2026-10-09 23:20:21.354 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 1741.8067ms
+2026-10-09 23:20:21.360 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 23:20:21.365 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 23:20:21.371 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 331 application/json; charset=utf-8 1827.8949ms
+2026-10-09 23:20:21.375 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 33600 application/json; charset=utf-8 1825.3551ms
+2026-10-09 23:20:24.403 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - null null
+2026-10-09 23:20:24.417 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:20:24.419 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/ExcelReport/stock-management - 204 null null 15.9224ms
+2026-10-09 23:20:24.427 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - application/json 138
+2026-10-09 23:20:24.435 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:20:24.439 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-10-09 23:20:24.455 +05:30 [INF] Route matched with {action = "GetStockManagementReport", controller = "ExcelReport"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockManagementReport(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.ExcelReportController (SSProjectSolution).
+2026-10-09 23:20:25.049 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.StockManagementReportDto'.
+2026-10-09 23:20:25.234 +05:30 [INF] Executed action SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution) in 738.4955ms
+2026-10-09 23:20:25.255 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.ExcelReportController.GetStockManagementReport (SSProjectSolution)'
+2026-10-09 23:20:25.258 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/ExcelReport/stock-management - 200 36353 application/json; charset=utf-8 831.2913ms
+2026-10-09 23:22:39.564 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - null null
+2026-10-09 23:22:39.673 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - null null
+2026-10-09 23:22:39.693 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:22:39.693 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:22:39.695 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/balance - 204 null null 130.6383ms
+2026-10-09 23:22:39.697 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/transactions - 204 null null 23.4319ms
+2026-10-09 23:22:39.673 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - null null
+2026-10-09 23:22:39.716 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - application/json 168
+2026-10-09 23:22:39.731 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - application/json 168
+2026-10-09 23:22:39.738 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:22:39.745 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:22:39.753 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:22:39.755 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/StockManagement/summary - 204 null null 81.9263ms
+2026-10-09 23:22:39.757 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 23:22:39.760 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 23:22:39.769 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - application/json 168
+2026-10-09 23:22:39.772 +05:30 [INF] Route matched with {action = "GetStockBalance", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockBalance(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:22:39.776 +05:30 [INF] Route matched with {action = "GetLastTransactions", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLastTransactions(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:22:39.784 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:22:39.814 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 23:22:39.818 +05:30 [INF] Route matched with {action = "GetStockSummary", controller = "StockManagement"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStockSummary(SSProjectSolution.Request.StockFilterRequest) on controller SSProjectSolution.Controllers.StockManagementController (SSProjectSolution).
+2026-10-09 23:22:40.128 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockTransactionDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:22:41.094 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution) in 1279.9854ms
+2026-10-09 23:22:41.097 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetLastTransactions (SSProjectSolution)'
+2026-10-09 23:22:41.117 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/transactions - 200 33600 application/json; charset=utf-8 1386.2506ms
+2026-10-09 23:22:41.216 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Response.StockSummaryDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:22:41.216 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Response.StockBalanceDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:22:41.227 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution) in 1404.6559ms
+2026-10-09 23:22:41.231 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockSummary (SSProjectSolution)'
+2026-10-09 23:22:41.232 +05:30 [INF] Executed action SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution) in 1417.6705ms
+2026-10-09 23:22:41.234 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/summary - 200 331 application/json; charset=utf-8 1465.1535ms
+2026-10-09 23:22:41.237 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StockManagementController.GetStockBalance (SSProjectSolution)'
+2026-10-09 23:22:41.249 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StockManagement/balance - 200 2462 application/json; charset=utf-8 1532.7712ms
+2026-10-09 23:22:48.409 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:22:48.484 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:22:48.487 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - 204 null null 78.1685ms
+2026-10-09 23:22:48.503 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:22:48.516 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:22:48.527 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:22:49.587 +05:30 [INF] Route matched with {action = "GetAll", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[System.Collections.Generic.IEnumerable`1[SSProjectSolution.Models.DTOs.RateQuotationResponseDto]]]] GetAllAsync() on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:22:51.160 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-10-09 23:22:51.560 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.RateQuotationResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:22:51.629 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution) in 2034.0989ms
+2026-10-09 23:22:51.635 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:22:51.639 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - 200 1342 application/json; charset=utf-8 3136.1163ms
+2026-10-09 23:22:56.753 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:22:56.759 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:22:56.761 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 8.2337ms
+2026-10-09 23:22:56.769 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:22:56.776 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:22:56.778 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:22:56.781 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 23:22:56.836 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:22:56.840 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 54.1828ms
+2026-10-09 23:22:56.843 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:22:56.847 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 78.2318ms
+2026-10-09 23:23:03.019 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:23:03.025 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:23:03.028 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 8.1033ms
+2026-10-09 23:23:03.035 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:23:03.062 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:23:03.070 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:23:03.105 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 23:23:03.182 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:23:03.200 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 85.0183ms
+2026-10-09 23:23:03.207 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:23:03.229 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 193.8653ms
+2026-10-09 23:23:59.532 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/create - null null
+2026-10-09 23:23:59.575 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:23:59.670 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/create - 204 null null 138.3095ms
+2026-10-09 23:24:00.183 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/RateQuotation/create - application/json 464
+2026-10-09 23:24:00.227 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:24:00.467 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.CreateAsync (SSProjectSolution)'
+2026-10-09 23:24:01.246 +05:30 [INF] Route matched with {action = "Create", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[System.Int64]]] CreateAsync(SSProjectSolution.Models.DTOs.RateQuotationCreateDto) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:24:08.692 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Int64, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:24:10.714 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.CreateAsync (SSProjectSolution) in 9451.0968ms
+2026-10-09 23:24:11.665 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.CreateAsync (SSProjectSolution)'
+2026-10-09 23:24:11.841 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/RateQuotation/create - 201 89 application/json; charset=utf-8 11657.9435ms
+2026-10-09 23:24:12.026 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/upload-image/10 - null null
+2026-10-09 23:24:12.258 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:24:12.392 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/upload-image/10 - 204 null null 365.7423ms
+2026-10-09 23:24:13.058 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/RateQuotation/upload-image/10 - multipart/form-data; boundary=----WebKitFormBoundaryeAKAu1dZtJOg3Lkf 32592
+2026-10-09 23:24:13.102 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:24:13.140 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.UploadImageAsync (SSProjectSolution)'
+2026-10-09 23:24:13.242 +05:30 [INF] Route matched with {action = "UploadImage", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[System.String]]] UploadImageAsync(Int64, Microsoft.AspNetCore.Http.IFormFile) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:24:13.557 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:24:13.602 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.UploadImageAsync (SSProjectSolution) in 314.7681ms
+2026-10-09 23:24:13.817 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.UploadImageAsync (SSProjectSolution)'
+2026-10-09 23:24:13.892 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/RateQuotation/upload-image/10 - 200 108 application/json; charset=utf-8 834.2727ms
+2026-10-09 23:24:14.091 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:24:14.503 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:24:14.606 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - 204 null null 514.3392ms
+2026-10-09 23:24:15.508 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:24:15.668 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:24:15.854 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:24:15.890 +05:30 [INF] Route matched with {action = "GetAll", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[System.Collections.Generic.IEnumerable`1[SSProjectSolution.Models.DTOs.RateQuotationResponseDto]]]] GetAllAsync() on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:24:16.124 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.RateQuotationResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:24:16.141 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution) in 154.8011ms
+2026-10-09 23:24:16.386 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:24:16.389 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - 200 1998 application/json; charset=utf-8 880.653ms
+2026-10-09 23:43:04.600 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:43:04.790 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:43:04.841 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - 204 null null 241.7275ms
+2026-10-09 23:43:04.900 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:43:04.934 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:43:04.990 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:43:05.057 +05:30 [INF] Route matched with {action = "GetAll", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[System.Collections.Generic.IEnumerable`1[SSProjectSolution.Models.DTOs.RateQuotationResponseDto]]]] GetAllAsync() on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:43:08.549 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.RateQuotationResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:43:08.577 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution) in 3467.2478ms
+2026-10-09 23:43:08.580 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:43:08.584 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - 200 697 application/json; charset=utf-8 3683.8593ms
+2026-10-09 23:43:27.370 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:43:27.376 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:43:27.378 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - 204 null null 8.5313ms
+2026-10-09 23:43:27.387 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:43:27.392 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:43:27.394 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:43:27.396 +05:30 [INF] Route matched with {action = "GetAll", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[System.Collections.Generic.IEnumerable`1[SSProjectSolution.Models.DTOs.RateQuotationResponseDto]]]] GetAllAsync() on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:43:27.477 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.RateQuotationResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:43:27.484 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution) in 84.0772ms
+2026-10-09 23:43:27.488 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:43:27.493 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - 200 697 application/json; charset=utf-8 106.0907ms
+2026-10-09 23:43:44.008 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:43:44.014 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:43:44.017 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - 204 null null 8.7505ms
+2026-10-09 23:43:44.025 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:43:44.035 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:43:44.037 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:43:44.127 +05:30 [INF] Route matched with {action = "GetAll", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[System.Collections.Generic.IEnumerable`1[SSProjectSolution.Models.DTOs.RateQuotationResponseDto]]]] GetAllAsync() on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:43:44.226 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.RateQuotationResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:43:44.250 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution) in 84.1301ms
+2026-10-09 23:43:44.254 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:43:44.272 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - 200 697 application/json; charset=utf-8 246.4413ms
+2026-10-09 23:43:49.441 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:43:49.452 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:43:49.455 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - 204 null null 14.085ms
+2026-10-09 23:43:49.475 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:43:49.486 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:43:49.488 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:43:49.522 +05:30 [INF] Route matched with {action = "GetAll", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[System.Collections.Generic.IEnumerable`1[SSProjectSolution.Models.DTOs.RateQuotationResponseDto]]]] GetAllAsync() on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:43:49.610 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.RateQuotationResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:43:49.721 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution) in 188.3723ms
+2026-10-09 23:43:49.735 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:43:49.741 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - 200 697 application/json; charset=utf-8 266.2195ms
+2026-10-09 23:48:44.948 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/settings - null null
+2026-10-09 23:48:44.956 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:48:44.961 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:48:44.967 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:48:44.969 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/settings - 204 null null 21.2126ms
+2026-10-09 23:48:44.971 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 15.2583ms
+2026-10-09 23:48:44.979 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/settings - null null
+2026-10-09 23:48:44.988 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:48:45.011 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:48:45.011 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:48:45.013 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:48:45.026 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 23:48:45.245 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/settings - 404 0 null 266.2606ms
+2026-10-09 23:48:45.251 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:48:45.282 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 251.21ms
+2026-10-09 23:48:45.286 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:48:45.288 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 300.8671ms
+2026-10-09 23:48:45.333 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getbyid/12 - null null
+2026-10-09 23:48:45.359 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:48:45.362 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getbyid/12 - 204 null null 29.1187ms
+2026-10-09 23:48:45.373 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getbyid/12 - null null
+2026-10-09 23:48:45.432 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:48:45.445 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetByIdAsync (SSProjectSolution)'
+2026-10-09 23:48:45.610 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/RateQuotation/settings, Response status code: 404
+2026-10-09 23:48:46.166 +05:30 [INF] Route matched with {action = "GetById", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[SSProjectSolution.Models.DTOs.RateQuotationResponseDto]]] GetByIdAsync(Int64) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:48:46.879 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Models.DTOs.RateQuotationResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:48:47.379 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetByIdAsync (SSProjectSolution) in 1203.5008ms
+2026-10-09 23:48:47.404 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetByIdAsync (SSProjectSolution)'
+2026-10-09 23:48:47.439 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getbyid/12 - 200 695 application/json; charset=utf-8 2064.9462ms
+2026-10-09 23:48:47.785 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/image/12?t=1791569927407 - null null
+2026-10-09 23:48:47.865 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetImage (SSProjectSolution)'
+2026-10-09 23:48:47.929 +05:30 [INF] Route matched with {action = "GetImage", controller = "RateQuotation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetImage(Int64) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:48:48.038 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2026-10-09 23:48:48.084 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetImage (SSProjectSolution) in 145.1579ms
+2026-10-09 23:48:48.098 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetImage (SSProjectSolution)'
+2026-10-09 23:48:48.109 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/image/12?t=1791569927407 - 404 null text/plain; charset=utf-8 323.8322ms
+2026-10-09 23:48:58.926 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:48:58.932 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:48:58.935 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - 204 null null 9.1814ms
+2026-10-09 23:48:58.943 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:48:58.947 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:48:58.951 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:48:58.981 +05:30 [INF] Route matched with {action = "GetAll", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[System.Collections.Generic.IEnumerable`1[SSProjectSolution.Models.DTOs.RateQuotationResponseDto]]]] GetAllAsync() on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:48:59.110 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.RateQuotationResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:48:59.113 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution) in 122.8302ms
+2026-10-09 23:48:59.116 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:48:59.119 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - 200 697 application/json; charset=utf-8 175.8283ms
+2026-10-09 23:49:00.565 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/settings - null null
+2026-10-09 23:49:00.575 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:49:00.577 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/settings - 204 null null 11.6413ms
+2026-10-09 23:49:00.575 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:49:00.593 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/settings - null null
+2026-10-09 23:49:00.599 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:49:00.609 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:49:00.622 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 47.0841ms
+2026-10-09 23:49:00.628 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/settings - 404 0 null 35.0685ms
+2026-10-09 23:49:00.638 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:49:00.660 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/RateQuotation/settings, Response status code: 404
+2026-10-09 23:49:00.721 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:49:00.728 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:49:00.752 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 23:49:00.828 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:49:00.832 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 66.1449ms
+2026-10-09 23:49:00.846 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:49:00.853 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 214.8544ms
+2026-10-09 23:49:56.970 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/create - null null
+2026-10-09 23:49:56.983 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:49:56.986 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/create - 204 null null 16.5147ms
+2026-10-09 23:49:56.999 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/RateQuotation/create - application/json 514
+2026-10-09 23:49:57.008 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:49:57.011 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.CreateAsync (SSProjectSolution)'
+2026-10-09 23:49:57.013 +05:30 [INF] Route matched with {action = "Create", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[System.Int64]]] CreateAsync(SSProjectSolution.Models.DTOs.RateQuotationCreateDto) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:49:57.444 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Int64, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:49:57.523 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.CreateAsync (SSProjectSolution) in 503.5296ms
+2026-10-09 23:49:57.549 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.CreateAsync (SSProjectSolution)'
+2026-10-09 23:49:57.568 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/RateQuotation/create - 201 89 application/json; charset=utf-8 568.7408ms
+2026-10-09 23:49:57.600 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/upload-image/13 - null null
+2026-10-09 23:49:57.624 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:49:57.627 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/upload-image/13 - 204 null null 27.5827ms
+2026-10-09 23:49:57.645 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/RateQuotation/upload-image/13 - multipart/form-data; boundary=----WebKitFormBoundaryEqhTotF69PwBxAIb 893806
+2026-10-09 23:49:57.655 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:49:57.658 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.UploadImageAsync (SSProjectSolution)'
+2026-10-09 23:49:57.662 +05:30 [INF] Route matched with {action = "UploadImage", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[System.String]]] UploadImageAsync(Int64, Microsoft.AspNetCore.Http.IFormFile) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:49:57.896 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:49:57.909 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.UploadImageAsync (SSProjectSolution) in 241.5395ms
+2026-10-09 23:49:58.038 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.UploadImageAsync (SSProjectSolution)'
+2026-10-09 23:49:58.599 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/RateQuotation/upload-image/13 - 200 108 application/json; charset=utf-8 953.35ms
+2026-10-09 23:49:59.093 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:49:59.401 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:49:59.411 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - 204 null null 317.4739ms
+2026-10-09 23:49:59.444 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:49:59.472 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:49:59.484 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:49:59.517 +05:30 [INF] Route matched with {action = "GetAll", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[System.Collections.Generic.IEnumerable`1[SSProjectSolution.Models.DTOs.RateQuotationResponseDto]]]] GetAllAsync() on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:49:59.645 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.RateQuotationResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:50:00.031 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution) in 467.1847ms
+2026-10-09 23:50:00.044 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:50:00.131 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - 200 1362 application/json; charset=utf-8 687.5647ms
+2026-10-09 23:50:07.965 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/settings - null null
+2026-10-09 23:50:07.968 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:50:07.970 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:07.975 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:07.976 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/settings - 204 null null 11.7561ms
+2026-10-09 23:50:07.980 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 11.8849ms
+2026-10-09 23:50:07.989 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/settings - null null
+2026-10-09 23:50:08.008 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:50:08.014 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:08.023 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:08.035 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:50:08.040 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 23:50:08.029 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/settings - 404 0 null 39.9677ms
+2026-10-09 23:50:08.059 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/RateQuotation/settings, Response status code: 404
+2026-10-09 23:50:08.203 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:50:08.214 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 161.811ms
+2026-10-09 23:50:08.225 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:50:08.245 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 236.6408ms
+2026-10-09 23:50:08.265 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getbyid/13 - null null
+2026-10-09 23:50:08.277 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:08.280 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getbyid/13 - 204 null null 14.6946ms
+2026-10-09 23:50:08.301 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getbyid/13 - null null
+2026-10-09 23:50:08.308 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:08.310 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetByIdAsync (SSProjectSolution)'
+2026-10-09 23:50:08.312 +05:30 [INF] Route matched with {action = "GetById", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[SSProjectSolution.Models.DTOs.RateQuotationResponseDto]]] GetByIdAsync(Int64) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:50:08.411 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Models.DTOs.RateQuotationResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:50:08.454 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetByIdAsync (SSProjectSolution) in 130.6347ms
+2026-10-09 23:50:08.472 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetByIdAsync (SSProjectSolution)'
+2026-10-09 23:50:08.490 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getbyid/13 - 200 722 application/json; charset=utf-8 188.9828ms
+2026-10-09 23:50:08.511 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/image/13?t=1791570008474 - null null
+2026-10-09 23:50:08.529 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetImage (SSProjectSolution)'
+2026-10-09 23:50:08.532 +05:30 [INF] Route matched with {action = "GetImage", controller = "RateQuotation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetImage(Int64) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:50:08.736 +05:30 [INF] Executing PhysicalFileResult, sending file '/var/www/Test_Image_File\13.jpg' with download name '' ...
+2026-10-09 23:50:08.826 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetImage (SSProjectSolution) in 279.7126ms
+2026-10-09 23:50:08.831 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetImage (SSProjectSolution)'
+2026-10-09 23:50:08.833 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/image/13?t=1791570008474 - 200 893626 image/jpeg 322.7743ms
+2026-10-09 23:50:25.083 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/download-pdf - null null
+2026-10-09 23:50:25.097 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:25.102 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/download-pdf - 204 null null 18.8585ms
+2026-10-09 23:50:25.118 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/RateQuotation/download-pdf - application/json 18
+2026-10-09 23:50:25.128 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:25.132 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.DownloadPdf (SSProjectSolution)'
+2026-10-09 23:50:25.349 +05:30 [INF] Route matched with {action = "DownloadPdf", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadPdf(RateQuotationPdfRequest) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:50:25.909 +05:30 [INF] Company loaded. CompanyId=6 CompanyName=Sample - Company TEST Gst=27***********A2
+2026-10-09 23:50:31.908 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:50:31.935 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:31.937 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getall - 204 null null 29.595ms
+2026-10-09 23:50:32.119 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - null null
+2026-10-09 23:50:32.126 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:32.131 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:50:32.143 +05:30 [INF] Route matched with {action = "GetAll", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[System.Collections.Generic.IEnumerable`1[SSProjectSolution.Models.DTOs.RateQuotationResponseDto]]]] GetAllAsync() on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:50:32.241 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[System.Collections.Generic.IEnumerable`1[[SSProjectSolution.Models.DTOs.RateQuotationResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-10-09 23:50:32.469 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution) in 305.2054ms
+2026-10-09 23:50:32.525 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetAllAsync (SSProjectSolution)'
+2026-10-09 23:50:32.542 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getall - 200 1362 application/json; charset=utf-8 423.1286ms
+2026-10-09 23:50:34.773 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/settings - null null
+2026-10-09 23:50:34.782 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:50:34.800 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:34.808 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:34.819 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/settings - 204 null null 45.4415ms
+2026-10-09 23:50:34.820 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 37.8422ms
+2026-10-09 23:50:34.835 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:50:34.858 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/settings - null null
+2026-10-09 23:50:35.135 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:35.156 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:35.158 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:50:35.175 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/settings - 404 0 null 317.2251ms
+2026-10-09 23:50:35.217 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 23:50:35.258 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5219/api/RateQuotation/settings, Response status code: 404
+2026-10-09 23:50:35.370 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:50:35.454 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 146.9952ms
+2026-10-09 23:50:35.521 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:50:35.543 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 707.2267ms
+2026-10-09 23:50:35.617 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getbyid/13 - null null
+2026-10-09 23:50:35.625 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:35.632 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getbyid/13 - 204 null null 13.7081ms
+2026-10-09 23:50:35.657 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getbyid/13 - null null
+2026-10-09 23:50:35.671 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:35.679 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetByIdAsync (SSProjectSolution)'
+2026-10-09 23:50:35.684 +05:30 [INF] Route matched with {action = "GetById", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[SSProjectSolution.Models.DTOs.RateQuotationResponseDto]]] GetByIdAsync(Int64) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:50:35.883 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Models.DTOs.RateQuotationResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:50:35.890 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetByIdAsync (SSProjectSolution) in 198.9941ms
+2026-10-09 23:50:35.902 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetByIdAsync (SSProjectSolution)'
+2026-10-09 23:50:35.924 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getbyid/13 - 200 722 application/json; charset=utf-8 266.6724ms
+2026-10-09 23:50:35.935 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/image/13?t=1791570035907 - null null
+2026-10-09 23:50:36.047 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetImage (SSProjectSolution)'
+2026-10-09 23:50:36.051 +05:30 [INF] Route matched with {action = "GetImage", controller = "RateQuotation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetImage(Int64) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:50:36.058 +05:30 [INF] Executing PhysicalFileResult, sending file '/var/www/Test_Image_File\13.jpg' with download name '' ...
+2026-10-09 23:50:36.130 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetImage (SSProjectSolution) in 73.5885ms
+2026-10-09 23:50:36.145 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetImage (SSProjectSolution)'
+2026-10-09 23:50:36.151 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/image/13?t=1791570035907 - 200 893626 image/jpeg 216.8997ms
+2026-10-09 23:50:37.049 +05:30 [INF] Executing FileContentResult, sending file with download name 'RateQuotation_SSE_0008-2027-2026.pdf' ...
+2026-10-09 23:50:37.093 +05:30 [INF] Connection id "0HNP65AF1NBS3", Request id "0HNP65AF1NBS3:0000000E": the application aborted the connection.
+2026-10-09 23:50:37.104 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.DownloadPdf (SSProjectSolution) in 11736.4184ms
+2026-10-09 23:50:37.108 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.DownloadPdf (SSProjectSolution)'
+2026-10-09 23:50:37.114 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/RateQuotation/download-pdf - 499 124878 application/pdf 11996.3507ms
+2026-10-09 23:50:38.150 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/download-pdf - null null
+2026-10-09 23:50:38.157 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:38.163 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/download-pdf - 204 null null 13.4135ms
+2026-10-09 23:50:38.186 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/RateQuotation/download-pdf - application/json 18
+2026-10-09 23:50:38.200 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:50:38.205 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.DownloadPdf (SSProjectSolution)'
+2026-10-09 23:50:38.214 +05:30 [INF] Route matched with {action = "DownloadPdf", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadPdf(RateQuotationPdfRequest) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:50:38.366 +05:30 [INF] Company loaded. CompanyId=6 CompanyName=Sample - Company TEST Gst=27***********A2
+2026-10-09 23:50:38.548 +05:30 [INF] Executing FileContentResult, sending file with download name 'RateQuotation_SSE_0008-2027-2026.pdf' ...
+2026-10-09 23:50:38.590 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.DownloadPdf (SSProjectSolution) in 368.3723ms
+2026-10-09 23:50:38.615 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.DownloadPdf (SSProjectSolution)'
+2026-10-09 23:50:38.624 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/RateQuotation/download-pdf - 200 124878 application/pdf 436.0185ms
+2026-10-09 23:51:15.579 +05:30 [INF] Application is shutting down...
+2026-10-09 23:52:39.327 +05:30 [INF] User profile is available. Using 'C:\Users\ADMIN\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-10-09 23:52:40.620 +05:30 [INF] Now listening on: http://localhost:5219
+2026-10-09 23:52:40.628 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-10-09 23:52:40.630 +05:30 [INF] Hosting environment: Development
+2026-10-09 23:52:40.632 +05:30 [INF] Content root path: C:\Users\ADMIN\Desktop\SS_Project\SSProjectSolution\SSProjectSolution\SSProjectSolution
+2026-10-09 23:54:50.468 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:54:50.467 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/settings - null null
+2026-10-09 23:54:51.079 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:54:51.080 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:54:51.150 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/company/get-company-list - 204 null null 687.7852ms
+2026-10-09 23:54:51.150 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/settings - 204 null null 688.7141ms
+2026-10-09 23:54:51.321 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - null null
+2026-10-09 23:54:51.321 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/settings - null null
+2026-10-09 23:54:51.544 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:54:51.544 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:54:51.556 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-10-09 23:54:52.261 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetSettings (SSProjectSolution)'
+2026-10-09 23:54:52.261 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:54:52.560 +05:30 [INF] Route matched with {action = "GetCompanyList", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyList() on controller SSProjectSolution.Controllers.CompanyController (SSProjectSolution).
+2026-10-09 23:54:52.560 +05:30 [INF] Route matched with {action = "GetSettings", controller = "RateQuotation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetSettings() on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:54:53.586 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-10-09 23:54:53.680 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType15`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:54:54.562 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetSettings (SSProjectSolution) in 1927.0385ms
+2026-10-09 23:54:54.578 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetSettings (SSProjectSolution)'
+2026-10-09 23:54:54.593 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/settings - 200 64 application/json; charset=utf-8 3272.1667ms
+2026-10-09 23:54:58.599 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SSProjectSolution.Models.KeyValueModel, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:54:58.838 +05:30 [INF] Executed action SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution) in 6221.956ms
+2026-10-09 23:54:58.901 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.CompanyController.GetCompanyList (SSProjectSolution)'
+2026-10-09 23:54:59.181 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/company/get-company-list - 200 885 application/json; charset=utf-8 7859.9098ms
+2026-10-09 23:54:59.241 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getbyid/13 - null null
+2026-10-09 23:54:59.319 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:54:59.342 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/getbyid/13 - 204 null null 89.5969ms
+2026-10-09 23:54:59.375 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getbyid/13 - null null
+2026-10-09 23:54:59.420 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:54:59.462 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetByIdAsync (SSProjectSolution)'
+2026-10-09 23:54:59.687 +05:30 [INF] Route matched with {action = "GetById", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SSProjectSolution.Response.ApiResponse`1[SSProjectSolution.Models.DTOs.RateQuotationResponseDto]]] GetByIdAsync(Int64) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:55:01.823 +05:30 [INF] Executing OkObjectResult, writing value of type 'SSProjectSolution.Response.ApiResponse`1[[SSProjectSolution.Models.DTOs.RateQuotationResponseDto, SSProjectSolution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-10-09 23:55:01.992 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetByIdAsync (SSProjectSolution) in 2290.5697ms
+2026-10-09 23:55:02.031 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetByIdAsync (SSProjectSolution)'
+2026-10-09 23:55:02.037 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/getbyid/13 - 200 766 application/json; charset=utf-8 2662.2459ms
+2026-10-09 23:55:02.157 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/RateQuotation/image/13?t=1791570302008 - null null
+2026-10-09 23:55:02.363 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetImage (SSProjectSolution)'
+2026-10-09 23:55:02.373 +05:30 [INF] Route matched with {action = "GetImage", controller = "RateQuotation"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetImage(Int64) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:55:02.424 +05:30 [INF] Executing PhysicalFileResult, sending file '/var/www/Test_Image_File\13.jpg' with download name '' ...
+2026-10-09 23:55:02.517 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.GetImage (SSProjectSolution) in 134.2558ms
+2026-10-09 23:55:02.521 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.GetImage (SSProjectSolution)'
+2026-10-09 23:55:02.531 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/RateQuotation/image/13?t=1791570302008 - 200 893626 image/jpeg 373.6341ms
+2026-10-09 23:55:06.192 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/download-pdf - null null
+2026-10-09 23:55:06.205 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:55:06.216 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5219/api/RateQuotation/download-pdf - 204 null null 23.3568ms
+2026-10-09 23:55:06.379 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5219/api/RateQuotation/download-pdf - application/json 18
+2026-10-09 23:55:06.401 +05:30 [INF] CORS policy execution successful.
+2026-10-09 23:55:06.406 +05:30 [INF] Executing endpoint 'SSProjectSolution.Controllers.RateQuotationController.DownloadPdf (SSProjectSolution)'
+2026-10-09 23:55:06.433 +05:30 [INF] Route matched with {action = "DownloadPdf", controller = "RateQuotation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadPdf(RateQuotationPdfRequest) on controller SSProjectSolution.Controllers.RateQuotationController (SSProjectSolution).
+2026-10-09 23:55:08.113 +05:30 [INF] Company loaded. CompanyId=6 CompanyName=Sample - Company TEST Gst=27***********A2
+2026-10-09 23:55:17.053 +05:30 [INF] Executing FileContentResult, sending file with download name 'RateQuotation_SSE_0008-2027-2026.pdf' ...
+2026-10-09 23:55:17.123 +05:30 [INF] Executed action SSProjectSolution.Controllers.RateQuotationController.DownloadPdf (SSProjectSolution) in 10685.3218ms
+2026-10-09 23:55:17.168 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.RateQuotationController.DownloadPdf (SSProjectSolution)'
+2026-10-09 23:55:17.193 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/RateQuotation/download-pdf - 200 125033 application/pdf 10814.2413ms
+2026-10-09 23:56:48.163 +05:30 [INF] Application is shutting down...

@@ -96,7 +96,7 @@ namespace SSProjectSolution.Repositories
             parameters.Add("@StyleNo", filter.StyleNo);
             parameters.Add("@DesignName", filter.DesignName);
             parameters.Add("@Colour", filter.Colour);
-            parameters.Add("@TopCount", 50);
+            parameters.Add("@TopCount", 500);
 
             string spName = "usp_GetLastTransactions";
 

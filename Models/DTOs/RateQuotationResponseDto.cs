@@ -17,6 +17,8 @@ namespace SSProjectSolution.Models.DTOs
         public string? RatePerPiece { get; set; }
         public string? RatePerMeter { get; set; }
         public string? NoOfStitches { get; set; }
+        public string? NumberOfTrimmings { get; set; }
+        public string? CustomField { get; set; }
         public int? ChenilleColors { get; set; }
         public int? NormalEmbColors { get; set; }
         public int Quantity { get; set; }
