@@ -779,3 +779,4 @@
 2026-10-10 18:22:53.995 +05:30 [INF] Executed action SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution) in 2819.6901ms
 2026-10-10 18:22:54.002 +05:30 [INF] Executed endpoint 'SSProjectSolution.Controllers.StatusFilterController.Search (SSProjectSolution)'
 2026-10-10 18:22:54.011 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5219/api/StatusFilter/search - 200 8954 application/json; charset=utf-8 3021.2426ms
+2026-10-10 23:50:06.126 +05:30 [INF] Application is shutting down...

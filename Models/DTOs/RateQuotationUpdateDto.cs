@@ -3,8 +3,8 @@ namespace SSProjectSolution.Models.DTOs
     public class RateQuotationUpdateDto
     {
         public DateTime QuotationDate { get; set; }
-        public long CompanyId { get; set; }
-        public string CompanyName { get; set; } = string.Empty;
+        public long? CompanyId { get; set; }
+        public string? CompanyName { get; set; }
         public string? ContactPerson { get; set; }
         public string? MobileNo { get; set; }
         public string? EmailId { get; set; }
@@ -17,12 +17,12 @@ namespace SSProjectSolution.Models.DTOs
         public string? NoOfStitches { get; set; }
         public string? NumberOfTrimmings { get; set; }
         public string? CustomField { get; set; }
-        public int? ChenilleColors { get; set; }
-        public int? NormalEmbColors { get; set; }
-        public int Quantity { get; set; }
-        public decimal TotalAmount { get; set; }
+        public string? ChenilleColors { get; set; }
+        public string? NormalEmbColors { get; set; }
+        public int? Quantity { get; set; }
+        public string? TotalAmount { get; set; }
         public string? Remarks { get; set; }
         public string Status { get; set; } = "Draft";
-        public long ModifiedBy { get; set; }
+        public long? ModifiedBy { get; set; }
     }
 }

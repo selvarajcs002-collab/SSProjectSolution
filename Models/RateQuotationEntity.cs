@@ -19,10 +19,10 @@ namespace SSProjectSolution.Models
         public string? NoOfStitches { get; set; }
         public string? NumberOfTrimmings { get; set; }
         public string? CustomField { get; set; }
-        public int? ChenilleColors { get; set; }
-        public int? NormalEmbColors { get; set; }
+        public string? ChenilleColors { get; set; }
+        public string? NormalEmbColors { get; set; }
         public int Quantity { get; set; }
-        public decimal TotalAmount { get; set; }
+        public string? TotalAmount { get; set; }
         public string? Remarks { get; set; }
         public string Status { get; set; } = "Draft";
         public bool IsActive { get; set; }

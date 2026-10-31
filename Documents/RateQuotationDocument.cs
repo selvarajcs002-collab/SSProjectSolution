@@ -281,12 +281,53 @@ namespace SSProjectSolution.Documents
                                         columns.RelativeColumn(5.8f);
                                     });
 
-                                    // Helper method
-                                    void AddRow(
-                                        string label,
-                                        string value)
+                                    bool HasDisplayValue(string? value)
                                     {
-                                        // Label
+                                        if (string.IsNullOrWhiteSpace(value))
+                                        {
+                                            return false;
+                                        }
+
+                                        var trimmed = value.Trim();
+                                        if (trimmed == "-" || trimmed == "0")
+                                        {
+                                            return false;
+                                        }
+
+                                        if (decimal.TryParse(trimmed, out var numericValue) && numericValue == 0)
+                                        {
+                                            return false;
+                                        }
+
+                                        return true;
+                                    }
+
+                                    string FormatRs(string value)
+                                    {
+                                        var trimmed = value.Trim();
+                                        if (trimmed.StartsWith("RS", StringComparison.OrdinalIgnoreCase))
+                                        {
+                                            return trimmed;
+                                        }
+
+                                        return "RS " + trimmed;
+                                    }
+
+                                    var rowCount = 0;
+
+                                    void AddRow(string label, string? value, bool isMoney = false)
+                                    {
+                                        if (!HasDisplayValue(value))
+                                        {
+                                            return;
+                                        }
+
+                                        rowCount++;
+
+                                        var displayValue = isMoney
+                                            ? FormatRs(value!.Trim())
+                                            : value!.Trim();
+
                                         table.Cell()
                                             .Border(1)
                                             .BorderColor(borderColor)
@@ -298,7 +339,6 @@ namespace SSProjectSolution.Documents
                                             .Bold()
                                             .FontSize(10);
 
-                                        // Colon
                                         table.Cell()
                                             .BorderTop(1)
                                             .BorderBottom(1)
@@ -310,7 +350,6 @@ namespace SSProjectSolution.Documents
                                             .Text(":")
                                             .FontSize(10);
 
-                                        // Value
                                         table.Cell()
                                             .Border(1)
                                             .BorderColor(borderColor)
@@ -318,83 +357,36 @@ namespace SSProjectSolution.Documents
                                             .PaddingVertical(8)
                                             .PaddingHorizontal(8)
                                             .AlignMiddle()
-                                            .Text(value)
+                                            .Text(displayValue)
                                             .FontSize(10);
                                     }
 
-                                    // -------------------------------------------------
-                                    // DATA
-                                    // -------------------------------------------------
+                                    AddRow("Company Name", _model.CompanyName);
+                                    AddRow("Style No", _model.StyleNo);
+                                    AddRow("EMB Design", _model.DesignName);
+                                    AddRow("Chenille Colors", _model.ChenilleColors);
+                                    AddRow("Normal EMB Colors", _model.NormalEmbColors);
+                                    AddRow("No. of Stitches", _model.NoOfStitches);
+                                    AddRow("Number of Trimmings", _model.NumberOfTrimmings);
+                                    AddRow(_customFieldLabel, _model.CustomField);
+                                    AddRow("Rate Per Piece", _model.RatePerPiece, true);
+                                    AddRow("Embroidery Cost / 1000 Sts", _model.RatePerMeter, true);
+                                    AddRow("Total Amount", _model.TotalAmount, true);
+                                    AddRow("Payment Terms", _model.Remarks);
 
-                                    AddRow(
-                                        "Company Name",
-                                        string.IsNullOrWhiteSpace(
-                                            _model.CompanyName)
-                                            ? "-"
-                                            : _model.CompanyName);
-
-                                    AddRow(
-                                        "Style No",
-                                        string.IsNullOrWhiteSpace(
-                                            _model.StyleNo)
-                                            ? "-"
-                                            : _model.StyleNo);
-
-                                    AddRow(
-                                        "EMB Design",
-                                        string.IsNullOrWhiteSpace(
-                                            _model.DesignName)
-                                            ? "-"
-                                            : _model.DesignName);
-
-                                    AddRow(
-                                        "Chenille Colors",
-                                        _model.ChenilleColors?
-                                            .ToString()
-                                            ?? "-");
-
-                                    AddRow(
-                                        "Normal EMB Colors",
-                                        _model.NormalEmbColors?
-                                            .ToString()
-                                            ?? "-");
-
-                                    AddRow(
-                                        "No. of Stitches",
-                                        string.IsNullOrWhiteSpace(_model.NoOfStitches)
-                                            ? "-"
-                                            : _model.NoOfStitches);
-
-                                    AddRow(
-                                        "Number of Trimmings",
-                                        string.IsNullOrWhiteSpace(_model.NumberOfTrimmings)
-                                            ? "-"
-                                            : _model.NumberOfTrimmings);
-
-                                    AddRow(
-                                        _customFieldLabel,
-                                        string.IsNullOrWhiteSpace(_model.CustomField)
-                                            ? "-"
-                                            : _model.CustomField);
-
-                                    AddRow(
-                                        "Rate Per Piece",
-                                        _model.RatePerPiece != null
-                                            ? _model.RatePerPiece.ToString()
-                                            : "-");
-
-                                    AddRow(
-                                        "Embroidery Cost / 1000 Sts",
-                                        string.IsNullOrWhiteSpace(_model.RatePerMeter)
-                                            ? "-"
-                                            : _model.RatePerMeter);
-
-                                    AddRow(
-                                        "Payment Terms",
-                                        string.IsNullOrWhiteSpace(
-                                            _model.Remarks)
-                                            ? "-"
-                                            : _model.Remarks);
+                                    if (rowCount == 0)
+                                    {
+                                        table.Cell().ColumnSpan(3)
+                                            .Border(1)
+                                            .BorderColor(borderColor)
+                                            .MinHeight(34)
+                                            .PaddingVertical(8)
+                                            .PaddingHorizontal(8)
+                                            .AlignMiddle()
+                                            .Text("No quotation details were provided.")
+                                            .FontSize(10)
+                                            .FontColor(greyColor);
+                                    }
                                 });
 
                             // -------------------------------------------------
