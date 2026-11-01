@@ -234,12 +234,10 @@ namespace SSProjectSolution.Controllers
 
                 var result = await _inwardService.GetDesignStyleColourByCompanyAsync(companyId);
 
-                if (result == null || !result.Any())
-                {
-                    return NotFound(new { message = "No designs found for this company" });
-                }
-
-                return Ok(result);
+                // Empty list is a valid state (no active inward stock for the company).
+                // Returning 404 here breaks outward edit because the UI loads this
+                // endpoint for dropdowns even when the outward record already exists.
+                return Ok(result ?? Enumerable.Empty<DesignStyleColourDto>());
             }
             catch (Exception ex)
             {
@@ -277,7 +275,7 @@ namespace SSProjectSolution.Controllers
                 }
 
                 // 1. Get all designs/styles/colours for company
-                var allDesigns = await _inwardService.GetDesignStyleColourByCompanyAsync(companyId);
+                var allDesigns = await _inwardService.GetDesignStyleColourByCompanyAsync(companyId) ?? Enumerable.Empty<DesignStyleColourDto>();
                 
                 // 2. Filter by StyleNo to find all colours
                 var styleColours = allDesigns
